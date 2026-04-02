@@ -1,0 +1,37 @@
+Binary operators:
+
+|:	logical or
+
+|&	logical and
+
+|	bitwise or
+¬	bitwise xor
+
+&	bitwise and
+
+>	greater than
+>=	greater than or equal to
+=	equal to
+<	less than
+<=	less than or equal to
+¬>	not greater than
+¬=	not equal to
+¬<	not less than
+
+||	string concatenate
+
++	plus
+-	minus
+
+*	times
+/	divide
+
+**	exponentiate
+
+Unary operators:
+
++	unary plus
+-	unary minus
+¬	logical not
+
+Other characters: blank . ' ( ) , _ $ ; : %

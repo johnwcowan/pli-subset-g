@@ -1,0 +1,363 @@
+Kednos PL/I for OpenVMS Systems
+Reference Manual
+
+
+
+Appendix C
+Compatibility with PL/I Standards
+
+This appendix describes the relationship between Kednos PL/I for OpenVMS VAX and and Kednos PL/I for OpenVMS Alpha to each other and to the various PL/I language standards that are currently in force.
+
+Kednos PL/I for OpenVMS VAX and Kednos PL/I for OpenVMS Alpha are strict supersets of the ANSI X3.74-1981 PL/I General Purpose Subset. Both contain many features from larger or more recent PL/I standards and implementations. Most of the features implemented in Kednos PL/I for OpenVMS VAX and Kednos PL/I for OpenVMS Alpha that go beyond the language defined by ANSI X3.74-1981 are contained in either the ANSI X3.53-1976 (full) PL/I language standard or the new ANSI X3.74-198x PL/I General Purpose Subset.
+
+C.1 Differences and Similarities Between Kednos PL/I for OpenVMS VAX and Kednos PL/I for OpenVMS Alpha
+
+Kednos PL/I for OpenVMS VAX and Alpha both support floating-point variables and constants up to 53 bits of precision. Attempts to declare variables with greater precision result in a compilation error on VAX. On Alpha, such attempts result in a warning that a value of 53 has been used. On both OpenVMS VAX and OpenVMS Alpha, using a constant with more than 15 decimal digits results in a warning indicating possible loss of precision.
+
+In both Kednos PL/I for OpenVMS VAX and Kednos PL/I for OpenVMS Alpha, the default condition-handling capabilities of a module without OPTIONS(MAIN) are not correct.
+
+Neither the VAX nor the Alpha Run-Time Library (RTL) signals ENDPAGE for SYSPRINT.
+
+Kednos PL/I for OpenVMS VAX supports the OPTIONS(UNDERFLOW) option and checks for UNDERFLOW. Kednos PL/I for OpenVMS Alpha ignores OPTIONS(UNDERFLOW).
+
+C.2 Relation to the 1981 PL/I General-Purpose Subset
+
+The 1981 PL/I General-Purpose Subset (ANSI X3.74-1981) was designed to be useful in scientific, commercial, and systems programming, especially on small and medium-size computer systems. Among the primary goals of the design of the subset were the following:
+
+To include features that were easy to learn and to use and to exclude features that were difficult to learn or prone to error
+
+To provide a subset that would be easily portable from one computer system to another
+
+To exclude features that were not often used and whose implementation greatly increased the complexity of the run-time support required by the compiler
+
+The essential elements of the subset are described below. These descriptions are extracted from the ANSI X3.74-1981 standard.
+
+C.2.1 Program Structure
+
+The General-Purpose Subset includes a complete character set, with comments, identifiers, decimal arithmetic constants, and simple string constants.
+
+Begin blocks and DO-groups are included in the subset. Each block or group in the program must be terminated with an END statement.
+
+C.2.2 Program Control
+
+The following program control statements are included in the subset: CALL, RETURN, IF, DO, GOTO, null, STOP, ON, REVERT, and SIGNAL.
+
+The DO statement options supported are TO, BY, WHILE, and REPEAT.
+
+An IF statement can contain unlabeled THEN and ELSE clauses.
+
+An ON statement can specify a single condition. The condition names supported are ERROR, ENDFILE, ENDPAGE, FIXEDOVERFLOW, KEY, OVERFLOW, UNDEFINEDFILE, UNDERFLOW, and ZERODIVIDE.
+
+C.2.3 Storage Control
+
+The subset includes the assignment statement and the assignment of array and structure variables whose dimensions and data types match. The subset also permits aggregate promotion, that is, the assignment of a scalar expression to every element or member of an aggregate variable.
+
+In the subset, only static variables can be initialized.
+
+The ALLOCATE statement with the SET option and the FREE statement are included in the subset.
+
+C.2.4 Input/Output
+
+The I/O statements are:
+
+OPEN and CLOSE
+
+READ, WRITE, DELETE, and REWRITE for record I/O
+
+GET and PUT, with FILE, STRING, EDIT, LIST, PAGE, SKIP, and LINE options for stream I/O
+
+The file attributes, specified in DECLARE or OPEN, are DIRECT, ENVIRONMENT, INPUT, KEYED, OUTPUT, PRINT, RECORD, SEQUENTIAL, STREAM, and UPDATE.
+
+The FORMAT statement is included. The format items are E, F, P, A, B, X, R, PAGE, SKIP, COLUMN, TAB, and LINE.
+
+C.2.5 Attributes and Pictures
+
+The DECLARE statement is included in the subset. All names must be declared, either by means of a DECLARE statement or by means of a label prefix.
+
+The attributes supported are as follows: ALIGNED, AUTOMATIC, BASED, BINARY, BIT, BUILTIN, CHARACTER, DECIMAL, DEFINED, DIRECT, ENTRY, ENVIRONMENT, EXTERNAL, FILE, FIXED, FLOAT, INITIAL, INPUT, INTERNAL, KEYED, LABEL, OPTIONS, OUTPUT, PICTURE, POINTER, PRINT, RECORD, RETURNS, SEQUENTIAL, STATIC, STREAM, UPDATE, VARIABLE, and VARYING.
+
+The picture characters included are CR, DB, S, V, Z, 9, -, +, $, and *. The picture insertion characters (. , / B) are also included.
+
+C.2.6 Built-In Functions and Pseudovariables
+
+The built-in functions in the subset are as follows: ABS, ACOS, ADDR, ASIN, ATAN, ATAND, ATANH, BINARY, BIT, BOOL, CEIL, CHARACTER, COLLATE, COPY, COS, COSD, COSH, DATE, DECIMAL, DIMENSION, DIVIDE, EXP, FIXED, FLOAT, FLOOR, HBOUND, INDEX, LBOUND, LENGTH, LINENO, LOG, LOG2, LOG10, MAX, MIN, MOD, NULL, ONCODE, ONFILE, ONKEY, PAGENO, ROUND, SIGN, SIN, SIND, SINH, SQRT, STRING, SUBSTR, TAN, TAND, TANH, TIME, TRANSLATE, TRUNC, UNSPEC, VALID, and VERIFY.
+
+The pseudovariables are PAGENO, STRING, SUBSTR, and UNSPEC.
+
+C.2.7 Expressions
+
+The subset supports all infix and prefix operators, the locator qualifier, parenthesized expressions, subscripts, and function references. Implicit conversion from one data type to another is restricted to those contexts in which the conversion is likely to produce the desired results.
+
+C.3 198x PL/I General-Purpose Subset Features Supported
+
+The 198x PL/I General-Purpose Subset (ANSI X3.74-198x) was designed to extend the previous subset standard on the basis of experience with subset implementations and the desire for more capabilities in subset-conforming implementations.
+
+The following sections describe features in this standard that have been implemented to date in Kednos PL/I for OpenVMS VAX and Kednos PL/I for OpenVMS Alpha.
+
+C.3.1 Lexical Constructs
+
+The character pair /* is permitted within comments.
+
+Both uppercase and lowercase characters are permitted in source programs.
+
+No space is required after the P for picture constants.
+
+C.3.2 Program Control
+
+RETURNS(CHAR(*)) is supported.
+
+The statements following THEN and ELSE can be labeled.
+
+The NONRECURSIVE procedure option is supported.
+
+The SELECT statement is supported.
+
+The LEAVE statement is supported.
+
+The UNTIL clause for DO groups and clauses is supported.
+
+C.3.3 Storage Control
+
+The IN option can be used for the ALLOCATE and FREE statements, and language controlled allocation in areas is supported.
+
+The SET option is optional for ALLOCATE if the based variable being allocated was declared with a base pointer.
+
+The ALLOCATE and FREE statements can specify a comma list of items.
+
+String assignment can have the source and target overlapped.
+
+C.3.4 Input/Output
+
+Expressions can be used in GET and PUT FORMAT lists.
+
+You can use, as the source or target of a file I/O statement, a function reference that performs I/O on the same file and then returns to the original statement.
+
+The OPEN and CLOSE statements can contain a list of file specifications.
+
+The FROM option of the REWRITE statement can be omitted.
+
+C.3.5 Attributes and Pictures
+
+The INITIAL attribute is allowed with AUTOMATIC storage. The initial items can contain asterisks to denote uninitialized values. The initial values can be expressions. The NULL built-in function can be used in both STATIC and AUTOMATIC INITIAL attributes. The initial iteration factor can be an asterisk.
+
+Restricted expressions can be used for static extents, parameter extents, and returns descriptor extents.
+
+The AREA and OFFSET data types are supported.
+
+The REFER attribute can be used at the end of a structure.
+
+The DIMENSION, PARAMETER, and NONVARYING keywords can be specified.
+
+The UNALIGNED attribute can be specified, but only for BIT and CHARACTER variables.
+
+SYSIN and SYSPRINT can be contextually declared as files.
+
+The CONDITION attribute is supported.
+
+The UNION attribute is supported.
+
+C.3.6 Program Control
+
+The AREA, CONDITION, CONVERSION, FINISH, and STORAGE conditions are supported.
+
+Multiple conditions can be specified for ON and REVERT.
+
+The SNAP and SYSTEM options of the ON statement are supported.
+
+C.3.7 Built-In Functions and Pseudovariables
+
+The following built-in functions are supported: ADD, EMPTY, EVERY, HIGH, LOW, MULTIPLY, OFFSET, ONSOURCE, POINTER, PROD, REVERSE, SOME, SUBTRACT, and SUM.
+
+The ONSOURCE pseudovariable is supported.
+
+The DIMENSION, HBOUND, and LBOUND built-in functions have a default of one for the second parameter if it is not specified.
+
+The INDEX and VERIFY built-in functions have an optional starting position parameter.
+
+The UNSPEC built-in function and pseudovariable can be used on aggregates.
+
+C.3.8 Expressions
+
+The operators AND THEN (short-circuiting AND, specified as &:) and OR ELSE (short-circuiting OR, specified as |:) are supported.
+
+EXCLUSIVE OR (infix or dyadic ^) is supported.
+
+C.4 Full PL/I Features Supported
+
+The items discussed in this section are features that are explicitly excluded from both the old subset standard (ANSI X3.74-1981) and the new subset standard (ANSI X3.74-198x) but that have been implemented in Kednos PL/I. These features all exist in full PL/I.
+
+C.4.1 Program Structure
+
+The STRINGRANGE and SUBSCRIPTRANGE conditions are supported.
+
+Replication factors for string constants are supported.
+
+A comma list can be specified on the left-hand side of an assignment statement.
+
+C.4.2 Program Control
+
+The ENTRY statement is supported.
+
+C.4.3 Storage Control
+
+CONTROLLED storage is supported.
+
+C.4.4 Attributes and Pictures
+
+The CONTROLLED, LIKE, MEMBER, POSITION, PRECISION, REFER, and STRUCTURE attributes are supported. (The REFER attribute is restricted to BASED and CONTROLLED variables.)
+
+The picture characters Y, T, I, and R are supported, and pictures can include iteration factors.
+
+Scaled fixed binary numbers are supported. They can have a scale factor within the range -31 through 31 on OpenVMS VAX systems or the range -63 through 63 on OpenVMS Alpha systems.
+
+C.4.5 Built-In Functions and Pseudovariables
+
+The OFFSET and POINTER built-in functions are not restricted to ADDR.
+
+The ALLOCATION and ONCHAR built-in functions are supported.
+
+The ONCHAR pseudovariable is supported.
+
+C.4.6 Expressions
+
+The expression in a WHILE or UNTIL clause or in an IF statement can be a bit string of any length. When evaluated, the expression results in a true value if any bit of the string expression is a 1 and in a false value if all bits in the string expression are 0s.
+
+The control variable and the expressions in the TO, BY, and REPEAT options of the DO statement are not restricted to integers and pointers.
+
+C.5 Nonstandard Features from Other Implementations
+
+The features discussed in this section are not described in any ANSI PL/I standard. They are, however, provided by some other implementations.
+
+C.5.1 Preprocessor
+
+Both Kednos PL/I for OpenVMS VAX and Kednos PL/I for OpenVMS Alpha support an embedded lexical preprocessor for compilation control. The following preprocessor statements are included: %ACTIVATE, %DEACTIVATE, %DECLARE, %DICTIONARY %DO, %END, %ERROR, %FATAL, %GOTO, %INFORM, %IF, %LIST, %NOLIST, %PAGE, %PROCEDURE, %REPLACE, %RETURN, %SBTTL, %TITLE, and %WARN.
+
+An %IF statement can contain unlabeled %THEN and %ELSE clauses.
+
+The following preprocessor built-in functions are included: ABS, BYTE, COPY, DATE, DATETIME, DECODE, ENCODE, ERROR, INDEX, INFORM, LENGTH, LINE, LTRIM, MAX, MIN, MOD, RANK, REVERSE, RTRIM (Kednos PL/I for OpenVMS VAX only), SEARCH, SIGN, SUBSTR, TIME, TRANSLATE, TRIM, VARIANT, VERIFY, and WARN.
+
+C.5.2 Built-In Functions
+
+The following nonstandard built-in functions are included: ACTUALCOUNT, ADDREL, BYTE, BYTESIZE, DATETIME, DECODE, DESCRIPTOR, ENCODE, INT, LTRIM, MAXLENGTH, ONARGLIST, POSINT, PRESENT, RANK, REFERENCE, RTRIM, SEARCH, SIZE, TRIM, and VALUE.
+
+C.5.3 LIKE Extension
+
+Both Kednos PL/I for OpenVMS VAX and Kednos PL/I for OpenVMS Alpha allow you to use the LIKE attribute on a structure already containing LIKE.
+
+C.5.4 Declarations
+
+Variables can be declared outside procedures.
+
+C.6 PL/I-Specific Extensions for OpenVMS VAX and OpenVMS Alpha Platforms
+
+The extensions in the following sections are enhancements for PL/I programs executing on the OpenVMS VAX and OpenVMS Alpha platforms. These extensions are provided for procedure calling, condition handling, support of OpenVMS Record Management Services (RMS), compilation control, and miscellaneous purposes.
+
+C.6.1 Procedure-Calling and Condition-Handling Extensions
+
+The following extensions to PL/I were made to allow procedures to call procedures written in any other programming language that also supports the OpenVMS calling standard.
+
+The ANY, VALUE, REFERENCE, and DESCRIPTOR attributes describe how data is to be passed to a called procedure.
+
+The OPTIONAL attribute indicates that a parameter need not be specified in a call; and the TRUNCATE attribute indicates the point at which an actual parameter list can be truncated. In the case of the OPTIONAL attribute, trailing OPTIONAL formal parameters for which no actual parameter is provided will cause the compiler to generate null entries in the argument vector to meet minimum argument vector length requirements (for example, in the case of VMS system services).
+
+The LIST attribute can be used for the parameter descriptor in an external entry declaration to denote that a list of parameters may be specified.
+
+The ACTUALCOUNT built-in function returns the number of parameters the current procedure was called with. The PRESENT built-in function determines whether a parameter was specified in a call.
+
+The VARIABLE option for the ENTRY attribute permits a PL/I procedure to call a non-PL/I procedure with an argument list of variable length. It also permits a procedure to omit arguments in an argument list.
+
+The VALUE, REFERENCE, and DESCRIPTOR built-in functions can be used to pass an argument by the specified mechanism to a non-PL/I procedure.
+
+The following attributes provide storage classes for PL/I variables. These attributes permit PL/I programs to take advantage of features of the OpenVMS Linker and to combine PL/I procedures with other procedures that use these storage classes.
+
+The GLOBALDEF and GLOBALREF attributes let you define and access external global variables and optionally place all external global definitions in the same program section.
+
+The READONLY attribute can be applied to a static computational variable whose value does not change.
+
+The VALUE attribute defines a variable that is, in effect, a constant whose value is supplied by the linker. The value attribute can also be used to allow a procedure to receive constants passed by immediate value.
+
+The following extensions to condition handling provide support for condition handling in the OpenVMS environment:
+
+The ANYCONDITION condition name can be used in an ON-unit to handle any condition that is signaled that does not explicitly have an ON-unit of its own.
+
+The VAXCONDITION condition name can be used in ON, SIGNAL, and REVERT statements to process conditions specific to OpenVMS systems.
+
+The RESIGNAL built-in subroutine permits an ON-unit to keep a signal active.
+
+The ONARGSLIST built-in function provides an ON-unit with access to the mechanism and signal arguments of a system-specific exception condition.
+
+C.6.2 Support of OpenVMS Record Management Services
+
+The options of the ENVIRONMENT attribute provide support for many of the features and control values of the OpenVMS Record Management Services (RMS). Additional extensions have been made to the PL/I language to augment this support, as follows:
+
+The USER_OPEN ENVIRONMENT option allows access to the RMS FAB and RAB control structures during a PL/I file OPEN operation.
+
+The OPTIONS option is supported on the GET, PUT, READ, WRITE, REWRITE, and DELETE statements.
+
+The FLUSH, FREE, RELEASE, and REWIND built-in subroutines provide file handling and control functions. PL/I provides these additional built-in subroutines: DISPLAY, EXTEND, NEXT_VOLUME, and SPACEBLOCK.
+
+C.6.3 Miscellaneous Extensions
+
+PL/I supports the OpenVMS Common Data Dictionary (CDD). Data definitions are included in source programs with the %DICTIONARY statement.
+
+The following built-in functions are supported for BYTE, DECODE, ENCODE, INT, POSINT, RANK, and SIZE.
+
+C.7 Implementation-Defined Values and Features
+
+The following values and features are implementation-defined:
+
+PL/I supports the full 256-character DEC Multinational Character Set (a superset of ASCII) for CHARACTER data (including character string constants in PL/I source programs). All identifiers in a source program are restricted to the ASCII character set.
+
+The default precisions for arithmetic data are as follows:
+
+FIXED BINARY (31)
+
+FIXED DECIMAL (10)
+
+FLOAT BINARY (24)
+
+FLOAT DECIMAL (7)
+
+The maximum record size for SEQUENTIAL files is 32767 bytes minus the length of any fixed-length control area.
+
+The maximum key size is 255 bytes for character keys.
+
+The default value for the LINESIZE option is as follows:
+
+If the output is to a physical record-oriented device, such as a line printer or terminal, the default line size is the width of the device.
+
+If the output is to a print file, the default line size is 132.
+
+If the output is to a nonrecord device (magnetic tape), the default line size is 510.
+
+The default value for the PAGESIZE option is as follows:
+
+If the logical name SYS$LP_LINES is defined, the default page size is 6, the numeric value of SYS$LP_LINES.
+
+If SYS$LP_LINES is not defined, or if its value is less than 30 or greater than 90, or if its value is not numeric, the default page size is 60.
+
+The values for TAB positions are columns beginning with column 1 and every eight columns thereafter.
+
+The maximum length allowed for a file title is 128 characters.
+
+The maximum number of digits in editing fixed-point data is 34.
+
+The maximum numbers of digits for each combination of base and scale are as follows:
+
+FIXED BINARY - 31
+
+FIXED DECIMAL - 31
+
+FLOAT BINARY - 113 for OpenVMS VAX and 53 for OpenVMS Alpha
+
+FLOAT DECIMAL - 34 for OpenVMS VAX and 15 for OpenVMS Alpha
+
+The maximum length of CHARACTER, CHARACTER VARYING, and BIT strings is 32767.
+
+lxThe default precision for integer values is 31.
+
+The maximum number of arguments that can be passed to an entry pointers j is 253.l0
+
+The second parameter of the F format item (the optional parameter specifying the number of fractional digits in the stream representation) must have a value less than or equal to 31.
+
+PreviousNextContentsIndex

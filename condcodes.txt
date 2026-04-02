@@ -1,0 +1,206 @@
+3 This condition is raised if, in a SELECT group, no WHEN clause is selected and no OTHERWISE clause is present.
+4 SIGNAL FINISH, or STOP statement executed.
+9 SIGNAL ERROR statement executed.
+20 SIGNAL RECORD statement executed.
+21 Record variable smaller than record size. Either the record is larger than the variable in a READ INTO statement (the remainder of the record is lost), or the record length specified for a file with fixed-length records is larger than the variable in a WRITE or REWRITE statement (the remainder of the record is undefined).
+22 Record variable larger than record size: either: The record length specified for a file with fixed-length records is smaller than the variable in a READ INTO statement; the remainder of the variable is undefined.
+23 Record variable length is either zero or too short to contain the embedded key.  The variable in a WRITE or REWRITE statement is too short to contain the data set embedded key; no transmission occurs. (This case currently applies only to indexed key-sequenced data sets.)
+40 SIGNAL TRANSMIT statement executed.
+41 Uncorrectable transmission error in output data set.
+42 Uncorrectable transmission error in input data set.
+43 Uncorrectable transmission error on output to index set.
+44 Uncorrectable transmission error on input from index set.
+45 Uncorrectable transmission error on output to indexed consecutive data set.
+46 Uncorrectable transmission error on input from consecutive data set.
+50 SIGNAL KEY statement executed.
+51 Key specified cannot be found.
+52 Attempt to add keyed record that has same key as a record already present in data set.
+53 Value of expression specified in KEYFROM option during sequential creation of INDEXED data set is less than value of previously specified key.
+54 Key conversion error.
+55 Key specification is null string or begins with (8)'1'B or a change of embedded key has occurred on a sequential REWRITE[FROM] for an INDEXED or key-sequenced data set.
+56 Attempt to access a record using a key that is outside the data set limits.
+57 No space available to add a keyed record on INDEXED insert.
+58 Key of record to be added lies outside the range(s) specified for the data set.
+70 SIGNAL ENDFILE statement executed.
+80 SIGNAL UNDEFINEDFILE statement executed.
+81 Conflict in file attributes exists at open time between attributes in DECLARE statement and those in explicit or implicit OPEN statement.
+82 Conflict between file attributes and physical organization of data set (for example, between file organization and device type), or indexed data set has not been loaded.
+84 No DD statement associating file with a data set.
+90 SIGNAL ENDPAGE statement executed.
+92 The requested data set was not available.
+93 Error detected by the operating system while opening a data set.
+	50	A nonexistent keyed sequential file is being opened for input.
+	51	An unexpected error occurred when opening a keyed sequential file.
+	52, 53	An unexpected error occurred when opening a native file.
+	59	An attempt was made to open a file that was already open.
+	60	A file of invalid type is being opened.
+98 Attempt to position the file at the first record failed.
+99 File cannot be opened.
+	3	A positioning error occurred for a sequential output file.
+	4	TYPE (FIXED) was specified for a native file, but the file size was not a multiple of RECSIZE.
+	6 - 12	A positioning error occurred for an output file.
+	26	Conflicts exist with how the file is being used.
+	27	A composite key was detected with a keyed-opening.
+	41	Unexpected error occurred when opening a keyed sequential file.
+	42	A new keyed sequential file could not be created.
+	43	A positioning error occurred for a keyed sequential file.
+	60	A file of invalid type is being opened.
+	69	Query for file information failed for a native file under MVS batch.
+	72	An invalid PL/I file is being opened.
+300 SIGNAL OVERFLOW statement executed or OVERFLOW condition occurred.
+310 SIGNAL FIXEDOVERFLOW statement executed or FIXEDOVERFLOW condition occurred.
+320 SIGNAL ZERODIVIDE statement executed or ZERODIVIDE condition occurred.
+330 SIGNAL UNDERFLOW statement executed or UNDERFLOW condition occurred.
+340 SIGNAL SIZE statement executed; or high-order nonzero digits have been lost in an assignment to a variable or temporary, or significant digits have been lost in an input/output operation.
+341 High order nonzero digits have been lost in an input/output operation.
+360 Attempt to allocate a based variable within an area that contains insufficient free storage for allocation to be made.
+361 Insufficient space in target area for assignment of source area.
+400 SIGNAL ATTENTION statement executed.
+450 SIGNAL STORAGE statement executed.
+451 ALLOCATE statement or ALLOCATE built-in function failed; insufficient storage to satisfy request.
+500 SIGNAL CONDITION (name) statement executed.
+521 Subscript value was outside the bounds for an array.
+551 The offset of the last element that the callee expects for the indicated parameter does not match the offset passed by the caller.
+552 The size that the callee expects for the indicated parameter does not match the size passed by the caller.
+553 The lbound that the callee expects for the indicated parameter does not match the lbound passed by the caller.
+554 The hbound that the callee expects for the indicated parameter does not match the hbound passed by the caller.
+555 The MAXLENGTH value that the callee expects for the indicated parameter does not match the MAXLENGTH value passed by the caller.
+556 The string type that the callee expects for the indicated parameter does not match the type passed by the caller.
+557 The value that the callee expects for the RETURNS parameter does not match the value passed by the caller.
+558 The string type that the callee expects for the RETURNS parameter does not match the type passed by the caller.
+600 SIGNAL CONVERSION statement executed.
+601 Invalid conversion attempted during input/output of a character string.
+603 Error during processing of an F-format item for a GET STRING statement.
+604 Error during processing of an F-format item for a GET FILE statement.
+605 Error during processing of an F-format item for a GET FILE statement following a TRANSMIT condition.
+606 Error during processing of an E-format item for a GET STRING statement.
+607 Error during processing of an E-format item for a GET FILE statement.
+608 Error during processing of an E-format item for a GET FILE statement following a TRANSMIT condition.
+609 Error during processing of a B-format item for a GET STRING statement.
+610 Error during processing of a B-format item for a GET FILE statement.
+611 Error during processing of a B-format item for a GET FILE statement following TRANSMIT condition.
+612 Error during character value to arithmetic conversion.
+613 Error during character value to arithmetic conversion for a GET or PUT FILE statement.
+614 Error during character value to arithmetic conversion for a GET or PUT FILE statement following a TRANSMIT condition.
+615 Error during character value to bit value conversion.
+616 Error during character value to bit value conversion for a GET or PUT FILE statement.
+617 Error during character value to bit value conversion for a GET or PUT FILE statement following a TRANSMIT condition.
+618 Error during character value to picture conversion.
+619 Error during character value to picture conversion for a GET or PUT FILE statement.
+620 Error during character value to picture conversion for a GET or PUT FILE statement following a TRANSMIT condition.
+621 Error in decimal P-format item for a GET STRING statement.
+622 Error in decimal P-format input for a GET FILE statement.
+623 Error in decimal P-format input for a GET FILE statement following a TRANSMIT condition.
+624 Error in character P-format input for a GET FILE statement.
+625 Error exists in character P-format input for a GET FILE statement.
+626 Error exists in character P-format input for a GET FILE statement following a TRANSMIT condition.
+640 Conversion from picture contained an invalid character.
+641 Conversion from picture contained an invalid character on input or output.
+642 Conversion from picture contained an invalid character on input after TRANSMIT was detected.
+670 Unknown source attributes.
+671 Unknown source attributes on input.
+672 Unknown source attributes on input following a TRANSMIT condition.
+1002 GET or PUT STRING specifies data exceeding size of string.
+1003 Further output prevented by TRANSMIT or KEY conditions previously raised for the data set.
+1004 Attempt to use PAGE, LINE, or SKIP <= 0 for nonprintable file.
+1007 A REWRITE or a DELETE statement not preceded by a READ.
+1009 An input/output statement specifies an operation or an option which conflicts with the file attributes.
+1010 A built-in function or pseudovariable referenced an unopened file.
+1011 Data management detected an input/output error but is unable to provide any information about its cause.
+1016 After UNDEFINEDFILE condition raised as a result of an unsuccessful attempt to implicitly open a file, the file was found unopened on normal return from the ON-unit.
+1018 End of file or string encountered in data before end of data-list or in edit-directed transmission format list.
+1019 Attempt to close file that was not opened.
+1022 Unable to extend indexed data set.
+1024 Incorrect sequence of I/O operations on device-associated file.
+1025 Insufficient virtual storage available to complete request.
+1026 No position established in index data set.
+1029 Attempt to reposition in index data set failed.
+1030 An error occurred during index upgrade on a index data set.
+1031 Invalid sequential write attempted on index data set.
+1040 A data set open for output used all available space.
+1041 An attempt was made to write a record containing a record delimiter.
+1042 Record in data set is not properly delimited.
+1043 I/O error during CLOSE processing.
+1102 An error occurred in storage management. Storage to be freed was pointed to by an invalid address.
+1104 An internal error occurred in the library.
+1106 Insufficient space available to satisfy a storage allocation request.
+1107 A problem occurred during free storage processing.
+1301 F-factor in PICTURE specification was outside of the range of -128 to 127.
+1302 PICTURE specification contained invalid character.
+1303 F-factor contained invalid character.
+1304 PICTURE specification contained invalid character.
+1305 PICTURE specification contained invalid precision value.
+1306 PICTURE specification contained too many overpunch characters.
+1307 PICTURE specification contained precision value less than 1.
+1308 Precision value in fixed decimal PICTURE specification exceeded limit.
+1309 Precision value in float decimal PICTURE specification exceeded limit.
+1310 PICTURE specification did not contain picture characters.
+1311 Exponent in float PICTURE specification exceeded limit.
+1312 Exponent in float PICTURE specification was missing.
+1313 Exponent in PICTURE specification contained V character.
+1314 Float PICTURE specification contained invalid character.
+1315 PICTURE specification exceeded limit.
+1316 PICTURE specification contained invalid delimiter.
+1500 Computational error; short floating-point argument of SQRT built-in function is less than zero.
+1501 Computational error; long floating-point argument of SQRT built-in function is less than zero.
+1502 Computational error; extended floating-point argument of SQRT built-in function is less than zero.
+1503 Computational error in LOG, LOG2, or LOG10 built-in function; extended floating-point argument is less than zero.
+1504 Computational error in LOG, LOG2, or LOG10 built-in function; short floating-point argument is less than zero.
+1505 Computational error in LOG, LOG2 or LOG10 built-in function; long floating-point argument is less than zero.
+1506 Computational error in SIN, COS, SIND, or COSD built-in function; absolute value of short floating-point argument is too large.
+1507 Computational error in SIN, COS, SIND, or COSD built-in function; absolute value of long floating-point argument is too large
+1508 Computational error; absolute value of short floating-point argument of TAN or TAND built-in function is too large
+1509 Computational error; absolute value of long floating-point argument of TAN or TAND built-in function is too large.
+1514 Computational error; absolute value of short floating-point argument of ATANH built-in function >1.
+1515 Computational error; absolute value of long floating-point argument of ATANH built-in function >1.
+1516 Computational error; absolute value of extended floating-point argument of ATANH built-in function >1.
+1517 Computational error in SIN, COS, SIND, or COSD built-in function; argument of extended floating-point argument is too large.
+1518 Computational error; absolute value of short floating-point argument of ASIN or ACOS built-in function exceeds 1.
+1519 Computational error; absolute value of long floating-point argument of ASIN or ACOS built-in function exceeds 1.
+1520 Computational error; absolute value of extended floating-point argument of ASIN, ACOS built-in function exceeds 1.
+1522 Computational error; absolute value of extended floating-point argument of TAN or TAND built-in function is too large
+1523 Computational error; absolute value of short floating-point argument of SINH or COSH built-in function is too large
+1524 Absolute value of long floating-point argument of SINH or COSH argument is too large
+1525 Absolute value of extended floating-point argument of SINH or COSH is too large,
+1550 Computational error; during exponentiation, short floating-point base is zero and integer exponent is not positive.
+1551 Computational error; during exponentiation, long floating-point base is zero and integer exponent is not positive.
+1552 Computational error; during exponentiation, short floating-point base is zero and the floating-point or noninteger exponent is not positive.
+1553 Computational error; during exponentiation, long floating-point base is zero and the floating-point or noninteger exponent is not positive.
+1560 Computational error; during exponentiation, extended floating-point base is zero and integer exponent not positive.
+1561 Computational error; during exponentiation, extended floating-point base is zero and floating-point or noninteger exponent is not positive.
+1577 Computational error in LOG, LOG2, or LOG10 built-in function; short floating-point argument equal to zero.
+1578 Computational error in LOG, LOG2, or LOG10 built-in function; long floating-point argument equal to zero.
+1579 Computational error in LOG, LOG2, or LOG10 built-in function; extended floating-point argument equal to zero.
+1611 Computational error; short floating-point argument for EXP built-in function is too large.
+1612 Computational error; long floating-point argument for EXP built-in function is too large.
+1613 Computational error; extended floating-point argument for EXP built-in function is too large.
+1729 Computational error; during exponentiation, short floating-point base is zero and real short floating-point exponent is not positive or zero.
+1730 Computational error; during exponentiation, long floating-point base is zero and real long floating-point exponent is not positive or zero.
+1960 Computational error in SQRT; short floating-point argument is equal to zero.
+1961 Computational error in SQRT; long floating-point argument is equal to zero.
+1962 Computational error in SQRT; extended floating-point argument is equal to zero.
+2171 Short floating-point argument greater than limit.
+2172 Long floating-point argument greater than limit.
+2173 Extended floating-point argument greater than limit.
+2504 Short floating-point argument greater than allowed value for data type.
+2505 Long floating-point argument greater than allowed value for data type.
+2506 Extended floating-point argument greater than allowed value for data type.
+3000 Field width, number of fractional digits, and number of significant digits (w, d, and s) specified for E-format item in edit-directed input/output statement do not allow transmission without loss of significant digits or sign.
+3503 Error detected by the operating system while processing STOP statement.
+3798 ONSOURCE pseudovariable used out of context.
+3799 The source was not modified in the CONVERSION ON-unit. Retry was not attempted. An ON-unit was entered as a result of the CONVERSION condition being raised by an invalid character in the string being converted. The character was not corrected in an ON-unit using the ONSOURCE pseudovariable.
+3800 Length of data aggregate exceeds system limit.
+3804 Array initialization exceeded maximum depth of iteration.
+3809 A data aggregate exceeded the maximum length.
+3810 An array has an extent that exceeds the allowable maximum.
+5057 Characters after \u are not valid hexadecimal digits.
+8091 Operation exception.
+8094 Protection exception.
+8095 Addressing exception.
+8096 Specification exception.
+8097 Data exception.
+8098 Insufficient stack storage
+9002 Attempt to execute GO TO statement referencing label in an inactive block.
+9003 Attempt to execute a GO TO statement to a nonexistent label constant.
+9004 RETURN without return value attempted from procedure with RETURNS attribute.
+9005 RETURN with return value attempted from procedure without RETURNS attribute.

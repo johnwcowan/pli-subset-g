@@ -1,0 +1,99 @@
+5.2 Implementation-defined Features
+
+The PL/I language features listed below are termed IMPLEMENTATION-DEFINED : their specification is regarded as completing the definition of the language for a particular implementation. A brief description of each feature is given, with references in parentheses to the sections of this document where further details can be found.
+
+1. The actual restrictions imposed, if any, under the provisions for restrictions on the size of constructs (item 1 of 1.5.1.2) or in addressing (items 1, 2 and 3 of 1.5.1.3).
+
+2. Whether or not case mapping is performed on &identifier$s (Step 6.1 of 4.3.2).
+
+3. The mapping functions for <external-name>s and <identifier>s to <environment-name>s (4.8.2).
+
+4. Determination of the edataset-list> passed to the INTERPRET operation (1.7.3.3).
+
+5. Determination of the Qentry-value, passed to the INTERPRET operation (1.7.3.3).
+
+6. ENVIRONMENT attribute and option syntax (2.4.11.4) and semantics (Chapter 8 and item 1 in 1.5.1.8).
+
+7. OPTIONS attribute and option syntax (2.4.11.4) and semantics.
+
+8. Consistency requirements for ENVIRONMENT and OPTIONS attributes in EXTERNAL declarations(4.8.1), and for OPTIONS attributes in ENTRY references (6.4.7.1.1).
+
+9. The form of the <text-name$ in the INCLUDE construct (2.5.6).
+
+10. Interpretation of UNSPEC pseudo-variable (7.6.4.6).
+
+11. Result of UNSPEC built-in function (9.5.4.81).
+
+12. Length of string returned by TIME built-in function (9.5.4.77) and of the DATETIME built-in function (9.5.4.21).
+
+13. Extralingual characters in data character set (2.5.5 and 2.6.2).
+
+14. Collating sequence, hardware representations, graphic representations, and symbol names of an implementation’s character set (2.6 and 9.5.4.14) and the hardware representations of the
+
+15. The external hardware representations of the characters specified by *symbol>, i.e., the set of characters in which PL/I programs are written (2.6).
+
+16. Representation of currency symbol and digit and sign symbols (9.6.2.2).
+
+17. Default precisions of arithmetic data (4.553).
+
+18. Maximum <number-of-digits> for each combination of <base> and <scale>(4.6.3.5,9.2.3.2,9.6.1.9, and elsewhere).
+
+19. Precision of integer-type (9.2.2).
+
+20. Accuracy and range of floating-point results of expressions and built-in functions (1.6.3.7.2,9.2.4, and elsewhere).
+
+21. Accuracy and range of ROUND built-in function with floating-point argument (954.61).
+
+22. Results of numeric conversions (9.6.1.2, 9.6.1.3, and 9.6.1.6).
+
+23. Number of digits in the exponent of a floating-point number (9.6.1.5).
+
+24. Results of the MAXVAL, MINVAL, EPSILON, and RADIX arithmetic-enquiries (9.2.10).
+
+25. Result of the EXPONENT built-in function and effect of the EXPONENT pseudo-variable (9.5.4.29 and 7.6.4.1).
+
+26. Default AREA size (4.5.5.3).
+
+27. Size of an farea-value> passed as a dummy argument (6.4.7.1.2).
+
+28. Use of AREA size specification (7.3.4).
+
+29. Information output when SNAP is specified in ON statement (6.5.3).
+
+30. Form of comment output as standard system action (6.5.4.1).
+
+31. Value returned by ONCODE built-in function (6.5.3).
+
+32. Standard system action for STORAGE condition (6.5.4).
+
+33. Standard system action for ERROR condition (6.5.4).
+
+34. Circumstances in which TRANSMIT condition is raised (1.5.1.8).
+
+35. Circumstances in which the KEY condition is raised (8.6.2.3, 8.7.2.2, and 8.7.5.10).
+
+36. Circumstances under which records are written, or not written, when the RECORD condition is raised and normal return occurs, and the values of those records (8.7.3.2, and 8.7.5.9).
+
+37. Raising of RECORD condition by WRITE and REWRITE statements (8.7.3.2 and 8.7.5.9).
+
+38. Concrete representation of a <dataset+ (8.2).
+
+39. The “size” of a <record> (8.2.1).
+
+40. Length of a key (8.2.1). 
+
+41. Representation of stream dataset control items (8.2.2).
+
+42. Determination of a dataset, on file opening (8.6.1.3).
+
+43. Length of file title (8.6.1.4).
+
+44. Default LINESIZE for a STREAM OUTPUT file (8.6.1.3).
+
+45. Default PAGESIZE for a PRINT file (8.6.1.3).
+
+46. Default tab positions for a PRINT file (8.6.1.3).
+
+47. Position of records in a KEYED SEQUENTIAL file (8.7.5.9).
+
+48. Maximum <number-of-digits> used in editing relative to a <fixed-point-format> (8.8.2.5.3)

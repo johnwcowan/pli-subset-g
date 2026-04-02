@@ -1,0 +1,351 @@
+Appendix B. Features New to This Revision
+
+B.1 Lexical Constructs
+
+1. Lowercase characters
+
+Lowercase characters are permitted in the language character set, in
+keywords, in picture specifications, in format items, in constants, in
+input data, in declared names, and in all other alphanumeric constructs.
+In declared names, the correspondence of lowercase characters and
+uppercase characters is That is, programs intended for interchange
+must not depend upon whether an implementation considers lowercase and
+uppercase characters as distinct in declared names.
+
+In stream output of bit and numeric values, and in conversion of numeric values to character strings,
+lowercase characters are not generated.
+
+2. Blank after P not required
+
+P’string’ is a legal picture constant. (Previously, only P 'string’ was permitted.)
+
+3. Oversized floating-point literals
+
+Floating-point literals are permitted, in program text and stream
+input, which exceed the capability of the implementation to represent
+them. Insignificant digits in excessof the implementation’s
+representational capability are ignored.
+
+B.2 Attributes and Declarations
+
+1. The asterisk INITIAL iteration factor
+
+Asterisk in the INITIAL iteration factor means “initialize the entire
+aggregateto one (specified) scalar value”.
+
+2. The RESERVED attribute
+
+RESERVED implies STATIC EXTERNAL, but can never cause storage to be
+allocated or initialized.  Declaring a name with the RESERVED attribute
+implies that the PL/I program must contain at least one declaration of
+the same name with STATIC EXTERNAL and without RESERVED.
+
+3. The UNION attribute
+
+The UNION attribute is used to declare a set of MEMBERS, of which it is
+only valid to accessthe MEMBER which last had a value assignedto it. This
+standard thus permits (but does not require) the MEMBERS of a UNION to
+be allocated to overlapping storage.
+
+4. Named computational constants
+
+The DEFINE CONSTANT statement provides for definition of constant
+identifiers (named computational constants), and permits use of such named
+constants in lexically subsequent declarations and expressions within the
+defining package, procedure, or block.  DEFINE CONSTANT statements must
+appear before any other statements in the containing package, procedure,
+or block, and the definition of a named computation constant must
+lexically precede any uses in the defining package, procedure, or block.
+
+5. Extend EXTERNAL attribute
+
+An optional (‘string’) may be associatedwith the EXTERNAL attribute,
+e.g.  DECLARE GKS-OPEN-WORKSTATION ENTRY EXTERNAL ('GKS002'); The effect
+of this feature is to define, in an implementation defined fashion,
+the environment name (GKS002 in this case) to be used for the declared
+object, and the PL/I language name (GKS OPEN WORKSTATION in this case)
+to be used within the declaring package, procedure, or block.
+
+6. EXTERNAL on PROCEDURE statements and ENTRY declarations
+
+The EXTERNAL attribute may be applied to PROCEDURE statements and ENTRY
+declarations, so that they can have implementation defined environment names.
+
+B.3 Program Structure and Control
+
+1. The NONRECURSIVE keyword
+
+The NONRECURSIVE keyword is an assertion that a procedure is
+not recursive. (This is symmetric with the RECURSIVE keyword, and
+although NONRECURSIVE is the default if RECURSIVE is not specified, the
+NONRECURSIVE keyword permits explicit documentation of the properties
+of nonrecursive procedures.
+
+2. SELECT groups
+
+SELECT groups, containing WHEN and OTHERWISE clauses,provide case-driven
+selection of executable code units.
+
+3. DO LOOP
+
+DO LOOP specifies indefinite iteration.
+
+4. The LEAVE statement
+
+The LEAVE statement permits exit from the immediately containing DO group,
+or a specific labelled DO group.
+
+5. The UNTIL clause
+
+The UNTIL clause provides for repetitive execution of a group until a
+condition is satisfied. The’condition is tested after each execution
+of the group.
+
+6. Packages
+
+Packages may be constructed, using the PACKAGE and END statements.
+A package is a block which may immediately contain only declarations
+and procedures. The package forms a name scope which is shared by
+all declarations and procedures contained in the package. By use of
+the EXPORTS option on the PACKAGE statement, procedures immediately
+contained in the package can be made visible outside of the name scope
+formed by the package. Packagesthus permit multiple, externally visible
+procedures to execute within and share the declarative context formed
+by the package.  Condition prefixes specified on a PACKAGE statement
+apply to all procedures contained in the package (unless overridden).
+
+A package must only be declared at the top level of a program. That is,
+a package cannot be contained in any other package or procedure. The
+declarations immediately contained in a package must consist only of
+constants, and BASED and STATIC variables; AUTOMATIC and DEFINED variables
+must not be immediately contained in a package, and a package cannot have
+parameters.  Only top level procedures (procedures immediately contained
+in a package) can be exported from a package, and any procedures not
+explicitly exported are local to the package. All top level procedures
+contained in a package can be exported by use of the EXPORTS(*) construct.
+
+B.5 Input/Output
+
+1. L format item
+
+L format, used in GET EDIT and PUT EDIT format lists, inputs the rest
+of the current line and skips past the linemark, or outputs a string
+followed by a linemark.
+2. SIZETO option for varying length records
+
+The SIZETO option may be used with the READ statement to determine the
+actual length of the transmitted record.
+
+3.  The BEGINPAGE condition
+
+See “Conditions and Exception Handling”, below.
+
+4.  WRITE to KEYED SEQUENTIAL UPDATE file
+
+WRITE is allowed to files opened for KEYED SEQUENTIAL UPDATE.
+
+B.6 Expressions ahn Evaluation
+
+1. Short-circuit “and/or” operators
+
+Short-circuit “and” and “or” operators (spelled &: and |:) provide
+boolean expressions in which the right operand must not be evaluated if
+the value of the left operand is sufficient to determine the value of
+the expression. This permits explicit control of the order in which the
+operands are evaluated, overriding the usual rule that permits operands
+to be evaluated in either order.
+
+2. Exclusive-or operator
+
+The exclusive-or operator is binary not.
+
+3. Restricted Expressions
+
+“Restricted expressions are a subset of PL/I language expressions,
+designed to be evaluated at translation time, and allowed in DECLARE and
+DEFINE CONSTANT statements for the purpose of defining named computational
+constants and in declaration of extents of STATIC variables, parameters,
+and returns descriptors, as well as INITIAL attributes of STATIC
+variables. (In the specification of precision and scale in declarations
+and built-in functions, only a limited form of restricted expressions --
+namely, a literal or a reference to a named constant -- is permitted.)
+
+The form of allowable restricted expressions has been extended to be very
+general. All operators, all enquiry functions except DECLARESIZE, and all
+built-in functions except DATE, TIME, DATETIME, ONCODE, ONFILE, ONKEY,
+and ONSOURCE are allowed in restricted expressions. String constants,
+numeric constants, and named constants may all be operands.
+
+B.7 Pictures
+
+1. Generalized picture insertion/float
+
+This feature provides generalized specification of insertion and
+floating characters in pictures. If a picture specification includes
+(in a manner valid with respect to the syntax of pictures) the quoted
+characters “<” and “>“, then the characters between “<”
+and “>” will be inserted at that point in the picture value.
+Additional “>” characters following the “>” specify a floating
+field, and the characters between “<” and “>” will float right
+to the left of the most significant digit position.  One expected use
+of this capability is support of international currency symbols.
+
+2. Parentheses in pictures
+
+This feature permits a PICTURE pattern to begin with an arbitrary number
+of left parentheses and to end with a single right parenthesis. The left
+parentheses are floating characters. If the picture value is negative,
+it is represented enclosed by a single left and right parenthesispair.
+This provides a straightforward way to parenthesize negative values
+on output.
+
+3. EDIT built-in function
+
+See “Built-in Functions and Pseudo-variables" below.
+
+B.8 Built-in Functions and Pseudo-variables
+
+1. TRIM built-in function
+
+TRIM removes a sequence of characters, belonging to a programmer-specified
+set, from the beginning and/or end of a string.
+
+2. SEARCH built-in function
+
+SEARCH returns the location in a target string of the first occurrence
+of any character contained by a search string. See also item 14, below.
+
+3. CURRENTSIZE built-in function
+
+CURRENTSIZE returns the amount of storage, in IMPLEMENTATION-DEFINED
+units, that a generation of storage associated with a variable occupies.
+
+4. EXPONENT built-in function and pseudo-variable
+
+The EXPONENT built-in function and pseudo-variable permit floating-point
+data to be scaled efficiently and without loss of accuracy, by providing
+access to and manipulation of the exponent field of floating-point
+values. This built-in function and pseudo-variable provide the effect
+of multiplication and division, by a power of the implementation radix,
+without the loss of low-order significant digits that an actual multiply
+or divide operation may cause.
+
+The effect of EXPONENT is implementation-dependent, and does not require
+knowledge of exponent bias or representation of zero to correctly utilize.
+
+5. FILEOPEN built-in function
+
+FILEOPEN takes a file value and returns a boolean value indicating
+whether or not the file is open.
+
+6. ISOCHAR built-in function
+
+ISOCHAR provides a standard way to accesscontrol characters and other
+special characters independent of the external character’set(s) of
+an implementation.
+
+The arguments to ISOCHAR specify the row and column positions, in
+the IS0 character tables, which identify a specific character and its
+associated semantics. Implementations will translate those semantics to
+the appropriate, corresponding character(s) for that implementation.
+
+7. MAXLENGTH built-in function
+
+MAXLENGTH takes a varying string and returns the maximum declared length
+of the varying string (in contrast to LENGTH, which returns the current
+length).
+
+8. TALLY built-in function
+
+TALLY takes two bit or character string arguments, and returns the number
+of occurrences of the second argument in the first argument.
+
+9. DATETIME built-in function
+
+DATETIME returns the date and time in an extended format that will
+continue to work correctly after December 31, 1999.
+
+10. EDIT built-in function
+
+EDIT takes a numeric or string first argument and a character string
+second argument; the second argument must be a valid picture pattern. The
+first argument is converted to a character string according to the
+picture represented by the second argument. This conversion yields
+the same character string that would result from assigning the first
+argument to a picture variable declared with the picture specified by
+the second argument.
+
+11. IDENTICAL built-in function
+
+IDENTICAL allows comparison of arbitrary objects. If two objects have
+identical data descriptions, then if they have identical values, then
+IDENTICAL returns boolean true, otherwise it returns false. When comparing
+the values of two aggregates,any fill occupying storage between members
+of each aggregateare ignored.
+
+12. Permit UNSPEC with aggregateargument
+
+UNSPEC accepts an array, structure, or union argument,
+
+13. HBOUND/LBOUND/DlMENSION built-in function defaults
+
+If the second argument, the dimension, is not supplied to HBOUND, LBOUND,
+or DIMENSION, it defaults to 1.
+
+14. Extend INDEX/VERIFY/SEARCH built-in functions
+
+INDEX, VERIFY, and SEARCH take an optional third argument: the location
+within the argument string at which to begin processing.
+
+B.9 Enquiries
+
+A new class of functions, denoted as “Enquiries”, has been
+defined.  These functions are distinguished from built-in functions
+by their syntax (which utilizes “(:” and “:)“, for example
+“DECLARESIZE(:XYZ:)“) and by their arguments (which may be keywords
+or names without values, whereas the built-in functions require values
+for arguments.)  A special subclass of these functions is denoted as the
+“Arithmetic Enquiries”. These functions provide information regarding
+the floating-point environment and model-numbers of an implementation.
+
+1. DECLARESIZE enquiry
+
+The DECLARESIZE enquiry function returns the amount of storage, in
+IMPLEMENTATION-DEFINED units, that a BASED variable would occupy if it
+were allocated when DECLARESIZE is invoked. Use of DECLARESIZE does not
+require that there actually be a generation of storage associated with
+the referenced variable when DECLARESIZE is invoked.
+
+2. NULL enquiry
+
+NULL takes one argument, which must be one of the keywords POINTER,
+OFFSET, ENTRY, LABEL, or FILE, and returns a null value of the appropriate
+type.
+
+3. EPSILON arithmetic enquiry
+
+EPSILON returns the interval separating successivevalues representable
+by a floating-point data type given as its argument.
+
+4. MAXVAL arithmetic enquiry
+
+MAXVAL
+returns the maximum value representable by a floating-point data type
+given as its argument.
+
+5. MTNVAL arithmetic enquiry
+
+MINVAL returns the minimum value representable by a floating-point data
+type given as its argument.
+
+6. RADIX arithmetic enquiry
+
+RADIX returns the actual implementation base corresponding to a
+floating-point data type given as its argument.
+
+B.10 Conditions and Exception Handling
+
+BEGINPAGE condition
+
+BEGINPAGE is signalled at the beginning of every page of a PRINT file.
+

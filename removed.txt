@@ -1,0 +1,54 @@
+Syntactic restrictions:
+Only one label prefix with only one subscript
+Condition prefixes on PROCEDURE and BEGIN statements
+END statements close only one group or block
+No comma-lists in DO statements
+Assignment statements must have only one target
+GET and PUT statements: one I/O list, zero or one format list
+No third value for E and F format items
+INTO and FROM options on record I/O statements must not be unaligned
+No dimensioned file constants
+Unaligned types must be strings
+Pictures must not be aligned
+Static variables must not be initialized to constant labels, entries, or files
+Automatic initializer for a dimensioned variable must have * iteration
+No negative scale factors
+Non-zero scale factors for FIXED DECIMAL only
+No format constants except labels on FORMAT statements
+MAX and MIN: only two arguments
+Pseudo-variables only on the left side of assignment statements
+All precision, scale, or number-of-digits arguments must be integers or defined constants
+
+Semantic restrictions:
+All functions yield scalar values
+DO control variable must be arithmetic or pointer
+IF, WHILE, or UNTIL expression must be bit string of length 1
+Unconnected arrays cannot be passed as arguments
+No RETURN statements within ON statements
+All names must be declared except SYSIN, SYSOUT, and labels
+All parameters and return types must be specified
+All overlays must have identical type and extents, or be strings
+REFER, if present, must appear at the end of a structure
+Subscripts and extents must be integers
+No conversions between arithmetic/pictured values and string values
+No conversions between bit strings and character strings
+No conversions between pointers and offsets except via addr function
+Aggregate assignment must be between connected storage of the same type
+
+Excluded features:
+DEFAULT statement, ENTRY statement,
+Binary constants, replicated string constants
+Conditions: NAME
+STRINGRANGE, STRINGSIZE, SUBSCRIPTRANGE
+Assignment BY NAME
+LOCATE statement
+OPEN keyword: TAB
+GET/PUT keyword: DATA
+GET keyword: COPY
+READ keyword: IGNORE
+C format item
+Attributes: COMPLEX, CONTROLLED, GENERIC, LIKE, LOCAL, POSITION
+PICTURE characters: A, E, I, K, R, T, X, Y
+BIT VARYING
+iSUB defining
+FORMAT variables

@@ -1,0 +1,207 @@
+Appendix A. Features New to This Revision Adopted from X3.53-1976
+
+This Appendix describes the features of American National Standard Programming Language PL/I, ANSI
+X3.53-1976, which have been provided in this standard and were not provided in ANSI X3.74-1981.
+Except as noted, these features have been provided compatibly with the corresponding features in ANSI
+X3.53-1976.
+
+In certain cases,features are restricted to conform to the goals and language of this standard.
+
+A.1 Lexical Constructs
+
+1. The/**
+/ ** **/ restriction removed
+/* may be embeddedin the body of a comment.
+
+A.2 Attributes and Declarations
+
+1. REFER at end of structure
+
+A single REFER option at the end of any BASED structure is permitted by this standard.
+
+
+The AREA and OFFSET data types have been provided. Implicit conversion between OFFSET and
+POINTER is not permitted except when an OFFSET value is used as a locator qualifier.
+
+3. AUTOMATIC
+INITIAL
+
+Variables with the AUTOMATIC storage class may have the INITIAL attribute. INITIAL value lists may
+consist of scalar expressionsand asterisks. Dimensioned AUTOMATIC variables may have a “*” iteration
+factor (described in item 1 of Section B.2) in any INITIAL attribute.
+
+4. Asterisks in INITIAL value lists
+
+Asterisks may be used in INITIAL value lists to denote uninitialized variables.
+Appendix A. Features New to This Revision Adopted from X3.53-1976
+
+5. Restricted expressionsin extent declarations
+
+Restricted expressions(scalar arithmetic expressionsthat can be evaluated at translation time) are
+permitted in declaration of extents in STATIC variables, parameters, and returns-descriptors, as well as
+INITIAL attributes of STATIC variables.
+
+6. DIMENSION, PARAMETER, NONVARYING, ALIGNED, and UNALIGNED keywords
+
+These keywords are now recognized and checked for consistency. Only string types may be
+UNALIGNED and PICTURES may not be ALIGNED.
+
+7. Contextual declaration of SYSIN/ SYSPRINT
+
+The standard stream input and output files, SYSIN and SYSPRINT, need not be explicitly declared.
+
+8. Declaration of programmer-namedconditions.
+Programmer-namedconditions may be declared.
+See “Conditions and Exception Handling”, below.
+
+A.3 Program Structure and Control
+
+1. RETURNS(CHARACTER(*))
+
+RETURNS (CHARACTER(*)) means that the length of the returned character string is dynamically
+determined by the called procedure.
+
+2. RETURNS(BIT(*))
+
+RETURNS (BIT( *)) means that the length of the returned bit string is dynamically determined by the
+called procedure.
+
+3. OPTIONS on BEGIN
+
+A BEGIN statement may have an OPTIONS clause, specifying implementation defined options for the
+block.
+
+4. Allow labelled statements after THEN and ELSE
+
+A.4 Storage Control
+
+1. SET optional for ALLOCATE
+
+An ALLOCATE statement may allocate storage without specifying a SET pointer option.
+
+2. IN option in ALLOCATE and FREE
+An ALLOCATE or FREE statement may have an associatedIN option to specify the AREA in which to
+
+3. ALLOCATE and FREE of multiple items
+
+Additional syntax to allow multiple objects to be allocated or freed by a single statement.
+
+4. Allow assignmentto target overlapping source
+
+The target of a string assignmentmay overlap the source.
+
+A.5 Input/Output
+
+1. Expressions in I/O formats
+
+Expressions may be used in FORMAT lists for EDIT input and output.
+
+2. Recursive I/O
+Allow, for example, a condition handler to do I/O to a file on which I/O was active when a condition was
+signalled, or a function invoked by a format expression to do I/O to the file for which the format was
+being evaluated, with well-defined results.
+
+3. ENVIRONMENT
+option on record I/O statements
+
+The ENVIRONMENT option is permitted on CLOSE, DELETE, READ, WRITE, and REWRITE. (This
+is in addition to the OPEN statement, as permitted by ANSI X3.74- 198 1).
+
+4. OPEN and CLOSE of multiple files
+
+Additional syntax to allow multiple files to be opened or closed by a single statement.
+
+5. FROM optional for REWRITE
+
+The REWRITE statement may be used without a FROM option.
+
+A.8 Built-in Functions and Pseudo-variables
+
+1. EMPTY built-in function
+
+EMPTY returns an area containing no allocations.
+
+2. ONSOURCE built-in function
+
+ONSOURCE returns the character-string source value that was being converted when a CONVERSION
+condition was signalled.
+(Note that the CONVERSION condition is also a new addition to this standard).
+
+3. ONSOURCE pseudo-variable
+
+This pseudo-variable allows a copy of the character-string source value that caused a CONVERSION
+condition to be modified so that the conversion may be re-tried.
+
+4. OFFSET and POINTER built-in functions
+
+OFFSET and POINTER provide for explicit conversion between offsets and pointers.
+This standard restricts the first argument of the OFFSET built-in function to an invocation of the
+ADDR built-in function.
+
+5. PROD built-in function
+
+PROD produces the multiplicative product of all elements of an array.
+
+6. SUM built-in function
+
+SUM produces the sum of all elements of an array.
+
+7. ADD, MULTIPLY, SUBTRACT built-in functions
+These functions provide arithmetic operations with programmer-specified precision and scale.
+
+8. EVERY and SOME built-in functions
+
+EVERY returns the logical “and” of all elements of a bit string.
+SOME returns the logical “or” of all elements of a bit string.
+
+9. REVERSE built-in function
+
+REVERSE returns a string that contains the bits or characters of its string argument in reverse order.
+
+10. HIGH and LOW built-in functions
+HIGH and LOW return a string of the last and first characters in an implementation’s collating-sequence.
+
+11. ROUND built-in function with FLOAT argument
+
+ROUND now accepts floating-point arguments.
+
+A.9 Conditions and Exception Handling
+
+1. Permit normal return from UNDERFLOW
+
+“Normal” termination of an UNDERFLOW condition handler is now defined. The computation is
+continued, using zero as the result of the underflowing operation,
+
+2. Additional conditions
+
+CONVERSION, SIZE, RECORD, TRANSMIT, FINISH, AREA, and STORAGE conditions have been
+provided.
+
+3. Programmer-named conditions
+
+Programmer-named conditions are provided. Programmer-namedconditions may be used in SIGNAL,
+ON, and REVERT statements.
+Note that, since this standard does not allow contextual declarations of any identifiers but SYSIN,
+SYSPRINT, and built-in functions; programmer-named conditions must be declared as CONDITIONS.
+
+4.
+Condition-name-commalists
+
+A list of condition names, separated by commas, may be specified in ON and REVI?RT statements.
+
+5. Condition prefixes
+
+Condition prefixes may be applied to PROCEDURE and BEGIN statements, and assert enablement and
+disablement of individual conditions in that block or procedure.
+Note that a disabled condition is an assertion by the program that the condition will not be signalled, and
+that a program that causesa disabled condition to be signalled is not a standard-conforming program.
+
+6. SNAP
+
+This ON statement option results in implementation defined output when the condition handler is entered.
+
+7. ON SYSTEM
+
+ON condition-name-commalist SYSTEM causesthe SYSTEM condition-handler to be invoked for the
+specified conditions. The behavior of the SYSTEM condition-handler is defined in the standard.
+

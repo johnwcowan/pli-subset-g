@@ -1,0 +1,78 @@
+Here are statements available anywhere:
+
+%; - null statement
+%assignment
+%ACTIVATE - declared preproc variables are eligible for replacement
+%DEACTIVATE - the opposite
+%DECLARE, %DCL - corresponds to DECLARE
+%DO - corresponds to DO
+%END - corresponds to END
+%ERROR - outputs an error message
+%FATAL - outputs a fatal error message
+%GO TO, %GOTO - jumps to labeled preproc statement
+%IF-%THEN-%ELSE - corresponds to IF
+%INCLUDE - corresponds to %INCLUDE
+%INFORM - outputs an informative error message
+%INSCAN - like %INCLUDE, but inclusion is a preproc variable
+%PROCEDURE - declares preprocessor procedure
+%REPLACE - replaces an identifier with a constant value
+%WARN - generates warning message
+%XINCLUDE - like %INCLUDE but done only once
+%XINSCAN - like %INSCAN, but done only once
+
+Here are the statements valid within procedures:
+
+null statement
+assignment
+ANSWER - returns text to be rescanned
+CALL - invoke procedure
+DO - corresponds to DO
+END - corresponds to END
+GO TO, GOTO - corresponds to GOTO
+IF-THEN-ELSE corresponds to IF
+ITERATE - jump to end of iterative DO
+LEAVE - break out of DO
+RETURN - returns value to caller
+SELECT-WHEN-OTHERWISE - corresponds to SELECT
+STOP - no more output
+
+to
+Note: 1-dimensional arrays with lower bound 1
+
+ABS(n) - absolute value of n
+BIT(n) - bit string representing n
+CHARACTER(n) - character string representing n
+CHAR(n) - character with codepoint n
+COMMENT(s) - format s as a comment
+COMPILEDATE() - yyyymmddhhmmssttt
+COPY(s,n) - n copies of s
+COUNTER() - returns next integer
+COUNTER() - string of next integer value
+DECODE(s,base) - convert string to given radix
+DIMENSION(a,n) - extent of array a in the nth dimension
+DIV(x,y) - x div y
+ENCODE(n,base) - convert number to string in given radix
+ERROR(), INFORM(), WARN() - number of diagnostics
+FIXED(n) - fixed integer represented by n
+HBOUND(a,n) - high bound of array a (n must be 1)
+INDEX(needle,haystack[,index]) - returns 0 if not found
+LBOUND(a,[n]) - low bound of array a (n must be 1), always returns 1
+LENGTH(x) - number of characters or bits
+LINE() - line number
+LOWERCASE(s) - lowercase of s
+LTRIM(s) - remove whitespace from left end
+MAX(x,y) - maximum of x and y
+MIN(x,y) - minimum of x and y
+MOD(x,y) - x modulo y
+QUOTE(s) - format s as a quoted string
+RANK(c) - character to integer
+REPEAT(s,n) - COPY(s,n+1)
+RTRIM(s) - remove whitespace from right end
+SEARCH(x,y,[n]) - position in x of char in y, starting at n
+SIGN(n) - signum of n
+SUBSTR(s,x[,y]) - substring (default y = length)
+SYSPARM([name]) - full command line or command-line parameter
+TRANSLATE(s,to,from) - translate chars in from -> to
+TRIM(s) - remove whitespace from both ends
+UPPERCASE(s) - uppercase of s
+VERIFY(x,y,[,n] - position in x of char not in y, starting at n

@@ -1,0 +1,52 @@
+Statements:
+Structural: package (exports), procedure, begin, do, end
+Do keywords: loop, to, by, while, until
+Declarative: declare, define constant, format
+Flow of control: call, return, if,, select, leave, go to, (null), stop
+Select keywords: select, when, any/all, otherwise
+Conditions: on (snap, system), revert, signal
+Storage: allocate, free
+Assignment statement
+I/O: open, close, get, put, read, write, rewrite, delete
+Open keywords: file, title, linesize, pagesize, stream, record, input, output,
+update, sequential
+Get keywords: file, string, skip, list (do), edit
+Put keywords: file, string, skip,, list (do), edit
+Delete keywords: file, key, environment
+Read keywords, file, into, environment, key, keyto, set, sizeto
+Rewrite keywords: file, environment, key, from
+Write keywords: file, from, keyfrom, environment
+
+Data attributes:
+aligned, area, binary, bit, decimal, character, dimension (refer),
+entry, file, fixed, float, label, nonvarying, offset, picture, pointer,
+returns, union, varying, variable
+
+Non-data attributes:
+automatic, builtin, based, condition, direct, defined,
+environment, external, initial, input, internal, keyed, nonprint,
+options, output, parameter, print, record, reserved,
+sequential, static, stream, update, value
+
+Condition names:
+Computational: conversion, fixedoverflow, overflow, size, underflow, zerodivide
+I/O: beginpage, endfile, endpage, key, record, transmit, undefinedfile
+Other: condition, area, error, finish, storage
+
+Formats: a, b1, b2, b3, b4, e, f, p, l, tab, line, x, skip, column, r
+
+Operators: |: &: | ^ & = < <= > >= ^< ^= ^> || + - * / **
+unary ^ is not, binary ^ is xor
+
+Enquiry functions (with (: and :) around arguments):
+declaresize, null(:pointer:), minval, maxval, epsilon, radix,
+null(:pointer:), null(:label:), null(:file:), null(:offset:), null(:entry),
+
+Pseudo-variables: exponent, onsource, pageno, string, substr, unspec
+
+Built-in functions: see libbif.py
+
+Picture characters: V 9 Z $ + - S . , / B CR DB
+Iteration count in parentheses
+<...>: literal characters
+<...>> (any number of > signs): floating/drifting characters

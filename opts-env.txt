@@ -1,0 +1,84 @@
+APPEND	 	Environment option
+BACKUP_DATE	 	Environment option
+BATCH	 	Environment option
+BLOCK_BOUNDARY_FORMAT	 	Environment option
+BLOCK_IO	 	Environment option
+BLOCK_SIZE	 	Environment option
+BUCKET_SIZE	 	Environment option
+CANCEL_CONTROL_O	 	PUT OPTIONS option
+CARRIAGE_RETURN_FORMAT	 	Environment option
+CONTIGUOUS	 	Environment option
+CONTIGUOUS_BEST_TRY	 	Environment option
+CREATION_DATE	 	Environment option
+CURRENT_POSITION	 	Environment option
+DEFAULT_FILE_NAME	 	Environment option
+DEFERRED_WRITE	 	Environment option
+DELETE	 	Statement, Environment option
+EXPIRATION_DATE	 	Environment option
+EXTENSION_SIZE	 	Environment option
+FAST_DELETE	 	DELETE OPTIONS option
+FILE_ID	 	Environment option
+FILE_ID_TO	 	Environment option
+FILE_SIZE	 	Environment option
+FIXED_CONTROL_FROM	 	REWRITE OPTIONS option, WRITE OPTIONS option
+FIXED_CONTROL_SIZE	 	Environment option
+FIXED_CONTROL_SIZE_TO	 	Environment option
+FIXED_CONTROL_TO	 	READ OPTIONS option
+FIXED_LENGTH_RECORDS	 	Environment option
+GROUP_PROTECTION	 	Environment option
+IDENT	 	PROCEDURE OPTIONS option
+IGNORE_LINE_MARKS	 	Environment option
+INDEXED	 	Environment option
+INDEX_NUMBER	 	DELETE OPTIONS option, READ OPTIONS option, REWRITE OPTIONS option, Environment option
+INITIAL_FILL	 	Environment option
+LOCK_ON_READ	 	READ OPTIONS option
+LOCK_ON_WRITE	 	READ OPTIONS option
+MAIN	 	PROCEDURE OPTIONS option
+MANUAL_UNLOCKING	 	READ OPTIONS option
+MATCH_GREATER	 	DELETE OPTIONS option, READ OPTIONS option, REWRITE OPTIONS option
+MATCH_GREATER_EQUAL	 	DELETE OPTIONS option, READ OPTIONS option, REWRITE OPTIONS option
+MATCH_NEXT	 	DELETE OPTIONS option, READ OPTIONS option, REWRITE OPTIONS option
+MATCH_NEXT_EQUAL	 	DELETE OPTIONS option, READ OPTIONS option, REWRITE OPTIONS option
+MAXIMUM_RECORD_NUMBER	 	Environment option
+MAXIMUM_RECORD_SIZE	 	Environment option
+MULTIBLOCK_COUNT	 	Environment option
+MULTIBUFFER_COUNT	 	Environment option
+NOLOCK	 	READ OPTIONS option
+NONEXISTENT_RECORD	 	READ OPTIONS option
+NO_ECHO	 	GET OPTIONS option
+NO_FILTER	 	GET OPTIONS option
+NO_SHARE	 	Environment option
+OPTIONS	 	File attribute, Option of the GET, PUT, READ, WRITE, DELETE, REWRITE, and PROCEDURE statements
+OWNER_GROUP	 	Environment option
+OWNER_ID	 	Environment option
+OWNER_MEMBER	 	Environment option
+OWNER_PROTECTION	 	Environment option
+PRINTER_FORMAT	 	Environment option
+PROMPT	 	GET OPTIONS option
+PURGE_TYPE_AHEAD	 	GET OPTIONS option
+READ_AHEAD	 	Environment option
+READ_CHECK	 	Environment option
+READ_REGARDLESS	 	READ OPTIONS option
+RECORD_ID	 	DELETE OPTIONS option, READ OPTIONS option, REWRITE OPTIONS option
+RECORD_ID_ACCESS	 	Environment option
+RECORD_ID_TO	 	READ OPTIONS option, REWRITE OPTIONS option, WRITE OPTIONS option
+RETRIEVAL_POINTERS	 	Environment option
+REVISION_DATE	 	Environment option
+REWIND_ON_CLOSE	 	Environment option
+REWIND_ON_OPEN	 	Environment option
+SCALARVARYING	 	Environment option
+SHARED_READ	 	Environment option
+SHARED_WRITE	 	Environment option
+SPOOL	 	Environment option
+SUPERSEDE	 	Environment option
+SYSTEM_PROTECTION	 	Environment option
+TEMPORARY	 	Environment option
+TIMEOUT_PERIOD	 	READ OPTIONS option
+TRUNCATE	 	Attribute, Environment option
+UNDERFLOW	UFL	Condition name, PROCEDURE OPTIONS option
+USER_OPEN	 	Environment option
+VARIABLE	 	Attribute, OPTIONS option
+WAIT_FOR_RECORD	 	READ OPTIONS option
+WORLD_PROTECTION	 	Environment option
+WRITE_BEHIND	 	Environment option
+WRITE_CHECK	 	Environment option

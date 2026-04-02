@@ -1,0 +1,613 @@
+3.2 Abstract Syntax Rules
+
+3.2.1 Program
+
+Al. <program> :: = [<external-unit-list>]
+
+A2. <external-unit> ::= [<declaration-list >] (<procedure> ] <package> ]
+
+3.2.2 Package
+
+A3. <package> ::= [<condition-prefix-list>] [<declaration-list>] <procedure-list>
+
+3.2.3 Procedure
+
+A4. <procedure> ::= [<declaration-list>] [<procedure-list>] [<format-statement-list>]
+[<condition-prefix-list>] [<recursive>] <entry-point> <executable-unit-list> 
+
+3.2.4 Declaration
+
+A5 <declaration> : : = <identifier> <scope> <declaration-type> #declaration-designator%
+
+A6. <scope> ::= <external> [<external-name>] I <internal>
+
+A7. <external-name> : : = <expression> (scalar AND character)
+
+A8. <declaration-type> : : = <variable> ] <named-constant> I <builtin> I <condition>
+
+3.2.5 Variable
+
+A9. <variable> ::= <storage-type> <data-description>
+
+AlO. <storage-type> ::= <storage-class> I <defined> I <parameter>
+
+Al 1. <storage-class> ::= <automatic> I <based> I <&&> [<reserved>]
+
+A12. <based> ::= [<value-reference> (scalar AND locator) ] <reference-designator$]
+
+A13. <defined> ::= <base-item>
+
+A14. <base-item> ::= <variable-reference> (NOT defined AND NOT based) ] *reference-designator+
+
+3.2.6 Data-description
+
+A15 <data-description> ::= <dimensioned-data-description> ] <structure-data-description> ]
+<union-data-description> ] <item-data-description>
+
+A16. <dimensioned-data-description> :: = <element-data-description> <bound-pair-list>
+
+Al 7. <element-data-description> : : = <structure-data-description> ] <union-data-description> ]
+<item-data-description>
+
+A18. <bound-pair> ::= <lower-bound> <upper-bound> ] <asterisk>
+
+A19. <lower-bound> ::= <extent-expression>
+
+A20. <upper-bound> ::= <extent-expression>
+
+A21. <extent-expression> : : = {<expression> (scalar AND integer) I
+{expression-designator$ ] <integer-value+ 1 [<refer-option>]
+
+A22. <refer-option> :: = <identifier-list> ] finteger-value,
+
+A23. <structure-data-description> : : = [<identifier-list>] <member-description-list>
+
+A24. <union-data-description> ::= [<identifier-list>] <member-description-list>
+
+A25. <member-description> ::= <data-description>
+
+A26. <item-data-description> ::= [<alignment>] <data-type> [<initial>]
+Constraint: An <item-data-description> MUST NOT have an
+<initial> component with an <iteration-factor>, or an
+<initial-element-list> with more than one <initial-element> imme
+component, unless the <item-data-description> is a (not necessarily
+immediate) component of a <dimensioned-data-description>. An
+<item-data-description> MUST NOT have an <initial> if it is a (not
+necessarily immediate) component of a <union-data-description>.
+
+A27. <initial> ::= <initial-element-list> ] *initial-designator$ I <array-inn>
+
+A28. <array-in&> ::= <parenthesized-expression> (scalar)
+
+A29. <initial-element> ::= <asterisk> I <parenthesized-expression> (scalar) 1
+<iteration-factor> <initial-element-list>
+
+A30. <iteration-factor> ::= <expression> (scalar AND integer)
+
+A31. <alignment> ::= <aligned> ] <unaligned>
+
+3.2.7 Data-type
+
+A32.
+
+A33.
+
+A34.
+
+A35.
+
+A36.
+
+A37.
+
+A38.
+
+A39.
+
+A40. <scale-factor> ::= <integer>
+
+A41. <string> : : = <string-type> <maximum-length> [<varving> I <nonvarving>]
+
+A42. <string-type> ::= <character> ] <bit>
+
+A43. <maximum-length> : : = <extent-expression> ] <asterisk>
+
+A44. <pictured> : : = <pictured-numeric>
+
+A45. <locator> ::= <pointer> ] <offset>
+
+A46 <offset> :: = [<variable-reference> (scalar AND area) ] dreference-designator$]
+
+A47. <entry> ::= [<parameter-descriptor-list>] [<returns-descriptor>] [<options>]
+
+A48. <parameter-descriptor> ::= <data-description>
+<data-type> : : = <computational-type> ] <non-computational-type>
+<computational-type> :: = <arithmetic> ] <string> I <pictured>
+<non-computational-type> : : = <area> I <entry> I <file> I <format> I <!&eJ> I
+<locator >
+<arithmetic> :: = <base> <scale> <precision>
+<base> ::= <binary> I <decimal>
+<scale> ::= <fixed> 1 <float>
+<precision> : : = <number-of-digits> [<scale-factor>] ] #prec
+
+A49. <returns-descriptor> t:: = <data-description>
+Note: The <data-description> in a <returns-descriptor> always
+immediately contains an <item-data-description>. See the constraint
+following CH62.
+
+A50. <options> ::= This category is IMPLEMENTATION-DEFINED.
+
+A51. <area> ::= <area-size>
+
+A52. <area-size> :: = <extent-expression> I <asterisk>
+
+3.2.8 Named-constant
+
+A53. <named-constant> : : = <package-constant> ]
+(<entry> ] <file> <file-description-set> ] <format> ]
+<label> [<bound-pair>]] ]
+{<arithmetic> ] <string>j <basic-value> ] #declaration-designator$
+
+A54. <file-description-set> ::= [<stream>] [<record>] [<igp&>l [<outnut> [<uDdate>l
+[<seauential>] [<direct>] [<->I [<nonmint>] [<keyed>]
+[<environment>]
+
+A55. <environment> ::= This category is IMPLEMENTATION-DEFINED.
+
+3.2.9 Entry-point
+
+A56. <entry-point> :: = [<statement-name>] <entry-information>
+
+A57. <statement-name> ::= <identifier> [<signed-integer>]
+
+A5 8. <entry-information> : : = [<parameter-name-list>] [<returns-descriptor>] [<options>]
+
+A59. <parameter-name> ::= <identifier>
+
+3.2.10 Executable-unit
+
+A60. <executable-unit> ::= [<statement-name>]
+{<begin-block>
+<allocate-statement>
+<close-statement>
+<free-statement>
+<if-statement>
+<on-statement>
+<read-statement>
+<rewrite-statement>
+<write-statement>)
+I <group> ] <selection>
+I <assignment-statement> ] <call-statement>
+I <delete-statement> I <end-statement> ]
+I <get-statement> I <goto-statement> ]
+I <leave-statement> ] <null-statement> ]
+] <open-statement> I <put-statement> ]
+I <return-statement> I <revert-statement> ]
+I <signal-statement> I <stoD-statement
+
+3.2.11 Begin-block
+
+A61. <begin-block> ::= [<declaration-list>] [<procedure-list>] [<format-statement-list>]
+[<condition-prefix-list>] [<options>] <executable-unit-fist>
+
+3.2.12 Groups
+
+A62.
+
+A63.
+
+A64.
+
+A65.
+
+A66.
+
+A67.
+
+A68.
+
+A69.
+
+A70.
+
+A71.
+
+A72.
+
+A73.
+<group> ::= <iterative-group> I <non-iterative-group>
+<iterative-group> : : = <controlled-group> ] <conditional-group> I <looping-group>
+<controlled-group> : : = <do-spec> <executable-unit-list>
+<do-spec> ::= <variable-reference> (scalar AND pointer OR scalar AND integer) <spec>
+<spec> ::= <expression> (scalar AND pointer OR scalar AND arithmetic)
+[<to-by> I <repeat-option>] [<while-option>] [<until-option>]
+<to-by> ::= <to-option> [<by-option>] I <by-option>
+<repeat-option> :: = <eXpreSSiOn> (Scalar AND pointer OR SCdar AND arithmetic)
+<by-option> : : = <expression> (scalar AND arithmetic)
+<to-option> :: = <expression> (scalar AND arithmetic)
+<while-option> :: = <expression> (scalar AND bit)
+<until-option> ::= <expression> (scalar AND bit)
+<conditional-group> : : = [<while-option>] [<until-option>] <executable-unit-list>
+Note: A <conditional-group> contains at least one of <while-option> or
+<until-option> or both.
+
+A74. <looping-group> : : = <executable-unit-list>
+
+A75. <non-iterative-group> :: = <executable-unit-list>
+
+3.2.13 Selections
+
+A76. <selection> ::= [<expression> (scalar)] [<when-unit-list>] [<otherwise-unit>]
+
+A77. <when-unit> ::= ( <when-any-values> ] <when-all-values> ) <executable-unit>
+
+A78. <otherwise-unit> ::= <executable-unit>
+
+A79. <when-any-values> ::= <expression-list> (scalar)
+
+A80. <when-all-values> :: = <expression-fist> (scalar)
+
+3.2.14 On Statement
+
+A8 1. <on-statement> :: = <condition-name-list> [<->I (<on-unit> ] <system-action>]
+
+A82. <on-unit> ::= <procedure>
+
+3.2.15 If Statement
+
+A83. <if-statement> ::= <test> <then-unit> [<else-unit>]
+
+A84. <test> ::= <expression> (scalar AND bit)
+
+A85. <then-unit> ::= <executable-unit>
+
+A86. <else-unit> ::= <executable-unit>
+
+3.2.16 Flow of Control Statements
+
+A87. <call-statement> ::= <subroutine-reference>
+
+A88. <leave-statement> ::= [<named-constant-reference> (scalar AND label)]
+
+A89. <goto-statement> : : = <value-reference> (scalar AND label)
+
+A90. <return-statement> : : = [<expression> (scalar)]
+
+A9 1. <revert-statement> :: = <condition-name-list>
+
+A92. <signal-statement> ::= <condition-name>
+
+A93. <condition-name> :: = <computational-condition> I <named-io-condition> ]
+<programmer-named-condition> I <area-condition>
+<error-condition> ] <finish-condition> I
+<storage-condition>
+
+A94. <condition-prefix> :: = <computational-condition> (<enabled> ] <disabled>]
+
+A95. <computational-condition> ::= <conversion-condition> ] <fixedoverflow-condition> I
+<overflow-condition> I <size-condition> I
+<underflow-condition> ] <zerodivide-condition>
+
+A96. <named-io-condition> ::= <io-condition> <value-reference> (Sdar AND file)
+
+A97. <io-condition> ::= <beginoage-condition> ] <endfile-condition> I <endDaPe-condition> I
+<key-condition> ] <record-condition> ] <transmit-condition> I
+<undefinedfile-condition>
+
+A98. <programmer-named-condition> :: = <declaration-designator> (condition) 
+
+3.2.17 Storage Statements
+
+A99. <assignment-statement> ::= <target-reference> <expression>
+
+AlOO. <allocate-statement> :: = <allocation-list>
+
+AlOl. <allocation> ::= <declaration-designator> (based) [<set-option>] [<m-option>]
+
+A102. <set-option> ::= <variable-reference> (scalar AND locator)
+Constraint: The <data-description> immediate component of the
+<variable-reference> MUST NOT have <offset> without a
+<variable-reference> subnode.
+
+A103. <in-option> ::= <variable-reference> (scalar AND area)
+
+A104. <free-statement> ::= <freeing-list>
+
+A105. <freeing> ::= [<locator-qualifier>] <declaration-designator> (based) [<in-option>]
+
+3.2.18 I/O Statements
+
+A106. <open-statement> ::= <single-opening-list>
+
+A107. <single-opening> :: = <file-option> [<title-option>]
+[ <linesize-option>] [<page&e-option>]
+[<stream>] [<record>] [<a>] [<outnut>] [<uDdate>]
+[<sequential>] [<direct>] [ <->I [ <nonmint>] [<keyed>]
+[<environment>]
+
+A108. <file-option> ::= <value-reference> (Scalar AND file)
+
+A109. <title-option> ::= <expression> (scalar AND computational-type)
+
+Al 10. <linesize-option> ::= <expression> (scalar AND computational-type)
+
+Al 11. <page&e-option> : : = <expression> (scalar AND computational-type)
+
+Al 12. <close-statement> ::= <single-closing-list>
+
+Al 13. <single-closing> ::= <file-option> [<environment>]
+
+3.2.19 Record I/O Statements
+
+Al 14. <delete-statement> ::= <fife-option> [<key-option>] [<environment>]
+
+Al 15. <pointer-set-option> :: = <variable-reference> (scalar AND pointer)
+
+Al 16. <read-statement> ::= <file-option>
+( <into-option> ] <pointer-set-option> [<sizeto-option>] )
+[<key-option> ] <keyto-option>] [<environment>]
+
+Al 17. <into-option> ::= <variable-reference>
+
+Al 18. <rewrite-statement> ::= <file-option> [ [<key-option>] <from-option>] [<environment>] 
+
+Al 19. <write-statement> ‘: : = <file-option> <from-option> [<keyfrom-option>] [<environment>]
+
+A120. <from-option> ::= <variable-reference>
+
+A121. <key-option> ::= <expression> (scalar AND computational-type)
+
+A122. <keyfrom-option> : : = <expression> (scalar AND computational-type)
+
+A123. <keyto-option> ::= <variable-reference> (scalar AND character)
+
+A124. <sizeto-option> ::= <variable-reference> (scalar AND arithmetic)
+
+3.2.20 Stream I/O Statements
+
+A125 <get-statement> ::= <get-fife> I <get-string>
+
+A126. <get-file> ::= <file-option> [<skip-option>] [<input-specification>]
+Constraint: At least one of the last two options MUST be present.
+
+A127. <skip-option> ::= <expression> (scalar AND computational-type)
+
+A128. <get-string> ::= <expression> (scalar AND character) <input-specification>
+
+A129. <put-statement> ::= <put-file> ] <put-string>
+
+A130. <put-file> ::= <file-option> [<skip-option>] [<line-option>] [<->I
+[<output-specification>]
+Constraint: At least one of the last four options MUST be present and the
+<skip-option> MUST NOT be used together with a <line-option> or <w>.
+
+A131.
+
+A132.
+
+A133.
+
+A134.
+
+A135.
+
+A136.
+
+Al37.
+
+A138.
+
+A139.
+
+A140.
+
+A141. <edit-directed-output> : : = <edit-output-pair>
+<line-option> : : = <expression> (scalar AND computational-type)
+<put-string> : : = <variable-reference> (scalar AND character) <output-specification>
+<input-specification> : : = <list-directed-input> ] <edit-directed-input>
+<list-directed-input> ::= <input-target-list>
+<input-target> :: = <variable-reference> (computational-type AND NOT union ) ]
+<input-target-list> <do-spec>
+<edit-directed-input> : : = <edit-input-pair>
+<edit-input-pair> :: = <input-target-list> <format-specification-list>
+<output-specification> : : = <list-directed-output> I <edit-directed-output>
+<list-directed-output> ::= <output-source-list>
+
+A142. <edit-output-pair> ::= <output-source-list> <format-specification-list>
+
+A143. <format-specification> ::= <format-item> I <format-iteration>
+
+A144. <format-iteration> ::= <format-iteration-factor> <format-specification-list>
+
+A145. <format-iteration-factor> : : = <expression> (scalar AND integer)
+
+A146. <format-item> ::= <data-format> [ <control-format> I <remote-format>
+
+A147. <data-format> ::= <real-format> 1 <picture-format> I <string-format> I <l-format>
+
+A148. <real-format> ::= <fixed-point-format> I <floating-point-format>
+
+A149. <fixed-point-format> ::= {<expression> (scalar AND integer) I <integer-value>]-
+[{<expression> (scalar AND integer) I <integer-value>)]
+
+A150. <floating-point-format> ::= (<expression> (scalar AND integer) I <integer-value,)
+[(<expression> (scalar AND integer) I binteger-value>)]
+
+Al 5 1. <picture-format> :: = <pictured>
+
+A152. <string-format> ::= <character-format> I <bit-format>
+
+A153. <character-format> ::= [(<expression> (scalar AND integer) I finteger-value3 11
+
+A154. <bit-format> ::= <radix-factor> [(<expression> (scalar AND integer) I finteger-value,)]
+
+A155. <radix-factor> ::= 1 I 2 I 3 I 4
+
+A156. <control-format> ::= <tab-format> I <line-format> I <space-format> I <skip-format> I
+<column-format> I <w>
+
+A157. <tab-format> ::= {<expression> (scalar AND integer) I <integer-value>)
+
+A158. <line-format> ::= {<expression> (scalar AND integer) I &integer-value> )
+
+A159. <space-format> ::= (<expression> (scalar AND integer) I *integer-value+)
+
+A160. <skip-format> ::= {<expression> (scalar AND integer) I binteger-value3 1
+
+A161. <column-format> ::= {<expression> (scalar AND integer) I dinteger-value,)
+
+A162. <remote-format> ::= <value-reference> (SCdar AND format)
+
+A163. <format-statement> ::= <statement-name> <format-specification-list>
+
+3.2.21 Expression
+
+A164. <expression> ::= (<value-reference> I <constant> I <infix-expression> I
+<prefix-expression> I <parenthesized-expression>) <data-description>
+
+A165. <infix-expression> :: = <expression> <infix-operator> <expression> <data-description>
+
+A166. <infix-operator> ::= <or-logical> I <and-logical> I <a> I <xor>
+<and> I <a> I <ks> I <!%I> I 
+
+A167. <prefix-expression5 ::= <prefix-operator> <expression> <data-description>
+
+A168. <prefix-operator> ::I <m> ] <minus> I <&>
+
+Al 69. <parenthesized-expression> :: = <expression> <data-description>
+
+3.2.22 Types of Reference
+
+A170. <value-reference> ::= (<variable-reference> I <procedure-function-reference> I
+<builtin-function-reference> I <named-constant-reference> I
+<enquiry-reference>) <data-description>
+
+Al 7 1. <variable-reference> : : = [<locator-qualifier>] <declaration-designator> (variable)
+[<identifier-list>] [<subscript-list>] <data-description>
+
+A172. <locator-qualifier> ::= <value-reference> (scalar AND locator)
+
+A173. <subscript> ::= <expression> (scalar AND integer) I <asterisk> I finteger-value,
+
+A174. <procedure-function-reference> ::= <value-reference> [<argument-fist>] <data-description>
+
+A175. <argument> ::= <expression> [<dummy>] <data-description>
+
+A176. <builtin-function-reference> ::= <builtin-function> [<argument-list>] <data-description>
+
+A177. <builtin-function> ::= cabs-bif> 1 <aces-bif> I <add-bif> I <addr-bif>
+<asin-bif> I <atan-bif> I <atand-bif> I <atanh-bif>
+<binarv-bif> I <bit-bif> 1 <bool-bif> 1 <ceil-bif>
+<character-bif> I <collate-bif> I <couv-bif> 1 <cos-bif>
+<cosd-bif> 1 <cash-bif> I <current&e-bif> I <date-bif>
+<datetime-bif> I <decimal-bif> ] <dimension-bif> I <divide-bif>
+<edit-bif> I <empty-bif> I <everv-bif> I <exu-bif>
+<exuonent-bif> I <fileonen-bif> I <fixed-bif> I <float-bif>
+<floor-bif>
+<index-bif>
+<lineno-bif>
+<low-bif>
+<mod-bif>
+<oncode-bif>
+<pageno-bif>
+<round-bif>
+<sind-bif>
+<string-bif>
+<tally-bif>
+<time-bif>
+<unsDec-bif>
+I <hbound-bif> I <high-bif> I <identical-bif> I
+I <isochar-bif> I <lbound-bif> 1 <length-bif> I
+1 <log-bif> 1 <loglO-bif> 1 <logZbif> I
+I <max-bif> I <maxlength-bif> I <min-bif>
+I <multiulv-bif> ] <null-bif> I <offset-bif> I
+1 <onfile-bif> I <onkev-bif> 1 <onsource-bii> I
+] <pointer-bif> ] <prod-bif> ] <reverse-bif> ]
+I <search-bif> I <sign-bif> 1 <sin-bif>
+1 <sir&bif> 1 <some-bif> 1 <sort-bif> I
+I <substr-bif> I <subtract-bif> 1 <sum-bif> I
+I <tan-bif> I <tand-bif> I <tar&-bif>
+I <translate-bif> I <trim-bif> 1 <trunc-bif>
+1 <valid-bif> 1 <verify-bif>
+
+A178. <named-constant-reference> ::= <declaration-designator> (named-constant) [<subscript>]
+<data-description>
+
+A179. <target-reference> ::= (<variable-reference> I <pseudo-variable-reference>)
+<data-description>
+
+A180. <pseudo-variable-reference> ::= <pseudo-variable> [<argument-list>] <data-description>
+
+A181. <pseudo-variable> ::= <exuonent-nv> I <onsource-nv> 
+<output-source> ::= <expression> (computational-type AND 
+
+A167. <prefix-expression5 ::= <prefix-operator> <expression> <data-description>
+
+A168. <prefix-operator> ::I <m> ] <minus> I <&>
+
+Al 69. <parenthesized-expression> :: = <expression> <data-description>
+
+3.2.22 Types of Reference
+
+A170. <value-reference> ::= (<variable-reference> I <procedure-function-reference> I
+<builtin-function-reference> I <named-constant-reference> I
+<enquiry-reference>) <data-description>
+
+Al 7 1. <variable-reference> : : = [<locator-qualifier>] <declaration-designator> (variable)
+[<identifier-list>] [<subscript-list>] <data-description>
+
+A172. <locator-qualifier> ::= <value-reference> (scalar AND locator)
+
+A173. <subscript> ::= <expression> (scalar AND integer) I <asterisk> I finteger-value,
+
+A174. <procedure-function-reference> ::= <value-reference> [<argument-fist>] <data-description>
+
+A175. <argument> ::= <expression> [<dummy>] <data-description>
+
+A176. <builtin-function-reference> ::= <builtin-function> [<argument-list>] <data-description>
+
+A177. <builtin-function> ::= cabs-bif> 1 <aces-bif> I <add-bif> I <addr-bif>
+<asin-bif> I <atan-bif> I <atand-bif> I <atanh-bif>
+<binarv-bif> I <bit-bif> 1 <bool-bif> 1 <ceil-bif>
+<character-bif> I <collate-bif> I <couv-bif> 1 <cos-bif>
+<cosd-bif> 1 <cash-bif> I <current&e-bif> I <date-bif>
+<datetime-bif> I <decimal-bif> ] <dimension-bif> I <divide-bif>
+<edit-bif> I <empty-bif> I <everv-bif> I <exu-bif>
+<exuonent-bif> I <fileonen-bif> I <fixed-bif> I <float-bif>
+<floor-bif>
+<index-bif>
+<lineno-bif>
+<low-bif>
+<mod-bif>
+<oncode-bif>
+<pageno-bif>
+<round-bif>
+<sind-bif>
+<string-bif>
+<tally-bif>
+<time-bif>
+<unspec-bif>
+I <hbound-bif> I <high-bif> I <identical-bif> I
+I <isochar-bif> I <lbound-bif> 1 <length-bif> I
+1 <log-bif> 1 <loglO-bif> 1 <logZbif> I
+I <max-bif> I <maxlength-bif> I <min-bif>
+I <multiulv-bif> ] <null-bif> I <offset-bif> I
+1 <onfile-bif> I <onkev-bif> 1 <onsource-bii> I
+] <pointer-bif> ] <prod-bif> ] <reverse-bif> ]
+I <search-bif> I <sign-bif> 1 <sin-bif>
+1 <sir&bif> 1 <some-bif> 1 <sort-bif> I
+I <substr-bif> I <subtract-bif> 1 <sum-bif> I
+I <tan-bif> I <tand-bif> I <tar&-bif>
+I <translate-bif> I <trim-bif> 1 <trunc-bif>
+1 <valid-bif> 1 <verify-bif>
+
+A178. <named-constant-reference> ::= <declaration-designator> (named-constant) [<subscript>]
+<data-description>
+
+A179. <target-reference> ::= (<variable-reference> I <pseudo-variable-reference>)
+<data-description>
+
+A180. <pseudo-variable-reference> ::= <pseudo-variable> [<argument-list>] <data-description>
+
+A181. <pseudo-variable> ::= <exuonent-nv> I <onsource-nv> 
+

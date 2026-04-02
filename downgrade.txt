@@ -1,0 +1,217 @@
+Most of the information required to convert a program conforming to ANSI X3.53-1976 to operate with a
+processor for the language specified by this standard is available by reading this Appendix in conjunction with
+Appendix C. However, the reader is cautioned that text in this Appendix applies to ANSI X3.53-1976, and in
+general does not reflect new features described in Appendix B.
+
+D.1 Program Structure
+
+D. 1.1 Syntactic Restrictions
+
+1. A statement must not have multiple label prefixes.
+
+2. A DECLARE statement must not have a label prefix.
+
+3. A label prefix must not have more than one subscript. Label prefixes appearing on PROCEDURE or
+FORMAT statements must not be subscripted.
+
+5. END statements must not cause multiple group or block closure. Any closure label must match the label
+prefix on the corresponding DO, SELECT, BEGIN, or PROCEDURE statement.
+
+5. END statements must not cause multiple group or block closure. Any closure label must match the label
+prefix on the corresponding DO, SELECT, BEGIN, or PROCEDURE statement.
+
+4. Condition prefixes must not appear except on BEGIN and PROCEDURE statements.
+
+5. END statements must not cause multiple group or block closure. Any closure label must match the label
+prefix on the corresponding DO, SELECT, BEGIN, or PROCEDURE statement.
+
+6. Arithmetic constants must not contain the default-suppressingcharacters B, F, I, or P.
+
+D. 1.2 Semantic Restrictions
+
+All functions must yield scalar values.
+
+D. 1.3 Features Excluded
+
+1. The DEFAULT statement.
+
+2. The ENTRY statement.
+
+3. Binary constants and replicated string constants.
+
+D.2 Program Control
+
+D.2.1 Syntactic Restrictions
+
+DO statements must not contain commalists.
+
+D.2.2 Semantic Restrictions
+
+1. The control variable of a DO statement must be of an arithmetic (including pictured) or pointer type. The
+values of the TO, BY, and REPEAT options must be arithmetic (including pictured) or pointer values.
+
+2. The expressionin an IF statement or a WHILE clause or an UNTIL clause must have a bit-string value of
+length one.
+
+3. An array whose storage is unconnected must not be passedas an argument.
+
+4. A RETURN statement must not be used within an on-unit.
+
+D.2.3 Features Excluded
+
+Debugging conditions: NAME, STRINGRANGE, STRINGSIZE, SUBSCRIPTRANGE.
+
+D.3 Storage Control Statements
+
+D.3.1 Syntactic Restrictions
+
+An assignment statement may have only one target.
+
+D.3.3 Features Excluded
+
+BY NAME assignment.
+
+D.4 Input/Output
+
+D.4.1 Syntactic Restrictions
+
+1. GET and PUT statements may
+contain only one I/O list and at most one format list.
+
+2. The E and F format items must not contain a third value.
+
+3. The INTO and FROM options of the record I/O statements must not reference bit-aligned variables.
+
+4. File constants must not be dimensioned.
+
+D.4.3 Features Excluded
+
+1. The LOCATE statement.
+
+2. The TAB option of the OPEN statement.
+
+3. The DATA option of the GET and PUT statements.
+
+4. The COPY option of the GET statement.
+
+5. The IGNORE option of the READ statement.
+
+6. The C format item.
+
+D.5 Attributes and Pictures
+
+D.5.1 Syntactic Restrictions
+
+1. Pictures are restricted to a large subset of fixed-point decimal pictures.
+
+2. The following attributes are supported, but are not keywords in the language: CONSTANT, MEMBER,
+PRECISION, REAL, and STRUCTURE.
+
+3. Only string types may be UNALIGNED
+and PICTURES may not be ALIGNED.
+
+4. The INITIAL attribute for STATIC variables must not be a LABEL CONSTANT,
+ENTRY CONSTANT, or FILE CONSTANT.
+
+5. The INITIAL attribute for a dimensioned AUTOMATIC item must have a “*” iteration factor.
+
+6. A negative scale factor must not be specified. A nonzero scale factor may be specified only for
+FIXED DECIMAL variables.
+
+7. Format constants are supported only in the form of statement names on FORMAT statements.
+
+D.5.2 Semantic Restrictidus
+
+1. The data type of each name used in a program, except SYSIN and SYSPRINT when used in a FILE option
+or named I/O condition, must be specified either in a DECLARE or a DEFINE CONSTANT statement or
+else by use of the name as a label prefix or a built-in function. The data type must be given for each
+parameter in an ENTRY attribute, as well as for the return value in the RETURNS option of the
+PROCEDURE statement, and for the return value in the RETURNS attribute.
+
+2. The reference given in a DEFINED attribute must identify a variable of identical type and extents as the
+defined variable, or else both the defined variable and the base variable must be suitable for string overlay
+defining.
+
+3. If a declaration contains a REFER option, then it can have only one, which must be located at the end of
+the structure, and the target of which must contain FIXED and BINARY.
+
+D.5.3 Features Excluded
+
+1. Attributes: COMPLEX, CONTROLLED, GENERIC, LIKE, LOCAL, and POSITION.
+
+2. Picture characters: A E I K R T X Y.
+
+3. BIT VARYING.
+
+4. iSUB defining.
+
+5. FORMAT variables
+.
+D.6 Built-in Functions and Pseudo-variables
+
+D.6.1 Syntactic Restrictions
+
+1. The MAX and M IN built-in functions must have exactly two arguments.
+
+2. Pseudo-variablesmay appear only on the left side of an assignment statement.
+
+3. All arguments specifying precision, scale, or number-of-digits to built-in functions must be either an integer
+or a reference to a named constant.
+
+D.6.2 Semantic Restrictions
+
+1. Various built-in functions have restrictions on their arguments either to prevent the creation of an
+unsupported data type or to permit the compile-time evaluation of the function.
+
+2. Built-in functions must not yield aggregateresults.
+
+D.6.3 Features Excluded
+
+1. Built-in functions: AFTER, ALLOCATION, BEFORE, COMPLEX, CONJG, DECAT, DOT, ERF,
+ERFC, IMAG, ONCHAR, ONFIELD, ONLOC, PRECISION, and REAL.
+
+2. Pseudo-variables:IMAG, ONCHAR, and REAL.
+
+D.7 Expressions
+
+D.7.2 Semantic Restrictions
+
+1. All operators must yield scalar values.
+
+2. No expression can yield a fixed-point decimal result with a negative scale factor or a scaled fixed-point
+binary result.
+
+3. Subscripts and extents must evaluate to integer values.
+
+4. Arithmetic operators and built-in functions must have arithmetic or pictured operands.
+
+5. Bit-string operators and built-in functions must have bit-string operands.
+
+6. Character-string operators and built-in functions must have character-string operands.
+
+7. The operands of the relational operators must both be arithmetic (including pictured) values, both be
+character string values, both be bit string values, or must both have the same data type.
+
+8. Expressions in format iteration factors and format list items must yield integer values
+.
+9. A pointer value must not be assignedto an OFFSET variable, passedto an OFFSET PARAMETER, or
+returned from a function with the RETURNS(OFFSET) attribute. The first argument of the OFFSET
+built-in function must be an invocation of the ADDR built-in function. It may be used in this restricted
+form to convert pointer values to offset values.
+
+10. An offset value must not be assignedto a POINTER variable, passedto a POINTER PARAMETER, or
+returned from a function with the RETURNS(POINTER) attribute. (The POINTER built-in function will
+convert offset values to pointer values).
+
+11. The only allowed case of aggregatepromotion is an assignment statement of the form “reference =
+expression”, where reference denotes a connected array of scalars and expression is a scalar expression.
+
+12. In an assignment statement, “reference1 = reference2” where both references are aggregates,the data
+descriptions of the two references must be identical and both references must denote connected storage.
+
+D.8 Change in Intermediate Results
+
+When the derived scale of an arithmetic result is FIXED, the derived base has been changed from
+BINARY to DECIMAL when fractional (i.e., scale factor greater than zero) decimal values are combined
+with integral (i.e., scale factor equal to zero) binary values. This change provides improved consistency
+and is unlikely to affect actual results.

@@ -1,0 +1,102 @@
+Appendix F. Rationale for Major Design Decisions
+
+There are many costs attendant upon each feature included in this standard: costs to design, document, learn,
+remember, compile, execute, and maintain the feature. These costs were weighed against the liabilities of not
+including the feature: popularity of usage, difficulty of progr annning with alternative constructs, inefficiency of
+alternative constructs, and loss of readability due to the use of alternative constructs.
+
+The content of this standard derives from American National Standard Programming Language PL/I (ANSI
+X3.53-1976), especially those portions included in ANSI X3.74-1981, and a series of proposals and
+suggestionsfor “new” language features. “New”, in this case, refers to any feature not specified in ANSI
+X3.53-1976.
+
+Of the features of ANSI X3.53-1976, some were easy to exclude becausethey were common sourcesof
+programming errors, or becausethe cost to implement or use them was high in relation to their utility. Other
+features were more difficult to evaluate, particularly those whose cost and utility were high.
+Many entirely new features (relative to ANSI X3.53-1976) were considered for inclusion in this standard. A
+large fraction of them were proposed, at least informally, during the final review before adoption of ANSI
+X3.53-1976 and deferred to see how, or if, they would be implemented and used.
+
+Proposals were viewed favorably if they met one or more of the following criteria:
+1. The functionality had already been incorporated into existing implementations and had been found to be
+useful and successful.
+
+2. Similar functionality was provided in several existing implementations using different mechanismsand
+agreement could be reached that the functionality was important and that a single mechanism was, after
+experience, most appropriate.
+
+3. There was clear user demand for the proposed modifications and they were obvious and compatible
+extensions to well-established facilities.
+
+By contrast, the following criteria caused a proposal to be looked on with disfavor:
+
+1. The proposal would have introduced a new incompatibility, either with ANSI X3.53-1976 or with ANSI
+X3.74-l 98 1, or with important non-conforming implementations of PL/I. It was an important goal that
+the revised standard specify a language that, insofar as possible, would permit programs written in it to be
+portable among all sensible implementations of PL/I.
+
+2. The proposal would have introduced an alternate mechanism for performing some function where the
+functionality already existed in the language or would have introduced little new functionality at high
+implementation cost or with a very high degree of complexity.
+
+3. The proposed feature could not have been adequately described in implementation independent ways
+without unreasonably constraining hardware, software, or operating systems.
+
+4. The proposal represented a very large change or a change that would alter the basic character of PL/I into
+that of another language.
+
+5. The proposed feature would have been completely new to PL/I and would have represented
+standardization prior to any implementation experience.
+
+Several proposals, of course, met both positive and negative criteriaand, in these cases,the committee weighed
+both sets of factors in its decisions, paying special attention to existing practice.
+The major decisions to exclude features of ANSI X3.53-1976 made during the development of this standard
+and the rationale for each decision are discussedhere so that the reader will have some understanding of why
+various features were included in, or excluded from, this standard.
+
+1. Because the number of distinct data types in a language has a multiplicative effect on the number of code
+patterns and library routines needed to support execution of programs, the number of distinct scalar data
+types is limited to approximately one half of those provided by ANSI X3.53-1976, by excluding little-used
+data types. Over half of the excluded data types are forms of COMPLEX data and little-used forms of
+PICTURE data.
+
+2. Although array-valued expressionswere recognized to be of high utility in scientific applications, their cost
+was considered to be excessive for inclusion in this standard. Structure-valued expressionsand
+mixed-aggregate-type expressions were considered to be much less useful than were array-valued
+expressions. These expressionshave also been found to cause difficulties in program interchange.
+
+3. Data-directed stream I/O is excluded in order to reduce the amount of execution-time code required to
+support this standard. This restriction also simplify compilers and consequently reduce the cost to
+implement and use them.
+
+4. DEFAULT, ENTRY, and LOCATE statements were excluded because their frequency of usage did not
+justify their cost either in terms of compiler complexity or additional language complexity. The
+DEFAULT statement has also been found to inhibit, rather than enhance, program clarity and interchange.
+The addition of the PACKAGE construction to the languagefurther reduces the requirement for
+ENTRY.
+
+5. Explicit declaration of all user-defined names either by means of a DECLARE statement or by means of a
+label prefix is required in order to reduce programming errors and to improve the readability of programs.
+This requirement also reduces the complexity of compilers.
+
+6. Implicit conversion from one data type to another is limited to those contexts in which such conversions are
+likely to produce the desired result. This limitation eliminates a very common source of programming
+errors.
+
+7. The conditions that can be explicitly designated in this standard are limited. This reduces implementation
+complexity while retaining most of the power of the exception handling provided by ANSI X3.53-1976.
+
+8. The DO statement was designed to make it easy to learn and easy to use without introducing programming
+errors.
+
+9. All storage classesexcept CONTROLLED are included, and variable extents are permitted where
+permitted by ANSI X3.53-1976. CONTROLLED is excluded becauseit is largely redundant with
+BASED. Variable extents are permitted becauseno other languagefeature provides a suitable alternative.
+
+10. REFER options are included in a single, simplified form. While REFER is needed for some important
+programming applications, its full generality implies implementation cost and user confusion that outweighs
+the advantage of that generality.
+
+11. The DEFINED attribute is included for simple and string overlay defining. For simple defining, all extents
+are required to match. POSITION, iSUE&, and *-subscripts in the reference to the base variable are
+excluded becauseof excessivecomplexity for both users and implementers.

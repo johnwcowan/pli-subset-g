@@ -1,0 +1,894 @@
+	2.4 The High-level Syntax of PL/I
+
+2.4.1 Translation Unit
+
+CHl. <translation-unit+ : : = <packageS ] #procedure%
+
+2.4.2 Package
+
+CH2. <package$ :: = (&simple-statement-names l [ #statement-condition-prefix$]I
+tpackage-statements [*define-constant-statement-l&$]
+*unit-list* #ending$
+Constraint: Each {unit$ in the {unit-list* of a *package% MUST only have the
+following immediate subnodes:
+*declare-statement$
+.$procedure$
+Further, some *units in the #unit-list$ of a kpackage$ MUST immediately contain
+a +procedure$.
+
+2.4.3 Procedure
+
+CH3. #procedure$ ::= (&imple-statement-name$ l [{statement-condition-prefix$] j
+*procedure-statement+ [*define-constant-statement-list+]
+[#unit-list$] *ending$
+
+2.4.4 UnitCH6. #executable-single-statement$ ::= *allocate-statement% I
+*call-statement$
+<delete-statement$ I
+*get-statement+
+bleave-statement* I
+*open-statement$ I
+tread-statement$
+{revert-statement$ I
+*signal-statement$ ]
+*write-statement%
+&assignment-statementb ]
+*close-statement$
+*free-statements I
+*goto-statement*
+*null-statement% I2.4.11.2 Attributes
+
+CH37. <attribute$ ::= #data-attribute* I AUTOMATIC
+BUILTIN I BASED [(treference$)]
+CONDITION
+DIRECT
+~environment~
+*initial$
+INTERNAL
+NONPRINT
+OUTPUT
+PRINT
+RESERVED
+CONSTANT I
+DEFINED (<reference$) I
+EXTERNAL [(*external-name*)] I
+INPUT I
+KEYED
+*options* I
+PARAMETER
+RECORD I
+SEQUENTIAL I
+STATIC 1 STREAM I
+UPDATE ] VALUE (*expression$) I
+VARIABLE
+Note: The #attribute+ CONSTANT may not be supplied in a {translation-unit$.
+It is only used as a definitional artifice. See the operation
+VALIDATE-TRANSLATION-UNIT.
+
+2.4.11.3 Data Attributes
+
+CH38. &data-attribute+ : : = ALIGNED I AREA [(.$area-size%)]
+BINARY [ tprecisionb] ] BIT [( ~maximum-length$)]
+DECIMAL [ tprecision$] ] CHARACTER [( ~maximum-length$)] ]
+{dimension-attributes ] ENTRY [ ([ d:description-commalist $])I ]
+FILE ] FIXED [kprecision$]
+FORMAT ] FLOAT [(*number-of-digits$)] 1
+LABEL 1 MEMBER I
+NONVARYING ] OFFSET [(*reference%)]
+PACKAGE I PICTURE [#picture+] I
+POINTER ] PRECISION [bprecision$]
+#returns-descriptor+ I STRUCTURE I
+UNALIGNED I UNION I
+VARYING
+Note: Some <data-attributess (i.e. FORMAT, MEMBER, PACKAGE,
+PRECISION and STRUCTURE) may not be supplied in a
+<translation-unit$. They are used only as a definitional artifice. See the
+operation VALIDATE-TRANSLATION-UNIT.
+
+CH39. *area-size+ ::= #extent-expression+ ] *
+
+CH40. {precision$ :: = (tnumber-of-digits+ [,&scale-factor$])
+
+CH41. <number-of-digits$ :: = *integer> ] *identifiers
+
+CH42. #scale-factor$ :: = *integer% ] &dentifier$
+
+CH43. tmaxirnum-length$ :: = {extent-expression$ ] *
+
+CH44. <description$ :: = [<level$] [*dimension-suffix%] [kdata-attribute-list$]
+COtZ&d~t: At least one subnode MUST be present.
+
+2. 		
+#put-statement*
+*return-statements I
+*rewrite-statement$
+{stop-statement$ I
+
+2.4.6 If Statement
+
+CH7. *if-statementb ::= *if-clause$ (*executable-unit$ ] #balanced-unit+ ELSE 4executable-unit$)
+
+CH8. *balanced-unit$ ::= ([*statement-name*]
+{#executable-single-statement+ ] &youp$ ] &selection+ I
+{on-statement$ ]
+<if-clause+ d: balanced-unit $ ELSE d: balanced-unit$ ) ) ]
+*begin-block*
+
+CH9. tif-clause$ : : = IF dexpression$ THEN
+
+2.4.7 Do Group
+
+CHlO. +group$ ::= *do-statement+ [{unit-list$] #ending+
+
+2.4.8 Select Group
+
+CHll. tselection$ ::= &elect-statement% [twhen-statement-list+] [totherwise-statement$] <ending$
+
+CH12. #when-statement+ ::= #when-clause+ +executable-unit$
+
+CH13. *otherwise-statement+ : : = *otherwise-clause+ <executable-unit+
+
+CH14. bwhen-clauses ::= WHEN [ANY ] ALL] (texpression-commalist>)
+
+CH15. <otherwise-clause$ :: = OTHERWISE
+
+2.4.9 Begin Block
+
+CH16. <begin-block$ ::= {[*simple-statement-name$] l [*statement-condition-prefix$]j
+#begin-statement+ [*define-constant-statement-list$] [*unit-list$
+
+CH4. <unit+ ::= <declare-statement+ ] *simple-statement-names *format-statement$ I
++procedure$ ] #executable-unitj2.4.5 Executable Units
+
+CH5. *executable-unit$ ::= {[#statement-name$]
+(*group+ ] #selection+ ] ton-statement* I &f-statement+ I
+*executable-single-statement$)) I
+<begin-blocks 
+
+CH6. #executable-single-statement$ ::= *allocate-statement% I
+*call-statement$
+<delete-statement$ I
+*get-statement+
+bleave-statement* I
+*open-statement$ I
+tread-statement$
+{revert-statement$ I
+*signal-statement$ ]
+*write-statement%
+&assignment-statementb ]
+*close-statement$
+*free-statements I
+*goto-statement*
+*null-statement% I
+#put-statement*
+*return-statements I
+*rewrite-statement$
+{stop-statement$ I
+
+2.4.6 If Statement
+
+CH7. *if-statementb ::= *if-clause$ (*executable-unit$ ] #balanced-unit+ ELSE 4executable-unit$)
+
+CH8. *balanced-unit$ ::= ([*statement-name*]
+{#executable-single-statement+ ] &youp$ ] &selection+ I
+{on-statement$ ]
+<if-clause+ d: balanced-unit $ ELSE d: balanced-unit$ ) ) ]
+*begin-block*
+
+CH9. tif-clause$ : : = IF dexpression$ THEN
+
+2.4.7 Do Group
+
+CHlO. +group$ ::= *do-statement+ [{unit-list$] #ending+
+
+2.4.8 Select Group
+
+CHll. tselection$ ::= &elect-statement% [twhen-statement-list+] [totherwise-statement$] <ending$
+
+CH12. #when-statement+ ::= #when-clause+ +executable-unit$
+
+CH13. *otherwise-statement+ : : = *otherwise-clause+ <executable-unit+
+
+CH14. bwhen-clauses ::= WHEN [ANY ] ALL] (texpression-commalist>)
+
+CH15. <otherwise-clause$ :: = OTHERWISE
+
+2.4.9 Begin Block
+
+CH16. <begin-block$ ::= {[*simple-statement-name$] l [*statement-condition-prefix$]j
+#begin-statement+ [*define-constant-statement-list$] [*unit-list$
+
+2.4.10 On Unit
+
+CH17. ton-statement+ ::= ON *condition-name-commalist$ [SNAP] {ton-unit% I SYSTEM;]
+
+CH18. *on-u&$ ::= *executable-single-statement$ 1 #begin-block5
+
+2.4.10.1 Condition Prefiies
+
+CH19. *statement-condition-prefix$ : : = ({condition-prefix-commalist$):
+
+CH20. *condition-prefix$ : : = +computational-condition% 1 #disabled-computational-condition$
+
+CH2 1. <computational-condition$ : : = CONVERSION I FIXEDOVERFLOW 1 OVERFLOW I
+SIZE I UNDERFLOW 1 ZERODIVIDE
+
+CH22. #disabled-computational-condition% :: = NOCONVERSION 1 NOFIXEDOVERFLOW 1
+NOOVERFLOW 1 NOSIZE 1 NOUNDERFLOW I
+NOZERODIVIDE
+
+2.4.10.2 Statement Name Prefixes
+
+CH23. *statement-name$ ::= *identifier+ [ (&igned-integer$)]:
+
+CH24. d:simple-statement-name+ ::= #identifier+:
+
+CH25. *signed-integer+ :: = [+ I -1 binteger$
+
+2.4.11 Data Declaration
+
+CH26. <declare-statement+ :: = DECLARE {declaration-commalist$;
+
+CH27. *declaration+ : : = [klevel$] {*identifier% I (#declaration-commalist%)]
+[ #dimension-suffix$] [*attribute-list+]
+
+CH28. *level+ ::= *integer+
+
+CH29. <define-constant-statement$ : : = DEFINE CONSTANT {declaration-commalist+;
+
+2.4.11.1 Dimension Attribute and Dimension Suffii
+
+CH30. #dimension-attribute$ :: = DIMENSION [*dimension-suffix%]
+
+CH3 1. #dimension-suffix% : : = ({bound-pair-commalist$)
+
+CH32. {bound-pair+ ::= [ 4lower-bound* :] <upper-bound% I *
+
+CH33. {lower-bound$ ::= 4extent-expression%
+
+CH34. <upper-bound+ : : = #extent-expression+
+
+CH35. #extent-expression+ : : = #expression$ [*refer-option$]
+
+CH36. #refer-option+ ::= REFER (*unsubscripted-reference$) 
+
+2.4.11.2 Attributes
+
+CH37. <attribute$ ::= #data-attribute* I AUTOMATIC
+BUILTIN I BASED [(treference$)]
+CONDITION
+DIRECT
+~environment~
+*initial$
+INTERNAL
+NONPRINT
+OUTPUT
+PRINT
+RESERVED
+CONSTANT I
+DEFINED (<reference$) I
+EXTERNAL [(*external-name*)] I
+INPUT I
+KEYED
+*options* I
+PARAMETER
+RECORD I
+SEQUENTIAL I
+STATIC 1 STREAM I
+UPDATE ] VALUE (*expression$) I
+VARIABLE
+Note: The #attribute+ CONSTANT may not be supplied in a {translation-unit$.
+It is only used as a definitional artifice. See the operation
+VALIDATE-TRANSLATION-UNIT.
+
+2.4.11.3 Data Attributes
+
+CH38. &data-attribute+ : : = ALIGNED I AREA [(.$area-size%)]
+BINARY [ tprecisionb] ] BIT [( ~maximum-length$)]
+DECIMAL [ tprecision$] ] CHARACTER [( ~maximum-length$)] ]
+{dimension-attributes ] ENTRY [ ([ d:description-commalist $])I ]
+FILE ] FIXED [kprecision$]
+FORMAT ] FLOAT [(*number-of-digits$)] 1
+LABEL 1 MEMBER I
+NONVARYING ] OFFSET [(*reference%)]
+PACKAGE I PICTURE [#picture+] I
+POINTER ] PRECISION [bprecision$]
+#returns-descriptor+ I STRUCTURE I
+UNALIGNED I UNION I
+VARYING
+Note: Some <data-attributess (i.e. FORMAT, MEMBER, PACKAGE,
+PRECISION and STRUCTURE) may not be supplied in a
+<translation-unit$. They are used only as a definitional artifice. See the
+operation VALIDATE-TRANSLATION-UNIT.
+
+CH39. *area-size+ ::= #extent-expression+ ] *
+
+CH40. {precision$ :: = (tnumber-of-digits+ [,&scale-factor$])
+
+CH41. <number-of-digits$ :: = *integer> ] *identifiers
+
+CH42. #scale-factor$ :: = *integer% ] &dentifier$
+
+CH43. tmaxirnum-length$ :: = {extent-expression$ ] *
+
+CH44. <description$ :: = [<level$] [*dimension-suffix%] [kdata-attribute-list$]
+COtZ&d~t: At least one subnode MUST be present.
+
+CH45. *picture+ ::= &imple-character-string-constant$
+
+2.4.11.4 Environment and Options
+
+CH46. <environment> ::= ENVIRONMENT (*environment-specification+)
+
+CH47. d:enviromnent-specification+ ::= Thiscategoryis IMPLEMENTATION-DEFINED butispartially
+constrained by the HIGH-LEVEL-PARSE operation in Chapter 4.
+
+CH48. toptions$ ::= OPTIONS (*options-specification+)
+
+CH49. d:options-specification+ : : = This category is IMPLEMENTATION-DEFINED but is partially constrained
+by the HIGH-LEVEL-PARSE operation in Chapter 4.
+
+2.4.11.5 Initial
+
+CH50. @itial$ ::= INITIAL [(*initial-element-commalist> ] <array-i&$)]
+
+CH51. <array-init+ ::= (*) {{initial-constant-twos I (*initial-constant-one+) ]
+#parenthesized-expression$ )
+
+CH52. *initial-element+ ::= * ] {parenthesized-expression% ] (*iteration-factor$)
+{ &nitial-constant-two$ ] * ] (&nitial-element-commalist$)) ]
+*initial-constant-one$
+
+CH53. *initial-constant-one+ ::= [*prefix-operator*] *simple-string-constant$ ]
+4:initial-constant-two$
+
+CH54. &nitial-constant-two$ : : = [*prefix-operator$] (*reference$ I 4arithmetic-constant$] ]
+[+ ] -1 {real-constant$
+
+CH55. #iteration-factors ::= .$expression$
+
+2.4.12 The Package Statement
+
+CH56. *package-statement$ :: = PACKAGE (<exports-option+ l [boptions$]);
+
+CH57. #exports-option* :: = EXPORTS ( {#exported-entry-commalist$ I *) )
+
+CH58. {exported-entry+ ::= {identifier+ [EXTERNAL (#external-name+)]
+
+2.4.13 The Procedure Statement
+
+CH59. *procedure-statement+ ::= PROCEDURE 4:entry-information$;
+
+CH60. #entry-information* : : = [ (#parameter-name-commalist~)]
+([*returns-descriptor+] l [doptions$] l
+[EXTERNAL (4extemal-name$)] l
+[RECURSIVE 1 NONRECURSIVE]]
+
+CH6 1. *parameter-name+ :: = *identifier-$ 
+
+CH62. *returns-descriptor+ :: = RETURNS [(<description-commalist$)]
+Constraint: The *description-commalist$ in a 4retums-descriptor%
+MUST contain exactly one tdescription$,rd. rd MUST immediately
+contain a <data-attribute-l&$ and no other components.
+
+CH63. *external-names : : = *expression%
+
+2.4.14 The Begin Statement
+
+CH64. <begin-statement$ ::= BEGIN [<options>];
+
+2.4.15 The Do Statement
+
+CH65. {do-statement+ ::= DO LOOP; 1 DO {[dwhile-option$] l [*until-option$]); I
+DO <do-spec$;
+
+CH66. #do-spec$ ::= treference$ = &spec$
+
+CH67. {spec$ ::= {expression> [&o-by+ 1 <repeat-option+]
+([ * while-option$] 0 [*until-option*])
+
+CH68. #to-by+ ::= <to-option+ [4by-option$] I *by-option% [&o-option%]
+
+CH69. #to-option$ ::= TO bexpression$
+
+CH70. <by-option$ ::= BY <expression$
+
+CH7 1. *while-option$ : : = WHILE (4expression$)
+
+CH72. {until-option$ : : = UNTIL (texpression$)
+
+CH73. #repeat-optionZ$ ::= REPEAT #expression$
+
+2.4.16 The Select Statement
+
+CH74. #select-statement% ::= SELECT [(texpression$)];
+
+2.4.1’7 The End Statement
+
+CH75. #ending$ ::= [kstatement-name+] tend-statement$
+
+CH76. #end-statement$ ::= END [4identifier$];
+
+2.4.18 Flow of Control Statements
+
+2.4.18.1 The Call and Return Statements
+
+CH77. <call-statement> ::= CALL treference$;
+
+CH78. *return-statement$ ::= RETURN [(<expression$)];
+
+2.4.18.2 The Go To Statement
+
+CH79. *goto-statement$ ::= (GOT0 I GO TO) breference$;
+
+2.4.18.3 The Leave Statement
+
+CH80. {leave-statement+ ::= LEAVE [{identifier+];
+
+2.4.18.4 The Null Statement
+
+CH81. #null-statement* ::= ;
+
+2.4.18.5 The Revert and Signal Statements
+
+CH82. {revert-statement+ : : = REVERT <condition-name-commalist$;
+
+CH83. *signal-statement+ ::= SIGNAL #condition-name$;
+
+CH84. #condition-name+ :: = *computational-condition+ I #named-io-condition$ I
+*programmer-named-condition$ I AREA I ERROR I FINISH I
+STORAGE
+
+CH85. *named-io-condition$ :: = #io-condition$ (treference$)
+
+CH86. <io-condition+ : : = BEGINPAGE I ENDFILE I ENDPAGE I KEY 1 RECORD I
+TRANSMIT I UNDEFINEDFILE
+
+CH87. =&programmer-named-condition$ : : = CONDITION (*identifier%)
+
+2.4.18.6 The Stop Statement
+
+CH88. kstop-statement$ ::= STOP;
+
+2.4.19 Storage Control Statements
+
+CH89. *assignment-statement$ ::= *reference* = #expression%;
+
+CH90. +allocate-statement$ ::= ALLOCATE #allocation-commalist$;
+
+CH9 1. t allocation* : : = #identifier+ ([&et-option$] l [kin-option$]j
+
+CH92. <set-option+ ::= SET (#reference*)
+
+CH93. kin-option% ::= IN (&eference$)
+
+CH94. #free-statement+ ::= FREE 4freeing-commalist;;
+
+CH95. #freeing+ ::= [#locator-qualifier+] 4identifier$ [*in-option$]
+
+2.4.20 Input/Output Statements
+
+2.4.20.1 The Open and Close Statements
+
+CH96. {open-statement$ : : = OPEN <single-opening-commalist$;
+
+CH97. {single-opening% :: = &file-option$ 0 [#title-option+] l
+[ #linesize-option$] 0 [ *pagesize-option+] l
+[STREAM]. [RECORD] l [INPUT] l [OUTPUT] l [UPDATE].
+[SEQUENTIAL] l [DIRECT] . [PRINT] . [NONPRINT] . [KEYED] .
+[ ~environment$]
+
+CH98. #file-option+ ::= FILE (*reference+)
+
+CH99. *title-option> ::= TITLE (+expression$)
+
+CHlOO. *line&e-option* :: = LINESIZE (*expression%)
+
+CH 10 1. {pagesize-option+ : : = PAGESIZE ( #expression$)
+
+CH102. {close-statement* : : = CLOSE bsingle-closing-cornmali&;
+
+CH103. tsingle-closing$ ::= *file-option3 l [*environment*]
+
+2.4.20.2 Record I/O
+
+CH104. *delete-statement+ ::= DELETE {*file-option+ l [{key-option$] l [kenvironment$]);
+
+CH105. *pointer-set-option$ ::= SET (#reference+)
+
+CH106. <read-statement% ::= READ
+{ {file-option$ l *into-option$ l
+[denviromnent$ ] l [*key-option+ I *keyto-option$] I
+*file-option$ l *pointer-set-option$ 0 [#sizeto-option$ ] l
+[tenviromnent$ ] l [<key-option$ I tkeyto-option$] )
+
+CH107. +into-option$ ::= INTO (4reference$)
+
+CH108. <key-option+ ::= KEY (<expression+)
+
+CH109. {keyto-option+ ::= KEYTO (*reference+)
+
+CHllO. *rewrite-statement+ ::= REWRITE
+(tfile-option* l [<environment>] I *file-option* l
+[*key-option+] l <from-option+ l [tenvironment$]);
+
+CHlll. *write-statement% ::= WRITE
+({file-options l <from-option% l [<keyfrom-option$] l
+[.$enviromnent$]);
+
+CH112. #from-option+ : : = FROM (kreference$> 
+.4.20.3 Stream I/O
+
+CH115. *get-statement% ::= GET (#get-files I tget-string+);
+
+CH116. *get-files ::= [ *file-option$] l [*skip-option*] 0 [ *input-specification$]
+
+CH117. &&p-option+ ::= SKIP [(+expression$)]
+
+CHll8. #get-string$ : : = STRING (d:expression$) l 4input-specification$
+
+CH119. *put-statement$ : : = PUT (*put-file+ I *put-string*);
+
+CH120. #put-file+ ::= [{fiie-option$] l [{skip-option$] l [#line-option$] l [PAGE] l
+[*output-specification+]
+
+CH121. <line-option> :: = LINE (#expression+)
+
+CH122. <put-string$ : : = STRING (#reference$) l #output-specification%
+
+2.4.20.3.1 Stream Input S’ifimtion
+
+CH 123. <input-specification+ : : = *list-directed-input* 1 tedit-directed-input%
+
+CH124. *list-directed-inputs ::= LIST (4input-target-commalist$)
+
+CH125. {input-target$ ::= *reference% 1 (*input-target-commalist# DO <do-spec$)
+
+CH126. *edit-directed-input$ ::= EDIT #edit-input-pair+
+
+CH127. #edit-input-pair+ ::= ({input-target-commalist*) (*format-specification-commalist$)
+
+2.4.20.3.2 Sham Output Specification
+
+CH128. {output-specification+ ::= {list-directed-output+ I *edit-directed-output+
+
+CH129. {list-directed-output+ ::= LIST (#output-source-commalist$)
+
+CH130. *output-source+ ::= #expression+ I (<output-source-commalist$ DO *do-spec$)
+
+CH13 1. #edit-directed-output> : : = EDIT <edit-obtput-pair$
+
+CH132. #edit-output-pair$ ::= (#output-source-commalist$) (*format-specification-commalist*)
+
+2.4.20.3.3 Format Spdf ication Lh& ad the Format Statement
+
+CH133. {format-specification+ ::= {format-item$ I #format-iteration+
+
+CH134. *format-iteration$ ::= {format-iteration-factors
+{*format-item$ I (*format-specification-commalist>)
+
+CH135.
+
+CH136.
+
+CH137.
+
+CH138.
+
+CH139.
+
+CH140.
+
+CH141.
+
+CH142.
+
+CH143.
+
+CH144.
+
+CH145.
+
+CH146.
+
+CH147.
+
+CH148.
+
+CH149.
+
+CH150.
+
+CH151.
+
+CH152.
+
+CH153.
+AMERICAN NATIONAL STANDARD X3.74-1987
+*format-iteration-factor% ::= *integerI+ ] (*expression%)
+*format-item+ : : = *data-format$ ] <control-format% I #remote-format$
+*data-format$ : : = *real-format$ ] *picture-formats ] &ring-format+ I *l-format+
+*real-format+ :: = <fixed-point-format% ] *floating-point-format+
+*fixed-point-format+ : : = F (<expression$ [,kexpression$])
+{floating-point-format* : : = E (texpression$ [,*expression$])
+#picture-format$ ::= P *picture*
+*string-format+ :: = 4character-format$ ] *bit-format%
+*character-format+ ::= A [({expression>>]
+.&bit-format$ ::= *radix-factor* [(#expression*)]
+#l-format+ ::= L
+#control-format3 : : = <tab-format* ] #me-format* ] *space-format+ I &kip-format+ I
+~column-format> ] PAGE
+#tab-format$ : : = TAR [ (4expression#)]
+*line-format* :: = LINE (#expression$)
+#space-format+ :: = X (*expression+)
++&ip-format+ ::= SKIP [( #expression$)]
+{column-format* ::= COLUMN (*expression$)
+<remote-format+ ::= R (*identifier+)
+#format-statement+ : : = FORMAT (#format-specification-commalist));
+
+2.4.21 Expressions
+
+CH154. +expression$ ::= *expression-nine$ ] *expression$ k ] :$ *expression-nine%
+
+CH155. {expression-nine+ ::= *expression-eight$ ] *expression-nine> &: #expression-eight$
+
+CH156. #expression-eight+ : : = *expression-seven* I
+*expression-eight+ (6: ] $ ] 1) {expression-seven*
+
+CH157. *expression-seven$ ::= *expression-six* ] #expression-seven* & {expression-s&$
+
+CH158. <expression-&$ ::= {expression-five+ ]
+texpression-six+ *comparison-operator+ *expression-five*
+
+CH159. <comparison-operator% ::= > ] >= ] = ] < ] <= ] l> I l= I y<
+
+CH160. *expression-five* ::= #expression-four$ ] *expression-five% 4 ] ] I+ 4expression-four-$
+
+CH161. *expression-four* ::= #expression-three$ ] #expression-four* { + ] - ) *expression-three$
+
+CH162. *expression-three$ ::= #expression-two+ ] *expression-three% { * ] / ] *expression-two$
+
+CH163.
+
+CH164.
+
+CH165.
+
+CH166.
+
+CH167.
+
+CH168.
+
+CH169.
+
+CH170.
+
+CH171.
+
+CH172.
+
+CH173.
+
+CH174.
+
+CH175.
+
+CH176.
+
+CH177.
+
+CH178.
+
+2.4.22
+
+CH179.
+
+CH180.
+
+CH181.
+
+CH182.
+
+CH183.
+
+CH184.
+
+CH185.
+
+CH186.
+
+CH187.
+
+CH188.
+*expression-two$ : : = *primitive-expression$ ] tprefix-expression* ]
+<parenthesized-expression+ ] +expression-one+
+*expression-one* : : = (#primitive-expression$ ]
+*parenthesized-expression+) ** *expression-two*
+#prefix-expression* :: = *prefix-operator$ *expression-two$
+#prefix-operator$ ::= + ] - ] T
+*parenthesized-expression% :: = (<expression>)
+*primitive-expression$ : : = #references ] +constant$ ] #enquiry-reference$
+*reference$ : : = [#locator-qualifier$] tbasic-reference+ [#arguments-l&$]
+#locator-qualifier-$ :: = *reference* - >
+{arguments% ::= ([ *subscript-commalist+])
+*basic-reference5 : : = [<structure-qualification-list*] <identifier+
+4:structure-qualification$ ::= <identifier$ [*argument&].
+&ubscript# : : = #expressions
+#unsubscripted-reference$ : : = [ 6:unsubscripted-reference$ .] 4 identifier%
+#constant+ : : = *arithmetic-constant+ ] *string-constant$
+{string-constant$ : : = *simple-string-constant5
+&simple-string-constant$ :: = 6simple-character-string-constant$ ] &imple-bit-string-constant$
+Enquiry Functions
+#enquiry-reference+ ::= 4declaresize-enquiry-reference+ ] #epsilon-enquiry-reference$ I
+{maxval-enquiry-reference$ ] *minval-enquiry-reference$ ]
+4null-enquiry-reference* ] *radix-enquiry-reference+
+*enquiry-lbracket$ ::= (:
+.$enquiry-rbracket$ : : = :)
+*declare&e-enquiry-reference+ ::= #declare&e-enquiry-name% *enquiry-Ibracket%
+*declaresize-arguments$ #enquiry-rbracket$
+*declare&e-enquiry-name$ : : = DECLARESIZE
+tdeclaresize-argument& : : = <identifier$
+*null-enquiry-reference* : : = <null-enquiry-name% #enquiry-lbracket$ *null-arguments+
+*enquiry-rbracket$
+d: null-enquiry-name $ : : = NULL
+*null-arguments5 ::= POINTER ] OFFSET ] ENTRY 1 LABEL ] FILE
+{maxval-enquiry-reference$ :: = tmaxval-enquiry-name$ *enquiry-lbracket$
+bmaxval-arguments$ <enquiry-rbracket$
+H189. tmaxval-enquiry-named : : = MAXVAL
+
+CH190. tmaxval-arguments+ ::= d:arithmetic-enquiry-description%
+
+CH19 1. tminval-enquiry-referenced : : = Jminval-enquiry-name5 *enquiry-lbracket$
+#minval-arguments% #enquiry-rbracket$
+
+CH192. <minval-enquiry-name% ::= MINVAL
+
+CH193. tminval-argument& : : = #arithmetic-enquiry-description+
+
+CH194. #epsilon-enquiry-reference+ :: = *epsilon-enquiry-name% *enquiry-lbracket$
+<epsilon-arguments> {enquiry-rbracket$
+
+CH195. #epsilon-enquiry-name* : : = EPSILON2.5 The Low-level Syntax of PL/I
+
+2.51 PL/I Text
+
+CLl. *pli-text$ ::= [*delimiter-list$] [<delimiter-pair-l&$]
+
+CL2. <delimiter-pair$ : : = knon-delimiter$ *delimiter-list+
+
+CL3. bdelimiter$ ::= + 1 - 1 * 1 / 1 ** 1 > I < I = I >= I <= I l> I l< I 7 = I y I & I
+<I$ I &: I <I:$ I4:l I$ I ( I ) I c I :I I * I, I ; I : I -> I MI
+kcomment$ I tinclude$
+
+CL4. <non-delimiter+ ::= {identifier$ I 4arithmetic-constant$ I #simple-bit-string-constant+ I
+&simple-character-string-constant% I 6:pic-specs
+
+2.5.2 Comment
+
+CL5 #comment+ ::= /* [#comment-body-list+] **-list% /
+
+CL6. <comment-body$ ::= J.$*-list$] kcomment-character$ I /
+
+CL7. *comment-character* ::= -tletter$ I d&$$ I . I M I ’ I = I + I - I ( I 1 I , I ISI
+; I : I & I 6: I I$ I q I > I < I % I *extralingual-characG$
+Note: Rules CL5, CL6 and CL7 effectively state that a comment begins
+with /* and ends with */ and that any characters may appear between
+these except the consecutive pair */.
+
+2.5.3 Identifier
+
+CL8. gidentifiers : : = *letter+ [*identifier-tail-list+]
+
+CL9. bidentifier-tail> ::= {letter$ I kdigit$ I -
+
+2.5.4 Arithmetic Constant
+
+CLlO. #arithmetic-constant* ::= 4real-constants
+
+CL1 1. #real-constant5 : : = <decimal-constant$
+
+CL12. {decimal-constants : : = *decimal-number+ [E <exponent$]
+
+CL13. *decimal-number% ::= *integer$[.[~digit-list>]] I . *digit-list*
+
+CL14. *integer* ::= +digit-list*
+
+CL15 *exponent$ ::= [ + I - ] *integerI+
+
+2.5 The Low-level Syntax of PL/I
+
+2.51 PL/I Text
+
+CLl. *pli-text$ ::= [*delimiter-list$] [<delimiter-pair-l&$]
+
+CL2. <delimiter-pair$ : : = knon-delimiter$ *delimiter-list+
+
+CL3. bdelimiter$ ::= + 1 - 1 * 1 / 1 ** 1 > I < I = I >= I <= I l> I l< I 7 = I y I & I
+<I$ I &: I <I:$ I4:l I$ I ( I ) I c I :I I * I, I ; I : I -> I MI
+kcomment$ I tinclude$
+
+CL4. <non-delimiter+ ::= {identifier$ I 4arithmetic-constant$ I #simple-bit-string-constant+ I
+&simple-character-string-constant% I 6:pic-specs
+
+2.5.2 Comment
+
+CL5 #comment+ ::= /* [#comment-body-list+] **-list% /
+
+CL6. <comment-body$ ::= J.$*-list$] kcomment-character$ I /
+
+CL7. *comment-character* ::= -tletter$ I d&$$ I . I M I ’ I = I + I - I ( I 1 I , I ISI
+; I : I & I 6: I I$ I q I > I < I % I *extralingual-characG$
+Note: Rules CL5, CL6 and CL7 effectively state that a comment begins
+with /* and ends with */ and that any characters may appear between
+these except the consecutive pair */.
+
+2.5.3 Identifier
+
+CL8. gidentifiers : : = *letter+ [*identifier-tail-list+]
+
+CL9. bidentifier-tail> ::= {letter$ I kdigit$ I -
+
+2.5.4 Arithmetic Constant
+
+CLlO. #arithmetic-constant* ::= 4real-constants
+
+CL1 1. #real-constant5 : : = <decimal-constant$
+
+CL12. {decimal-constants : : = *decimal-number+ [E <exponent$]
+
+CL13. *decimal-number% ::= *integer$[.[~digit-list>]] I . *digit-list*
+
+CL14. *integer* ::= +digit-list*
+
+CL15 *exponent$ ::= [ + I - ] *integerI+ 
+
+2.5.5 Striug Constants and Pictures
+
+CL16. <simple-bit-string-constant% ::= l[&&ng-or-picture-symboMst~]’ *radix-factor+
+
+CL17. #radix-factor$ ::= B 1 Bl 1 B2 1 B3 1 B4
+
+CL18. *pit-spec$ ::= kpic-keys d:simple-character-string-constant$
+Note: The category <pie-spec$ is used only by the operation LOW-LEVEL-PARSE.
+No {pit-spec$ exist in the tpli-text+ returned by LOW-LEVEL-PARSE (see Step 2).
+
+CL19. tpic-key$ ::= PICTURE I P
+
+CL20. &simple-character-string-constant+ : : = ’ [&ring-or-picture-symbol-lists] ’
+
+CL21. &&ing-or-picture-symbol+ ::= #letter% ] *digit% ] . ] M ] ’ ’ ] = ] + ] - ] * ] / I ( ] ) ]
+I I $ I ; I : I & I cl+ I -l I > I < I % I
+~ex~alingual-character$
+Note: A d:string-or-picture-symbol$ may be two consecutive quote
+characters (I I) or any character other than I.
+
+CL22. d:extralingual-character$ ::= The category d:extralingual-character% in rule CL22 is
+IMPLEMENTATION-DEFINED, as specifiedin Section2.6.2.
+
+2.5.6 Include
+
+CL23. &nclude$ ::= %INCLUDE #text-name+;
+
+CL24. {text-name$ ::= The category #text-name+ inrule CL24 ~~I~@LE~~NTA~oN-DEI?INED.
+If any of the following are contained in {text-name3 then they MUST be
+contained in a &simple-character-string-constant$ which is the only immediate
+subnode of *text-name$ :
+the character “;”
+the character sequence “/*” if it is not part of a *comment$
+The character “I” MUST NOT appear in a {text-name* except as a component of
+a &simple-character-string-constant5 contained in a #text-name%.
+
+
+CH 196. {epsilon-argument& : : = *arithmetic-enquiry-descriptions
+
+CH197. #radix-enquiry-references : : = &ad&enquiry-name> kenquiry-lbrackets
+*radix-arguments+ *enquiry-rbracket$
+
+CH198. kradix-enquiry-name$ ::= RADIX
+
+CHl99. *radix-arguments$ : : = 6arithmetic-enquiry-description+
+
+CH200. *arithmetic-enquiry-description% ::= *description$ 
+
+

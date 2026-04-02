@@ -1,0 +1,31 @@
+
+Array descriptor
+
+struct descriptor_dimension
+{
+  ptrdiff_t stride;
+  ptrdiff_t lower_bound;
+  ptrdiff_t upper_bound;
+};
+
+template <int Rank, typename Type>
+struct descriptor {
+  Type *base_addr;
+  size_t offset;
+  ptrdiff_t dtype;
+  descriptor_dimension dim[Rank];
+};
+
+Bits#63/31..6 (size of element type), 5..3 (element type), 2..0 (array rank)
+
+The element type can take the following values
+
+Fortran type	Value
+Fixed decimal	0
+INTEGER	1
+LOGICAL	2
+REAL	3
+COMPLEX	4
+Any derived type	5
+CHARACTER	6
+BIT	7

@@ -1,0 +1,39 @@
+Proposed language features:
+
+1. BYVAL option to specify non-pointer arguments to C functions.
+
+2. DO loops with DOWNTHRU/UPTHRU (needed for max or min values).
+
+3. OPTIONS(MAIN) for sure, and possibly OPTIONS(WINMAIN).
+
+4. INLINE/NOINLINE on PROCEDURE statements: encourages inlining, passed through to gcc.
+
+8. UNSIGNED attribute (for FIXED BINARY only, C compatibility).
+
+9. ATTENTION condition (Control-C or equivalent).
+
+10. ENVIRONMENT(APPEND) to indicate opening a stream file for append only.
+
+12. Transactions on indexed sequential files (other files are unaffected).
+
+16. DISPLAY statement with REPLY option: for convenient interactive I/O.
+
+17. Allow suppressing echo and special-character processing on the terminal during GET.
+
+19. Specify key matching other than equality on indexed sequential files.
+
+21. OPTIONS(SCALARVARYING).
+
+22. ENVIRONMENT(IGNORE_LINE_MARKS) to ignore end-of-line in GET LIST.aa
+
+23. INF(), NAN(), ISINF(), ISNAN() built-in functions.
+
+24. Extend ISOCHAR to accept four arguments (UTF-32 bytes) or just one (a Unicode scalar value).
+
+25. Hex constants in quotes and suffixed with XN or XU.
+
+26. Double quotes.
+
+27. RANK built-in function.
+
+28. ENVIRONMENT(RECSIZE(n)).
