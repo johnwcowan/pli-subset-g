@@ -1,4 +1,4 @@
-# This is the PL/I built-in function library.
+# This is the PL/I Subset G built-in function library.
 # These functions are named with ALL CAPS for compatibility with PL/I.
 
 # Import useful modules
@@ -7,6 +7,17 @@ import string
 import math
 import cmath
 from datetime import datetime
+
+class _Collator:
+    pass
+
+_collation_string = _Collator()
+
+# Return True if characters are consecutive
+def _consecutive(x):
+    for i in range(1, len(x)):
+        if ord(x[i -1]) + 1 != ord(x[i]): return False
+    return True
 
 def ABS(x): return abs(x)
 
@@ -18,7 +29,7 @@ def ACOS(x):
 
 def ADD(x, y): return x + y
 
-def ADDR(x): pass
+def ADDR(x): raise NotImplementedError('Allocation')
 
 def ASIN(x):
     if isinstance(x, complex):
@@ -54,13 +65,8 @@ def CEIL(x):
 
 def CHARACTER(x, y): raise NotImplementedError('Conversion')
 
-class _Collator:
-    pass
-
-_CollationString = _Collator()
-
 def COLLATE(x):
-	return _CollationString
+	return __collation_string
 
 def COPY(x, n): return x * n
 
@@ -104,11 +110,11 @@ def DIVIDE(x, y): return x / y
 
 def EDIT(x): raise NotImplementedError()
 
-def EMPTY(x): raise NotImplementedError('Restricted')
+def EMPTY(x): raise NotImplementedError('Allocation')
 
 def EVERY(x):
     for e in x:
-      if not e: return False  
+      if not e: return False
     return True
 
 def EXP(x):
@@ -117,9 +123,9 @@ def EXP(x):
     else:
         return math.exp(x, 2)
 
-def EXPONENT(x): pass
+def EXPONENT(x): raise NotImplementedError()
 
-def FILEOPEN(x): pass
+def FILEOPEN(x): return not x.closed
 
 def FIXED(x):
     if isinstance(x, int):
@@ -135,19 +141,49 @@ def FLOOR(x):
     else:
         return floor(x)
 
-def HBOUND(x): pass
+def HBOUND(a, d = None):
+    if (d == None): d = 1
+    if (d != 1):
+        raise NotImplementedError('Multidimensional')
+    return len(d)
 
-def HIGH(x): pass
+def HIGH(x, n): return chr(0x1FFFFF) * n
 
-def IDENTICAL(x): pass
+def IDENTICAL(x, y): return x == y
 
-def INDEX(x): pass
+def INDEX(haystack, needle, n=1):
+    n -= 1
+    if needle is _collation_string and haystack is _collation_string:
+        return 1 if n == 0 else 0
+    elif needle is _collation_string:
+        return 0
+    elif haystack is _collation_string:
+        if not _consecutive(needle):
+            return 0
+        else:
+            return ord(needle[0]) + 1
 
-def ISOCHAR(x): pass
+    else:
+        return haystack.find(needle) + 1
 
-def LBOUND(x): pass
+def ISOCHAR(hi, mid1=None, mid2=None, lo=None):
+    if mid1 is None:
+        return chr(hi)
+    elif mid2 is None:
+        return chr(hi * 16 + mid1)
+    else:
+        return chr(256 * 256 * 256 * hi
+                  + 256 * 256 * mid1
+                  + 256 * mid2
+                  + lo)
 
-def LENGTH(x): pass
+def LBOUND(a, d = None):
+    if (d == None): d = 1
+    if (d != 1):
+        raise NotImplementedError('Multidimensional')
+    return 0
+
+def LENGTH(x): return len(x)
 
 def LINENO(x): raise NotImplementedError('Printing')
 
@@ -169,9 +205,7 @@ def LOG(x):
     else:
         return math.log(x)
 
-def LOW(x): pass
-
-def LTRIM(x): return lstrip(x)
+def LOW(x, n): return chr(0x000000) * n
 
 def MAX(x, y): return max(x, y)
 
@@ -179,14 +213,14 @@ def MAXLENGTH(x): return len(x)
 
 def MIN(x, y): return min(x, y)
 
-def MOD(x): pass
+def MOD(x): return x % y
 
 def MULTIPLY(x): return x * y
 
 def NULL(x):
     return None
 
-def OFFSET(x): pass
+def OFFSET(x): raise NotImplementedError('Allocation')
 
 def ONCODE(x): raise NotImplementedError('Conditions')
 
@@ -198,11 +232,13 @@ def ONSOURCE(x): raise NotImplementedError('Conditions')
 
 def PAGENO(x): raise NotImplementedError('Printing')
 
-def POINTER(x): pass
+def POINTER(x): raise NotImplementedError('Allocation')
 
-def PROD(x, y): pass
-
-def REFERENCE(x): pass
+def PROD(x, y):
+    result = 1
+    for elem in x:
+        result *= elem
+    return result
 
 def REVERSE(x): return x.reversed()
 
@@ -212,9 +248,13 @@ def ROUND(x):
     else:
         return round(x)
 
-def RTRIM(x): return rstrip(x)
-
-def SEARCH(x): pass
+def SEARCH(haystack, needle, n=1):
+    n -= 1
+    result = -1
+    for ch in needle:
+        found = INDEX(haystack, needle, n)
+        if found >= 0 and found < result: result = found
+    return result
 
 def SIGN(x):
     sgn = -1 if x < 0 else (1 if x > 0 else 0)
@@ -239,7 +279,7 @@ def SINH(x):
 
 def SOME(x):
     for e in x:
-      if e: return True  
+      if e: return True
     return False
 
 def SQRT(x):
@@ -252,13 +292,28 @@ def SQRT(x):
 
 def STRING(x): return str(x)
 
-def SUBSTR(x): pass
+def SUBSTR(x, start, length=None):
+    if not instanceof(x, str): raise NotImplementedError('Bit strings')
+    start -= 1
+    if length is None:
+        return x[start:start+length-1]
+    else:
+        return x[start:]
 
 def SUBTRACT(x, y): return x - y
 
-def SUM(x): pass
+def SUM(x):
+    result = 0
+    for elem in x:
+        result += elem
+    return result
 
-def TALLY(x): pass
+def TALLY(haystack, needle):
+    result = 0
+    start = 1
+    while True:
+        n = INDEX(haystack, needle, n)
+        if n == 0: return result
 
 def TAN(x):
     if isinstance(x, complex):
@@ -276,9 +331,15 @@ def TANH(x):
 
 def TIME(x): return DATETIME()[8:]
 
-def TRANSLATE(x): pass
+def TRANSLATE(x, frm, to):
+    table = str.maketable(frm, to)
+    return x.translate(table)
 
-def TRIM(x): return strip(x)
+def TRIM(x):
+    if x is _collation_string:
+        return _collation_string
+    else:
+        return strip(x)
 
 def TRUNC(x):
     if isinstance(x, Decimal):
@@ -286,9 +347,33 @@ def TRUNC(x):
     else:
         return trunc(x)
 
-def UNSPEC(x): pass
+def UNSPEC(x): raise NotImplementedError()
 
-def VALID(x): pass
+def VALID(x): raise NotImplementedError()
 
-def VERIFY(x): pass
+def VERIFY(x): raise NotImplementedError('Allocation')
+
+# Extension functions
+
+def LTRIM(x):
+    if x is _collation_string:
+        return _collation_string
+    else:
+        return lstrip(x)
+
+def RTRIM(x):
+    if x is _collation_string:
+        return _collation_string
+    else:
+        return rstrip(x)
+
+def RANK(x): return 1
+
+def INF(): math.inf
+
+def NAN(): math.nan
+
+def ISINF(): math.isinf
+
+def ISNAN(): math.isnan
 

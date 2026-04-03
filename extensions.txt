@@ -37,3 +37,5 @@ Proposed language features:
 27. RANK built-in function.
 
 28. ENVIRONMENT(RECSIZE(n)).
+
+29. LTRIM, RTRIM built-in functions

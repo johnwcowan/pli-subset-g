@@ -63,7 +63,6 @@ variables declared outside the ON-unit.
 
 IBM1048I I GET/PUT DATA without a data-list inhibits optimization.
 
-
 A GET DATA statement can alter almost any variable, and a PUT DATA
 statement requires almost all variables to be stored home anytime a PUT
 DATA statement might be executed. Both of these requirements inhibit
@@ -146,20 +145,6 @@ determine if it will be valid after the year 1999.
 
 IBM1062I I variable inferred to contain a two- digit year.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 The indicated was inferred to contain a two-digit year because, for
 example, it was assigned the DATE built- in function.
 
@@ -232,16 +217,6 @@ message (because multiple library calls will be made).
 
 IBM2803I I keyword STRING EDIT statement optimized.
 
-
-
-
-
-
-
-
-
-
-
 This message is issued when a PUT or GET STRING EDIT statement has been
 optimized by the compiler so that most of it is done inline.
 
@@ -310,7 +285,6 @@ A BYVALUE parameter should be one that could reasonably be passed in a
 register. Hence its type should be either one of REAL FIXED BIN, REAL
 FLOAT, POINTER, OFFSET, HANDLE, LIMITED ENTRY, FILE, ORDINAL, CHAR(1),
 WCHAR(1), or ALIGNED BIT(n) with n less than or equal to 8.
-
 
 IBM2817I I BYVALUE in RETURNS is recommended only for types that can
 reasonably be returned in registers.
@@ -389,13 +363,6 @@ declared with the attribute init( value(: a :) ).
 
       dcl x type b;
 
-
-
-
-
-
-
-
       x = value(: b :);
 
 IBM2831I I ASSERT statement may never be executed.
@@ -470,11 +437,6 @@ in each case, the second statement is much clearer.
 
      shortdate
 
-
-
-
-
-
       = repattern( longdate,
                    'DD.MM.YYYY', 'YYYYMMDDHHMISS999' );
 
@@ -548,13 +510,6 @@ BIN(31). If x equals 7, then ( x / 2 ) would have the value 3, and i x
 equals -7, then ( x / 2 ) would have the value -3. However, if x is 7,
 CEIL( x / 2 ) will yield 4, and if x is -7, CEIL( x / 2 ) will yield -3,
 
-
-
-
-
-
-
-
 appropriate pattern were used instead, and it might also be less
 problematic. For example, the first pair of statements below assign
 the same value to the target variable thedate, and the second pair
@@ -592,13 +547,6 @@ appropriate pattern instead.
 
 The use of SUBSTR, LEFT, and RIGHT would be easier to understand if the
 the DATETIME with the
-
-
-
-
-
-
-
 
 Chapter 2. Compiler Warning Messages (1078-1225, 2600-2799)
 
@@ -670,18 +618,7 @@ before it is used.
 IBM1086I W built-in function will be evaluated using long rather than
 extended routines.
 
-
 9
-
-
-
-
-
-
-
-
-
-
 
 The indicated built-in function has an extended float argument, but
 since the corresponding extended routine is not yet available, it will
@@ -764,17 +701,6 @@ for more detail.
 IBM1095I W Element option in PLIXOPT has been remapped to option. See
 related runtime message message- number.
 
-
-
-
-
-
-
-
-
-
-
-
 The PLIXOPT string contains a run-time option which is not supported by
 LE. See the cited LE message for more detail.
 
@@ -845,25 +771,6 @@ for PROCEDUREs.
 
      a: proc options( dataonly );
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 IBM1102I W option-name is not a known BEGIN attribute and is ignored.
 
      (nofofl): if (x+y) > 0 then
@@ -933,26 +840,6 @@ Split the text into 2 lines.
 
 IBM1111I W CHECK prefix is not supported and is ignored.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 The CHECK prefix is not part of the SAA PL/I language.
 
      (check): i = j + 1;
@@ -1020,19 +907,6 @@ order to correct your source.
 
 IBM1122I W Missing character assumed before character.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 The indicated character is missing and has been inserted by the parser
 in order to correct your source.
 
@@ -1096,34 +970,6 @@ the LIMITS compiler option.
 The suboption type is incorrect.
 
      dcl this_name_is_long  static external pointer;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 IBM1131I W An EXTERNAL name specification for name has been specified
 on its PROCEDURE statement and in the EXPORTS clause of the PACKAGE
@@ -1199,29 +1045,6 @@ name which contains array size elements.
 The array will be incompletely initialized. If the named variable is
 part of a structure, subsequent elements in
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 that structure with this problem will be flagged with message 2602. This
 may be a programming error (in the example below, 4 should probably have
 been 6) and may cause exceptions when the program is run.
@@ -1293,13 +1116,6 @@ The %NOTE statement must be followed by, in parentheses, a note and an
 optional return code, and then a semicolon.
 
 IBM1151I W FIXED BINARY precision is reduced to maximum value.
-
-
-
-
-
-
-
 
 The maximum FIXED BIN precision depends on the LIMITS option.
 
@@ -1373,10 +1189,6 @@ are assumed.
 
 Required suboptions of a compiler option are missing.
 
-
-
-
-
    *process margins;
 
 IBM1164I W option-name should be specified within OPTIONS, but is accepted
@@ -1444,11 +1256,6 @@ built- in function. The precision will be determined from the argument.
 IBM1174I W The reference in the from-into clause clause may not be byte-
 aligned.
 
-
-
-
-
-
 The reference specified in the FROM or INTO clause may not be
 byte-aligned. If the reference is indeed not byte-aligned, unpredictable
 results may occur.
@@ -1515,16 +1322,6 @@ The SIGNAL statement is ignored if the condition it would raise is
 disabled. Some conditions, like SIZE, are disabled by default.
 
     (nofofl): signal fixedoverflow;
-
-
-
-
-
-
-
-
-
-
 
 IBM1184I W Source with length string-length in INITIAL clause for
 variable name has length greater than the length string-length of that
@@ -1599,19 +1396,6 @@ is otherwise suitable for transformation into a branch table.
 
 IBM1193I W statement count statements in block block name.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 This message is produced if a block contains more statements than
 allowed by the MAXSTMT compiler option. It may point to blocks that are
 excessively large.
@@ -1684,15 +1468,6 @@ union, a severe message will be issued. Otherwise, its attributes will
 be changed to INTERNAL CONSTANT in order to eliminate the requirement
 for block activation
 
-
-
-
-
-
-
-
-
-
 information. Such a variable must be initialized with LABEL CONSTANTs
 from containing blocks.
 
@@ -1764,18 +1539,6 @@ IBM1209I W INDEXED environment option for file file name will be treated
 as ORGANIZATION(INDEXED).
 
 IBM1213I W The PROCEDURE proc name is not referenced.
-
-
-
-
-
-
-
-
-
-
-
-
 
 The named procedure is not external and is never referenced in any live
 code in the compilation unit.  This may represent an error (if it was
@@ -1852,25 +1615,6 @@ enclosing DO-group to be exited; the loop will not be exited.
 
 IBM1220I W Result of comparison is always constant.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 This message is produced when a variable is compared to a constant equal
 to the largest or smallest value that the variable could assume. In the
 following loop, the variable x can never be greater than 99, and hence
@@ -1945,26 +1689,6 @@ name which contains array size elements.
 The array will be incompletely initialized. If the named variable is part
 of a structure, the first element in that structure with this problem
 will be flagged with message 1138. This may be a programming error (in
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 the example below, 6 should probably have been 7) and may cause exceptions
 when the program is run.
@@ -2041,23 +1765,6 @@ factors, then significant digits may be lost. If the SIZE condition
 were enabled, code would be generated to detect any such occurrence,
 and this message would not be issued.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
      dcl a pic'(4)9' init(1009); dcl b pic'(3)9';
 
 IBM2612I W b = a;
@@ -2129,22 +1836,6 @@ only once. A semicolon after the DO may be missing, as in this example
 
 IBM2616I W Size of parameter variable will return the currentsize value
 since no descriptor is available.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 IBM2621I W If the SIZE or STG built-in function is applied to a CHAR(*)
 VARYING (or VARYINGZ) parameter when there is no descriptor available,
@@ -2218,20 +1909,6 @@ into the form of the second below.
 
 IBM2624I W Mixing BIT and FLOAT DEC produces a FLOAT BIN result.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Under DFP, this will lead to poor performance.
 
 IBM2629I W No debug symbol information will be generated for identifier.
@@ -2301,15 +1978,6 @@ are bad for performance.
      dcl a float bin(31); dcl b fixed dec(15);
 
      b = multiply( a, 1000, 15 );
-
-
-
-
-
-
-
-
-
 
 IBM2632I W One argument to BUILTIN name built-in function is FIXED DEC
 while the other is FLOAT DEC.  Compiler will not interpret precision as
@@ -2386,15 +2054,6 @@ Changing REFER objects might cause subsequent code to fail. For example,
 in the following code, the first assignment causes the second assignment
 to overwrite storage.
 
-
-
-
-
-
-
-
-
-
      dcl
        1 a based(p),
          2 b     fixed bin(31), 2 c     fixed bin(31), 2 d( 10 refer(c) ),
@@ -2466,12 +2125,6 @@ transformation into a branch table.
 
 IBM2651I W Block block name contains count branches.
 
-
-
-
-
-
-
 This message is produced if a block contains more branches than allowed
 by the MAXBRANCH compiler option. It may point to blocks that are
 excessively complex.
@@ -2540,15 +2193,6 @@ to an error under some conditions.
     oops: proc( x ) returns( fixed bin(31 );
       dcl x fixed bin(31); select;
         when( x > 0 ) return( 1 ); when( x = 0 ) return( 0 ); otherwise;
-
-
-
-
-
-
-
-
-
 
       end;
     end;
@@ -2627,8 +2271,6 @@ ALIAS statement, but they will be ignored and should be removed.
 
 IBM2670I W The parameter to MAIN should be declared as CHAR(*) VARYING.
 
-
-
 The parameter to MAIN has a maximum length that depends on the system
 and should not be declared with a fixed maximum length.
 
@@ -2704,23 +2346,6 @@ that they will loop infinitely.
 IBM2676I W Code generated for DO group would be more efficient if control
 variable had type FIXED BIN with zero scale factor.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 The control variable in the DO loop has one of the types: scaled fixed
 binary, nonnative fixed binary, fixed decimal, or picture. Consequently,
 the code generated for the loop will not be optimal.
@@ -2792,22 +2417,9 @@ INOUT.
 It is questionable to pass a constant to a parameter that is declared
 explicitly as INOUT.
 
-
-
-
-
-
-
-
-
     dcl x entry( char(4) inout );
 
     call x( 'Test' );
-
-
-
-
-
 
 Chapter 3. Compiler Error Messages (1226-1499, 2400-2599)
 
@@ -2870,17 +2482,7 @@ text, but lesser severity would be issued
 
 IBM1233I E RULES(NOLAXPUNC) violation: missing character assumed.
 
-
 37
-
-
-
-
-
-
-
-
-
 
 The indicated character is missing, and there are no more characters
 in the source. The missing character has been inserted by the parser in
@@ -2956,22 +2558,6 @@ compile-time but are not supported during run-time.
 IBM1244I E The variable specified as the option value in an ENVIRONMENT
 option must be a STATIC scalar
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 with the attributes REAL FIXED BIN(31,0).
 
 IBM1249I E Argument to BUILTIN name built-in function should have
@@ -3038,19 +2624,6 @@ The second argument to built-in functions such as COPY and REPEAT must
 be nonnegative.
 
     x = copy( y, -1 );
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 IBM1273I E Third argument to BUILTIN name built-in function is
 negative. It will be changed to 0.
@@ -3121,22 +2694,6 @@ IBM1293I E WIDECHAR extent is reduced to maximum value.
 
 IBM1298I E Characters in B3 literals must be 0-7.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 In a B3 literal, each character must be either 0-7.
 
 IBM1299I E CHARACTER extent is reduced to maximum value.
@@ -3203,21 +2760,6 @@ positive. A value of 1 is assumed.
 
 The variable names at any given sublevel within a structure or union
 must be unique.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     dcl 1 a, 2 b fixed, 2 b float;
 
@@ -3290,32 +2832,6 @@ IBM1318I E ELSE clauses are valid immediately after an IF-THEN statement.
 The ENVIRONMENT option option- name conflicts with preceding ENVIRONMENT
 options. This option will be ignored.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 There was a conflict detected in the ENVIRONMENT options specification. In
 the example ENV(CONSECUTIVE INDEXED), the INDEXED option conflicts with
 the CONSECUTIVE option.
@@ -3384,25 +2900,6 @@ as the LEAVE/ITERATE statement.
 
 An asterisk may be used only for structure or union names, or for members
 of structures or unions. An
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 asterisk may not be used for a level-1 structure name that specifies
 the LIKE attribute.
@@ -3477,22 +2974,6 @@ IBM1332I E The format-item format item requires an argument when used
 
 The maximum length allowed for a GRAPHIC variable is set by the STRING
 suboption of the LIMITS option.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 IBM1337I E GX literals should contain a multiple of 4 hex digits.
 
@@ -3575,31 +3056,6 @@ supported.
     dcl
       2 a,
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         3 b, 3 c,
 
 IBM1346I E INIT expression should be enclosed in parentheses.
@@ -3672,14 +3128,6 @@ set. Using the OR compiler option can help avoid this problem.
 
 IBM1357I E Character with decimal value n does not belong to the PL/I
 
-
-
-
-
-
-
-
-
 character set. It is assumed to be a NOT symbol.
 
 The indicated character is not part of the PL/I character set, but was
@@ -3750,31 +3198,6 @@ IBM1361I E The name identifier has already been defined as a LABEL
 constant.
 
 IBM1365I E Statement type resolution requires too many lexical units to
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 be examined. The statement will be ignored.
 
@@ -3847,25 +3270,6 @@ The named attribute is valid only on parent structures.
 IBM1373I E RULES(NOLAXDCL) violation: variable variable name is implicitly
 declared.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Under the RULES(NOLAXDCL) option, all variables must be declared except
 for contextual declarations of built-in functions, SYSPRINT and SYSIN.
 
@@ -3937,32 +3341,6 @@ the assignable attribute.
     p->a = 0;
 
 IBM1381I E DEFINED base for a BIT structure should be aligned.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 If a BIT structure (or union) is defined on a variable that is not
 aligned on a byte boundary, unpredictable results may occur. This is
@@ -4038,18 +3416,6 @@ IBM1392I E End-of-source has been encountered after an unmatched quote.
 
 IBM1387I E The NODESCRIPTOR attribute is invalid when any parameters have
 
-
-
-
-
-
-
-
-
-
-
-
-
 A closing quote is probably missing.
 
 IBM1393I E Item in OPTIONS list conflicts with other attributes in
@@ -4117,31 +3483,6 @@ PROCEDUREs. option-name is ignored.
 
 IBM1401I E Parameter attributes have been specified for a variable that
 is not a parameter. The parameter attributes are ignored.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     dcl b entry returns( ptr, ptr );
 
@@ -4211,25 +3552,6 @@ A function can return only one value.
       else
     end;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 IBM1411I E Semicolon inserted after ON clause.
 
 IBM1417I E Second argument in BUILTIN name reference is less than 1. It
@@ -4296,10 +3618,6 @@ IBM1423I E UNALIGNED attribute conflicts with AREA attribute.
 Subscripts can be specified only for elements of an array.
 
 All AREA variables must be ALIGNED.
-
-
-
-
 
 IBM1424I E End of comment marker found when there are no open
 comments. Marker will be ignored.
@@ -4372,19 +3690,6 @@ to cover its INITIAL values and is adjusted to fit.
 
     middle = divide( todo, 2, 0 );
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 IBM1436I E The scale factor specified as an argument to the BUILTIN name
 built-in function is out of the valid range. It will be replaced by the
 nearest valid value.
@@ -4454,30 +3759,6 @@ When a function returns an ENTRY variable or constant, the ENTRY and
 RETURNS description lists in the returned ENTRY reference should match
 those in the containing procedure's RETURNS option. The linkages must
 also match.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    a: proc returns( entry( float ) );
 
@@ -4551,26 +3832,6 @@ same DATE attribute as the date comparand.
 
 IBM1463I E Operand with DATE attribute is invalid except in compare or
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 assign. DATE attribute will be ignored.
 
 Comparisons are the only infix operations where operands with the DATE
@@ -4637,20 +3898,6 @@ of a string specifying the INCLUDE directive.
 
 IBM1472I E A closing right parenthesis is missing from the ID option
 specified for the INCLUDE preprocessor.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 The suboption specified for the INCLUDE preprocessor ID option must be
 closed with a right parenthesis.
@@ -4722,16 +3969,6 @@ in your source program.
 IBM1482I E RULES(NOLAXDCL) violation: the variable variable name is
 declared without any data attributes.
 
-
-
-
-
-
-
-
-
-
-
 It will be given the default attributes, but this may be because of an
 error in the declare. For instance, in the following example, parentheses
 may be missing.  Under RULES(LAXDCL), this is a W-level message.
@@ -4800,19 +4037,6 @@ in order to correct your source.  Under RULES(LAXPUNC), a message with
 the same text, but lesser severity would be issued
 
      xx: dcl test fixed bin;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 IBM2402I E variable name is declared as BASED on the ADDR of variable
 name, but variable name requires more storage than variable name.
@@ -4887,31 +4111,6 @@ IBM2406I E Precision outside VALUE clause will be ignored.
 IBM2411I E STRINGOFGRAPHIC( CHARACTER ) option is ignored because argument
 to STRING built-in
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function is possibly not contiguous.
 
 The STRINGOFGRAPHIC( CHARACTER ) option will be ignored if the
@@ -4982,13 +4181,6 @@ greater since the necessary instructions are available only with ARCH(7)
 or later.
 
 IBM2421I E A file should not be closed in its ENDFILE block.
-
-
-
-
-
-
-
 
 In an ENDFILE block for a file, it is invalid to close that file in the
 ENDFILE block.
@@ -5062,11 +4254,6 @@ be used instead.
 The specified option is not permitted with the GOFF option, and the GOFF
 option will be turned off so that
 
-
-
-
-
-
 the compile may proceed. This applies, for example, to the NOWRITABLE(PRV)
 and COMMON options.
 
@@ -5136,19 +4323,6 @@ IBM2441I E RULES(NOGOTO) violation: GOTO exits the current block.
 
 Under RULES(NOGOTO(LOOSE)) and RULES(NOGOTO(LOOSEFORWARD)), there should
 be no GOTO statements in your source program except
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 for those that exit an ON-unit and those that goto a label in the
 current block.
@@ -5229,12 +4403,6 @@ Under RULES(NOLAXSCALE), scale factors must be nonnegative. The compiler
 flags the first statement below, but not the second one (which is a
 possible replacement for the first).
 
-
-
-
-
-
-
      b = round( c, -1 );
 
      b = 10 * round( c/ 10, 0 );
@@ -5302,14 +4470,6 @@ Attributes must be consistent.
 
 IBM2463I E LINKAGE(SYSTEM) is not supported for PL/I PROCEDUREs, and
 LINKAGE(OPTLINK) will be assumed instead.
-
-
-
-
-
-
-
-
 
 Under 64-bit, only the OPTLINK linkage is supported for PL/I procedures
 
@@ -5383,7 +4543,6 @@ function.
 The indicated element of the options list is invalid for ON-unit BEGIN
 blocks (although it may be valid for other BEGIN blocks).
 
-
     on zdiv begin options( inline );
 
 IBM2478I E Under RULES(NOCOMPLEX), the COMPLEX attribute, the COMPLEX
@@ -5450,13 +4609,6 @@ Under RULES(NOPADDING(STRICT)), structures should contain no hang.
 
 IBM2489I E RULES(NOLAXSCALE) violation: FIXED DEC(source-
 precision,source-scale) operand
-
-
-
-
-
-
-
 
 will be converted to FIXED BIN(target-precision,target-scale).
 This introduces a non-zero scale factor into an integer operation
@@ -5529,7 +4681,6 @@ that consists of count comparisons of the same reference against a series
 of constant values. The statement could be replaced by a SELECT statement
 containing one large WHEN statement.
 
-
 It would be better to replace an IF expression of the form ( a = y1 | a =
 y2 | ... | a = yn ) with the expression SELECT( a ); WHEN( y1, y2, ...,
 yn ) ... This would be less likely to contain errors and more likely to
@@ -5599,10 +4750,6 @@ unscaled FIXED.
 
 IBM2511I E The operands in a division operation have the attributes
 
-
-
-
-
 operand attributes and operand attributes which will produce a result
 with the attributes result attributes. This means that its scale factor is
 negative. That may lead to the loss of significant digits and unexpected
@@ -5618,7 +4765,6 @@ FIXED BIN(31,0) and y is a FIXED DEC with a factional part. To eliminate
 this message, the PRECISION built-in function could be used to change
 the scale factor of the operands or the DIVIDE built-in function could
 be used to override the default attributes for the result.
-
 
 Chapter 4. Compiler Severe Messages (1500-2399)
 
@@ -5688,13 +4834,7 @@ ENTRY declaration.
 
 IBM1509I S Argument to variable name pseudovariable must be ASSIGNABLE.
 
-
 71
-
-
-
-
-
 
     call a( 0 );
 
@@ -5771,23 +4911,6 @@ that parameter's description.
 IBM1517I S The upper and lower bounds in the subelements of argument
 number argument-number in
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ENTRY reference ENTRY name and in its corresponding parameter description
 do not match.
 
@@ -5862,15 +4985,6 @@ locator type.
 An expression contains the named built-in function with its first argument
 having neither type POINTER nor OFFSET.
 
-
-
-
-
-
-
-
-
-
 IBM1528I S First argument to BUILTIN name built-in function must have
 derived mode REAL.
 
@@ -5944,11 +5058,6 @@ have derived mode REAL.
 An expression contains the named built-in function with the specified
 argument having mode COMPLEX.
 
-
-
-
-
-
 This message applies to the MAX and MIN built-in functions.
 
 IBM1548I S BUILTIN function may not be used inside a BEGIN block.
@@ -6020,7 +5129,6 @@ that has neither string nor numeric type.
 The ALL and ANY built-in functions are restricted to two types of array
 expressions: an array expression that is a NONVARYING BIT array reference
 or an array expression that has known length. The first
-
 
 five examples below meet these restrictions, but the remaining examples
 do not.
@@ -6099,11 +5207,6 @@ domain.
 An expression contains the named built-in function applied to a restricted
 expression that evaluated
 
-
-
-
-
-
 to a number outside the supported domain of that function.
 
 IBM1568I S BUILTIN function(x,y) is undefined if x and y are both zero.
@@ -6177,7 +5280,6 @@ declared without an AREA qualifier.
 If the first argument to built-in functions such as PLIMOVE and COMPARE
 is an OFFSET variable, that OFFSET variable must be declared with an AREA
 
-
 qualifier so that the offset can be converted to an address.
 
 IBM1582I S Argument number argument number to BUILTIN name built-in
@@ -6248,11 +5350,6 @@ must have the NONVARYING attribute.
 
 The STRING built-in function and pseudovariable cannot be applied to
 structures or arrays containing VARYING strings.
-
-
-
-
-
 
 IBM1593I S All members of an argument to the STRING built-in function
 must have string type.
@@ -6328,11 +5425,6 @@ or greater.
 
 IBM1605I S Argument to ENTRYADDR built- in function must be an ENTRY
 
-
-
-
-
-
 variable or an EXTERNAL ENTRY constant.
 
 IBM1611I S First argument to BUILTIN name pseudovariable must have
@@ -6401,14 +5493,6 @@ statement are in conflict. The following DECLARE statement is an example
 of this type of conflict:
 
   dcl file f1 direct env(consecutive);
-
-
-
-
-
-
-
-
 
 IBM1617I S DIRECT attribute for file file name needs ENVIRONMENT option
 specification of INDEXED, REGIONAL, RELATIVE, or VSAM.
@@ -6481,8 +5565,6 @@ In the assignment of one array to another, the two arrays must have the
 same number of dimensions.
 
 IBM1631I S Upper and lower bounds in arrays do not match.
-
-
 
 In the assignment of one array to another, the two arrays must have the
 same lower and upper bound in each dimension.
@@ -6557,25 +5639,6 @@ Number of dimensions in subelements of structures do not match.
 
 In structure assignments and structure expressions, all structures must
 have the same number of elements.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 IBM1640I S The aggregate aggregate-name contains one or more unions and
 cannot be used in stream I/O.
@@ -6659,23 +5722,6 @@ is 15.
 
 Arrays with more than 15 dimensions are not supported.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     dcl
       1 dim7(2,3,4,5,6,7,8),
         2 dim7more(2,3,4,5,6,7,8)
@@ -6756,26 +5802,6 @@ example will emit this message.
 
    call a(x);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    a: proc( b );
      dcl b controlled fixed bin(31);
 
@@ -6851,16 +5877,6 @@ IBM1668I S Target in assignment is a function reference.
 
 IBM1661I S Aggregates cannot be assigned to scalars.
 
-
-
-
-
-
-
-
-
-
-
 The target of an assignment statement must be an array, structure,
 union or scalar reference. Function references are not permitted as
 target of assignments.
@@ -6932,14 +5948,6 @@ should be invoked, an argument list must be provided.
 
 An ENTRY constant or variable without an argument list will not be
 invoked and hence can be assigned only to an ENTRY variable.
-
-
-
-
-
-
-
-
 
 IBM1678I S Assignment of source type to target type is invalid.
 
@@ -7015,15 +6023,6 @@ IBM1687I S reserved name cannot be declared with OPTIONS other than ASM.
 
 If the DLI compiler option is specified, PLITDLI cannot be declared with
 any OPTIONS other than OPTIONS(ASM).
-
-
-
-
-
-
-
-
-
 
 IBM1688I S reserved name cannot be declared with an entry description
 list.
@@ -7101,15 +6100,6 @@ Reference in CALL statement must not be a built-in function.
 Argument number argument- number in ENTRY reference ENTRY name is an
 aggregate. This conflicts with the BYVALUE option.
 
-
-
-
-
-
-
-
-
-
 IBM1705I S Arrays, structures, and unions cannot be passed BYVALUE.
 
 IBM1700I S attribute must be passed BYADDR.
@@ -7178,22 +6168,6 @@ a LIMITED ENTRY.
 IBM1708I S RETURN expression with attribute POINTER is invalid for RETURNS
 options specifying the attribute OFFSET since the OFFSET attribute is
 not declared with an AREA qualifier.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 POINTER expressions can be converted to OFFSET only if the offset is
 declared with an AREA qualifier.
@@ -7269,11 +6243,6 @@ IBM1714I S Extents in RETURNS descriptors must be constants.
 IBM1720I S Expression for calculating size of variable with adjustable
 extents is
 
-
-
-
-
-
 too complicated. Variable may be defined in terms of itself.
 
 IBM1726I S Subtraction of target type from source type is invalid.
@@ -7344,7 +6313,6 @@ An ENTRY cannot be used as an arithmetic operand. If the ENTRY is a
 function which should be invoked, an argument list, even if it consists
 only of a left and right parenthesis, must be provided.
 
-
 IBM1732I S Unsupported use of aggregate expression.
 
 should be invoked, an argument list must be provided.
@@ -7412,11 +6380,6 @@ ORDINALs cannot be compared with other ORDINALs having a different
 ORDINAL type.
 
 IBM1743I S Source and target in assignment have differing strong types.
-
-
-
-
-
 
 Assignments of strongly-typed variables are invalid unless both have
 the same type.
@@ -7487,16 +6450,6 @@ error message would be issued instead.
 
 IBM1754I S An asterisk iteration factor can be applied only to the last
 expression in the INITIAL item list for variable-name.
-
-
-
-
-
-
-
-
-
-
 
 Since an asterisk iteration factor completes the initialization of a
 variable, it cannot be followed by more initial values.
@@ -7573,30 +6526,6 @@ The variable y in DCL x ENTRY LIMITED INIT(y) must not be FETCHABLE;
 y must not be used in a FETCH or RELEASE statement, and y must not have
 the OPTIONS(FETCHABLE) attribute.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 IBM1762I S INITIAL iteration factor must have computational type.
 
 Iteration factors in INITIAL lists must have numeric or string types.
@@ -7667,24 +6596,6 @@ SUBSTR and UNSPEC may be used as pseudovariables in DO-loops only if
 their derived length is known at compile time.
 
 IBM1772I S Source in DO loop initialization must be scalar.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 In a DO loop of the form DO a = b TO c, b must be a scalar.
 
@@ -7757,15 +6668,6 @@ an argument to built-in functions such as STORAGE.
 IBM1784I S The ENTRY variable-name may not be used as a locator qualifier
 since it does not have the RETURNS attribute.
 
-
-
-
-
-
-
-
-
-
 Functions, but not subprocedures, can be used as locator qualifiers
 (and then only if they return a locator).
 
@@ -7836,9 +6738,6 @@ The REFER option cannot be used in a BASED variable which also has an
 extent that is set by a non-constant expression.
 
 IBM1798I S Invalid scale factor in PICTURE specification.
-
-
-
 
 The picture character F specifies a picture scaling factor for fixed-point
 decimal numbers. The number of digits following the V picture character,
@@ -7914,7 +6813,6 @@ IBM1811I S Exponent in PICTURE specification cannot contain V.
 V specifies an implicit decimal point. Therefore, it is not permitted
 in the exponent field.
 
-
 IBM1812I S FLOAT PICTURE cannot contain CR, DB or F.
 
 The expression must be arithmetic or string.
@@ -7987,17 +6885,6 @@ IBM1816I S keyword item variable name is not computational.
 An invalid scalar or aggregate reference has been specified for the FROM
 or INTO clause in a record
 
-
-
-
-
-
-
-
-
-
-
-
 I/O statement. The example below will cause this message to be issued.
 
 IBM1827I S The reference in the keyword clause must have CHARACTER type.
@@ -8066,16 +6953,6 @@ IBM1831I S The LOCATE reference variable- name is not implicitly qualified
 and is invalid without a SET clause.
 
 Provide a SET clause in the LOCATE statement.
-
-
-
-
-
-
-
-
-
-
 
    dcl f file; dcl x char(10) based; locate x file(f1);
 
@@ -8150,16 +7027,6 @@ of scalars.
 The field width specified in the keyword-format item is too small for
 complete input or output of the data item.
 
-
-
-
-
-
-
-
-
-
-
 The width specified is too small for complete processing.
 
     put edit(10190) (f(3));
@@ -8233,8 +7100,6 @@ compiler.
 IBM1856I S Fetch of the user exit initialization routine failed with
 ONCODE= oncode.
 
-
-
 The compiler was unable to load the user exit.
 
 IBM1857I S User exit routine terminated abnormally with ONCODE=
@@ -8304,7 +7169,6 @@ IBM1869I S ALLOCATE with attribute lists is not supported.
 
 For example, neither of the following are supported.
 
-
     allocate x(5); allocate y char(10);
 
 IBM1870I S ON statement cannot specify both SYSTEM and an ON-unit.
@@ -8373,17 +7237,6 @@ Provide a SET clause in the ALLOCATE statement.
     dcl a based;
 
     allocate a;
-
-
-
-
-
-
-
-
-
-
-
 
 IBM1884I S The reference variable-name in the GENERIC attribute list is
 not a scalar ENTRY reference.
@@ -8460,19 +7313,6 @@ REFER cannot be used only in declarations of scalars or arrays of scalars.
 
 IBM1894I S REINIT references must not be subscripted.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 In the statement REINIT x, x must not have any subscripts or arguments.
 
 IBM1895I S Operations involving OPTIONS(language-name) routines are not
@@ -8542,7 +7382,6 @@ or FREE statement.
 
 IBM1906I S The reference qualifying an OFFSET attribute must be a scalar
 AREA reference.
-
 
 Using the specified AREA reference to qualify an OFFSET variable is
 invalid. The reference must be scalar. The following example will issue
@@ -8618,12 +7457,6 @@ declared.
 None of the names in an ORDINAL should have been declared elsewhere. If
 they are, perhaps the ORDINAL definition has been accidentally repeated.
 
-
-
-
-
-
-
 IBM1919I S The EXTERNAL name string is specified for the differing names
 name and name.
 
@@ -8690,13 +7523,6 @@ Unable to open file file-name in routine proc-name(line-number).
 The compiler was unable to open the named temporary file used to
 communicate with the code generation module. Check the value of the TMP
 environment variable.
-
-
-
-
-
-
-
 
 IBM1930I S Unable to write to file file-name .  Disk may be full.
 
@@ -8770,7 +7596,6 @@ This applies to all the precision-handling built-in functions.
 IBM1943I S The number of error messages allowed by the FLAG option has
 been exceeded.
 
-
 Compilation will terminate when the number of messages has exceeded the
 limit set in the FLAG compiler option.
 
@@ -8840,13 +7665,6 @@ are not supported.
 
 EXTERNAL FILE constants and CONDITIONs may be declared only once in a
 compilation unit. Remove all but the outermost declare.
-
-
-
-
-
-
-
 
 IBM1956I S ITERATE is valid only for iterative DO-groups.
 
@@ -8921,9 +7739,6 @@ if they return a handle).
 
 IBM1968I S The ENTRY variable-name may not be used as a handle.
 
-
-
-
 x(...)=>y is invalid unless x returns a HANDLE.
 
 IBM1969I S The variable variable-name is used as a handle, but it is
@@ -8997,7 +7812,6 @@ IBM1989I S File name or extension for filename is too long.
 
 IBM1981I S BUILTIN function may not be used outside a PROCEDURE.
 
-
 The length of the file name or extension is greater than the maximum
 allowed.
 
@@ -9065,8 +7879,6 @@ IBM2002I S Close of file filename failed. There may be a space problem.
 An error has occurred while attempting to close a file.
 
 IBM2003I S Write to file filename failed. There may be a space problem.
-
-
 
 An error has occurred while attempting to write to a file.
 
@@ -9137,14 +7949,6 @@ must be specified with a restricted expression. Like RETURNS descriptors,
 asterisks and non-constant expressions are not permitted.
 
 IBM2015I S VALUE attribute conflicts with data type.
-
-
-
-
-
-
-
-
 
 The VALUE attribute is allowed only with computational data types as
 well as pointer, offset, handle and ordinal.
@@ -9217,7 +8021,6 @@ qualifier since it does not have the RETURNS attribute.
 The DEFINE STRUCTURE or DEFINE ALIAS statement for a type x must precede
 any of use of x as attribute type. The following two statements should
 be in the opposite order.
-
 
     dcl x type point;
 
@@ -9294,18 +8097,6 @@ a description list, but that description
 An expression contains the named built-in function with an argument that
 is not a HANDLE.
 
-
-
-
-
-
-
-
-
-
-
-
-
 IBM2039I S Argument to variable name pseudovariable must be a HANDLE.
 
 The TYPE pseudovariable can be applied only to HANDLEs.
@@ -9377,9 +8168,6 @@ with entry variables declared without the LIMITED attribute.
 
 IBM2049I S The LIST attribute may be specified only on the last element
 of an entry description list.
-
-
-
 
 The LIST attribute indicates that zero or more parameters may be specified
 after it, but those parameters may not be described.
@@ -9454,7 +8242,6 @@ or the BYADDR suboption of the DEFAULT statement must be in effect.
 IBM2061I S Attributes specified for variable- name in ALLOCATE statement
 do not match those in its declaration.
 
-
 An attribute, such as CHARACTER, may be specified in an ALLOCATE statement
 only if it is also specified in the declaration of the variable to
 be allocated.
@@ -9526,7 +8313,6 @@ FIXED DECIMAL and arithmetic PICTURE.
 IBM2075I S ENTRY types and arguments in type function must be LIMITED.
 
 The DATE attribute cannot be used on any other than the named types.
-
 
 IBM2082I S DATE attribute conflicts with non- zero scale factor.
 
@@ -9600,7 +8386,6 @@ or ORDINAL.
 
 The target in a CAST from a FIXED DEC must be FLOAT, FIXED BIN or ORDINAL.
 
-
 IBM2097I S FIXED DEC types and arguments in type function must be REAL
 with non-negative scale factor.
 
@@ -9665,7 +8450,6 @@ compilation unit, but the attributes in those declarations must match.
 IBM2107I S The attributes of the EXTERNAL variable variable name do not
 match those in its previous declaration. Upper bounds do not match.
 
-
 EXTERNAL variables can be declared in more than one procedure in a
 compilation unit, but the attributes in those declarations must match.
 
@@ -9729,7 +8513,6 @@ EXTERNAL variables can be declared in more than one procedure in a
 compilation unit, but the attributes in those declarations must match.
 
 IBM2117I S The attributes of the EXTERNAL variable variable name do
-
 
 not match those in its previous declaration. Alignment of parameter
 parameter-number does not match.
@@ -9799,14 +8582,6 @@ IBM2126I S variable-name is a member of a typed structure and hence
 cannot be used in data directed I/O.
 
     dcl x entry( area(10000) ); dcl a area(8000) );
-
-
-
-
-
-
-
-
 
 The use of members of DEFINE STRUCTURE types is not supported in data
 directed I/O statements.
@@ -9893,30 +8668,6 @@ The POSITION attribute can be used only with string overlay defining.
 
     dcl b(4) char(2) pos(2) def( a(1sub,1sub) );
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 IBM2131I S In iSUB defining, the base and DEFINED variables must match.
 
 IBM2136I S The defined and base arrays in iSUB defining must have
@@ -9980,25 +8731,6 @@ in effect (as it is by default on z/OS).
 
 IBM2140I S Length of second argument to the REPLACEBY2 built-in function
 must be twice that of the third.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 The second argument to the REPLACEBY2 built-in function provides the set
 of pairs of characters which are to replace the corresponding characters
@@ -10071,7 +8803,6 @@ The indicated element of the structure supplying the event handlers for
 the SAX parser must have a BYVALUE POINTER as its first parameter. See
 the Programming Guide for more details.
 
-
 IBM2150I S Member member-number in the event structure argument to
 the BUILTIN name built-in function must have a BYVALUE POINTER as its
 second parameter.
@@ -10139,7 +8870,6 @@ BUILTIN name built-in function
 
 IBM2158I S Member member-number in the event structure argument to the
 BUILTIN name built-in function has the wrong linkage.
-
 
 The indicated element of the structure supplying the event handlers for
 the SAX parser must have the PL/I default linkage. See the Programming
@@ -10211,7 +8941,6 @@ IBM2170I S Too many INTERNAL CONTROLLED variables.
 
 When using the PRV to address CONTROLLED variables, there may be no more
 than 568 INTERNAL CONTROLLED variables.
-
 
 IBM2171I S Under the NOWRITABLE option, no FETCHABLE ENTRY may be declared
 at the PACKAGE level.
@@ -10288,7 +9017,6 @@ function, for example.
 
 IBM2183I S The first argument to BUILTIN name built-in function must have
 
-
 constant length equal to that of the second argument.
 
 IBM2189I S Under CMPAT(V2) and CMPAT(LE), bounds must not be greater
@@ -10361,7 +9089,6 @@ parameter position. See the Programming Guide for more details.
 IBM2194I S Member member-number in the event structure argument to the
 BUILTIN name built-in function must have a BYADDR POINTER
 
-
 as parameter number parameter- number .
 
 The indicated element of the structure supplying the event handlers for
@@ -10430,7 +9157,6 @@ code is to be generated.
 
 It is invalid to specify the VALUE attribute for a member of a structure
 if the structure has a storage attribute such as BASED, CONTROLLED, etc.
-
 
 IBM2205I S The VALUE attribute may be used on a structure member only
 if no dimension attributes are specified for its parents.
@@ -10501,10 +9227,6 @@ elements.
 
 IBM2217I S XMLATTR is invalid if the previous element at that logical
 level does not also have the XMLATTR attribute.
-
-
-
-
 
 The XMLATTR attribute may be used on a structure element only if all
 its previous sister elements at the same logical level also had the
@@ -10579,7 +9301,6 @@ if any
 The use of non-constant extents in BASED variables without using REFER
 is limited. In a CHARACTER extent, its use requires that the string not
 be part of an array.
-
 
 IBM2228I S A non-constant CHARACTER extent in a BASED structure is
 invalid unless the string is the last field in the structure and not
@@ -10659,19 +9380,6 @@ or a scalar. For example, the following is invalid.
 IBM2238I S The third argument to the ALLCOMPARE built-in function must
 specify the name of a comparison operator.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 When uppercased, the third argument to the ALLCOMPARE built-in function
 must be one of 'EQ', 'LT', 'LE', 'GE', 'GT', or 'NE'.
 
@@ -10744,7 +9452,6 @@ IBM2248I S The attributes derived from the PROCEDURE statement for
 the ENTRY constant variable name do not match those in its explicit
 declaration. BYVALUE/BYADDR
 
-
 attributes in parameter parameter- number do not match.
 
 explicit declaration. Alignment of parameter parameter-number does
@@ -10811,7 +9518,6 @@ non-computational arguments are not allowed.
 
 IBM2256I S The result of the BUILTIN name built-in function would have
 a length greater than the the maximum allowed for a CHARACTER string.
-
 
 Conversion of CHAR or WCHAR to UTF-8 can produce a result string that is
 longer than the source string because some CHAR(1) and WCHAR(1) values can
@@ -10885,10 +9591,6 @@ attribute.
 The LOCVAL pseudovariable can be applied only to variables with the
 LOCATES attribute.
 
-
-
-
-
 IBM2269I S LOCATES attribute is valid only with OFFSET.
 
 The LOCATES attribute cannot be used on any other types.
@@ -10957,10 +9659,6 @@ have computational type or ordinal type.
 
 An expression contains the named built-in function with the specified
 argument having a noncomputational type that is either not an ordinal
-
-
-
-
 
 type. This message applies to the INLIST and BETWEEN built-in functions.
 
@@ -11037,7 +9735,6 @@ any COMPLEX
 IBM2293I S The BUILTIN name built-in function is not supported under
 CMPAT(V1).
 
-
 CMPAT(V2), CMPAT(V3) or CMPAT(LE) must be used when compiling any code
 using this built-in function.
 
@@ -11107,7 +9804,6 @@ CMPAT(V2), CMPAT(V3) or CMPAT(LE) must be used when compiling any code
 using this attribute.
 
 IBM2305I S The ASSERT COMPARE operator must be a CHAR(2) constant.
-
 
 If an operator is specified in an ASSERT COMPARE statement, it must be
 a restricted expression with the attributes CHAR(2) NONVARYING.
@@ -11179,7 +9875,6 @@ function must have type size_t.
 This message applies to the REGEX and other built- in functions when some
 arguments must have the attributes NATIVE REAL FIXED BIN PRECISION(p,0)
 
-
 where p = 31 in 32-bit addressing mode and p = 63 in 64-bit addressing
 mode.
 
@@ -11250,10 +9945,6 @@ be between 1 and 16.
 These values specify which bits are set in the ROUTCDE and DESC fields
 when a WTO or WTOR is issued. These fields consist of 16 bits, and hence
 the values must be between 1 and 16.
-
-
-
-
 
 IBM2326I S The argument to the BUILTIN name built-in function must have
 UCHAR type.
@@ -11327,7 +10018,6 @@ IBM2337I S BUILTIN name argument must have numeric type.
 An expression contains the named built-in function with an argument that
 is not FIXED, FLOAT, or numeric PICTURE.
 
-
 IBM2338I S A QUALIFY block may contain only DEFINE statements, DECLARE
 statements, and nested QUALIFY blocks.
 
@@ -11398,7 +10088,6 @@ while the first argument's upper bound is hbound.
 This applies, for example, to the REGEX built-in function.
 
 IBM2350I S attribute must be returned BYADDR.
-
 
 BYADDR must be used in RETURNS of PICTURE and VARYING.
 
@@ -11474,19 +10163,6 @@ IBM2357I S INITACROSS structure member count of member_count does not
 match the implied member count of element_count from the INITACROSS
 attribute.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 The explicit member count for an INITACROSSS structure must match the
 implicit member count defined by the number of elements in each of
 the INITACROSS commalists. For example, in this (invalid) declare, the
@@ -11561,9 +10237,6 @@ no arguments, it should be declared as ENTRY().
 
 IBM2367I S
 
-
-
-
 IBM2369I S All aggregate arguments passed to an ENTRY declared with
 OPTIONS( AMODE31 ) must be connected variable references.
 
@@ -11589,8 +10262,6 @@ the code is valid only if q has some zero suppression (Z) characters.
 IBM2372I S XDECLARE statement must specify a name.
 
 Statements that start with XDECLARE * and XDECLARE 1 * are invalid.
-
-
 
 Chapter 5. MACRO, CICS, and SQL Preprocessor Messages (3000-3999)
 
@@ -11659,17 +10330,7 @@ identifiers and constants.
 IBM3256I W Multiple closure of groups. END statements will be inserted
 to close intervening groups.
 
-
 149
-
-
-
-
-
-
-
-
-
 
 Using one END statement to close more than one group of statements is
 permitted, but it may indicate a coding error.
@@ -11744,15 +10405,6 @@ IBM3262I W The suboption option of the option option must be followed by a
 WHEN or OTHERWISE clauses are not required on SELECT statements, but
 their absence may indicate a coding error.
 
-
-
-
-
-
-
-
-
-
 IBM3283I W SELECT statement contains no WHEN clauses.
 
 IBM3291I W The OPTIONS option option-name conflicts with the LANGLVL
@@ -11823,11 +10475,6 @@ IBM3299I W Syntax of the %LINE directive is incorrect.
 The %LINE directive must be followed, with optional intervening blanks,
 by a parenthesis, a line number, a comma, a file name and a closing
 parenthesis.
-
-
-
-
-
 
 statement will cause only the immediately enclosing DO-group to be exited;
 the loop will not be exited.
@@ -11907,24 +10554,6 @@ reference to A is treated as a reference to A.B.
 
 IBM3316I W The reference reference is a structure containing an array.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Structures containing arrays are not valid in SQL statements, but because
 this structure consists of only one element, the reference is treated
 as if it were a reference to its lone child.
@@ -11997,28 +10626,6 @@ or FIXED. This message could indicate that there is an extraneous comma
 in the declare statement as in this example.
 
    %dcl a, char;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 IBM3326I W The LIKE reference is neither a structure nor a union.
 
@@ -12097,19 +10704,6 @@ IBM3334I W The ENTRY named variable will be deprecated.
 The named ENTRY was specified in the ENTRY suboption of the DEPRECATENEXT
 option, and so any use of it is flagged.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 IBM3500I E note
 
 The largest accepted value for an integer with an G suffix is 2G. The
@@ -12184,7 +10778,6 @@ in your source program.
 IBM3514I E Second argument to BUILTIN name built-in is negative. It will
 be changed to 0.
 
-
 The second argument to built-in functions such as COPY and REPEAT must
 be nonnegative.
 
@@ -12254,19 +10847,6 @@ Structure level numbers must be positive.
 The second argument to the LBOUND, HBOUND, and DIMENSION built-in
 functions must be no greater than the number of dimensions of their
 array arguments.
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     dcl a(5,10) fixed bin; do i = 1 to lbound(a,3);
 
@@ -12340,31 +10920,6 @@ is valid.
       when ( ... )
         do; end;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       otherwise
         do; end;
     display( .... );
@@ -12435,23 +10990,6 @@ There is no language element of the form 1su.
 IBM3543I E ITERATE/LEAVE statement is invalid outside an open DO
 
 IBM3548I E Digit in BINARY constant is not zero or one.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 In a BINARY constant, each digit must be a zero or one.
 
@@ -12527,10 +11065,6 @@ violate RULES(NOGOTO).
 
 IBM3565I E Statement type resolution requires too many lexical units to
 
-
-
-
-
 be examined. The statement will be ignored.
 
     dcl x char(-10);
@@ -12604,25 +11138,6 @@ Extents must be positive.
     dcl a fixed bin(15), * char(20) static
 init('who can use me');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 IBM3575I E Duplicate specification of attribute. Subsequent specification
 ignored.
 
@@ -12692,25 +11207,6 @@ keyword and any argument are ignored.
     %dcl a char external;
 
 IBM3591I E Right parenthesis will be assumed at end of argument list.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 IBM3607I E A right parenthesis is probably missing. If this occurs in
 the source, all the characters after the unmatched left parenthesis in
@@ -12783,19 +11279,6 @@ found before the statement required after ELSE.
 
 IBM3612I E Semicolon inserted after OTHERWISE keyword.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 An END statement might be misplaced or a semicolon might be missing.
 
 Otherwise the STRINGRANGE condition would be raised.
@@ -12867,10 +11350,6 @@ IBM3628I E X literals should contain a multiple of 2 hex digits.
 
 An X literal may not contain an odd number of digits.
 
-
-
-
-
 IBM3638I E Excess arguments for ENTRY ENTRY name ignored.
 
 IBM3650I E keyword keyword accepted although invalid under LANGLVL(SAA).
@@ -12940,22 +11419,6 @@ invalid under LANGLVL(SAA).
 
 Under LANGLVL(SAA), the VERIFY and INDEX built-in functions are supposed
 to have exactly 2 arguments.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
      i = verify( s, j, k );
 
@@ -13029,13 +11492,6 @@ The correct syntax is SQL TYPE IS type( length ).
 IBM3757I S SQL TYPE IS XML AS type name must be followed by an opening
 left parenthesis.
 
-
-
-
-
-
-
-
 The correct syntax is SQL TYPE IS XML AS type( length ).
 
 IBM3758I S SQL TYPE IS XML AS type name must have an integer specifying
@@ -13102,10 +11558,6 @@ This applies to the RANK built-in function.
 IBM3763I S Not enough virtual memory is available to continue the compile.
 
 IBM3770I S First argument to BUILTIN name built-in must be an array.
-
-
-
-
 
 An expression contains the named built-in function with a first
 argument that is not an array. This message applies, for instance,
@@ -13174,7 +11626,6 @@ IBM3786I S SQL TYPE IS TABLE LIKE must be followed by the keyword AS
 after the table name.
 
 The correct syntax is SQL TYPE IS TABLE LIKE table- name AS LOCATOR.
-
 
 IBM3787I S SQL TYPE IS TABLE must be followed by the keyword LOCATOR
 after the table name and the AS keyword.
@@ -13250,18 +11701,6 @@ less than 214748648.
 
 IBM3798I S RETURN statement with an expression is invalid inside a
 
-
-
-
-
-
-
-
-
-
-
-
-
 PROCEDURE that did not specify the RETURNS attribute.
 
     %a = '0'; %a ||= '1';
@@ -13329,18 +11768,6 @@ Compound concatenate assignments with fixed targets are not supported.
     %dcl a fixed;
 
 The correct syntax is SQL TYPE IS type LARGE OBJECT( length ).
-
-
-
-
-
-
-
-
-
-
-
-
 
 IBM3810I S Statement has too many labels.
 
@@ -13413,10 +11840,6 @@ must have length less than 32768.
 
 IBM3823I S A QUALIFY block may contain only DEFINE statements, DECLARE
 
-
-
-
-
 statements, and nested QUALIFY blocks.
 
 DEFAULT statements, for example, are not allowed in QUALIFY blocks.
@@ -13486,11 +11909,6 @@ IBM3842I S Statements are nested too deep.
 
 IBM3851I S INITIAL values for type type type type name must be in
 increasing order.
-
-
-
-
-
 
         2 lower_right  type point;
 
@@ -13564,10 +11982,6 @@ INCONLY option, your must specify the DBRMLIB compiler option.
 
 IBM3870I S The FETCH of the CICS backend failed.
 
-
-
-
-
 Check that the CICS modules are accessible, otherwise report this error
 to IBM.
 
@@ -13639,7 +12053,6 @@ IBM3885I S The host variable host-variable must have only one dimension.
 A host variable in an EXEC SQL statement must not be multi-dimensional.
 
 IBM3886I S The host variable host-variable must have constant bounds.
-
 
 A host variable in an EXEC SQL statement must have bounds that are
 specified simply as optionally signed integers.
@@ -13714,7 +12127,6 @@ must not be used as a host variable.
 IBM3898I S The VALUE reference host- reference does not have character,
 integer or decimal type and thus must not be used as a host variable.
 
-
 A reference with the VALUE attribute may be used as a host variable only
 if it has a SQL type of character, integer or decimal.
 
@@ -13784,10 +12196,6 @@ The statement label identifier has already been declared.
 
 Exponent in FLOAT BINARY constant contains more digits than the
 implementation maximum.
-
-
-
-
 
 The exponent in a FLOAT BINARY constant may contain no more than 5 digits.
 
@@ -13860,17 +12268,6 @@ IBM3928I S Only B, BX and X string suffixes are supported.
 EXEC SQL INCLUDE must be followed by one identifier and then by a
 semicolon.
 
-
-
-
-
-
-
-
-
-
-
-
 IBM3935I S The FETCH of the SQL backend failed.
 
     %a = a / 0;
@@ -13937,19 +12334,6 @@ A parameter cannot have an INITIAL attribute.
 
 IBM3953I S INITIAL list contains count items, but the array variable
 name contains only array size. Excess is ignored.
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 IBM3962I S For an array, an INITIAL list should not contain more values
 than the array has elements.
@@ -14021,19 +12405,6 @@ in a compilation, would produce this message. If the %ACTIVATE statement
 specified NORESCAN, it would work correctly.
 
     %dcl dcl_Count fixed;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     %dcl_Count = 0;
 
@@ -14108,10 +12479,6 @@ A closing quote is probably missing.
 
 A procedure must not invoke itself directly or indirectly.
 
-
-
-
-
 IBM3981I S BUILTIN function may not be used outside a procedure.
 
     if a > 0 ; then
@@ -14184,23 +12551,6 @@ A statement that appears to be an IF statement has invalid syntax.
 The text produced by an ANSWER or RETURNS statement would be rejected
 by the UVALID built-in function.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 IBM3996I S Internal preprocessor error: protection exception in module
 name.
 
@@ -14221,8 +12571,6 @@ This message indicates that there is an error in the preprocessor. Report
 the problem to IBM.
 
 This message is used by %NOTE statements with a return code of 16.
-
-
 
 Chapter 6. Code Generation Messages (5000-5999)
 
@@ -14301,7 +12649,6 @@ parameters match the function definition.
 
 IBM5054 Automatic storage for function function-name increased to
 over value.
-
 
 183
 
@@ -14390,7 +12737,6 @@ optimizations not performed.
 
 The specified expression is too complex to be optimized.
 
-
 Reduce the complexity of the expression or compile with a different
 OPT level.
 
@@ -14472,7 +12818,6 @@ translation of each subprogram.
 Reduce the complexity of the program and recompile.
 
 IBM5119 Number of labels in function function-name exceeds value.
-
 
 Labels are used whenever the execution path of the program could change;
 for example: if statements, switch statements, loops or conditional
