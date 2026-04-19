@@ -1,0 +1,103 @@
+<jklowden> The only thing I know about PL/I is that it might be the only langauge bigger than COBOL.
+<jcowan> In some ways.
+<jcowan> My first decision was to work on the ANSI PL/I Subset G standard with an absolute minimum of extensions, rather than Full PL/I much less IBM PL/I.
+<jcowan> which is truly huuuuuuge
+<jcowan> So it's a bit like Fortran, a bit like Cobol, and a bit like the Algol family.
+<jklowden> We started from scratch 5 years ago learning how to add a FE to GCC.  If you have something that generates C, it could be a candidate for ripping out the C and plugging it into the GCC middle-end.  
+<jcowan> I don't have anything in the way of code yet, except a simulator for the standard library written in Python.
+<jcowan> But I do have lots of ideas on how to do things.
+<jklowden> I see.  I've been on the hunt for a PL/I parser for a while.  It's a natural complement to COBOL in our quest to steal IBM's mainframe business.  
+<jcowan> Most of the minicomputer PL/Is were Subset G.  Trying to catch up with IBM is like trying to catch up with Microsoft, only more so.
+<jklowden> AS/400 you mean? 
+<jcowan> no, I mean Vax and Stratus, chiefly, but there were others.
+<jklowden> What became of those Vax and Stratus PL/I applications?  I would have thought those systems died out long ago.  
+<jcowan> There are still Vaxen running: the PL/I compiler was sold to a company named Kednos,, which supported it until recently.  But the manuals are available at Bitsavers.
+<jcowan> I have the ANSI standard, but it's very difficult to understand.  There is a concrete syntax, which is translated to an abstract syntax, run through a compiler and the result interpreted.  All written in technical prose.
+<jcowan> So it's precise, but hard to grasp.
+<jklowden> You and I likely share a Vax affection.  My presentation at the GCC Cauldron last year reflected on the capabilities of the Source Code Analyzer, something that still exists for C on VMS, but sadly nowhere else.  
+<jklowden> So Kednos called EOL on their compiler? 
+<jcowan> Went out of business, I think.  Their website is down.
+<jklowden> I think that is the 3rd proprietary PL/1 compiler to disappear into the bitstream.
+<jklowden> 3rd that I know of. 
+<jcowan> IronSpring has a Linux version,, which is gratis but not libre
+<jklowden> I didn't know, thanks. 
+<jcowan> And they have an active ML, where I ask questions.
+<jcowan> I think that bringing over IBM mainframe code is probably not practical anyway because PL/I programs depend heavily on the z/OS infrastructure with VSAM and all their other mysterious abbreviations.
+<jcowan> Are you familiar with gfortran at all?
+<jcowan> Because PL/I was designed to replace both Fortran and Cobol, interoperation with Fortran libraries will be very important.
+<jklowden> Familiar, yes, in the sense that we refer to the gfortran machinery for technical insight and inspriration.
+<jklowden> I see.
+<jcowan> mmm.
+<jklowden> There's a COBOL mode for emacs.  Not great, suffers from the Lisp Curse, you might say.  But does the job.  
+<jcowan> But anyway, back to PL/I.  The issues I've worked on (in my head, mostly) are PL/I exceptions, which have resumption semantics as in Smalltalk, Common Lisp, ,Scheme, and elsewhere
+<jcowan> Another decision I took was to target gcc (the C compiler) exclusively, because it has nested functions and a couple of other things that PL/I also needs.
+<jklowden> As I said, I don't know the language.  But I haven't found any two languages that implement exceptions with the same semantics.  I've used them in Python, C++, COBOL, and now Scheme.  Superficially the same, but no one can be defined in terms of another.  
+<jklowden> I forget right now what GCC does, technically, with the stack of a nested function. I remember it's an issue.  
+<jcowan> The main difference from Scheme exceptions is that conditions are singletons with no internal structure.  When you raise a condition, the handler doesn't get any ancillary information except through a few standard functions.
+<jcowan> It uses a trampoline to restore the static link
+<jklowden> Ah.
+<jcowan> Which some people are allergic to, because they hate executable heaps.
+<jklowden> Not without reason ...
+<jcowan> Oh, I know. Somehow Marst (the GNU Algol 60 compiler) generates C that doesn't depend on them, but I don't know how..
+<jklowden> What you describe is similar to the COBOL model.  In COBOL a raised exception is directed to a specified handler, called a Declarative.  Details may be obtained from intrinsic functions (supplied by the compiler).  Execution if not terminated is resumed where the exception was raised.  
+<jcowan> Yes, exactly the same then.
+<jcowan> How do you maintain the stack of exception handlers?
+<jklowden> To us a Declarative is just another Paragraph, in COBOL terms.  If it raises an exception, control is directed to the associated Declarative.  There is a rule against recursion that we hopefully enforce at runtime.  
+<jklowden> I hadn't thought of it until now, but it's rather like signal(3) without the restrictions.  Raise, handle, resume.  
+<jcowan> Ah.  PL/I handlers are dynamically scoped: you declare them with "ON condition statement-or-block;"
+* jklowden thinking about "dynamically scoped"
+<jcowan> and when you exit the routine containing that, the handler is disestablished automatically
+<jcowan> So logically each condition is associated with a stack of handlers.
+<jklowden> We don't need no stinkin' stack.  Everything is statically laid out.  The compiler knows all.  
+<jcowan> Right
+<jcowan> So that's a difference.
+<jklowden> :-)
+<jklowden> ISO COBOL defines a scoped PERFORM statement that would operate something like that.  No compiler implements it, and it's not clear if one ever will.  
+<jcowan> Oh, the other gcc features that PL/I needs is non-local GOTOs and label variables.
+<jcowan> A routine that declares a condition has to mark its local variables volatile.
+<jklowden> I don't remember offhand what GnuCOBOL does about that, if I ever actually knew. 
+<jcowan> So my idea is this: each PL/I routine declares a local array holding function pointers to all possible conditions.  When a PL/I routine calls another, it copies a pointer to this array into a global variable.
+<jcowan> The function prelude uses this variable to copy the array into its own local array, so that dispatching a condition doesn't involve any stack walking
+<jklowden> It's one of the reasons I want to use Scheme as the "GENERIC assembler" language: so people can write compiler and emit something better than C as the intermediate output on the way to code generation. 
+<jcowan> I agree in principle, but there always seem to be one or two features that can't be translated.
+<jklowden> Recent experience suggests your pointer array will present problems to the gcc optimizer.  
+<jcowan> Well, fortunately exceptions are never the happy path.
+<jklowden> true
+<jcowan> The snag is that you can create your own conditions, and that means the pointer array can't have a fixed size.
+<jcowan> Unless we go for a whole-program compiler that can identify all declared conditions throughout the program.
+* jklowden considering
+<jklowden> While I'm thinking about that: Just for the sake of argument, because I don't think I'm going to take up the charge, would generating Scheme for Guile be easier/better than C as a midpoint?  Or do you think true compilation is too important?  
+<jcowan> You mean, use call/cc to do the non-local gotos? That's a possibility.
+<jcowan> Do you know offhand if Guile has an LMDB library?
+<jklowden> Yes, in round figures that's what I mean. 
+<jklowden> In fact, yes.  I'm using it in my project.  (Is so happens I work for Symas.  Howard Chu invited me to work here.  So LMDB is a friend.)
+<jklowden> https://git.sr.ht/~jklowden/coddb
+<jcowan> We'll need it for keyed sequential files
+<jcowan> I did a lot of investigation of which package to use, and I think it has the best tradeoffs.
+<jklowden> As I ask in my COBOL presentations, why doesn't your language define indexed file I/O?  Why are you reinventing it?  (not you, them.)
+<jcowan> The only downside is the 2 GB limit on 32-bit systems.
+<jcowan> Yes!
+<jklowden> You need to take care, though.  I abandoned LDMB as an IMS substrate because the treasaction semantics don't fit.  
+<jcowan> OTOH, if PL/I only supports 64-bit systems, I will not weep
+<jcowan> Oh?  Can you explain that? Transactions are one thing I want to add to Subset G.
+<jklowden> LMDB uses modern transactions, like SQL on a good day.  Open a transaction, do stuff, commit/abort.  No in between.  IMS uses for lack of a better term record semantics: every write is its own commit.  There is not isolation in the SQL ACID world we're used to.  
+<jcowan> Yes, okay, so you open a transaction, write, commit the transaction, no?
+<jklowden> You can commit each write, yes, if thoughput isn't important.  
+<jklowden> And if you don't want to be able to roll back a sequence of writes, as a set. 
+<jcowan> Sure.  People lived for a long time without those capabilities.  Is it particularly slow to commit transactions?
+<jklowden> For our compiler, we explicitly told GCC we never expected to see a 32-bit customer.  We would support cross-compilation on principle, but have no real concern that anyone will ever use COBOL on a 32-bit system.  
+<jcowan> Good.
+<jklowden> I think it was slow for our purposes.  I don't want to talk out of school. 
+<jcowan> Another thing I've thought about is that PL/I supports local heaps in the language.  You declare variables of type AREA and can allocate out of them and then drop the whole area.  I don't think Guile has anything like that.
+<jklowden> My instant reaction is that Scheme is a dynamic language.  You define a top-level alist called heap-areas, and cdr is the user's own to with as he will.  
+<jcowan> I thought about doing it more or less that way in C as well: a local heap is a linked list of objects in the main heap, and you walk the list to deallocate it.
+<jcowan> PL/I doesn't *require* gc, but I think there is no reason not to take advantage of it.  Why mess around with carefully generating code to free temporaries?
+<jcowan> Although alloca would be a decent alternative.
+<jklowden> Well, you are talking to guy who's written a few destructors in his time.  And also someone who watched Java give up on GC when Stop The World disappointed the user.  
+<jklowden> But I think in your case, your implementation language, whether Scheme or C, gives you facilities to access the heap, which is what you need.  
+<jcowan> I'm pretty sure Java is using a real-time gc now
+<jklowden> I'm just a long distance observer.  I used to tell my millenial colleagues that I am pre-Java man.  
+* jcowan chuckles
+<jklowden> GC does seem like the Holy Grail.  I understand why Andy wants to write one. 
+<jklowden> For myself, I'm glad there are guys like him who want to, so I don't have to. 
+<jklowden> It just never intersected with my job.  I made a career in C++ and SQL.  It put my kids through school, and set me up to learn to write a compiler.  

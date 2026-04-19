@@ -8,6 +8,8 @@ Proposed language features:
 
 4. INLINE/NOINLINE on PROCEDURE statements: encourages inlining, passed through to gcc.
 
+6. COMPLEX types (for FLOAT BINARY only).
+
 8. UNSIGNED attribute (for FIXED BINARY only, C compatibility).
 
 9. ATTENTION condition (Control-C or equivalent).
@@ -24,13 +26,13 @@ Proposed language features:
 
 21. OPTIONS(SCALARVARYING).
 
-22. ENVIRONMENT(IGNORE_LINE_MARKS) to ignore end-of-line in GET LIST.aa
+22. ENVIRONMENT(IGNORE_LINE_MARKS) to ignore end-of-line in GET LIST.
 
 23. INF(), NAN(), ISINF(), ISNAN() built-in functions.
 
 24. Extend ISOCHAR to accept four arguments (UTF-32 bytes) or just one (a Unicode scalar value).
 
-25. Hex constants in quotes and suffixed with XN or XU.
+25. Hex constants in quotes and suffixed with XN (signed) or XU (unsigned).
 
 26. Double quotes.
 

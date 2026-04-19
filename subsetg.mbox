@@ -46829,3 +46829,4500 @@ pascal would also be ok.
 
 
 
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: bda4de328f,bc376e75fd398260
+X-Google-Attributes: gidbda4de328f,public,usenet
+X-Google-NewGroupId: yes
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Received: by 10.180.86.34 with SMTP id m2mr1241857wiz.5.1364344039473;
+        Tue, 26 Mar 2013 17:27:19 -0700 (PDT)
+Path: p18ni19754wiv.0!nntp.google.com!feeder1.cambriumusenet.nl!feed.tweaknews.nl!194.109.133.86.MISMATCH!newsfeed.xs4all.nl!newsfeed3.news.xs4all.nl!xs4all!border4.nntp.ams.giganews.com!border2.nntp.ams.giganews.com!border2.nntp.dca.giganews.com!border3.nntp.dca.giganews.com!border1.nntp.dca.giganews.com!nntp.giganews.com!newsgate.cuhk.edu.hk!goblin1!goblin.stu.neva.ru!eternal-september.org!feeder.eternal-september.org!mx05.eternal-september.org!.POSTED!not-for-mail
+From: Peter Flass <Peter_Flass@Yahoo.com>
+Newsgroups: comp.lang.pl1
+Subject: Re: FIXED DECIMAL -> FIXED BINARY conversion rules with large scale
+ values
+Date: Tue, 19 Mar 2013 08:43:24 -0400
+Organization: A noiseless patient Spider
+Message-ID: <ki9m4j$r6n$1@dont-email.me>
+References: <khtch1$3ir$1@speranza.aioe.org>       <6dca08b9-40d0-4be7-b05b-b534a642c99c@kw7g2000pbb.googlegroups.com>       <514320CC.701@dignus.com>       <51438518$0$19547$607ed4bc@cv.net>       <51463fc0$19$fuzhry+tra$mr2ice@news.patriot.net>       <ki6uij$aj$1@dont-email.me> <5147ca39$6$fuzhry+tra$mr2ice@news.patriot.net>
+Mime-Version: 1.0
+Injection-Date: Tue, 19 Mar 2013 12:36:35 +0000 (UTC)
+Injection-Info: mx05.eternal-september.org; posting-host="a5cdd2ddd91d6d8aadb3612341ba8479";
+	logging-data="27863"; mail-complaints-to="abuse@eternal-september.org";	posting-account="U2FsdGVkX19JMNqH3rtTrUdDWXV6+kyk"
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:17.0) Gecko/20130307 Thunderbird/17.0.4
+In-Reply-To: <5147ca39$6$fuzhry+tra$mr2ice@news.patriot.net>
+Cancel-Lock: sha1:SasKSegWN82PNa+0XUA9TWK1Yz8=
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+On 3/18/2013 10:15 PM, Shmuel (Seymour J.) Metz wrote:
+> In <ki6uij$aj$1@dont-email.me>, on 03/18/2013
+>     at 07:48 AM, Peter Flass <Peter_Flass@Yahoo.com> said:
+>
+>> On 3/17/2013 6:12 PM, Shmuel (Seymour J.) Metz wrote:
+>>> In <51438518$0$19547$607ed4bc@cv.net>, on 03/15/2013
+>>>      at 04:31 PM, John W Kennedy <jwkenne@attglobal.net> said:
+>>>
+>>>> The ANSI PL/I standard apparently doesn't allow FIXED BIN(n,m) at
+>>>> all,
+>>>
+>>> What ANSI standard? X3.74-1987 certainly does.
+>>>
+>
+>> I believe subset G doesn't allow scaled fixed binary.
+>
+> X3.74-1987 *is* subset G. I don't recall what the 1976 version
+> allowed.
+>
+
+I have -1987.  "A nonzero scale factor may be specified only for FIXED 
+DECIMAL values." (p.417)
+
+SELECT is not in X3.53-1976 "Full" PL/I.
+
+-- 
+Pete
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: 101deb,bc376e75fd398260
+X-Google-NewGroupId: yes
+X-Google-Attributes: gidbda4de328f,domainid0,public,usenet
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Received: by 10.180.106.73 with SMTP id gs9mr2767771wib.2.1363571399964;
+        Sun, 17 Mar 2013 18:49:59 -0700 (PDT)
+MIME-Version: 1.0
+Path: g1ni72271wig.0!nntp.google.com!proxad.net!feeder1-2.proxad.net!news.glorb.com!border3.nntp.dca.giganews.com!Xl.tags.giganews.com!border1.nntp.dca.giganews.com!nntp.giganews.com!local2.nntp.dca.giganews.com!nntp.posted.lerostechnologies!news.posted.lerostechnologies.POSTED!not-for-mail
+NNTP-Posting-Date: Sun, 17 Mar 2013 20:49:58 -0500
+Newsgroups: comp.lang.pl1
+From: Shmuel (Seymour J.) Metz <spamtrap@library.lspace.org.invalid>
+Date: Sun, 17 Mar 2013 18:12:16 -0400
+Subject: Re: FIXED DECIMAL -> FIXED BINARY conversion rules with large scale values
+References: <khtch1$3ir$1@speranza.aioe.org> 
+      <6dca08b9-40d0-4be7-b05b-b534a642c99c@kw7g2000pbb.googlegroups.com> 
+      <514320CC.701@dignus.com> 
+      <51438518$0$19547$607ed4bc@cv.net>
+Mail-Copies-To: nobody
+Organization: Atid/2
+X-Treme: C&C,DWS
+X-WebTV-Stationery: Standard; BGColor=black; TextColor=black
+Message-ID: <51463fc0$19$fuzhry+tra$mr2ice@news.patriot.net>
+X-Newsreader: MR/2 Internet Cruiser Edition for OS/2 v3.00.11.18 BETA/60
+X-Usenet-Provider: http://www.giganews.com
+NNTP-Posting-Host: 69.72.27.199
+X-Trace: sv3-t6BNw4l4ujSDT7Mv2GRQxopbkJB0VsfWC3Qd2Msfv/fX69iRrQETo5Gd8wi82u2gqNn8P/TCU93xANH!ljtlUgkbn5WKaLYubOKet6unS+I0etk8+63be2mqqzPqx8ba5yty5InfbZDsoehR1fOZBEGbDMcW!i39SGN+FFjeregFCSyiQSTeyJ6Qnmg5M
+X-Abuse-and-DMCA-Info: Please be sure to forward a copy of ALL headers
+X-Abuse-and-DMCA-Info: Otherwise we will be unable to process your complaint properly
+X-Postfilter: 1.3.40
+X-Original-Bytes: 1886
+
+In <51438518$0$19547$607ed4bc@cv.net>, on 03/15/2013
+   at 04:31 PM, John W Kennedy <jwkenne@attglobal.net> said:
+
+>The ANSI PL/I standard apparently doesn't allow FIXED BIN(n,m) at
+>all, 
+
+What ANSI standard? X3.74-1987 certainly does.
+
+-- 
+Shmuel (Seymour J.) Metz, SysProg and JOAT  <http://patriot.net/~shmuel>
+
+Unsolicited bulk E-mail subject to legal action.  I reserve the
+right to publicly post or ridicule any abusive E-mail.  Reply to
+domain Patriot dot net user shmuel+news to contact me.  Do not
+reply to spamtrap@library.lspace.org
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: bda4de328f,bc376e75fd398260
+X-Google-Attributes: gidbda4de328f,public,usenet
+X-Google-NewGroupId: yes
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Received: by 10.180.86.38 with SMTP id m6mr1716694wiz.0.1363919153646;
+        Thu, 21 Mar 2013 19:25:53 -0700 (PDT)
+Path: bp2ni113242wib.1!nntp.google.com!feeder1.cambriumusenet.nl!feed.tweaknews.nl!194.109.133.81.MISMATCH!newsfeed.xs4all.nl!newsfeed2.news.xs4all.nl!xs4all!border4.nntp.ams.giganews.com!border2.nntp.ams.giganews.com!border3.nntp.ams.giganews.com!border1.nntp.ams.giganews.com!nntp.giganews.com!newsreader4.netcologne.de!news.netcologne.de!goblin2!goblin.stu.neva.ru!feeder.erje.net!eu.feeder.erje.net!eternal-september.org!feeder.eternal-september.org!mx05.eternal-september.org!.POSTED!not-for-mail
+From: Peter Flass <Peter_Flass@Yahoo.com>
+Newsgroups: comp.lang.pl1
+Subject: Re: FIXED DECIMAL -> FIXED BINARY conversion rules with large scale
+ values
+Date: Mon, 18 Mar 2013 07:48:40 -0400
+Organization: A noiseless patient Spider
+Message-ID: <ki6uij$aj$1@dont-email.me>
+References: <khtch1$3ir$1@speranza.aioe.org>       <6dca08b9-40d0-4be7-b05b-b534a642c99c@kw7g2000pbb.googlegroups.com>       <514320CC.701@dignus.com>       <51438518$0$19547$607ed4bc@cv.net> <51463fc0$19$fuzhry+tra$mr2ice@news.patriot.net>
+Mime-Version: 1.0
+Injection-Date: Mon, 18 Mar 2013 11:42:11 +0000 (UTC)
+Injection-Info: mx05.eternal-september.org; posting-host="a5cdd2ddd91d6d8aadb3612341ba8479";
+	logging-data="339"; mail-complaints-to="abuse@eternal-september.org";	posting-account="U2FsdGVkX1/L2WOT3gfX4tixl/uPxRwj"
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:17.0) Gecko/20130307 Thunderbird/17.0.4
+In-Reply-To: <51463fc0$19$fuzhry+tra$mr2ice@news.patriot.net>
+Cancel-Lock: sha1:ovyrwy18VPzCQ5XeaJy9U0p2DwA=
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+On 3/17/2013 6:12 PM, Shmuel (Seymour J.) Metz wrote:
+> In <51438518$0$19547$607ed4bc@cv.net>, on 03/15/2013
+>     at 04:31 PM, John W Kennedy <jwkenne@attglobal.net> said:
+>
+>> The ANSI PL/I standard apparently doesn't allow FIXED BIN(n,m) at
+>> all,
+>
+> What ANSI standard? X3.74-1987 certainly does.
+>
+
+I believe subset G doesn't allow scaled fixed binary.
+
+-- 
+Pete
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: bda4de328f,bc376e75fd398260
+X-Google-Attributes: gidbda4de328f,public,usenet
+X-Google-NewGroupId: yes
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Received: by 10.180.81.101 with SMTP id z5mr1706618wix.7.1363919153928;
+        Thu, 21 Mar 2013 19:25:53 -0700 (PDT)
+Path: bp2ni113242wib.1!nntp.google.com!feeder1.cambriumusenet.nl!82.197.223.108.MISMATCH!feeder2.cambriumusenet.nl!feeder3.cambriumusenet.nl!feed.tweaknews.nl!194.109.133.86.MISMATCH!newsfeed.xs4all.nl!newsfeed3.news.xs4all.nl!xs4all!border4.nntp.ams.giganews.com!border2.nntp.ams.giganews.com!border3.nntp.ams.giganews.com!border1.nntp.ams.giganews.com!nntp.giganews.com!newsreader4.netcologne.de!news.netcologne.de!nx01.iad01.newshosting.com!newshosting.com!69.16.185.51.MISMATCH!isp-post01.iad!news.highwinds-media.com!news.cv.net!not-for-mail
+From: John W Kennedy <jwkenne@attglobal.net>
+Newsgroups: comp.lang.pl1
+Date: Mon, 18 Mar 2013 09:25:00 -0400
+Message-ID: <514715ac$0$12066$607ed4bc@cv.net>
+References: <khtch1$3ir$1@speranza.aioe.org> <6dca08b9-40d0-4be7-b05b-b534a642c99c@kw7g2000pbb.googlegroups.com> <514320CC.701@dignus.com> <51438518$0$19547$607ed4bc@cv.net> <51463fc0$19$fuzhry+tra$mr2ice@news.patriot.net> <ki6uij$aj$1@dont-email.me>
+MIME-Version: 1.0
+Subject: Re: FIXED DECIMAL -> FIXED BINARY conversion rules with large scale values
+User-Agent: Unison/2.1.10
+Organization: Optimum Online
+X-Complaints-To: abuse@cv.net
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+On 2013-03-18 11:48:40 +0000, Peter Flass said:
+
+> On 3/17/2013 6:12 PM, Shmuel (Seymour J.) Metz wrote:
+>> In <51438518$0$19547$607ed4bc@cv.net>, on 03/15/2013
+>> at 04:31 PM, John W Kennedy <jwkenne@attglobal.net> said:
+>> 
+>>> The ANSI PL/I standard apparently doesn't allow FIXED BIN(n,m) at
+>>> all,
+>> 
+>> What ANSI standard? X3.74-1987 certainly does.
+>> 
+> 
+> I believe subset G doesn't allow scaled fixed binary.
+
+If the one allows it and the other doesn't, then it cannot be, strictu 
+sensu, a subset. (I lack direct knowledge; I have never held a 
+definition of either.)
+
+-- 
+John W Kennedy
+If Bill Gates believes in "intelligent design", why can't he apply it 
+to Windows?
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: bda4de328f,bc376e75fd398260
+X-Google-Attributes: gidbda4de328f,public,usenet
+X-Google-NewGroupId: yes
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Received: by 10.180.77.230 with SMTP id v6mr25266wiw.0.1363919153599;
+        Thu, 21 Mar 2013 19:25:53 -0700 (PDT)
+Path: bp2ni113242wib.1!nntp.google.com!feeder1.cambriumusenet.nl!feed.tweaknews.nl!85.12.40.138.MISMATCH!xlned.com!feeder5.xlned.com!newsfeed.xs4all.nl!newsfeed1.news.xs4all.nl!xs4all!border4.nntp.ams.giganews.com!border2.nntp.ams.giganews.com!border3.nntp.ams.giganews.com!border1.nntp.ams.giganews.com!nntp.giganews.com!newsreader4.netcologne.de!news.netcologne.de!news.swapon.de!eternal-september.org!feeder.eternal-september.org!mx05.eternal-september.org!.POSTED!not-for-mail
+From: Peter Flass <Peter_Flass@Yahoo.com>
+Newsgroups: comp.lang.pl1
+Subject: Re: FIXED DECIMAL -> FIXED BINARY conversion rules with large scale
+ values
+Date: Mon, 18 Mar 2013 13:24:04 -0400
+Organization: A noiseless patient Spider
+Message-ID: <ki7i5r$kjb$1@dont-email.me>
+References: <khtch1$3ir$1@speranza.aioe.org> <6dca08b9-40d0-4be7-b05b-b534a642c99c@kw7g2000pbb.googlegroups.com> <514320CC.701@dignus.com> <51438518$0$19547$607ed4bc@cv.net> <51463fc0$19$fuzhry+tra$mr2ice@news.patriot.net> <ki6uij$aj$1@dont-email.me> <514715ac$0$12066$607ed4bc@cv.net>
+Mime-Version: 1.0
+Injection-Date: Mon, 18 Mar 2013 17:16:43 +0000 (UTC)
+Injection-Info: mx05.eternal-september.org; posting-host="a5cdd2ddd91d6d8aadb3612341ba8479";
+	logging-data="21099"; mail-complaints-to="abuse@eternal-september.org";	posting-account="U2FsdGVkX183584sM/sywX2mJZPCABTM"
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:17.0) Gecko/20130307 Thunderbird/17.0.4
+In-Reply-To: <514715ac$0$12066$607ed4bc@cv.net>
+Cancel-Lock: sha1:7tBiq6bKDZfZnvx6ezdEhTUmwUM=
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+On 3/18/2013 9:25 AM, John W Kennedy wrote:
+> On 2013-03-18 11:48:40 +0000, Peter Flass said:
+>
+>> On 3/17/2013 6:12 PM, Shmuel (Seymour J.) Metz wrote:
+>>> In <51438518$0$19547$607ed4bc@cv.net>, on 03/15/2013
+>>> at 04:31 PM, John W Kennedy <jwkenne@attglobal.net> said:
+>>>
+>>>> The ANSI PL/I standard apparently doesn't allow FIXED BIN(n,m) at
+>>>> all,
+>>>
+>>> What ANSI standard? X3.74-1987 certainly does.
+>>>
+>>
+>> I believe subset G doesn't allow scaled fixed binary.
+>
+> If the one allows it and the other doesn't, then it cannot be, strictu
+> sensu, a subset. (I lack direct knowledge; I have never held a
+> definition of either.)
+>
+
+They're not - for example "G" includes the SELECT statement and "Full 
+PL/I" doesn't.
+
+-- 
+Pete
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: 101deb,bc376e75fd398260
+X-Google-NewGroupId: yes
+X-Google-Attributes: gidbda4de328f,domainid0,public,usenet
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Received: by 10.180.189.209 with SMTP id gk17mr68300wic.7.1363663646209;
+        Mon, 18 Mar 2013 20:27:26 -0700 (PDT)
+MIME-Version: 1.0
+Path: g1ni74398wig.0!nntp.google.com!feeder1-2.proxad.net!proxad.net!feeder2-2.proxad.net!nx02.iad01.newshosting.com!newshosting.com!216.196.98.144.MISMATCH!border3.nntp.dca.giganews.com!Xl.tags.giganews.com!border1.nntp.dca.giganews.com!nntp.giganews.com!local2.nntp.dca.giganews.com!nntp.posted.lerostechnologies!news.posted.lerostechnologies.POSTED!not-for-mail
+NNTP-Posting-Date: Mon, 18 Mar 2013 22:27:24 -0500
+Newsgroups: comp.lang.pl1
+From: Shmuel (Seymour J.) Metz <spamtrap@library.lspace.org.invalid>
+Date: Mon, 18 Mar 2013 22:15:20 -0400
+Subject: Re: FIXED DECIMAL -> FIXED BINARY conversion rules with large scale values
+References: <khtch1$3ir$1@speranza.aioe.org> 
+      <6dca08b9-40d0-4be7-b05b-b534a642c99c@kw7g2000pbb.googlegroups.com> 
+      <514320CC.701@dignus.com> 
+      <51438518$0$19547$607ed4bc@cv.net> 
+      <51463fc0$19$fuzhry+tra$mr2ice@news.patriot.net> 
+      <ki6uij$aj$1@dont-email.me>
+Mail-Copies-To: nobody
+Organization: Atid/2
+X-Treme: C&C,DWS
+X-WebTV-Stationery: Standard; BGColor=black; TextColor=black
+Message-ID: <5147ca39$6$fuzhry+tra$mr2ice@news.patriot.net>
+X-Newsreader: MR/2 Internet Cruiser Edition for OS/2 v3.00.11.18 BETA/60
+X-Usenet-Provider: http://www.giganews.com
+NNTP-Posting-Host: 69.72.27.149
+X-Trace: sv3-PMBf1jxjqeLQbgz31FCxs/tT2AqQP9olGbwdAxdMTy0uXBmm56g6JcrVfVedBovfh32xkbDpPTBoHGn!BLkjVAtpVgkP+OKMK1jrC6UUI2pEDH4i50Md4JDK9fMZvOWNPbmhbGYxwgiGiG6VEBn0MWhmo6C9!dmGs4fqtee+glVnX5S11goI/ROhyNk4=
+X-Abuse-and-DMCA-Info: Please be sure to forward a copy of ALL headers
+X-Abuse-and-DMCA-Info: Otherwise we will be unable to process your complaint properly
+X-Postfilter: 1.3.40
+X-Original-Bytes: 2300
+
+In <ki6uij$aj$1@dont-email.me>, on 03/18/2013
+   at 07:48 AM, Peter Flass <Peter_Flass@Yahoo.com> said:
+
+>On 3/17/2013 6:12 PM, Shmuel (Seymour J.) Metz wrote:
+>> In <51438518$0$19547$607ed4bc@cv.net>, on 03/15/2013
+>>     at 04:31 PM, John W Kennedy <jwkenne@attglobal.net> said:
+>>
+>>> The ANSI PL/I standard apparently doesn't allow FIXED BIN(n,m) at
+>>> all,
+>>
+>> What ANSI standard? X3.74-1987 certainly does.
+>>
+
+>I believe subset G doesn't allow scaled fixed binary.
+
+X3.74-1987 *is* subset G. I don't recall what the 1976 version
+allowed. 
+
+-- 
+Shmuel (Seymour J.) Metz, SysProg and JOAT  <http://patriot.net/~shmuel>
+
+Unsolicited bulk E-mail subject to legal action.  I reserve the
+right to publicly post or ridicule any abusive E-mail.  Reply to
+domain Patriot dot net user shmuel+news to contact me.  Do not
+reply to spamtrap@library.lspace.org
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: 101deb,a176c436af16703e
+X-Google-NewGroupId: yes
+X-Google-Attributes: gidbda4de328f,domainid0,public,usenet
+X-Google-Language: ENGLISH,CP1252
+X-Received: by 10.66.88.131 with SMTP id bg3mr8610502pab.39.1357263410958;
+        Thu, 03 Jan 2013 17:36:50 -0800 (PST)
+MIME-Version: 1.0
+Received: by 10.50.106.225 with SMTP id gx1mr17041544igb.8.1357263410724; Thu,
+ 03 Jan 2013 17:36:50 -0800 (PST)
+Path: s9ni79141pbb.0!nntp.google.com!b8no1747900pbd.0!postnews.google.com!px4g2000pbc.googlegroups.com!not-for-mail
+Newsgroups: comp.lang.pl1
+Date: Thu, 3 Jan 2013 17:36:50 -0800 (PST)
+Complaints-To: groups-abuse@google.com
+Injection-Info: px4g2000pbc.googlegroups.com; posting-host=123.2.70.40; posting-account=S_MdrwoAAAD7T2pxG2e393dk6y0tc0Le
+NNTP-Posting-Host: 123.2.70.40
+References: <f5563373-2b13-4af6-a7ed-8da943e606c6@googlegroups.com>
+ <50d4edef$0$1229$607ed4bc@cv.net> <57a8d781-92a4-430b-b43e-d5f37a00325b@gg5g2000pbc.googlegroups.com>
+ <548241885377966994.325270jwkenne-attglobal.neg@news.optonline.net>
+ <3281893c-0124-4bfd-8a0c-c29ac63b6561@oi3g2000pbb.googlegroups.com> <50e5b55a$0$1249$607ed4bc@cv.net>
+User-Agent: G2/1.0
+X-HTTP-UserAgent: Mozilla/5.0 (Windows NT 5.1; rv:13.0) Gecko/20100101 Firefox/13.0.1,gzip(gfe)
+Message-ID: <8e9fc82c-4492-4f9e-9a0a-2ef0a9feeae6@px4g2000pbc.googlegroups.com>
+Subject: Re: PICSPEC question
+From: Robin Vowels <robin.vowels@gmail.com>
+Injection-Date: Fri, 04 Jan 2013 01:36:50 +0000
+Content-Type: text/plain; charset=windows-1252
+Content-Transfer-Encoding: quoted-printable
+
+On Jan 4, 3:44=A0am, John W Kennedy <jwke...@attglobal.net> wrote:
+> On 2013-01-03 15:31:44 +0000, Robin Vowels said:
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> > On Dec 24 2012, 2:40=A0am, John W Kennedy <jwke...@attglobal.neg> wrote=
+:
+> >> Robin Vowels <robin.vow...@gmail.com> wrote:
+> >>> On Dec 22, 10:17 am, John W Kennedy <jwke...@attglobal.net> wrote:
+> >>>> On 2012-12-21 18:03:21 +0000, Roger Henn said:
+>
+> >>>>> OK, can anyone explain why this fragment:
+> >>>>> PICSPEC (SUBSTR (TRACKING_CODE, INX, 1), '9')
+> >>>>> produces this error (Enterprise PL/I for z/OS V4.R1.M0):
+> >>>>> IBM2183I S 387 The first argument to PICSPEC built-in must have
+> >>>>> =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0constant length equal to that of the=
+ second argument.
+>
+> >>>>> The actual logic is something like:
+> >>>>> DCL WORK FIXED DEC (31) INIT (0);
+> >>>>> DCL TRACKING_CODE CHAR (20);
+> >>>>> DCL INX FIXED BIN (31);
+> >>>>> DO INX =3D 1 TO LENGTH (TRACKING_CODE);
+> >>>>> =A0 WORK =3D WORK * 5 + PICSPEC (SUBSTR (TRACKING_CODE, INX, 1), '9=
+');
+> >>>>> END;
+>
+> >>>>> I thought 1 was a constant.
+>
+> >>>> Neither the modern manual nor the Optimizer manual specifies anythin=
+g
+> >>>> one way or the other, but the 60s manual (the abstract one, not the =
+(F)
+> >>>> documentation) says expressly that the result of SUBSTR is always
+> >>>> VARYING. 1 being a constant doesn't change that.
+>
+> >>> Well researched.
+> >>> I think that that early IBM documentation is not applicable,
+> >>> as the current IBM compiler is the third completely
+> >>> different compiler from PL/I-F of 1966.
+>
+> >> What part of my statement that this was /not/ documentation for the F
+> >> compiler didn=92t you understand? This is IBM's official description o=
+f the
+> >> PL/I language, and, although it's decades out of date, it has never be=
+en
+> >> revised.
+>
+> >>> In the case of the IBM compiler here, it looks like an
+> >>> implementation restriction. I see no reason why SUBSTR
+> >>> should return anything other than NONVARYING string
+> >>> when the third argument is a constant.
+>
+> >>> It looks like the requirement of PICSPEC (insisting on a
+> >>> fixed-length string) is likewise an implementation restriction, merel=
+y
+> >>> to simplify code generation.
+>
+> >> That=92s your explanation for everything, and, as usual, you=92re off-=
+base. In
+> >> order for the first operand of PICSPEC to be VARYING, it is necessary =
+for
+> >> the second operand to be a run-time string variable, which could be sa=
+nely
+> >> done only out-of-line, which in itself is trivial from a code-generati=
+on
+> >> viewpoint, but which means in turn that the type, precision, and scale=
+ of
+> >> the expression all become unknown at compile time, which opens the sam=
+e
+> >> rat's nest that assigning from CHARACTER to numeric did, only worse, s=
+ince
+> >> the CHARACTER case at least allowed of arbitrary defaults.
+>
+> >> If you want a language that is interpreted at runtime, I suggest REXX =
+in
+> >> the IBM world, or Ruby elsewhere. PL/I is designed to be compiled.
+>
+> >>>> Unfortunately, all modern PL/I documentation is vague, and all preci=
+se
+> >>>> PL/I documentation has gone without revision since the 60s. A pity,
+> >>>> seeing that PL/I was the first language to be decently documented, b=
+ut
+> >>>> there you are.
+>
+> >>> I think that you will find that the Kednos PL/I documentation
+> >>> is precise.
+>
+> >> No it isn=92t. Indeed, on this particular issue, it=92s flat wrong, se=
+eing that
+> >> the plain reading of it is that the result of SUBSTR is NONVARYING, wh=
+ich
+> >> is absurd.
+>
+> > It's not absurd.
+>
+> > The Kednos PL/I manual is correct.
+>
+> There is no such thing as "correct" unless there is an authoritative stan=
+dard.
+
+Try X3.4-1977 and X3.74-1987, which are the standards used
+by IBM's compilers (see p. 4, Industry Standards Used).
+The Kednos compiler is a definitive specification, and it follows
+X3.74-1981, X3.74-1987, and X3.4-1977.
+
+> > In point of fact, on current IBM PL/I compilers, SUBSTR always
+> > yields CHAR NONVARYING, regardless of the CHARACTER argument being
+> > VARYING or NONVARYING.
+>
+> You can't prove how the SUBSTR function works by appealing to the
+> SUBSTR pseudovariable.
+
+Another nonsensical reply.
+The discussion has been about the SUBSTR built-in function.
+And I proved that IBM's SUBSTR built-in function always returns
+a non-varying string.
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: 101deb,a176c436af16703e
+X-Google-NewGroupId: yes
+X-Google-Attributes: gidbda4de328f,domainid0,public,usenet
+X-Google-Language: ENGLISH,UTF8
+X-Received: by 10.66.78.6 with SMTP id x6mr5923268paw.42.1357269068294;
+        Thu, 03 Jan 2013 19:11:08 -0800 (PST)
+Path: 6ni80345pbd.1!nntp.google.com!news.glorb.com!border3.nntp.dca.giganews.com!border1.nntp.dca.giganews.com!border4.nntp.dca.giganews.com!border2.nntp.dca.giganews.com!nntp.giganews.com!nx02.iad01.newshosting.com!newshosting.com!69.16.185.51.MISMATCH!isp-post01.iad!news.highwinds-media.com!news.cv.net!not-for-mail
+From: John W Kennedy <jwkenne@attglobal.net>
+Newsgroups: comp.lang.pl1
+Date: Thu, 3 Jan 2013 22:11:09 -0500
+Message-ID: <50e64844$0$24764$607ed4bc@cv.net>
+References: <f5563373-2b13-4af6-a7ed-8da943e606c6@googlegroups.com> <50d4edef$0$1229$607ed4bc@cv.net> <57a8d781-92a4-430b-b43e-d5f37a00325b@gg5g2000pbc.googlegroups.com> <548241885377966994.325270jwkenne-attglobal.neg@news.optonline.net> <3281893c-0124-4bfd-8a0c-c29ac63b6561@oi3g2000pbb.googlegroups.com> <50e5b55a$0$1249$607ed4bc@cv.net> <8e9fc82c-4492-4f9e-9a0a-2ef0a9feeae6@px4g2000pbc.googlegroups.com>
+MIME-Version: 1.0
+Subject: Re: PICSPEC question
+User-Agent: Unison/2.1.10
+Organization: Optimum Online
+X-Complaints-To: abuse@cv.net
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+On 2013-01-04 01:36:50 +0000, Robin Vowels said:
+
+> On Jan 4, 3:44 am, John W Kennedy <jwke...@attglobal.net> wrote:
+>> On 2013-01-03 15:31:44 +0000, Robin Vowels said:
+>> 
+>> 
+>> 
+>> 
+>> 
+>> 
+>> 
+>> 
+>> 
+>>> On Dec 24 2012, 2:40 am, John W Kennedy <jwke...@attglobal.neg> wrote:
+>>>> Robin Vowels <robin.vow...@gmail.com> wrote:
+>>>>> On Dec 22, 10:17 am, John W Kennedy <jwke...@attglobal.net> wrote:
+>>>>>> On 2012-12-21 18:03:21 +0000, Roger Henn said:
+>> 
+>>>>>>> OK, can anyone explain why this fragment:
+>>>>>>> PICSPEC (SUBSTR (TRACKING_CODE, INX, 1), '9')
+>>>>>>> produces this error (Enterprise PL/I for z/OS V4.R1.M0):
+>>>>>>> IBM2183I S 387 The first argument to PICSPEC built-in must have
+>>>>>>>                constant length equal to that of the second argument.
+>> 
+>>>>>>> The actual logic is something like:
+>>>>>>> DCL WORK FIXED DEC (31) INIT (0);
+>>>>>>> DCL TRACKING_CODE CHAR (20);
+>>>>>>> DCL INX FIXED BIN (31);
+>>>>>>> DO INX = 1 TO LENGTH (TRACKING_CODE);
+>>>>>>>   WORK = WORK * 5 + PICSPEC (SUBSTR (TRACKING_CODE, INX, 1), '9');
+>>>>>>> END;
+>> 
+>>>>>>> I thought 1 was a constant.
+>> 
+>>>>>> Neither the modern manual nor the Optimizer manual specifies anything
+>>>>>> one way or the other, but the 60s manual (the abstract one, not the (F)
+>>>>>> documentation) says expressly that the result of SUBSTR is always
+>>>>>> VARYING. 1 being a constant doesn't change that.
+>> 
+>>>>> Well researched.
+>>>>> I think that that early IBM documentation is not applicable,
+>>>>> as the current IBM compiler is the third completely
+>>>>> different compiler from PL/I-F of 1966.
+>> 
+>>>> What part of my statement that this was /not/ documentation for the F
+>>>> compiler didn’t you understand? This is IBM's official description of the
+>>>> PL/I language, and, although it's decades out of date, it has never been
+>>>> revised.
+>> 
+>>>>> In the case of the IBM compiler here, it looks like an
+>>>>> implementation restriction. I see no reason why SUBSTR
+>>>>> should return anything other than NONVARYING string
+>>>>> when the third argument is a constant.
+>> 
+>>>>> It looks like the requirement of PICSPEC (insisting on a
+>>>>> fixed-length string) is likewise an implementation restriction, merely
+>>>>> to simplify code generation.
+>> 
+>>>> That’s your explanation for everything, and, as usual, you’re off-base. In
+>>>> order for the first operand of PICSPEC to be VARYING, it is necessary for
+>>>> the second operand to be a run-time string variable, which could be sanely
+>>>> done only out-of-line, which in itself is trivial from a code-generation
+>>>> viewpoint, but which means in turn that the type, precision, and scale of
+>>>> the expression all become unknown at compile time, which opens the same
+>>>> rat's nest that assigning from CHARACTER to numeric did, only worse, since
+>>>> the CHARACTER case at least allowed of arbitrary defaults.
+>> 
+>>>> If you want a language that is interpreted at runtime, I suggest REXX in
+>>>> the IBM world, or Ruby elsewhere. PL/I is designed to be compiled.
+>> 
+>>>>>> Unfortunately, all modern PL/I documentation is vague, and all precise
+>>>>>> PL/I documentation has gone without revision since the 60s. A pity,
+>>>>>> seeing that PL/I was the first language to be decently documented, but
+>>>>>> there you are.
+>> 
+>>>>> I think that you will find that the Kednos PL/I documentation
+>>>>> is precise.
+>> 
+>>>> No it isn’t. Indeed, on this particular issue, it’s flat wrong, seeing that
+>>>> the plain reading of it is that the result of SUBSTR is NONVARYING, which
+>>>> is absurd.
+>> 
+>>> It's not absurd.
+>> 
+>>> The Kednos PL/I manual is correct.
+>> 
+>> There is no such thing as "correct" unless there is an authoritative standard.
+> 
+> Try X3.4-1977 and X3.74-1987, which are the standards used
+> by IBM's compilers (see p. 4, Industry Standards Used).
+
+It may use them, but it doesn't follow them.
+
+> The Kednos compiler is a definitive specification,
+
+A compiler is not a specification. And if by "compiler" you mean the 
+manuals appertaining, no, those manuals do not come close to being an 
+adequate specification, as I already pointed out.
+
+>  and it follows
+> X3.74-1981, X3.74-1987, and X3.4-1977.
+> 
+>>> In point of fact, on current IBM PL/I compilers, SUBSTR always
+>>> yields CHAR NONVARYING, regardless of the CHARACTER argument being
+>>> VARYING or NONVARYING.
+>> 
+>> You can't prove how the SUBSTR function works by appealing to the
+>> SUBSTR pseudovariable.
+> 
+> Another nonsensical reply.
+> The discussion has been about the SUBSTR built-in function.
+> And I proved that IBM's SUBSTR built-in function always returns
+> a non-varying string.
+
+You "proved" it A) by experimenting with a compiler to see what it did 
+and B) by using the SUBSTR pseudo-variable.
+
+-- 
+John W Kennedy
+"Though a Rothschild you may be
+In your own capacity,
+    As a Company you've come to utter sorrow--
+But the Liquidators say,
+'Never mind--you needn't pay,'
+    So you start another company to-morrow!"
+  -- Sir William S. Gilbert.  "Utopia Limited"
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: 101deb,a176c436af16703e
+X-Google-NewGroupId: yes
+X-Google-Attributes: gidbda4de328f,domainid0,public,usenet
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Received: by 10.180.24.130 with SMTP id u2mr12217877wif.6.1357302954715;
+        Fri, 04 Jan 2013 04:35:54 -0800 (PST)
+Path: o9ni711wio.1!nntp.google.com!goblin3!goblin1!goblin.stu.neva.ru!eternal-september.org!feeder.eternal-september.org!mx04.eternal-september.org!.POSTED!not-for-mail
+From: Peter Flass <Peter_Flass@Yahoo.com>
+Newsgroups: comp.lang.pl1
+Subject: Re: PICSPEC question
+Date: Fri, 04 Jan 2013 07:36:14 -0500
+Organization: A noiseless patient Spider
+Message-ID: <kc6iba$kon$2@dont-email.me>
+References: <f5563373-2b13-4af6-a7ed-8da943e606c6@googlegroups.com> <50d4edef$0$1229$607ed4bc@cv.net> <57a8d781-92a4-430b-b43e-d5f37a00325b@gg5g2000pbc.googlegroups.com> <548241885377966994.325270jwkenne-attglobal.neg@news.optonline.net> <3281893c-0124-4bfd-8a0c-c29ac63b6561@oi3g2000pbb.googlegroups.com> <50e5b55a$0$1249$607ed4bc@cv.net> <8e9fc82c-4492-4f9e-9a0a-2ef0a9feeae6@px4g2000pbc.googlegroups.com> <50e64844$0$24764$607ed4bc@cv.net>
+Mime-Version: 1.0
+Injection-Date: Fri, 4 Jan 2013 12:35:54 +0000 (UTC)
+Injection-Info: mx04.eternal-september.org; posting-host="4e9b25ba643e7f13e4f5d3825e55ed67";
+	logging-data="21271"; mail-complaints-to="abuse@eternal-september.org";	posting-account="U2FsdGVkX18Ff9oM4J5NVSrR0y0tVpJG"
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:17.0) Gecko/17.0 Thunderbird/17.0
+In-Reply-To: <50e64844$0$24764$607ed4bc@cv.net>
+Cancel-Lock: sha1:dwPVs0MQDPfMwwFJSPk4DKkbOxc=
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+On 1/3/2013 10:11 PM, John W Kennedy wrote:
+> On 2013-01-04 01:36:50 +0000, Robin Vowels said:
+>>
+>> Try X3.4-1977 and X3.74-1987, which are the standards used
+>> by IBM's compilers (see p. 4, Industry Standards Used).
+>
+> It may use them, but it doesn't follow them.
+
+Yes, IBM found they made excellent places to set coffee cups.
+
+
+-- 
+Pete
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: 101deb,1f267fd430dffcdc
+X-Google-NewGroupId: yes
+X-Google-Attributes: gidbda4de328f,domainid0,public,usenet
+X-Google-Language: ENGLISH,ASCII
+X-Received: by 10.66.73.102 with SMTP id k6mr8753693pav.7.1357308306804;
+        Fri, 04 Jan 2013 06:05:06 -0800 (PST)
+MIME-Version: 1.0
+Received: by 10.50.34.167 with SMTP id a7mr17426580igj.5.1357308306624; Fri,
+ 04 Jan 2013 06:05:06 -0800 (PST)
+Path: s9ni72755pbb.0!nntp.google.com!f6no9584441pbd.1!postnews.google.com!qi8g2000pbb.googlegroups.com!not-for-mail
+Newsgroups: comp.lang.pl1
+Date: Fri, 4 Jan 2013 06:05:06 -0800 (PST)
+Complaints-To: groups-abuse@google.com
+Injection-Info: qi8g2000pbb.googlegroups.com; posting-host=123.2.70.40; posting-account=S_MdrwoAAAD7T2pxG2e393dk6y0tc0Le
+NNTP-Posting-Host: 123.2.70.40
+References: <385ea848-d4d3-4360-af42-2cf76f388c18@px4g2000pbc.googlegroups.com>
+ <50db9ccc$0$24777$607ed4bc@cv.net> <67efa3bf-158e-40af-94f3-dd066fdb8abe@i7g2000pbf.googlegroups.com>
+ <50de318d$0$9801$607ed4bc@cv.net> <7c771d8c-949e-499a-8909-74367d520a7f@i2g2000pbi.googlegroups.com>
+ <50e5b46e$0$1243$607ed4bc@cv.net> <kc541h$rhc$1@speranza.aioe.org> <50e61dbd$0$9821$607ed4bc@cv.net>
+User-Agent: G2/1.0
+X-HTTP-UserAgent: Mozilla/5.0 (Windows NT 5.1; rv:13.0) Gecko/20100101 Firefox/13.0.1,gzip(gfe)
+Message-ID: <1fa4c24c-5867-4f49-8245-416bc348a90e@qi8g2000pbb.googlegroups.com>
+Subject: Re: SUBSTR discussion
+From: Robin Vowels <robin.vowels@gmail.com>
+Injection-Date: Fri, 04 Jan 2013 14:05:06 +0000
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+On Jan 4, 11:09=A0am, John W Kennedy <jwke...@attglobal.net> wrote:
+> On 2013-01-03 23:25:37 +0000, James J. Weinkam said:
+>
+> > John W Kennedy wrote:
+>
+> >> CHARACTER means CHARACTER(1), according to the Language Reference Manu=
+al.
+>
+> > Not in a generic descriptor; string lengths and area sizes are not
+> > allowed in that context.
+>
+> Not according to the Language Reference Manual, which, as in so many
+> cases, is silent on the subject.
+
+Now you are contradicting yourself.
+In any case the relevant manuals are X3.4-1977 and X3.74-1987
+(see p. 4 of the LRM)
+
+> (And in this case, the Language
+> Specifications manual is of no use, because it describes the older
+> GENERIC (entry ENTRY(arguments),...) version.)
+>
+> IBM PL/I desperately needs an up-to-date specification manual.
+
+IBM doesn't need anything of the sort.  It hasn't needed one for
+40 years.  If IBM thought that it needed one, it would have
+produced one sometime in the past 40 years.
+You might need one, though, as you seem to have no idea to read the
+LRM.
+
+> It is of
+> no use to cry with Robin (sometimes), "Whatever the compiler does is
+> right," nor is it any better to cry with Robin (the rest of the time),
+> "However I think it should work is right."
+
+Now you are being perfectly ludicrous.
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: bda4de328f,a176c436af16703e
+X-Google-Attributes: gidbda4de328f,public,usenet
+X-Google-NewGroupId: yes
+X-Google-Language: ENGLISH,CP1252
+X-Received: by 10.66.82.37 with SMTP id f5mr7515770pay.27.1357431253513;
+        Sat, 05 Jan 2013 16:14:13 -0800 (PST)
+MIME-Version: 1.0
+X-Received: by 10.50.7.198 with SMTP id l6mr658042iga.3.1357431253330; Sat, 05
+ Jan 2013 16:14:13 -0800 (PST)
+Path: s9ni85391pbb.0!nntp.google.com!f6no1930326pbd.1!postnews.google.com!vb8g2000pbb.googlegroups.com!not-for-mail
+Newsgroups: comp.lang.pl1
+Date: Sat, 5 Jan 2013 16:14:13 -0800 (PST)
+Complaints-To: groups-abuse@google.com
+Injection-Info: vb8g2000pbb.googlegroups.com; posting-host=123.2.70.40; posting-account=S_MdrwoAAAD7T2pxG2e393dk6y0tc0Le
+NNTP-Posting-Host: 123.2.70.40
+References: <f5563373-2b13-4af6-a7ed-8da943e606c6@googlegroups.com>
+ <50d4edef$0$1229$607ed4bc@cv.net> <57a8d781-92a4-430b-b43e-d5f37a00325b@gg5g2000pbc.googlegroups.com>
+ <548241885377966994.325270jwkenne-attglobal.neg@news.optonline.net>
+ <3281893c-0124-4bfd-8a0c-c29ac63b6561@oi3g2000pbb.googlegroups.com>
+ <50e5b55a$0$1249$607ed4bc@cv.net> <8e9fc82c-4492-4f9e-9a0a-2ef0a9feeae6@px4g2000pbc.googlegroups.com>
+ <50e64844$0$24764$607ed4bc@cv.net>
+User-Agent: G2/1.0
+X-HTTP-UserAgent: Mozilla/5.0 (Windows NT 5.1; rv:13.0) Gecko/20100101 Firefox/13.0.1,gzip(gfe)
+Message-ID: <39524023-45b4-4e30-bb2a-b5e81ba883db@vb8g2000pbb.googlegroups.com>
+Subject: Re: PICSPEC question
+From: Robin Vowels <robin.vowels@gmail.com>
+Injection-Date: Sun, 06 Jan 2013 00:14:13 +0000
+Content-Type: text/plain; charset=windows-1252
+Content-Transfer-Encoding: quoted-printable
+
+On Jan 4, 2:11=A0pm, John W Kennedy <jwke...@attglobal.net> wrote:
+> On 2013-01-04 01:36:50 +0000, Robin Vowels said:
+>
+> > On Jan 4, 3:44=A0am, John W Kennedy <jwke...@attglobal.net> wrote:
+> >> On 2013-01-03 15:31:44 +0000, Robin Vowels said:
+>
+> >>> On Dec 24 2012, 2:40=A0am, John W Kennedy <jwke...@attglobal.neg> wro=
+te:
+> >>>> Robin Vowels <robin.vow...@gmail.com> wrote:
+> >>>>> On Dec 22, 10:17 am, John W Kennedy <jwke...@attglobal.net> wrote:
+> >>>>>> On 2012-12-21 18:03:21 +0000, Roger Henn said:
+>
+> >>>>>>> OK, can anyone explain why this fragment:
+> >>>>>>> PICSPEC (SUBSTR (TRACKING_CODE, INX, 1), '9')
+> >>>>>>> produces this error (Enterprise PL/I for z/OS V4.R1.M0):
+> >>>>>>> IBM2183I S 387 The first argument to PICSPEC built-in must have
+> >>>>>>> =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0constant length equal to that of t=
+he second argument.
+>
+> >>>>>>> The actual logic is something like:
+> >>>>>>> DCL WORK FIXED DEC (31) INIT (0);
+> >>>>>>> DCL TRACKING_CODE CHAR (20);
+> >>>>>>> DCL INX FIXED BIN (31);
+> >>>>>>> DO INX =3D 1 TO LENGTH (TRACKING_CODE);
+> >>>>>>> =A0 WORK =3D WORK * 5 + PICSPEC (SUBSTR (TRACKING_CODE, INX, 1), =
+'9');
+> >>>>>>> END;
+>
+> >>>>>>> I thought 1 was a constant.
+>
+> >>>>>> Neither the modern manual nor the Optimizer manual specifies anyth=
+ing
+> >>>>>> one way or the other, but the 60s manual (the abstract one, not th=
+e (F)
+> >>>>>> documentation) says expressly that the result of SUBSTR is always
+> >>>>>> VARYING. 1 being a constant doesn't change that.
+>
+> >>>>> Well researched.
+> >>>>> I think that that early IBM documentation is not applicable,
+> >>>>> as the current IBM compiler is the third completely
+> >>>>> different compiler from PL/I-F of 1966.
+>
+> >>>> What part of my statement that this was /not/ documentation for the =
+F
+> >>>> compiler didn=92t you understand? This is IBM's official description=
+ of the
+> >>>> PL/I language, and, although it's decades out of date, it has never =
+been
+> >>>> revised.
+>
+> >>>>> In the case of the IBM compiler here, it looks like an
+> >>>>> implementation restriction. I see no reason why SUBSTR
+> >>>>> should return anything other than NONVARYING string
+> >>>>> when the third argument is a constant.
+>
+> >>>>> It looks like the requirement of PICSPEC (insisting on a
+> >>>>> fixed-length string) is likewise an implementation restriction, mer=
+ely
+> >>>>> to simplify code generation.
+>
+> >>>> That=92s your explanation for everything, and, as usual, you=92re of=
+f-base. In
+> >>>> order for the first operand of PICSPEC to be VARYING, it is necessar=
+y for
+> >>>> the second operand to be a run-time string variable, which could be =
+sanely
+> >>>> done only out-of-line, which in itself is trivial from a code-genera=
+tion
+> >>>> viewpoint, but which means in turn that the type, precision, and sca=
+le of
+> >>>> the expression all become unknown at compile time, which opens the s=
+ame
+> >>>> rat's nest that assigning from CHARACTER to numeric did, only worse,=
+ since
+> >>>> the CHARACTER case at least allowed of arbitrary defaults.
+>
+> >>>> If you want a language that is interpreted at runtime, I suggest REX=
+X in
+> >>>> the IBM world, or Ruby elsewhere. PL/I is designed to be compiled.
+>
+> >>>>>> Unfortunately, all modern PL/I documentation is vague, and all pre=
+cise
+> >>>>>> PL/I documentation has gone without revision since the 60s. A pity=
+,
+> >>>>>> seeing that PL/I was the first language to be decently documented,=
+ but
+> >>>>>> there you are.
+>
+> >>>>> I think that you will find that the Kednos PL/I documentation
+> >>>>> is precise.
+>
+> >>>> No it isn=92t. Indeed, on this particular issue, it=92s flat wrong, =
+seeing that
+> >>>> the plain reading of it is that the result of SUBSTR is NONVARYING, =
+which
+> >>>> is absurd.
+>
+> >>> It's not absurd.
+>
+> >>> The Kednos PL/I manual is correct.
+>
+> >> There is no such thing as "correct" unless there is an authoritative s=
+tandard.
+>
+> > Try X3.4-1977 and X3.74-1987, which are the standards used
+> > by IBM's compilers (see p. 4, Industry Standards Used).
+>
+> It may use them, but it doesn't follow them.
+>
+> > The Kednos compiler is a definitive specification,
+>
+> A compiler is not a specification. And if by "compiler" you mean the
+> manuals appertaining, no, those manuals do not come close to being an
+> adequate specification, as I already pointed out.
+
+Not only are you wrong, you are just being silly, because you found
+by looking in it that Kednos PL/I LRM states that SUBSTR returns a
+non-varying string.
+
+> > =A0and it follows
+> > X3.74-1981, X3.74-1987, and X3.4-1977.
+>
+> >>> In point of fact, on current IBM PL/I compilers, SUBSTR always
+> >>> yields CHAR NONVARYING, regardless of the CHARACTER argument being
+> >>> VARYING or NONVARYING.
+>
+> >> You can't prove how the SUBSTR function works by appealing to the
+> >> SUBSTR pseudovariable.
+>
+> > Another nonsensical reply.
+> > The discussion has been about the SUBSTR built-in function.
+> > And I proved that IBM's SUBSTR built-in function always returns
+> > a non-varying string.
+>
+> You "proved" it A) by experimenting with a compiler to see what it did
+
+I checked with IBM PL/I compiler after you made the stupid claim
+(see quote following) that the Kednos PL/I LRM was not only wrong,
+but that to deliver a non-varying result for SUBSTR was "absurd".
+Peter Flass already had advised you that Iron Spring compiler
+delivered a non-varying result.
+You have been using an out-of-date 40-year-old manual as reference.
+
+" No it isn=92t. Indeed, on this particular issue, it=92s flat wrong,
+seeing that
+" the plain reading of it is that the result of SUBSTR is NONVARYING,
+which
+" is absurd."
+
+> and B) by using the SUBSTR pseudo-variable.
+
+The SUBSTR pseudo-variable had nothing to do with the proof,
+as I already said.
+See if you can find a pseudo-variable in my PL/I example using
+generic facility.
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: 10d15b,e3c59dae7f005edd
+X-Google-NewGroupId: yes
+X-Google-Thread: 101deb,be2d726c96d4b23d
+X-Google-NewGroupId: yes
+X-Google-Attributes: gid7616fb0170,gidbda4de328f,domainid0,public,usenet
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news2.google.com!news4.google.com!feeder1.cambriumusenet.nl!feed.tweaknews.nl!193.201.147.93.MISMATCH!xlned.com!feeder7.xlned.com!news2.euro.net!goblin1!goblin3!goblin.stu.neva.ru!exi-transit.telstra.net!news.telstra.net!exi-spool.telstra.net!exi-reader.telstra.net!not-for-mail
+From: "robin" <robin51@dodo.mapson.com.au>
+Newsgroups: comp.lang.cobol,comp.lang.pl1
+References: <c0d054fb-8b4e-4a97-b299-ef153d4fc7be@32g2000yqz.googlegroups.com>       <8pn774FcdhU1@mid.individual.net>       <4d3d691a$0$88227$c30e37c6@exi-reader.telstra.net>       <4l7rj6tqvf5vj1t367fembll2fon5uqsnu@4ax.com>       <4d3ee002$0$88217$c30e37c6@exi-reader.telstra.net>       <nzR%o.340760$Ph5.198741@en-nntp-07.dc1.easynews.com>       <ihpap1$pu0$1@news.eternal-september.org>       <4d4204ed$3$fuzhry+tra$mr2ice@news.patriot.net>       <4d455954$0$88217$c30e37c6@exi-reader.telstra.net>       <4d45b96f$6$fuzhry+tra$mr2ice@news.patriot.net>       <4d46cf09$0$10581$c30e37c6@exi-reader.telstra.net>       <4d4710e1$1$fuzhry+tra$mr2ice@news.patriot.net>       <4d53df50$0$32792$c30e37c6@exi-reader.telstra.net>       <4d54353e$5$fuzhry+tra$mr2ice@news.patriot.net>       <4d55c8e0$0$32793$c30e37c6@exi-reader.telstra.net> <4d5952d3$9$fuzhry+tra$mr2ice@news.patriot.net>
+Subject: Re: Rounding
+Date: Tue, 15 Feb 2011 23:19:33 +1100
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Newsreader: Microsoft Outlook Express 6.00.2900.5931
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5994
+Message-ID: <4d5a6f5d$0$54953$c30e37c6@exi-reader.telstra.net>
+NNTP-Posting-Host: 123.3.16.104
+X-Trace: 1297772382 exi-reader.telstra.net 54953 123.3.16.104:1051
+Xref: g2news2.google.com comp.lang.cobol:12679 comp.lang.pl1:2230
+
+"Shmuel (Seymour J.) Metz" <spamtrap@library.lspace.org.invalid> wrote in message 
+news:4d5952d3$9$fuzhry+tra$mr2ice@news.patriot.net...
+| In <4d55c8e0$0$32793$c30e37c6@exi-reader.telstra.net>, on 02/12/2011
+|   at 10:38 AM, "robin" <robin51@dodo.mapson.com.au> said:
+|
+| >Say somethng relevant.
+|
+| ROTF,LMAO! It's not my fault that you are unable to read.
+|
+| >1.  Vendors haven't ignored ANSI standards.
+|
+| IBM has.
+
+No they haven't. Do read their manual.
+You will find that they cite four ANSI standards, including ANSI X3.74-1987.
+
+| In case you wewre unaware of it, IBM is a vendor.
+
+| >2.  That topic wasn't under discussion.
+|
+| Wrong again. Message-ID: <ihpap1$pu0$1@news.eternal-september.org>
+|
+| >3.  There were other issues under discussion (see subject).
+|
+| Had I been addressing other issues I would have quoted the relevant
+| text. I addressed the specific text that I quoted.
+
+As I said, that issue wasn't under discussion. 
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: 10d15b,e3c59dae7f005edd
+X-Google-NewGroupId: yes
+X-Google-Thread: 101deb,be2d726c96d4b23d
+X-Google-NewGroupId: yes
+X-Google-Attributes: gid7616fb0170,gidbda4de328f,domainid0,public,usenet
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news2.google.com!news3.google.com!feeder1.cambriumusenet.nl!feed.tweaknews.nl!193.201.147.78.MISMATCH!feeder.news-service.com!85.214.198.2.MISMATCH!eternal-september.org!feeder.eternal-september.org!.POSTED!not-for-mail
+From: Peter Flass <Peter_Flass@Yahoo.com>
+Newsgroups: comp.lang.cobol,comp.lang.pl1
+Subject: Re: Rounding
+Date: Tue, 15 Feb 2011 07:46:54 -0500
+Organization: A noiseless patient Spider
+Message-ID: <ijdsk1$p8e$1@news.eternal-september.org>
+References: <c0d054fb-8b4e-4a97-b299-ef153d4fc7be@32g2000yqz.googlegroups.com>       <8pn774FcdhU1@mid.individual.net>       <4d3d691a$0$88227$c30e37c6@exi-reader.telstra.net>       <4l7rj6tqvf5vj1t367fembll2fon5uqsnu@4ax.com>       <4d3ee002$0$88217$c30e37c6@exi-reader.telstra.net>       <nzR%o.340760$Ph5.198741@en-nntp-07.dc1.easynews.com>       <ihpap1$pu0$1@news.eternal-september.org>       <4d4204ed$3$fuzhry+tra$mr2ice@news.patriot.net>       <4d455954$0$88217$c30e37c6@exi-reader.telstra.net>       <4d45b96f$6$fuzhry+tra$mr2ice@news.patriot.net>       <4d46cf09$0$10581$c30e37c6@exi-reader.telstra.net>       <4d4710e1$1$fuzhry+tra$mr2ice@news.patriot.net>       <4d53df50$0$32792$c30e37c6@exi-reader.telstra.net>       <4d54353e$5$fuzhry+tra$mr2ice@news.patriot.net>       <4d55c8e0$0$32793$c30e37c6@exi-reader.telstra.net> <4d5952d3$9$fuzhry+tra$mr2ice@news.patriot.net> <4d5a6f5d$0$54953$c30e37c6@exi-reader.telstra.net>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+Injection-Date: Tue, 15 Feb 2011 12:46:57 +0000 (UTC)
+Injection-Info: mx02.eternal-september.org; posting-host="V8SydqRRXuF8ysuwvpMn7w";
+	logging-data="25870"; mail-complaints-to="abuse@eternal-september.org";	posting-account="U2FsdGVkX1/2/r6B8anqq9y/b8ObXodv"
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.13) Gecko/20101207 Thunderbird/3.1.7
+In-Reply-To: <4d5a6f5d$0$54953$c30e37c6@exi-reader.telstra.net>
+X-Antivirus-Status: Clean
+X-Antivirus: avast! (VPS 110214-1, 02/14/2011), Outbound message
+Cancel-Lock: sha1:0iN88uEquYtMhm1WdTejBZmU/OQ=
+Xref: g2news2.google.com comp.lang.cobol:12683 comp.lang.pl1:2232
+
+On 2/15/2011 7:19 AM, robin wrote:
+> "Shmuel (Seymour J.) Metz"<spamtrap@library.lspace.org.invalid>  wrote in message
+> news:4d5952d3$9$fuzhry+tra$mr2ice@news.patriot.net...
+> | In<4d55c8e0$0$32793$c30e37c6@exi-reader.telstra.net>, on 02/12/2011
+> |   at 10:38 AM, "robin"<robin51@dodo.mapson.com.au>  said:
+> |
+> |>Say somethng relevant.
+> |
+> | ROTF,LMAO! It's not my fault that you are unable to read.
+> |
+> |>1.  Vendors haven't ignored ANSI standards.
+> |
+> | IBM has.
+>
+> No they haven't. Do read their manual.
+> You will find that they cite four ANSI standards, including ANSI X3.74-1987.
+
+But they have made significant extensions, and I haven't seen any 
+attempt to get these standardized.
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: bda4de328f,be2d726c96d4b23d
+X-Google-Attributes: gidbda4de328f,public,usenet
+X-Google-NewGroupId: yes
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news2.google.com!news2.google.com!goblin1!goblin3!goblin.stu.neva.ru!exi-transit.telstra.net!news.telstra.net!exi-spool.telstra.net!exi-reader.telstra.net!not-for-mail
+From: "robin" <robin51@dodo.com.au>
+Newsgroups: comp.lang.cobol,comp.lang.pl1
+References: <c0d054fb-8b4e-4a97-b299-ef153d4fc7be@32g2000yqz.googlegroups.com>      <8pn774FcdhU1@mid.individual.net>      <4d3d691a$0$88227$c30e37c6@exi-reader.telstra.net>      <4l7rj6tqvf5vj1t367fembll2fon5uqsnu@4ax.com>      <4d3ee002$0$88217$c30e37c6@exi-reader.telstra.net>      <nzR%o.340760$Ph5.198741@en-nntp-07.dc1.easynews.com>      <ihpap1$pu0$1@news.eternal-september.org>      <4d4204ed$3$fuzhry+tra$mr2ice@news.patriot.net>      <4d455954$0$88217$c30e37c6@exi-reader.telstra.net>      <4d45b96f$6$fuzhry+tra$mr2ice@news.patriot.net>      <4d46cf09$0$10581$c30e37c6@exi-reader.telstra.net>      <4d4710e1$1$fuzhry+tra$mr2ice@news.patriot.net>      <4d53df50$0$32792$c30e37c6@exi-reader.telstra.net>      <4d54353e$5$fuzhry+tra$mr2ice@news.patriot.net>      <4d55c8e0$0$32793$c30e37c6@exi-reader.telstra.net>      <4d5952d3$9$fuzhry+tra$mr2ice@news.patriot.net>      <4d5a6f5d$0$54953$c30e37c6@exi-reader.telstra.net> <4d5c33fb$24$fuzhry+tra$mr2ice@news.patriot.net>
+Subject: Re: Rounding
+Date: Thu, 17 Feb 2011 23:03:51 +1100
+X-Newsreader: Microsoft Outlook Express 4.72.3110.5
+X-MimeOLE: Produced By Microsoft MimeOLE V4.72.3110.3
+Message-ID: <4d5d0dd2$0$54956$c30e37c6@exi-reader.telstra.net>
+NNTP-Posting-Host: 123.3.24.131
+X-Trace: 1297944018 exi-reader.telstra.net 54956 123.3.24.131:1045
+Xref: g2news2.google.com comp.lang.cobol:12704 comp.lang.pl1:2249
+
+Shmuel (Seymour J.) Metz wrote in message <4d5c33fb$24$fuzhry+tra$mr2ice@news.patriot.net>...
+>In <4d5a6f5d$0$54953$c30e37c6@exi-reader.telstra.net>, on 02/15/2011
+>   at 11:19 PM, "robin" <robin51@dodo.mapson.com.au> said:
+>
+>>You will find that they cite four ANSI standards, including ANSI
+>>X3.74-1987.
+>
+>K3wl. That's the *SUBSET* standard.
+
+I know that.  But you claimed that IBM ignored  ANSI stanadards,
+and you were wrong.
+
+IBM also follows the ANSI standard for full PL/I.
+You are wrong about that also.
+
+>>As I said,
+>
+>You said a lot of things; they were wrong.
+
+
+No, it's you who is wrong.  You made a false claim,
+and you are proved wrong, because it's there in the manual
+in black-and-white.
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: 10d15b,e3c59dae7f005edd
+X-Google-NewGroupId: yes
+X-Google-Thread: 101deb,be2d726c96d4b23d
+X-Google-NewGroupId: yes
+X-Google-Attributes: gid7616fb0170,gidbda4de328f,domainid0,public,usenet
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news2.google.com!news4.google.com!feeder.news-service.com!goblin3!goblin.stu.neva.ru!exi-transit.telstra.net!news.telstra.net!exi-spool.telstra.net!exi-reader.telstra.net!not-for-mail
+From: "robin" <robin51@dodo.com.au>
+Newsgroups: comp.lang.cobol,comp.lang.pl1
+References: <c0d054fb-8b4e-4a97-b299-ef153d4fc7be@32g2000yqz.googlegroups.com>       <8pn774FcdhU1@mid.individual.net>       <4d3d691a$0$88227$c30e37c6@exi-reader.telstra.net>       <4l7rj6tqvf5vj1t367fembll2fon5uqsnu@4ax.com>       <4d3ee002$0$88217$c30e37c6@exi-reader.telstra.net>       <nzR%o.340760$Ph5.198741@en-nntp-07.dc1.easynews.com>       <ihpap1$pu0$1@news.eternal-september.org>       <4d4204ed$3$fuzhry+tra$mr2ice@news.patriot.net>       <4d455954$0$88217$c30e37c6@exi-reader.telstra.net>       <4d45b96f$6$fuzhry+tra$mr2ice@news.patriot.net>       <4d46cf09$0$10581$c30e37c6@exi-reader.telstra.net>       <4d4710e1$1$fuzhry+tra$mr2ice@news.patriot.net>       <4d53df50$0$32792$c30e37c6@exi-reader.telstra.net>       <4d54353e$5$fuzhry+tra$mr2ice@news.patriot.net>       <4d55c8e0$0$32793$c30e37c6@exi-reader.telstra.net> <4d5952d3$9$fuzhry+tra$mr2ice@news.patriot.net> <4d5a6f5d$0$54953$c30e37c6@exi-reader.telstra.net> <ijdsk1$p8e$1@news.eternal-september.org>
+Subject: Re: Rounding
+Date: Thu, 17 Feb 2011 23:06:03 +1100
+X-Newsreader: Microsoft Outlook Express 4.72.3110.5
+X-MimeOLE: Produced By Microsoft MimeOLE V4.72.3110.3
+Message-ID: <4d5d19f1$0$54954$c30e37c6@exi-reader.telstra.net>
+NNTP-Posting-Host: 123.3.25.0
+X-Trace: 1297947122 exi-reader.telstra.net 54954 123.3.25.0:1051
+Xref: g2news2.google.com comp.lang.cobol:12706 comp.lang.pl1:2250
+
+Peter Flass wrote in message ...
+>On 2/15/2011 7:19 AM, robin wrote:
+>> "Shmuel (Seymour J.) Metz"<spamtrap@library.lspace.org.invalid>  wrote in message
+>> news:4d5952d3$9$fuzhry+tra$mr2ice@news.patriot.net...
+>> | In<4d55c8e0$0$32793$c30e37c6@exi-reader.telstra.net>, on 02/12/2011
+>> |   at 10:38 AM, "robin"<robin51@dodo.mapson.com.au>  said:
+>> |
+>> |>Say somethng relevant.
+>> |
+>> | ROTF,LMAO! It's not my fault that you are unable to read.
+>> |
+>> |>1.  Vendors haven't ignored ANSI standards.
+>> |
+>> | IBM has.
+>>
+>> No they haven't. Do read their manual.
+>> You will find that they cite four ANSI standards, including ANSI X3.74-1987.
+>
+>But they have made significant extensions, and I haven't seen any
+>attempt to get these standardized.
+
+That's up to ANSI.
+IBM sets the standard, just as it did back in 1966 when it introduced PL/I
+after consultation with user groups.
+
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: bda4de328f,be2d726c96d4b23d
+X-Google-Attributes: gidbda4de328f,public,usenet
+X-Google-NewGroupId: yes
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news1.google.com!news4.google.com!feeder.news-service.com!85.214.198.2.MISMATCH!eternal-september.org!feeder.eternal-september.org!.POSTED!not-for-mail
+From: Peter Flass <Peter_Flass@Yahoo.com>
+Newsgroups: comp.lang.cobol,comp.lang.pl1
+Subject: Re: Rounding
+Date: Thu, 17 Feb 2011 08:02:53 -0500
+Organization: A noiseless patient Spider
+Message-ID: <ijj6a1$5gh$2@news.eternal-september.org>
+References: <c0d054fb-8b4e-4a97-b299-ef153d4fc7be@32g2000yqz.googlegroups.com>       <4d3d691a$0$88227$c30e37c6@exi-reader.telstra.net>       <4l7rj6tqvf5vj1t367fembll2fon5uqsnu@4ax.com>       <4d3ee002$0$88217$c30e37c6@exi-reader.telstra.net>       <nzR%o.340760$Ph5.198741@en-nntp-07.dc1.easynews.com>       <ihpap1$pu0$1@news.eternal-september.org>       <4d4204ed$3$fuzhry+tra$mr2ice@news.patriot.net>       <4d455954$0$88217$c30e37c6@exi-reader.telstra.net>       <4d45b96f$6$fuzhry+tra$mr2ice@news.patriot.net>       <4d46cf09$0$10581$c30e37c6@exi-reader.telstra.net>       <4d4710e1$1$fuzhry+tra$mr2ice@news.patriot.net>       <4d53df50$0$32792$c30e37c6@exi-reader.telstra.net>       <4d54353e$5$fuzhry+tra$mr2ice@news.patriot.net>       <4d55c8e0$0$32793$c30e37c6@exi-reader.telstra.net> <4d5952d3$9$fuzhry+tra$mr2ice@news.patriot.net> <4d5a6f5d$0$54953$c30e37c6@exi-reader.telstra.net> <ijdsk1$p8e$1@news.eternal-september.org> <4d5d19f1$0$54954$c30e37c6@exi-reader.telstra.net>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+Injection-Date: Thu, 17 Feb 2011 13:02:57 +0000 (UTC)
+Injection-Info: mx02.eternal-september.org; posting-host="V8SydqRRXuF8ysuwvpMn7w";
+	logging-data="5649"; mail-complaints-to="abuse@eternal-september.org";	posting-account="U2FsdGVkX1+Wk+EJS3j4kQvOfk20zylh"
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.13) Gecko/20101207 Thunderbird/3.1.7
+In-Reply-To: <4d5d19f1$0$54954$c30e37c6@exi-reader.telstra.net>
+X-Antivirus-Status: Clean
+X-Antivirus: avast! (VPS 110216-1, 02/16/2011), Outbound message
+Cancel-Lock: sha1:s8VkhmPw/yHHQ2PKLYerQZONrC8=
+Xref: g2news1.google.com comp.lang.cobol:11563 comp.lang.pl1:2140
+
+On 2/17/2011 7:06 AM, robin wrote:
+> Peter Flass wrote in message ...
+>> On 2/15/2011 7:19 AM, robin wrote:
+>>> "Shmuel (Seymour J.) Metz"<spamtrap@library.lspace.org.invalid>   wrote in message
+>>> news:4d5952d3$9$fuzhry+tra$mr2ice@news.patriot.net...
+>>> | In<4d55c8e0$0$32793$c30e37c6@exi-reader.telstra.net>, on 02/12/2011
+>>> |   at 10:38 AM, "robin"<robin51@dodo.mapson.com.au>   said:
+>>> |
+>>> |>Say somethng relevant.
+>>> |
+>>> | ROTF,LMAO! It's not my fault that you are unable to read.
+>>> |
+>>> |>1.  Vendors haven't ignored ANSI standards.
+>>> |
+>>> | IBM has.
+>>>
+>>> No they haven't. Do read their manual.
+>>> You will find that they cite four ANSI standards, including ANSI X3.74-1987.
+>>
+>> But they have made significant extensions, and I haven't seen any
+>> attempt to get these standardized.
+>
+> That's up to ANSI.
+> IBM sets the standard, just as it did back in 1966 when it introduced PL/I
+> after consultation with user groups.
+>
+
+The ANSI PL/I group is inactive.  It would probably take a real kick 
+from someone as big as IBM to get them going again.
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: 101deb,6b9fe76dfe36e0b6,start
+X-Google-NewGroupId: yes
+X-Google-Attributes: gidbda4de328f,domainid0,public,usenet
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news2.google.com!news1.google.com!news.glorb.com!news2.glorb.com!news-in-01.newsfeed.easynews.com!easynews!core-easynews-01!easynews.com!en-nntp-04.dc1.easynews.com.POSTED!not-for-mail
+Reply-To: "Bill Klein" <wmklein@noreply.ix.netcom.com>
+From: "Bill Klein" <wmklein@noreply.ix.netcom.com>
+Newsgroups: comp.lang.pl1
+Subject: PL/I - Standards, IBM, etc
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Newsreader: Microsoft Outlook Express 6.00.2900.5931
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5994
+X-RFC2646: Format=Flowed; Original
+Message-ID: <VKu7p.628704$Qg.565343@en-nntp-04.dc1.easynews.com>
+X-Complaints-To: abuse@easynews.com
+Organization: EasyNews, UseNet made Easy!
+X-Complaints-Info: Please be sure to forward a copy of ALL headers otherwise we will be unable to process your complaint properly.
+Date: Fri, 18 Feb 2011 07:46:41 -0600
+Xref: g2news2.google.com comp.lang.pl1:2254
+
+Just to clarify (I hope) information about PL/I, standards, and IBM.
+
+
+If you check out:
+
+http://www.techstreet.com/cgi-bin/results
+
+
+and put "PL/I" in the search option (at the top)
+
+
+You will see the dates of the "most recent" ANSI PL/I Standards. ANSI rules 
+say that any Standard *must* be reaffirmed every 5 years to be a "current" 
+ANSI Standard.
+
+
+Therefore, the
+
+- ANSI/INCITS 74-1987(R1993)
+
+PL/I General Purpose Subset (formerly ANSI X3.74-1987(R1993))
+
+
+and
+
+- INCITS TR-7-1989
+
+Information Processing Systems Technical Report - Real-Time Extensions for 
+PL/I (NOT AN AMERICAN NATIONAL STANDARD) "
+
+
+are no longer currently recognized as active Standards.
+
+
+There is also:
+
+- ANSI/INCITS 53-1976(R1993)
+
+Programming Language PL/I (formerly ANSI X3.53-1976(R1993))
+
+which is (was) the last "non-subset" PL/I ANSI Standard - which also has not 
+been reaffirmed since 1993.
+
+
+* * * * *
+
+
+As far as ISO goes, you can go to:
+
+http://www.iso.org/iso/search.htm?qt=pl%2Fi&searchSubmit=Search&sort=rel&type=simple&published=true
+
+
+click on "withdrawn" and search for PL/I. This will show you a link to:
+
+http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=12906
+
+
+which shows that even the PL/I "subset" was withdrawn by ISO in 1992.
+
+
+* * * *
+
+
+Now, as far as IBM and Standards goes, it must be understood that EVERY ANSI 
+or ISO Standard (that I know of) for a programming language explicitly 
+allows for implementor extensions. Having such does NOT make one 
+"non-standard" (unless there is no way to get "standard conforming" compiler 
+and run-time behavior for those features defined in the Standard.
+
+
+So, just because IBM has extensions, this does not mean that they do NOT 
+conform to the (now defunct) ANSI (or ISO) PL/I Standards. With the proper 
+options set, IBM claims to conform to the defunct Standard and I have seen 
+no indication that they don't.
+
+
+* * * *
+
+
+Back to the origin of the current threads:
+
+A) IBM does provide PL/I compilers that conform to the LAST (now defunct) 
+Standards
+
+
+B) There appears to be ZERO interest in either ANSI or ISO to continue to 
+enhance (or even maintain) a Standard for PL/I
+
+
+C) Yes, those extensions to the Standard that IBM has (and continues) to 
+introduce for its PL/I compilers are usually treated as "de facto" industry 
+Standards for PL/I. (especially as there are NO current de jure ANIS or ISO 
+PL/I Standards.
+
+
+D) At the time when the PL/I ANSI and ISO Standards were being maintained 
+and enhanced, IBM participated in that process. Sometimes the Standards 
+would "get ahead" of IBM and sometimes IBM would get ahead of the Standards. 
+As far as I know, each time the Standard "got ahead of IBM", they EVENTUALLY 
+provide Standard conforming compilers
+
+
+E) The Standards committees OFTEN "rejected" extensions that IBM had 
+introduced. With few exceptions, others vendors usually (not always) 
+followed IBM in introducing such extensions to their compilers - even when 
+the Standards never added such features.
+
+
+So, if YOUR question is:
+
+Does IBM conform to the current PL/I Standard?
+
+
+the answer is:
+
+There is NO current ANSI (or ISO) PL/I Standard, but IBM does provide 
+options to conform to the LAST approved ANSI and ISO PL/I Standards.
+
+
+If your question is:
+
+I am comparing two languages; one with a current ANSI and/or ISO Standard 
+and one (PL/I) without, which will give me "greater portability"?
+
+
+The answer is
+
+It depends. Most PL/I compilers provide portability by including both 
+Standard conforming behavior and extensions that were initially introduced 
+by IBM. To the extent that other vendors (or IBM on other platforms) conform 
+to the DE FACTO IBM (not ANSI or ISO) Standard, then you can expect 
+portability with PL/I. However, if you are looking for a NON-vendor 
+definition of a programming language that is being maintained and enhanced 
+by ANSI or ISO, then PL/I is not your best choice. HOWEVER, even here, you 
+will find that some programming languages that DO have current ANSI or ISO 
+Standards do NOT have many (any?) compilers that actually claim to conform 
+to the latest (current) Standards. You should check a few vendors on a few 
+different platforms and see if they CLAIM to conform to the current 
+Standard. If not, then that other language probably offers no more (and 
+probably no less) portability than PL/I does.
+
+
+Finally, although in the 1980's (and earlier) and in the early 1990's the US 
+government (and I think some others) often required "standard conforming" 
+compilers for certain hardware and software contracts, this is no longer 
+true. Therefore, it is PROBABLY irrelevant that PL/I has no current ANSI or 
+ISO Standard as far as current contracts go. Furthermore, as far as I know, 
+there are no longer ANY official "certification" processes for ANY 
+programming language compilers. Therefore, any claim by any compiler vendor 
+of "ANSI conformance" is based on their own "beliefs" (or of running no 
+longer maintained test suites).
+
+
+* * * *
+
+
+Hopefully, this note can resolve the issues from other threads and clarify 
+what is and is not "true" about PL/I, Standards, and IBM PL/I compilers.
+
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news2.google.com!news3.google.com!feeder.news-service.com!188.40.43.213.MISMATCH!feeder.eternal-september.org!eternal-september.org!not-for-mail
+From: Peter Flass <Peter_Flass@Yahoo.com>
+Newsgroups: comp.lang.pl1
+Subject: Re: Russian Compiler PL/1 for Win32
+Date: Thu, 05 Nov 2009 17:48:31 -0500
+Organization: A noiseless patient Spider
+Message-ID: <hcvkod$va8$1@news.eternal-september.org>
+References: <2df58b56-429b-4a6d-983f-267d6d2a7109@l13g2000yqb.googlegroups.com> 	<sJzIm.52360$ze1.16261@news-server.bigpond.net.au> <6de86359-933e-42e2-9a3f-eda9356e82a1@r31g2000vbi.googlegroups.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: news.eternal-september.org U2FsdGVkX1+gUORSYgqAff/lDG/cHBRtM54ZGeeM4E6eM7k+VCA/9mznZsMJ4leBrjuAIyJGv871sMKUwCERLCe9Zk5B2hDfY+fx9pmC4j+l1SiFRitdji44hF7Q985aZhVQoOWEplqXVXn9o5iM4g==
+X-Complaints-To: abuse@eternal-september.org
+NNTP-Posting-Date: Thu, 5 Nov 2009 22:48:45 +0000 (UTC)
+In-Reply-To: <6de86359-933e-42e2-9a3f-eda9356e82a1@r31g2000vbi.googlegroups.com>
+X-Auth-Sender: U2FsdGVkX1/gwZKAjTZ1Ck5xB2SOssrZBarIZcMeBh8=
+Cancel-Lock: sha1:ZlIdrNc77rrR7FzCdzeol14iat4=
+User-Agent: Thunderbird 2.0.0.23 (Windows/20090812)
+Xref: g2news2.google.com comp.lang.pl1:1035
+
+MZN wrote:
+> I briefly read that book. Resume see below.
+> 
+> 1. Author name is unknown. Book is definitely exists in electronic
+> form only.
+> 2. No any links to compiler.
+> 3. Compiler is very short (1.5Mb total) and free
+> 4. Origin of compiler is old DR compiler, set G
+> 5. Looks like that compiler supports X3.74 standard with some
+> exceptions and additions (most valuable addition is possibility to
+> write program completely on Russian, including operators)
+> 6. Author declares that compiler work under DOS, Windows (95, 98, 2000
+> and possibly XP and Vista)
+> 7. Book looks like hymn to PL/I, he gives a lot of advantages in
+> comparison with C, Java, Pascal, Ada.
+> 8. Book is dedicated in memory of Gary Kildall
+
+If anyone who knows Russian feels like translating this, I'm sure it 
+would be interesting reading.
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: bda4de328f,2d87db2aa0552b6f
+X-Google-Attributes: gidbda4de328f,public,usenet
+X-Google-NewGroupId: yes
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news2.google.com!news1.google.com!npeer02.iad.highwinds-media.com!news.highwinds-media.com!feed-me.highwinds-media.com!post01.iad.highwinds-media.com!newsfe12.iad.POSTED!7564ea0f!not-for-mail
+Message-ID: <4AF447F8.1010206@cox.net>
+From: "Donald L. Dobbs" <donaldldobbs@cox.net>
+User-Agent: Thunderbird 2.0.0.23 (Windows/20090812)
+MIME-Version: 1.0
+Newsgroups: comp.lang.pl1
+Subject: Re: Russian Compiler PL/1 for Win32
+References: <2df58b56-429b-4a6d-983f-267d6d2a7109@l13g2000yqb.googlegroups.com> 	<sJzIm.52360$ze1.16261@news-server.bigpond.net.au> <6de86359-933e-42e2-9a3f-eda9356e82a1@r31g2000vbi.googlegroups.com> <hcvkod$va8$1@news.eternal-september.org>
+In-Reply-To: <hcvkod$va8$1@news.eternal-september.org>
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+NNTP-Posting-Host: 68.225.232.243
+X-Complaints-To: newsmaster@cox.net
+X-Trace: newsfe12.iad 1257523114 68.225.232.243 (Fri, 06 Nov 2009 15:58:34 UTC)
+NNTP-Posting-Date: Fri, 06 Nov 2009 15:58:34 UTC
+Organization: Cox
+Date: Fri, 06 Nov 2009 07:59:52 -0800
+Xref: g2news2.google.com comp.lang.pl1:1036
+
+Peter Flass wrote:
+> MZN wrote:
+>> I briefly read that book. Resume see below.
+>>
+>> 1. Author name is unknown. Book is definitely exists in electronic
+>> form only.
+>> 2. No any links to compiler.
+>> 3. Compiler is very short (1.5Mb total) and free
+>> 4. Origin of compiler is old DR compiler, set G
+>> 5. Looks like that compiler supports X3.74 standard with some
+>> exceptions and additions (most valuable addition is possibility to
+>> write program completely on Russian, including operators)
+>> 6. Author declares that compiler work under DOS, Windows (95, 98, 2000
+>> and possibly XP and Vista)
+>> 7. Book looks like hymn to PL/I, he gives a lot of advantages in
+>> comparison with C, Java, Pascal, Ada.
+>> 8. Book is dedicated in memory of Gary Kildall
+> 
+> If anyone who knows Russian feels like translating this, I'm sure it 
+> would be interesting reading.
+
+I work with a Russian engineer (many years U.S. citizen) who graduated 
+from a technical university in Moscow. I will ask him if he is 
+interested in taking on such a task.  He does some programming in C, 
+but I don't know if he ever had any PL/I experience.
+
+BTW, I still use the Digital Research PL/I-86 compiler and linker. 
+Runs just fine under Win 3.1 and Win 98SE.  No luck in Win-XP. 
+However, the executable is produces does run OK in an XP DOS window.
+
+I haven't gotten around to trying the executable on Vista and 7 yet, 
+but I will as soon as I meet a deadline on a crash project.
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: bda4de328f,2d87db2aa0552b6f
+X-Google-Attributes: gidbda4de328f,public,usenet
+X-Google-NewGroupId: yes
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news2.google.com!news2.google.com!npeer03.iad.highwinds-media.com!news.highwinds-media.com!feed-me.highwinds-media.com!post01.iad.highwinds-media.com!newsfe09.iad.POSTED!7564ea0f!not-for-mail
+From: "Donald L. Dobbs" <donaldldobbs@cox.net>
+User-Agent: Thunderbird 2.0.0.23 (Windows/20090812)
+MIME-Version: 1.0
+Newsgroups: comp.lang.pl1
+Subject: Re: Russian Compiler PL/1 for Win32
+References: <2df58b56-429b-4a6d-983f-267d6d2a7109@l13g2000yqb.googlegroups.com> 	<sJzIm.52360$ze1.16261@news-server.bigpond.net.au> <6de86359-933e-42e2-9a3f-eda9356e82a1@r31g2000vbi.googlegroups.com> <hcvkod$va8$1@news.eternal-september.org> <4AF447F8.1010206@cox.net>
+In-Reply-To: <4AF447F8.1010206@cox.net>
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+Message-ID: <a01Jm.1513$We2.1273@newsfe09.iad>
+NNTP-Posting-Host: 68.225.232.243
+X-Complaints-To: newsmaster@cox.net
+X-Trace: newsfe09.iad 1257544838 68.225.232.243 (Fri, 06 Nov 2009 22:00:38 UTC)
+NNTP-Posting-Date: Fri, 06 Nov 2009 22:00:38 UTC
+Organization: Cox
+Date: Fri, 06 Nov 2009 14:01:57 -0800
+Xref: g2news2.google.com comp.lang.pl1:1037
+
+Donald L. Dobbs wrote:
+> Peter Flass wrote:
+>> MZN wrote:
+>>> I briefly read that book. Resume see below.
+>>>
+>>> 1. Author name is unknown. Book is definitely exists in electronic
+>>> form only.
+>>> 2. No any links to compiler.
+>>> 3. Compiler is very short (1.5Mb total) and free
+>>> 4. Origin of compiler is old DR compiler, set G
+>>> 5. Looks like that compiler supports X3.74 standard with some
+>>> exceptions and additions (most valuable addition is possibility to
+>>> write program completely on Russian, including operators)
+>>> 6. Author declares that compiler work under DOS, Windows (95, 98, 2000
+>>> and possibly XP and Vista)
+>>> 7. Book looks like hymn to PL/I, he gives a lot of advantages in
+>>> comparison with C, Java, Pascal, Ada.
+>>> 8. Book is dedicated in memory of Gary Kildall
+>>
+>> If anyone who knows Russian feels like translating this, I'm sure it 
+>> would be interesting reading.
+> 
+> I work with a Russian engineer (many years U.S. citizen) who graduated 
+> from a technical university in Moscow. I will ask him if he is 
+> interested in taking on such a task.  He does some programming in C, but 
+> I don't know if he ever had any PL/I experience.
+> 
+> BTW, I still use the Digital Research PL/I-86 compiler and linker. Runs 
+> just fine under Win 3.1 and Win 98SE.  No luck in Win-XP. However, the 
+> executable is produces does run OK in an XP DOS window.
+> 
+> I haven't gotten around to trying the executable on Vista and 7 yet, but 
+> I will as soon as I meet a deadline on a crash project.
+
+Update: now I know why the compiler and linker don't run on my Vista 
+and Win 7 machines -- neither does the executable.  Reason: both my 
+Vista and Win 7 machines are 64-bit. The DOS window error didn't show 
+up until I tried running the executable (created on a 32-bit machine 
+running Win 98).  But I am curious as to why the DOS window in the 
+64-bit versions of various Windows doesn't support 32-bit executables. 
+  Who would be developing 64-bit DOS programs?  Just wondering.
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: bda4de328f,2d87db2aa0552b6f
+X-Google-Attributes: gidbda4de328f,public,usenet
+X-Google-NewGroupId: yes
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news2.google.com!postnews.google.com!r31g2000vbi.googlegroups.com!not-for-mail
+From: MZN <mikezmn@gmail.com>
+Newsgroups: comp.lang.pl1
+Subject: Re: Russian Compiler PL/1 for Win32
+Date: Thu, 5 Nov 2009 13:18:52 -0800 (PST)
+Organization: http://groups.google.com
+Message-ID: <6de86359-933e-42e2-9a3f-eda9356e82a1@r31g2000vbi.googlegroups.com>
+References: <2df58b56-429b-4a6d-983f-267d6d2a7109@l13g2000yqb.googlegroups.com> 
+	<sJzIm.52360$ze1.16261@news-server.bigpond.net.au>
+NNTP-Posting-Host: 91.76.57.229
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+X-Trace: posting.google.com 1257455932 30796 127.0.0.1 (5 Nov 2009 21:18:52 GMT)
+X-Complaints-To: groups-abuse@google.com
+NNTP-Posting-Date: Thu, 5 Nov 2009 21:18:52 +0000 (UTC)
+Complaints-To: groups-abuse@google.com
+Injection-Info: r31g2000vbi.googlegroups.com; posting-host=91.76.57.229; 
+	posting-account=HEzfkQoAAABCoV9x6eItLeVV5j7oGe8W
+User-Agent: G2/1.0
+X-HTTP-UserAgent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; WOW64; 
+	Trident/4.0; Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) ; Avant 
+	Browser; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.0.30729; 
+	.NET CLR 3.5.30729; InfoPath.2; OfficeLiveConnector.1.4; OfficeLivePatch.1.3; 
+	Creative AutoUpdate v1.40.01),gzip(gfe),gzip(gfe)
+Xref: g2news2.google.com comp.lang.pl1:1034
+
+I briefly read that book. Resume see below.
+
+1. Author name is unknown. Book is definitely exists in electronic
+form only.
+2. No any links to compiler.
+3. Compiler is very short (1.5Mb total) and free
+4. Origin of compiler is old DR compiler, set G
+5. Looks like that compiler supports X3.74 standard with some
+exceptions and additions (most valuable addition is possibility to
+write program completely on Russian, including operators)
+6. Author declares that compiler work under DOS, Windows (95, 98, 2000
+and possibly XP and Vista)
+7. Book looks like hymn to PL/I, he gives a lot of advantages in
+comparison with C, Java, Pascal, Ada.
+8. Book is dedicated in memory of Gary Kildall
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: 114eba,dbd6800bf19faa43
+X-Google-Thread: 101deb,eb340b5a20c2ce1e
+X-Google-Attributes: gid114eba,gid101deb,domainid0,public,usenet
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news1.google.com!news1.google.com!news2.google.com!border1.nntp.dca.giganews.com!border2.nntp.dca.giganews.com!nntp.giganews.com!cyclone1.gnilink.net!gnilink.net!newsfeed3.dallas1.level3.net!newsfeed1.dallas1.level3.net!news.level3.com!transfer.stratus.com!not-for-mail
+From: "Paul Green" <Paul.Green@stratus.com>
+Newsgroups: comp.sys.stratus,comp.lang.pl1
+Subject: Re: V-Series/VOS 16 porting tips for PL/I, collected
+Date: Fri, 20 Jun 2008 12:57:02 -0400
+Organization: Stratus Technologies, Inc.
+Message-ID: <g3gngu$o0s$1@transfer.stratus.com>
+References: <13zmonjza1v9r$.dlg@jay.fm> <49xij.2770$421.1491@news-server.bigpond.net.au> <x0fwruufudzy.dlg@jay.fm> <gSQij.3072$421.748@news-server.bigpond.net.au> <F5F42E77A43DD944B6D664B00A5401CB037148A5@EXNA.corp.stratus.com> <wKC6k.12673$IK1.9440@news-server.bigpond.net.au>
+NNTP-Posting-Host: green-p.mno.stratus.com
+X-Trace: transfer.stratus.com 1213981022 24604 134.111.199.55 (20 Jun 2008 16:57:02 GMT)
+X-Complaints-To: usenet@transfer.stratus.com
+NNTP-Posting-Date: Fri, 20 Jun 2008 16:57:02 +0000 (UTC)
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Newsreader: Microsoft Outlook Express 6.00.2900.5512
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5512
+X-RFC2646: Format=Flowed; Original
+Xref: g2news1.google.com comp.sys.stratus:7 comp.lang.pl1:73
+X-Original-Bytes: 3494
+
+"robin" <robin_v@bigpond.com> wrote in message 
+news:wKC6k.12673$IK1.9440@news-server.bigpond.net.au...
+> "Paul Green" <Paul.Green@stratus.B0GVS.com> wrote in message
+> news:F5F42E77A43DD944B6D664B00A5401CB037148A5@EXNA.corp.stratus.com...
+>>
+>> Stratus provides a PL/I compiler that is very close to the Subset G
+>> version of ANSI PL/I.  The reference is ANSI X3.74-1987 (R1993):
+>> Information Systems - Programming Language - PL/I General-Purpose Subset.
+>> [...]
+>> VOS PL/I does not provide the stringsize condition and there is no
+>> substitute for it.  You don't need it to avoid data corruption,
+>> because the compiler always knows the length of the target string,
+>> and will not write beyond that point.  Even in the case where the
+>> target is a parameter declared "char (*)", the calling program has
+>> passed a hidden argument that supplies the extent of the string.  You
+>> might want stringsize so you can catch cases of truncation, but this
+>> feature was omitted from Subset G, presumably in the belief that
+>> string truncation is the norm, not the exception.
+>
+> String truncation would not be the norm.
+
+I was stating why I believe PL/I Subset G omits the stringrange and 
+stringsize conditions. But perhaps they had more mundane reasons.  Appendix 
+F of X3.74 states, "The conditions that can be explicitly designated in the 
+subset were restricted. This was done to reduce implementation complexity 
+while retaining most of the power of PL/I exception handling."
+
+Subset G also omits the name and subscriptrange conditions.  Implementations 
+are free to add support back in, of course, or provide other methods to 
+catch these errors, but they aren't required to do so to claim conformance 
+to this standard.
+
+> Inadvertant truncation of trailing characters of a string
+> could be a programming error, and having the ability to
+> detect when it occurs is an important safeguard.
+>
+> Such truncation can occur on string assignment,
+> on output (when the string is longer than the format item).
+> and on assignment to a parameter whose length is (*), and
+> on input (when the data string is longer than the receiving variable),
+> for example.
+
+Of course.
+
+
+
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: 114eba,dbd6800bf19faa43
+X-Google-Thread: 101deb,eb340b5a20c2ce1e
+X-Google-Attributes: gid114eba,gid101deb,domainid0,public,usenet
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news1.google.com!news2.google.com!newsfeed2.dallas1.level3.net!news.level3.com!newsfeed-00.mathworks.com!lon-transit.news.telstra.net!lon-in.news.telstra.net!news.telstra.net!news-server.bigpond.net.au!53ab2750!not-for-mail
+From: "robin" <robin_v@bigpond.com>
+Newsgroups: comp.sys.stratus,comp.lang.pl1
+References: <13zmonjza1v9r$.dlg@jay.fm> <49xij.2770$421.1491@news-server.bigpond.net.au> <x0fwruufudzy.dlg@jay.fm> <gSQij.3072$421.748@news-server.bigpond.net.au> <F5F42E77A43DD944B6D664B00A5401CB037148A5@EXNA.corp.stratus.com>
+Subject: Re: V-Series/VOS 16 porting tips for PL/I, collected
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Newsreader: Microsoft Outlook Express 6.00.2800.1106
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1106
+Message-ID: <wKC6k.12673$IK1.9440@news-server.bigpond.net.au>
+Date: Fri, 20 Jun 2008 00:21:48 GMT
+NNTP-Posting-Host: 144.134.49.178
+X-Complaints-To: abuse@bigpond.net.au
+X-Trace: news-server.bigpond.net.au 1213921308 144.134.49.178 (Fri, 20 Jun 2008 10:21:48 EST)
+NNTP-Posting-Date: Fri, 20 Jun 2008 10:21:48 EST
+Organization: BigPond Internet Services
+Xref: g2news1.google.com comp.sys.stratus:4 comp.lang.pl1:70
+
+"Paul Green" <Paul.Green@stratus.B0GVS.com> wrote in message
+news:F5F42E77A43DD944B6D664B00A5401CB037148A5@EXNA.corp.stratus.com...
+
+> Let me clarify the situation for Stratus VOS customers. I would not
+> want to confuse them with information that may be accurate for other
+> platforms but not for our platform.  VOS PL/I truncates strings at
+> assignment time and this eliminates most cases of data corruption.
+>
+> Stratus provides a PL/I compiler that is very close to the Subset G
+> version of ANSI PL/I.  The reference is ANSI X3.74-1987 (R1993):
+> Information Systems - Programming Language - PL/I General-Purpose Subset.
+>
+> You can view our manual by pointing the Internet Explorer web browser at
+>
+>     http://stratadoc.stratus.com/
+>
+> click on the VOS Operating System, pick a release, and pick a platform.
+>
+> The PL/I manual is filed under "Languages and Subroutines",
+> and the PL/I Language manual is number R009.
+>
+> Or you can click on the following link, if the mail system doesn't mung
+> it up too badly (remove any added carriage-returns):
+>
+http://stratadoc.stratus.com/vos/16.2.0/r009-04/wwhelp/wwhimpl/js/html/wwhelp.htm?context=r009-04&fi
+le=ch1r009-04.html
+>
+> VOS PL/I does not provide the stringsize condition and there is no
+> substitute for it.  You don't need it to avoid data corruption,
+> because the compiler always knows the length of the target string,
+> and will not write beyond that point.  Even in the case where the
+> target is a parameter declared "char (*)", the calling program has
+> passed a hidden argument that supplies the extent of the string.  You
+> might want stringsize so you can catch cases of truncation, but this
+> feature was omitted from Subset G, presumably in the belief that
+> string truncation is the norm, not the exception.
+
+String truncation would not be the norm.
+Inadvertant truncation of trailing characters of a string
+could be a programming error, and having the ability to
+detect when it occurs is an important safeguard.
+
+Such truncation can occur on string assignment,
+on output (when the string is longer than the format item).
+and on assignment to a parameter whose length is (*), and
+on input (when the data string is longer than the receiving variable),
+for example.
+
+> VOS PL/I does not provide the stringrange condition. Instead, it
+> provides the -check control argument on the pl1 command.  When
+> -check is used, the compiler adds code to ensure that references to
+> the substr() built-in function stay within the declared length of
+> the string; if the reference is invalid the code signals the error
+> condition.  Without -check, the compiled code presumes that the
+> programmer knows what she or he is doing and executes the substr
+> without checking.
+>
+> Most of the cases of string corruption that I've seen, or have
+> bitten me, have involved strings with expression extents (i.e.,
+> strings whose length is an expression).  If some variable in the
+> expression extent is uninitialized or incorrect, then storage can
+> be corrupted or unitialized storage can be referenced.  But it is
+> unclear to me that stringsize or stringrange would be of much use
+> here, because to the compiled code, the length of the string *is*
+> the value of the expression.  There is no way to know that 1 is ok
+> and 32766 is bad.  Just catching cases of truncation isn't
+> sufficient; the bogus length could still not result in any truncation.
+>
+> You really need some sort of meta-data that can be used to validate
+> the putative extent.  That's not practical in a compiled environment.
+> Instead, I encourage people to use a different control argument,
+> -check_uninitialized, in which the compiler performs additional
+> analysis to find variables that are unset in each flow unit. (A
+> flow unit is a collection of statements that have a single entry
+> and single exit).
+
+That's good.  A compiler check for uninitialized data is  an important facility.
+
+> The bottom line, as now said by many people, is that programmers
+> should use the error-catching features of the language and the
+> compiler.  The costs associated with encountering latent defects
+> far outweigh the slight performance gain that comes from avoiding
+> the checking code.
+
+Indeed.
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: 114eba,dbd6800bf19faa43
+X-Google-Thread: 101deb,eb340b5a20c2ce1e
+X-Google-Attributes: gid114eba,gid101deb,public,usenet
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news1.google.com!news2.google.com!newsfeed2.dallas1.level3.net!newsfeed1.dallas1.level3.net!news.level3.com!transfer.stratus.com!stratagy.com!info-stratus-mailing-list!not-for-spam
+From: "Paul Green" <Paul.Green@stratus.B0GVS.com>
+Newsgroups: comp.sys.stratus,comp.lang.pl1
+Subject: Re: IS:: V-Series/VOS 16 porting tips for PL/I, collected
+Date: Thu, 17 Jan 2008 13:22:57 -0500
+Organization: Stratus Technologies, Maynard, MA, USA
+Message-ID: <F5F42E77A43DD944B6D664B00A5401CB037148A5@EXNA.corp.stratus.com>
+References: <13zmonjza1v9r$.dlg@jay.fm> <49xij.2770$421.1491@news-server.bigpond.net.au> <x0fwruufudzy.dlg@jay.fm> <gSQij.3072$421.748@news-server.bigpond.net.au>
+NNTP-Posting-Host: list.stratagy.com
+X-Trace: transfer.stratus.com 1200687151 12839 198.97.41.80 (18 Jan 2008 20:12:31 GMT)
+X-Complaints-To: usenet@transfer.stratus.com
+NNTP-Posting-Date: Fri, 18 Jan 2008 20:12:31 +0000 (UTC)
+X-In-Reply-To: <gSQij.3072$421.748@news-server.bigpond.net.au>
+X-Message-Flag: posted to Info-Stratus mailing list
+Xref: g2news1.google.com comp.sys.stratus:276 comp.lang.pl1:5828
+
+robin calvert wrote:
+>
+> "Jay Levitt" <jay+news(at)jay.fm> wrote in message
+> > robin wrote:
+> >
+> > > Re these tips, it's important that STRINGSIZE and STRINGRANGE
+> > > be enabled, as well as FOFL and SIZE.
+> >
+> > Unfortunately, on Stratus, we only have FOFL (in the form of
+> > -fixedoverflow) and STRINGRANGE (in the form of -check).
+> > We explicitly don't have SIZE, and I don't know what
+> > STRINGSIZE is, but I don't think we have it either...
+>
+> STRINGSIZE causes a check to be included that the destination
+> (target) of a character or bit operation does not exceed the
+> length of that target.  And if the target is the shorter, the
+> moved characters are truncated.  In this way, storage following
+> the destination area is not corrupted.
+>
+> If you do not have this facility, you need to include code that
+> not only checks for this condition, but prevents it from
+> happening.
+
+
+Let me clarify the situation for Stratus VOS customers. I would not
+want to confuse them with information that may be accurate for other
+platforms but not for our platform.  VOS PL/I truncates strings at
+assignment time and this eliminates most cases of data corruption.
+
+Stratus provides a PL/I compiler that is very close to the Subset G
+version of ANSI PL/I.  The reference is ANSI X3.74-1987 (R1993):
+Information Systems - Programming Language - PL/I General-Purpose Subset.
+
+You can view our manual by pointing the Internet Explorer web browser at
+
+    http://stratadoc.stratus.com/
+
+click on the VOS Operating System, pick a release, and pick a platform.
+
+The PL/I manual is filed under "Languages and Subroutines",
+and the PL/I Language manual is number R009.
+
+Or you can click on the following link, if the mail system doesn't mung
+it up too badly (remove any added carriage-returns):
+
+    http://stratadoc.stratus.com/vos/16.2.0/r009-04/wwhelp/wwhimpl/js/html/wwhelp.htm?context=r009-04&file=ch1r009-04.html
+
+VOS PL/I does not provide the stringsize condition and there is no
+substitute for it.  You don't need it to avoid data corruption,
+because the compiler always knows the length of the target string,
+and will not write beyond that point.  Even in the case where the
+target is a parameter declared "char (*)", the calling program has
+passed a hidden argument that supplies the extent of the string.  You
+might want stringsize so you can catch cases of truncation, but this
+feature was omitted from Subset G, presumably in the belief that
+string truncation is the norm, not the exception.
+
+VOS PL/I does not provide the stringrange condition. Instead, it
+provides the -check control argument on the pl1 command.  When
+-check is used, the compiler adds code to ensure that references to
+the substr() built-in function stay within the declared length of
+the string; if the reference is invalid the code signals the error
+condition.  Without -check, the compiled code presumes that the
+programmer knows what she or he is doing and executes the substr
+without checking.
+
+Most of the cases of string corruption that I've seen, or have
+bitten me, have involved strings with expression extents (i.e.,
+strings whose length is an expression).  If some variable in the
+expression extent is uninitialized or incorrect, then storage can
+be corrupted or unitialized storage can be referenced.  But it is
+unclear to me that stringsize or stringrange would be of much use
+here, because to the compiled code, the length of the string *is*
+the value of the expression.  There is no way to know that 1 is ok
+and 32766 is bad.  Just catching cases of truncation isn't
+sufficient; the bogus length could still not result in any truncation.
+
+You really need some sort of meta-data that can be used to validate
+the putative extent.  That's not practical in a compiled environment.
+Instead, I encourage people to use a different control argument,
+-check_uninitialized, in which the compiler performs additional
+analysis to find variables that are unset in each flow unit. (A
+flow unit is a collection of statements that have a single entry
+and single exit).
+
+The bottom line, as now said by many people, is that programmers
+should use the error-catching features of the language and the
+compiler.  The costs associated with encountering latent defects
+far outweigh the slight performance gain that comes from avoiding
+the checking code.
+
+Here is a trivial example of -check in action.
+
+display t_check.pl1 -line_numbers
+
+%es#m105_user>Languages>Green>t_check.pl1  08-01-17 12:47:20 est
+
+    1  t_check: proc;
+    2
+    3  declare n bin (31);
+    4  declare s char (32);
+    5  declare i bin (15);
+    6
+    7       on error begin; n = oncode (); goto caught; end;
+    8
+    9       put list ('enter i: ');
+   10       get list (i);
+   11       s = '';
+   12       substr (s, i, 1) = 'x';
+   13       put list (i, s);
+   14       put skip;
+   15       return;
+   16
+   17  caught:
+   18       put list ('caught the error; oncode = ', n);
+   19       put skip;
+   20
+   21  end;
+
+
+ready  12:47:20  0.006  14
+pl1 t_check -check
+PL/I: t_check.pl1
+ready  12:47:29  0.056  493
+bind t_check
+ready  12:47:34  0.061  148
+t_check
+enter i:  0
+caught the error; oncode =              1161
+ready  12:47:41  0.008  21
+display_error 1161
+e$stringrange. A sub-string reference extends beyond the range of the string.
+ready  12:47:45  0.002  9
+
+Thanks
+PG
+-- 
+Paul Green, Senior Technical Consultant, Stratus Technologies.
+Voice: +1 978-461-7557; FAX: +1 978-461-3610; Mobile: +1 (978) 235-2451;
+AIM: PaulGreen
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: 101deb,4ae5d8c1f08c9d29
+X-Google-Attributes: gid101deb,public
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news1.google.com!news2.google.com!news4.google.com!border1.nntp.dca.giganews.com!nntp.giganews.com!newsfeed2.easynews.com!easynews.com!easynews!easynews-local!fe05.news.easynews.com.POSTED!not-for-mail
+From: "William M. Klein" <wmklein@nospam.netcom.com>
+Newsgroups: comp.lang.pl1
+References: <hsm-osx-82E4B0.19574706022006@comcast.dca.giganews.com> <dsaudh$tn2$1@news.hispeed.ch> <44smssF3pht1U1@individual.net> <emIGf.2765$yK1.1855@news-server.bigpond.net.au> <ops4poxesxzgicya@hyrrokkin> <1ON0g.8880$vy1.6440@news-server.bigpond.net.au>
+Subject: Re: ANSI PL/I
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Newsreader: Microsoft Outlook Express 6.00.2900.2869
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2869
+X-RFC2646: Format=Flowed; Original
+Message-ID: <_lO0g.88518$Rb2.4127@fe05.news.easynews.com>
+X-Complaints-To: abuse@easynews.com
+Organization: EasyNews, UseNet made Easy!
+X-Complaints-Info: Please be sure to forward a copy of ALL headers otherwise we will be unable to process your complaint properly.
+Date: Mon, 17 Apr 2006 15:19:24 GMT
+Xref: g2news1.google.com comp.lang.pl1:1412
+
+I had to look this one up.
+
+According to:
+   http://publibz.boulder.ibm.com/cgi-bin/bookmgr_OS390/BOOKS/ibm3lr40/1.3
+
+"Selected features of the American National Standard PL/I General Purpose Subset 
+(ANSI X3.74-1987)."
+
+
+-- 
+Bill Klein
+ wmklein <at> ix.netcom.com
+"robin" <robin_v@bigpond.com> wrote in message 
+news:1ON0g.8880$vy1.6440@news-server.bigpond.net.au...
+> "Tom Linden" <tom@kednos.com> wrote in message
+> news:ops4poxesxzgicya@hyrrokkin...
+>> On Thu, 09 Feb 2006 14:30:34 GMT, robin <robin_v@bigpond.com> wrote:
+>>
+>> > Robert AH Prins wrote in message <44smssF3pht1U1@individual.net>...
+>> >
+>> >> What current commercial compiler implements ANSI PL/I?
+>> >
+>> > Kednos PL/I, Liant's Open PL/I, etc. etc., IBM's Enterprise PL/I, etc
+>> >
+>> I didn't know that.  So Enterprise PL/I implements X3.53-1976?  Liant's
+>> is a subset, ours is the full implementation
+>
+> IBM PL/I is a superset. It offers either ANSI or IBM options
+> for certain features, notably conversion rules.
+>
+> 
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: 101deb,debefa6557e390a0
+X-Google-Attributes: gid101deb,public
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news1.google.com!news1.google.com!fu-berlin.de!uni-berlin.de!individual.net!not-for-mail
+From: "Tom Linden" <tom@kednos.com>
+Newsgroups: comp.lang.pl1
+Subject: Re: ANSI Standards / ISO Documents
+Date: Thu, 09 Feb 2006 06:06:34 -0800
+Organization: Kednos
+Message-ID: <ops4plg8lzzgicya@hyrrokkin>
+References: <43EAF837.3050404@comcast.net>
+Mime-Version: 1.0
+Content-Type: text/plain; format=flowed; delsp=yes; charset=iso-8859-15
+Content-Transfer-Encoding: 8bit
+X-Trace: individual.net yIihq8eGAlTqvuzERMzwXAFJ4V4EIIjc81Evi4Z4Y31QUffw9P
+User-Agent: Opera M2/7.54 (Win32, build 3865)
+Xref: g2news1.google.com comp.lang.pl1:1063
+
+On Thu, 09 Feb 2006 03:07:19 -0500, Bob Lidral  
+<l1dralspamba1t@comcast.net> wrote:
+
+> Peter Flass wrote:
+>
+>> Bob Lidral wrote:
+>>
+>>>>
+>>> Just out of curiosity, why do the ANSI specifications cost so much?  I
+>>> bought the 3 PDF versions from the ANSI webstore a few years ago and
+>>> they only cost $90 total at current prices.
+>>>
+>>> The other three (expensive) documents are presumably hardcopy but it
+>>> wasn't clear to me how useful or necessary they would be -- unless they
+>>> specify extensions to the language or subset language, but judging by
+>>> the titles and descriptions they don't appear to add much of anything
+>>> crucial.  ISO 6160:1979 is an endorsement of X3.53-1976, is only $13,
+>>> and appears to be superseded by the PDF document ANSI INCITS 53-1976
+>>> (R1998) [here I'm guessing the R1998 means the 1998 revision].  I'm  
+>>> guessing ISO/IEC 6522:1992 is the 1992 PL/I General Purpose Subset  
+>>> standard which would appear to be superseded by ANSI INCITS 74-1987  
+>>> (R1998) [again assuming the R1998 means the 1998 revision].   ISO/IEC
+>>> 9075-2:2003 appears to be a definition of SQL which only shows up in a
+>>> search for PL/I documents because it contains information regarding the
+>>> interface with PL/I (among other languages).
+>>>
+>>> Am I missing something or did my search of the ANSI webstore miss one  
+>>> or
+>>> more relevant documents?
+>>>
+>>  The ISO docs are, if I remember correctly, just one-pagers that say  
+>> "we endorse ANSI standard ...".  I bought the PDFs of the latest Full  
+>> ANSI and Subset G standards, and they're quite useful, although it  
+>> takes a while to get used to reading them.  I forgot, and so did my  
+>> newsreader.  What's the third?
+>
+>
+> Here's what my search of the ANSI webstore returned (edited slightly so
+> my news reader client could handle it -- sigh):
+>
+>> There are 6 products that contain "PL/I":  Document #             
+>> Document  
+>> Title                                                              
+>> Price  Member
+>>                                                                                                         Discount
+>>                                                                                                         Available
+>>
+>> ANSI INCITS 53-1976   [ANSI Logo] Programming Language PL/l (formerly  
+>> ANSI X3.53-1976  
+>> (R1998))                                                                                       
+>> $30.00  Yes  (R1998)
+
+This is the original definition, 403 pages
+>>
+>> ANSI INCITS 74-1987   [ANSI Logo] Information Systems - Programming  
+>> Language - PL/I General-    $30.00  Yes
+>> (R1998)                           Purpose Subset (formerly ANSI  
+>> X3.74-1987 (R1998))
+
+This was the revision of X3.74-1981 the original Subset G which add a  
+number
+of features from X3.53 as well as new constructs, such as UNION  449 pages.
+>>
+>> ANSI INCITS TR-7-1989 [ANSI Logo] Information Processing Systems  
+>> Technical Report - Real-Time   $30.00  Yes
+>>                                   Extensions for PL/I (NOT AN AMERICAN  
+>> NATIONAL STANDARD)
+>>                                   (formerly ANSI X3/TR-7-1989)
+>>
+>> ISO 6160:1979         Programming languages - PL/I (Endorsement of ANSI  
+>> standard X3.53-l976)    $13.00  Yes
+>>
+>> ISO/IEC 6522:1992     Information technology - Programming languages -  
+>> PL/1 general purpose    $269.00  Yes
+>>                       subset
+>>
+>> ISO/IEC 9075-2:2003   Information technology - Database languages - SQL  
+>> - Part 2: Foundation   $281.00  Yes
+>>                       (SQL/Foundation)
+>>
+>
+> I'm guessing, from the prices, that ISO 6160:1979 is probably the
+> one-pager described by Mr. Flass, ISO/IEC 6522:1992 is probably a
+> hardcopy of the PL/I General Purpose Subset standard [probably from 1992
+> and probably superseded by ANSI INCITS 74-1987 (R1998)], and ISO/IEC
+> 9075-2:2003 is probably a hardcopy of part 2 of the SQL standard (i.e.,
+> not a PL/I standard).
+>
+> If anyone has more accurate information as to the contents and purposes
+> of these documents, please enlighten us.
+>
+>
+> Bob Lidral
+> lidral  at   alum  dot  mit  dot  edu
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: 101deb,debefa6557e390a0,start
+X-Google-Attributes: gid101deb,public
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news1.google.com!news2.google.com!news3.google.com!border1.nntp.dca.giganews.com!nntp.giganews.com!local01.nntp.dca.giganews.com!nntp.comcast.com!news.comcast.com.POSTED!not-for-mail
+NNTP-Posting-Date: Thu, 09 Feb 2006 02:07:22 -0600
+Message-ID: <43EAF837.3050404@comcast.net>
+Date: Thu, 09 Feb 2006 03:07:19 -0500
+From: Bob Lidral <l1dralspamba1t@comcast.net>
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.2) Gecko/20040804 Netscape/7.2 (ax)
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+Newsgroups: comp.lang.pl1
+Subject: ANSI Standards / ISO Documents
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+NNTP-Posting-Host: 24.34.139.239
+X-Trace: sv3-xXQGzudbmhGiSJxELlWTNutc1Sw61mbMsq+4xFKctfPoyGweUy6Sg7giehUnQx5CIHHzsQi6pBMsq8M!0+2Vi1Qb5OktbAWm/ZXbZr4WTjHN+sfoo1b3aGw7X3r+sl07MuDyAk8HwbLJXEqi9w==
+X-Complaints-To: abuse@comcast.net
+X-DMCA-Complaints-To: dmca@comcast.net
+X-Abuse-and-DMCA-Info: Please be sure to forward a copy of ALL headers
+X-Abuse-and-DMCA-Info: Otherwise we will be unable to process your complaint properly
+X-Postfilter: 1.3.32
+Xref: g2news1.google.com comp.lang.pl1:1059
+
+Peter Flass wrote:
+
+> Bob Lidral wrote:
+> 
+>>>
+>> Just out of curiosity, why do the ANSI specifications cost so much?  I
+>> bought the 3 PDF versions from the ANSI webstore a few years ago and
+>> they only cost $90 total at current prices.
+>>
+>> The other three (expensive) documents are presumably hardcopy but it
+>> wasn't clear to me how useful or necessary they would be -- unless they
+>> specify extensions to the language or subset language, but judging by
+>> the titles and descriptions they don't appear to add much of anything
+>> crucial.  ISO 6160:1979 is an endorsement of X3.53-1976, is only $13,
+>> and appears to be superseded by the PDF document ANSI INCITS 53-1976
+>> (R1998) [here I'm guessing the R1998 means the 1998 revision].  I'm guessing ISO/IEC 6522:1992 is the 1992 PL/I General Purpose Subset standard which would appear to be superseded by ANSI INCITS 74-1987 (R1998) [again assuming the R1998 means the 1998 revision].   ISO/IEC
+>> 9075-2:2003 appears to be a definition of SQL which only shows up in a
+>> search for PL/I documents because it contains information regarding the
+>> interface with PL/I (among other languages).
+>>
+>> Am I missing something or did my search of the ANSI webstore miss one or
+>> more relevant documents?
+>>
+> 
+> The ISO docs are, if I remember correctly, just one-pagers that say "we endorse ANSI standard ...".  I bought the PDFs of the latest Full ANSI and Subset G standards, and they're quite useful, although it takes a while to get used to reading them.  I forgot, and so did my newsreader.  What's the third?
+
+
+Here's what my search of the ANSI webstore returned (edited slightly so
+my news reader client could handle it -- sigh):
+
+> There are 6 products that contain "PL/I": 
+> 
+> Document #            Document Title                                                             Price  Member
+>                                                                                                         Discount
+>                                                                                                         Available
+>
+> ANSI INCITS 53-1976   [ANSI Logo] Programming Language PL/l (formerly ANSI X3.53-1976 (R1998))                                                                                      $30.00  Yes  
+> (R1998)
+>
+> ANSI INCITS 74-1987   [ANSI Logo] Information Systems - Programming Language - PL/I General-    $30.00  Yes
+> (R1998)                           Purpose Subset (formerly ANSI X3.74-1987 (R1998))
+>
+> ANSI INCITS TR-7-1989 [ANSI Logo] Information Processing Systems Technical Report - Real-Time   $30.00  Yes
+>                                   Extensions for PL/I (NOT AN AMERICAN NATIONAL STANDARD)
+>                                   (formerly ANSI X3/TR-7-1989)
+>
+> ISO 6160:1979         Programming languages - PL/I (Endorsement of ANSI standard X3.53-l976)    $13.00  Yes
+>
+> ISO/IEC 6522:1992     Information technology - Programming languages - PL/1 general purpose    $269.00  Yes
+>                       subset
+>
+> ISO/IEC 9075-2:2003   Information technology - Database languages - SQL - Part 2: Foundation   $281.00  Yes
+>                       (SQL/Foundation)
+>     
+
+I'm guessing, from the prices, that ISO 6160:1979 is probably the
+one-pager described by Mr. Flass, ISO/IEC 6522:1992 is probably a
+hardcopy of the PL/I General Purpose Subset standard [probably from 1992
+and probably superseded by ANSI INCITS 74-1987 (R1998)], and ISO/IEC
+9075-2:2003 is probably a hardcopy of part 2 of the SQL standard (i.e.,
+not a PL/I standard).
+
+If anyone has more accurate information as to the contents and purposes
+of these documents, please enlighten us.
+
+
+Bob Lidral
+lidral  at   alum  dot  mit  dot  edu
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: 101deb,2c521bb4bbaaa3f
+X-Google-Attributes: gid101deb,public
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news1.google.com!news4.google.com!border1.nntp.dca.giganews.com!nntp.giganews.com!wns13feed!worldnet.att.net!4.24.21.153!newsfeed3.dallas1.level3.net!news.level3.com!newsfeed1.easynews.com!easynews.com!easynews!newspeer1.nwr.nac.net!news.maxwell.syr.edu!news-rtr.nyroc.rr.com!news-out.nyroc.rr.com!twister.nyroc.rr.com.POSTED!53ab2750!not-for-mail
+From: Peter Flass <Peter_Flass@Yahoo.com>
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.4) Gecko/20030624 Netscape/7.1 (ax)
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+Newsgroups: comp.lang.pl1
+Subject: Re: Paper on PL/I
+References: <1132940103.169696.12330@z14g2000cwz.googlegroups.com> <XFXhf.3678$aA2.1117@newsread2.news.atl.earthlink.net> <b97if.4861$ea6.3844@news-server.bigpond.net.au> <Qhgif.6141$wf.1528@newsread3.news.atl.earthlink.net> <ops0wryzgszgicya@hyrrokkin> <vZCpf.36784$q%.20895@newssvr12.news.prodigy.com> <ops133i2sizgicya@hyrrokkin> <8Osqf.35782$dO2.13148@newssvr29.news.prodigy.net> <ops16128o1zgicya@hyrrokkin> <G2Hqf.36781$dO2.35595@newssvr29.news.prodigy.net>
+In-Reply-To: <G2Hqf.36781$dO2.35595@newssvr29.news.prodigy.net>
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Message-ID: <3w0sf.56016$XC4.7435@twister.nyroc.rr.com>
+Date: Tue, 27 Dec 2005 01:10:23 GMT
+NNTP-Posting-Host: 24.194.240.38
+X-Complaints-To: abuse@rr.com
+X-Trace: twister.nyroc.rr.com 1135645823 24.194.240.38 (Mon, 26 Dec 2005 20:10:23 EST)
+NNTP-Posting-Date: Mon, 26 Dec 2005 20:10:23 EST
+Organization: Road Runner
+Xref: g2news1.google.com comp.lang.pl1:1595
+
+adaworks@sbcglobal.net wrote:
+
+> 
+> Is there an ISO standard for PL/I.   I suppose I could look this up but
+> I suspect others in this forum might like to know too.
+
+PL/I is ANSI standard X3.53-1976 (rev 1998): Full language, and ANSI 
+Standard X3.74-1987: "Subset G", which is not a proper subset.  Most 
+current compilers implement both.  I don't know offhand what the 
+corresponding ISO standards are, but I believe ISO has endorsed both 
+standards without change.
+
+> 
+> In reply to your question about what I would like to see added to PL/I, I
+> think assertions, as described above, would be at the top of the list.  There is
+> also a great feature that was added to ANSI-85 COBOL that no other
+> language has:  the EVALUATE statement.  This is a great feature for simplifying
+> the communication between user, designer, and programmer.
+> 
+
+I'm not an authority on assertions, but I believe much of this 
+functionality can be implemented using the preprocessor, which is much 
+more capable than C's preprocessor.
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: 101deb,652607bf7f9ecaa2
+X-Google-Attributes: gid101deb,public
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news1.google.com!news1.google.com!news.maxwell.syr.edu!border1.nntp.dca.giganews.com!nntp.giganews.com!local1.nntp.dca.giganews.com!nntp.comcast.com!news.comcast.com.POSTED!not-for-mail
+NNTP-Posting-Date: Thu, 27 Jan 2005 01:16:26 -0600
+Message-ID: <41F8954A.6030108@comcast.net>
+Date: Thu, 27 Jan 2005 02:16:26 -0500
+From: Bob Lidral <l1dralspamba1t@comcast.net>
+Organization: I'd tell you but then I'd have to ...
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.2) Gecko/20040804 Netscape/7.2 (ax)
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+Newsgroups: comp.lang.pl1
+Subject: Re: EXCEPTIONS
+References: <LA6Jd.132364$K7.42773@news-server.bigpond.net.au> <GhdJd.49537$06.17591@clgrps12> <ct7fbk$5lh$1@ngspool-d02.news.aol.com> <WySJd.44249$Qb.21344@edtnps89> <VOidnRaOUPtc8GXcRVn-3A@comcast.com>
+In-Reply-To: <VOidnRaOUPtc8GXcRVn-3A@comcast.com>
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+NNTP-Posting-Host: 24.91.61.239
+X-Trace: sv3-EqoJvxbcGhMFNbDKiIEROkEDjWywAB0fH0JjW9tD68mhFcmtrlL0L6bG8AGCmfjKBFocV+wCWwJjNtv!SbnhMOs6S5vGkcvps106eQcG1+SEUBLVz64ZG6e/u0FhutjsL0p7
+X-Complaints-To: abuse@comcast.net
+X-DMCA-Complaints-To: dmca@comcast.net
+X-Abuse-and-DMCA-Info: Please be sure to forward a copy of ALL headers
+X-Abuse-and-DMCA-Info: Otherwise we will be unable to process your complaint properly
+X-Postfilter: 1.3.22
+Xref: g2news1.google.com comp.lang.pl1:1856
+
+glen herrmannsfeldt wrote:
+
+> From:
+> 
+> http://publibfp.boulder.ibm.com/cgi-bin/bookmgr/BOOKS/ibmol004/10.1.6.72
+> 
+>  10.1.6.72 ONSOURCE Pseudovariable
+> 
+> The pseudovariable sets the current value of the ONSOURCE built-in 
+> function. The element value assigned to the pseudovariable is converted 
+> to a character string and, if necessary, is padded on the right with 
+> blanks or truncated to match the length of the field that raised the 
+> CONVERSION condition. The new string is used when the conversion is 
+> re-attempted. (See Chapter 17, the "CONVERSION Condition" section.) The 
+> syntax for ONSOURCE pseudovariable is:
+> 
+> 
+> When conversion is re-attempted, the string assigned to the 
+> pseudovariable is processed as a single data item. For this reason, the 
+> error correction process should not assign a string containing more than 
+> one data item when the conversion occurs during the execution of a GET 
+> LIST or GET DATA statement. The presence of blanks or commas in the 
+> string could raise CONVERSION again.
+> 
+> ------------------
+> 
+> I agree it could be more obvious.  Though since the it sets the value of
+> the ONSOURCE function, that is a hint that it modifies the buffer.
+> I don't know if GET STRING could have a separate buffer from the
+> string itself, or not.
+> 
+> -- glen
+> 
+
+ From ANSI X3.74-1987 Programming Language - PL/I General-Purpose Subset:
+
+     Appendix A.8  Built-in Functions and Pseudo-variables
+     ...
+     3.  ONSOURCE pseudo-variable
+
+         This pseudo-variable allows a copy of the character-string
+         source value that caused a CONVERSION condition to be modified
+         so that the conversion may be re-tried.
+
+
+The PL/I ANSI standard is a little complicated; I only have a PDF
+version at home and I'm much more comfortable with the hardcopy version.
+  Nevertheless, the quotation above seems to indicate an assignment to
+the ONSOURCE pseudo-variable is an assignment to a copy of the field
+causing the CONVERSION condition rather than an assignment to the
+original field itself.
+
+Of course there's always the question of whether any specific compiler
+is standard-conforming.
+
+
+Bob Lidral
+l i d r a l  at  a l u m  dot  m i t  dot  e d u
+
+
+
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Thread: 101deb,652607bf7f9ecaa2
+X-Google-Attributes: gid101deb,public
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news1.google.com!news3.google.com!news.glorb.com!news-feed01.roc.ny.frontiernet.net!nntp.frontiernet.net!nntp.giganews.com.MISMATCH!border1.nntp.dca.giganews.com!nntp.giganews.com!local1.nntp.dca.giganews.com!nntp.comcast.com!news.comcast.com.POSTED!not-for-mail
+NNTP-Posting-Date: Thu, 27 Jan 2005 22:40:12 -0600
+Date: Thu, 27 Jan 2005 20:40:12 -0800
+From: glen herrmannsfeldt <gah@ugcs.caltech.edu>
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.4) Gecko/20030624 Netscape/7.1 (ax)
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+Newsgroups: comp.lang.pl1
+Subject: Re: EXCEPTIONS
+References: <LA6Jd.132364$K7.42773@news-server.bigpond.net.au> <GhdJd.49537$06.17591@clgrps12> <ct7fbk$5lh$1@ngspool-d02.news.aol.com> <WySJd.44249$Qb.21344@edtnps89> <VOidnRaOUPtc8GXcRVn-3A@comcast.com> <41F8954A.6030108@comcast.net>
+In-Reply-To: <41F8954A.6030108@comcast.net>
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Message-ID: <6uGdnVO6wf-xX2TcRVn-gg@comcast.com>
+NNTP-Posting-Host: 24.18.187.38
+X-Trace: sv3-a9e4WSx0OX2v8tGskfApoBlV9eW5bJIvQBRMW4paklq3kz5rfwrA7Be5ThEZQKOHj3BiHZIZx5hMfdt!uFysSa4gFjLQ5S7OzLaLaJKYSFG/GPHzjq0dc9kVH3S/pLoytaEJaxSnQmEmTxmaqhD7Eg==
+X-Complaints-To: abuse@comcast.net
+X-DMCA-Complaints-To: dmca@comcast.net
+X-Abuse-and-DMCA-Info: Please be sure to forward a copy of ALL headers
+X-Abuse-and-DMCA-Info: Otherwise we will be unable to process your complaint properly
+X-Postfilter: 1.3.22
+Xref: g2news1.google.com comp.lang.pl1:1862
+
+Bob Lidral wrote:
+
+> glen herrmannsfeldt wrote:
+> 
+>> From:
+>>
+>> http://publibfp.boulder.ibm.com/cgi-bin/bookmgr/BOOKS/ibmol004/10.1.6.72
+
+(snip)
+
+>  From ANSI X3.74-1987 Programming Language - PL/I General-Purpose Subset:
+
+>     Appendix A.8  Built-in Functions and Pseudo-variables
+>     ...
+>     3.  ONSOURCE pseudo-variable
+
+>         This pseudo-variable allows a copy of the character-string
+>         source value that caused a CONVERSION condition to be modified
+>         so that the conversion may be re-tried.
+
+> The PL/I ANSI standard is a little complicated; I only have a PDF
+> version at home and I'm much more comfortable with the hardcopy version.
+>  Nevertheless, the quotation above seems to indicate an assignment to
+> the ONSOURCE pseudo-variable is an assignment to a copy of the field
+> causing the CONVERSION condition rather than an assignment to the
+> original field itself.
+
+For a GET FILE statement I would hope that would be true for
+all compilers.  That is, it modifies the buffer not the data
+on disk (tape, cards, punched paper tape, keyboard, etc.)
+
+For GET STRING does it copy the string into a buffer, or
+use the original string?
+
+> Of course there's always the question of whether any specific compiler
+> is standard-conforming.
+
+Probably true for most compilers for reasonably complex languages.
+
+-- glen
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,df6a623d00952b27
+X-Google-Attributes: gid101deb,public
+X-Google-ArrivalTime: 2003-03-08 22:06:54 PST
+Path: archiver1.google.com!news1.google.com!newsfeed.stanford.edu!logbridge.uoregon.edu!arclight.uoregon.edu!wn13feed!worldnet.att.net!204.127.198.203!attbi_feed3!attbi.com!rwcrnsc52.ops.asp.att.net.POSTED!not-for-mail
+Message-ID: <3E6AD9FD.4E59877E@dev.null>
+From: Bob Lidral <spam@dev.null>
+X-Mailer: Mozilla 4.72 [en] (Windows NT 5.0; U)
+X-Accept-Language: en
+MIME-Version: 1.0
+Newsgroups: comp.lang.pl1
+Subject: Re: pli- IBM and Liant
+References: <1fe89c8e.0303070403.3cf883d7@posting.google.com> 
+		      <3E69928B.960DD522@alum.mit.edu> <3e6a9f04$10$fuzhry+tra$mr2ice@news.patriot.net>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+NNTP-Posting-Host: 66.30.137.89
+X-Complaints-To: abuse@attbi.com
+X-Trace: rwcrnsc52.ops.asp.att.net 1047190013 66.30.137.89 (Sun, 09 Mar 2003 06:06:53 GMT)
+NNTP-Posting-Date: Sun, 09 Mar 2003 06:06:53 GMT
+Organization: AT&T Broadband
+Date: Sun, 09 Mar 2003 06:06:53 GMT
+Xref: archiver1.google.com comp.lang.pl1:4483
+
+"Shmuel (Seymour J.) Metz" wrote:
+
+> In <3E69928B.960DD522@alum.mit.edu>, on 03/08/2003
+>    at 06:49 AM, Bob Lidral <lidral@alum.mit.edu> said:
+>
+> >>From what I remember, Liant took great pains to be compatible with
+> >the PL/I ANSI standard
+>
+>  1. The last I heard Liant was Subset G rather than full 1976
+>     ANSI PL/I
+>
+>  2. IBM has some important features not in ANSI.
+>
+> I would recommend that he write Liant and ask to have them run a test
+> compile of his code.
+>
+> --
+>      Shmuel (Seymour J.) Metz, SysProg and JOAT
+
+The last documentation I have for Liant's PL/I (dated 1990) claims
+compatibility with the general purpose subset, ANSI X3.74-1981 plus
+some extensions.  The care they took to comply with that ANSI standard
+should make it easy to port any programs using only general purpose
+subset features.
+
+However, Shmuel is correct: full PL/I has additional features and
+IBM PL/I probably has features not included in the full ANSI PL/I
+standard.  The general purpose subset has a fairly robust set of
+features but some programmers seem to take pride in using every
+obscure feature they can discover so the best bet is to communicate
+with Liant directly.
+
+
+Bob Lidral
+
+The amount of spam in my inbox has increased dramatically in the
+last week or so, hence I've changed the email address used for
+posting.  To reach me directly, use lidral at alum dot mit dot edu
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,3e3d8080933240e2
+X-Google-Attributes: gid101deb,public
+X-Google-ArrivalTime: 2002-10-07 12:51:02 PST
+Path: archiver1.google.com!news1.google.com!newsfeed.stanford.edu!bloom-beacon.mit.edu!nycmny1-snh1.gtei.net!chcgil2-snh1.gtei.net!cambridge1-snf1.gtei.net!news.gtei.net!transfer.stratus.com!not-for-mail
+From: "Paul Green" <Paul.Green@stratus.com>
+Newsgroups: comp.lang.pl1
+Subject: Re: Dialects
+Date: Mon, 7 Oct 2002 15:49:31 -0400
+Organization: Stratus Computer
+Message-ID: <ansogc$rng$1@transfer.stratus.com>
+References: <dlanpuk7e89ue39or8po8v4t4vntusup5v@4ax.com> <Pine.HPX.4.10.10210031628260.17317-100000@merle.acns.nwu.edu> <brkppu8t1krbac6m88kv94sd86hhv3fl4d@4ax.com> <800d5029.0210070904.5a38def5@posting.google.com>
+NNTP-Posting-Host: pgreen.mno.stratus.com
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Newsreader: Microsoft Outlook Express 5.50.4522.1200
+X-MimeOLE: Produced By Microsoft MimeOLE V5.50.4522.1200
+Xref: archiver1.google.com comp.lang.pl1:3228
+
+Stratus VOS PL/I is basically ANSI Subset G PL/I (X3.74-1981).  We have a
+few extra features from the full language and a few proprietary extensions,
+but for the most part, it stays close to the Subset G language. That's not
+surprising since the author of Subset G was the author of the front-end of
+the Stratus PL/I compiler (Bob Freiburghouse).
+
+Multics PL/I was pretty close to full ANSI PL/I.  (X3.53-1976)  Bob
+eventually sold a version of his TSI PL/I compiler that handled ANSI PL/I as
+well.
+
+The Multics PL/I compiler and the TSI PL/I compilers are totally separate
+implementations.  About all you can say is that some of the same people
+worked on both of them, including me.
+
+Thanks
+PG
+--
+Paul Green, Senior Technical Consultant, Stratus Computer.
+Voice: +1 978-461-7557; FAX: +1 978-461-3610
+Speaking from Stratus not for Stratus
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,b416337720aaef4c
+X-Google-Attributes: gid101deb,public
+X-Google-ArrivalTime: 2001-12-20 11:14:01 PST
+Path: archiver1.google.com!news1.google.com!newsfeed.stanford.edu!news-spur1.maxwell.syr.edu!news.maxwell.syr.edu!dispose.news.demon.net!demon!btnet-peer0!btnet-peer!btnet!lnewspeer01.lnd.ops.eu.uu.net!emea.uu.net!virata.com!not-for-mail
+From: "billy chen" <bchen@virata.com>
+Newsgroups: comp.lang.pl1
+Subject: Re: looking for a PL/I compiler for 386+ in MSDOS or NT-DOS
+Date: Thu, 20 Dec 2001 14:11:07 -0500
+Organization: Virata
+Message-ID: <vGD*A4icp@news.cam.virata.com>
+References: <ZpRR7.257000$e5.150396@newsfeeds.bigpond.com> <3c1987c1.2513662@24.0.3.73> <3C1990FE.A808562@home.com> <wYE*r75bp@news.cam.virata.com> <9vmpqd$fr7$1@suaar1ac.prod.compuserve.com> <3C2230B4.468221FD@home.com>
+NNTP-Posting-Host: boletus.cam.virata.com
+X-Server-Date: 20 Dec 2001 19:13:47 GMT
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Newsreader: Microsoft Outlook Express 5.50.4133.2400
+X-MimeOLE: Produced By Microsoft MimeOLE V5.50.4133.2400
+Xref: archiver1.google.com comp.lang.pl1:1836
+
+Yes, PL/I-80 and PL/I-86 is Subset G of the PL/I. Around 1984, I were using
+this PLI-80 write an 1/7 bytes long float extension addition procedure for
+Numercial Analysis.
+
+I thank the manual states that in
+
+http://www.retroarchive.org/cpm/archive/unofficial/drilib.html
+
+There are programmer and reference manual.
+===========================================
+Digital Research PL/I is an implementation of PL/I based on American
+National Standard X3.74, PL/I General Purpose Subset (Subset G).
+===========================================
+
+The programmer manual is the first time a NO-computer guy learn the "token"
+and try to see the string and parser .... and lots, lots. There is no other
+language can be compared with this powerful tools in CP/M. (C compiler is
+not available that time to me).
+
+
+Billyc
+
+
+"Donald L. Dobbs" <donaldldobbs@home.com> wrote in message
+news:3C2230B4.468221FD@home.com...
+>
+> Mark Yudkin wrote:
+> >
+> > PLI-80 and PLI-86 are not even remotely related to PL/I, with the sole
+> > exception of the use of three of the same characters in their names.
+They
+> > are Intel-created langauges used for (low level) programming of the 8080
+and
+> > 8086 in embedded systems (and as such are no longer relevant).
+>
+> With all due respect, Mark, I think you are confusing Intel's PLM with
+> the PLI-80 and PLI-86 implementations of Subset G by Digital Research.
+> I have done serious programming with PLI-80 and -86 (complete
+> interactive relational database). There are a few Subset G features not
+> implemented but most of them stem from lack of OS support (CP/M &
+> IBM/MS-DOS).
+>
+>
+>
+>
+> >
+> > XPL is inspired by PL/I, but, as the XPL web pages clearly state "The
+XPL
+> > language is similar to PL/I, but is not PL/I." (using your reference:
+> > http://www.geocities.com/xpl_lang/ldindex.html). The "DOS" version is
+> > actually a 360 compiler, as is Hercules. Both are ancient, OS360 is long
+> > gone.
+> >
+> > According to your own text, RUN.C is for a "PL/I-like" language, and
+PLI-32
+> > is a syntax checker only.
+> >
+> > Facit: You have found no PL/I compilers.
+> >
+> > "billy chen" <bchen@virata.com> wrote in message
+> > news:wYE*r75bp@news.cam.virata.com...
+> > > I found serval PL/I free compiler for PC
+> > >
+> > > 1) PL/I-80 runing under a Zsim2.42 with manual/samples/smome utilities
+...
+> > > (version 1.3)
+> > > 2) PL/I-86 runing under DOS  (version 1.0)
+> > > 3) A PL/I-32 complier (syntax check only) from internet test driver
+> > > 4) RUN.C An Interp of PL/I-like (no procedure call)
+> > > 5) XPL in PC-DOS (from RU) a 360 simulator for xsplsm (This one woks
+good
+> > on
+> > > my pc)
+> > > 6) XPL for FreeBSD (I load to FreeBSD 4.4, but haveing problem to
+build
+> > the
+> > > sub-monitor)
+> > > 7) The hercules for OS360 (I did not try this yet, anyone please post
+this
+> > > results)
+> > >
+> > > If any one want try to port the item 6, here is the web-address
+> > >
+> > > http://www.geocities.com/xpl_lang/
+> > >
+> > >
+> > > Thanks for the answers
+> > >
+> > >
+> > > Billyc
+> > >
+> > >
+> > >
+> > > "Donald L. Dobbs" <donaldldobbs@home.com> wrote in message
+> > > news:3C1990FE.A808562@home.com...
+> > > > webmaster wrote:
+> > > > >
+> > > > > Wish I knew it ran under DOS ... for me it probably would have
+been
+> > > > > good enough!
+> > > > >
+> > > > > On Wed, 12 Dec 2001 23:06:33 GMT, robin
+<robin_v@bigpond.nospam.com>
+> > > > > wrote:
+> > > > >
+> > > > > >"Mark Yudkin" <myudkin@compuserve.com> writes:
+> > > > > >> There are no free compilers that permit you to do any real
+work.
+> > > > > >
+> > > > > >Digital Research PL/I is free for non-commercial use.
+> > > > > >It implements the ANSI subset, and would be adequate
+> > > > > >for even serious work.
+> > > > > >
+> > > >
+> > > > Subset G is indeed quite adequate for serious work.  However, if I
+> > > > recall correctly the D.R. implementation was limited to a 64KB code
+> > > > space and a 64KB data space. The linker (provided with the compiler)
+> > > > allowed for overlays of code segments up to 7 levels of nesting.
+When I
+> > > > had an application that required a lot of code I created a small
+root
+> > > > segment (usually less than 4KB) and then swapped overlays (up to
+60KB
+> > > > each) as needed. There is no restriction on the number of overlays
+at
+> > > > any level. The most serious limitation is the 64KB data space for
+the
+> > > > sum total of all variables and I/O buffers.  Using CONTROLLED
+storage
+> > > > helped somewhat.
+> > > >
+> > > > Being a DOS implementation the PL/I itself only did ASCII characters
+to
+> > > > the CRT. Digital Research also had a companion product called
+Display
+> > > > Manager whose runtime could be linked in with the PL/I object code.
+> > > > Display Manager was still character based but it automated such
+things
+> > > > as blinking, underlining, high-intensity, half-intensity, and echo
+> > > > suppression (password entry). It also handled row and column
+addressing
+> > > > to put output anywhere on the face of a CRT.
+> > >
+> > >
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII
+X-Google-Thread: 101deb,427126cb0480c97c
+X-Google-Attributes: gid101deb,public
+X-Google-ArrivalTime: 2001-12-13 13:27:17 PST
+From: "Douglas H. Quebbeman" <dougq@ixnayamspayiglou.com>
+Newsgroups: comp.lang.pl1
+References: <3c113b5d_1@news.iglou.com>       <u17o82hhqb11e5@corp.supernews.com>       <3c14ced7$1_3@news.iglou.com> <3c17579b$2$fuzhry$mr2ice@news.patriot.net>
+Subject: Re: Seeking Talented Programmers to Implement Public Domain 32-Bit PL/I Compiler
+Date: Thu, 13 Dec 2001 08:48:11 -0500
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Newsreader: Microsoft Outlook Express 5.50.4522.1200
+X-MimeOLE: Produced By Microsoft MimeOLE V5.50.4522.1200
+NNTP-Posting-Host: 204.250.0.238
+X-Original-NNTP-Posting-Host: 204.250.0.238
+Message-ID: <3c18b19c$1_2@news.iglou.com>
+X-Trace: news.iglou.com 1008251292 204.250.0.238 (13 Dec 2001 08:48:12 -0500)
+X-Authenticated-User: dougq
+X-Original-NNTP-Posting-Host: 204.250.0.238
+Path: archiver1.google.com!news1.google.com!newsfeed.stanford.edu!news-spur1.maxwell.syr.edu!news.maxwell.syr.edu!news-out.visi.com!hermes.visi.com!uunet!ash.uu.net!news.iglou.com
+Xref: archiver1.google.com comp.lang.pl1:1809
+
+"Shmuel (Seymour J.) Metz" <spamtrap@library.lspace.org.invalid> wrote in
+message news:3c17579b$2$fuzhry$mr2ice@news.patriot.net...
+> In <3c14ced7$1_3@news.iglou.com>, on 12/10/2001
+>    at 10:03 AM, "Douglas H. Quebbeman" <dougq@ixnayamspayiglou.com>
+> said:
+>
+> >I'd like to see it piggybacked onto the Gnu Compiler Collection,
+> >either officially, or at least as a convenience. Frankly, my main
+> >goal is to get the compiler source into some kind of Open Source
+> >License...
+>
+> That would be nice, but why the G subset rather than the full
+> language?
+
+I think there is some confusion here; a quote from the compiler's
+existing documentation:
+
+: The PL/I-32 projects objective, is to create an ANSI conformant
+: PL/I compiler for the Win32 platform. Note the term ANSI in this
+: document means ANSI X3.74-1987 a full featured standard for the
+: language this should not be confused with the earlier, less
+: functional ANSI standard sometimes referred to as �Subset G�,
+: this was ANSI X3.74-1981.
+
+Hopefully this clarifies the target language.
+
+Regards,
+-doug quebbeman
+
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,1a2142ba1560c0ad
+X-Google-Attributes: gid101deb,public
+X-Google-ArrivalTime: 2001-06-05 05:58:58 PST
+Path: archiver1.google.com!newsfeed.google.com!newsfeed.stanford.edu!cyclone.bc.net!newsfeed.direct.ca!look.ca!newshub2.rdc1.sfba.home.com!news.home.com!news1.rdc2.on.home.com.POSTED!not-for-mail
+From: "Ron Alexander" <rcalex@home.com>
+Newsgroups: comp.lang.pl1
+References: <josef-46B2F7.15265404062001@nnrp01.earthlink.net>
+Subject: Re: STRATUS PL/1
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Newsreader: Microsoft Outlook Express 6.00.2462.0000
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2462.0000
+Message-ID: <lI4T6.29691$W02.363686@news1.rdc2.on.home.com>
+Date: Tue, 05 Jun 2001 12:58:57 GMT
+NNTP-Posting-Host: 24.64.170.143
+X-Complaints-To: abuse@home.net
+X-Trace: news1.rdc2.on.home.com 991745937 24.64.170.143 (Tue, 05 Jun 2001 05:58:57 PDT)
+NNTP-Posting-Date: Tue, 05 Jun 2001 05:58:57 PDT
+Organization: Excite@Home - The Leader in Broadband http://home.com/faster
+Xref: archiver1.google.com comp.lang.pl1:757
+
+Stratus PL/I is what is known as Subset G or ANSI X3.74-1981.
+As well, Stratus has implemented many non standard features as well as
+Stratus extensions.
+If you already know OS/390 PL/I then you know about 90% of Stratus PL/I.
+Call your local Stratus sales office to order a "VOS PL/I Language Manual
+(R009-03)"
+
+Regards,
+Ron Alexander
+
+"Josef A. Herz" <josef@REMOVE.jaherz.com> wrote in message
+news:josef-46B2F7.15265404062001@nnrp01.earthlink.net...
+> Can anyone elaborate on the differences between STRATUS PL/1 and OS/390
+> PL/1?
+>
+> Or point to documentation about the difference?
+>
+> I am curious about the transition path for learning to code on STRATUS?
+> Is it just STRATUS Education? Something else?
+>
+> Thank you in advance.
+>
+> --
+>                             ~~~ Josef Herz~~~
+>
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,565eca426a39f407,start
+X-Google-Attributes: gid101deb,public
+From: peter_flass@yahoo.com
+Subject: PL/I Standards available for download
+Date: 2000/10/18
+Message-ID: <8skf0e$u6e$1@nnrp1.deja.com>#1/1
+X-Deja-AN: 682913635
+X-Http-Proxy: 1.0 x58.deja.com:80 (Squid/1.1.22) for client 161.11.3.43
+Organization: Deja.com - Before you buy.
+X-Article-Creation-Date: Wed Oct 18 15:18:47 2000 GMT
+X-MyDeja-Info: XMYDJUIDpeter_flass
+Newsgroups: comp.lang.pl1
+X-Http-User-Agent: Mozilla/4.61 [en] (OS/2; U)
+
+ANSI now has PDF versions of standards available for download at
+reasonable cost.
+   PL/I General-Purpose Subset ANSI X3.74-1987 (R1998) $18(US)
+   Programming Language PL/I   ANSI X3.53-1976 (R1998) $18(US)
+
+Go to http://webstore.ansi.org/ansidocstore/find.asp? and key in the
+document number above (ANSI X3...).  This is a big improvement from the
+$100's for printed documentation (General-purpose Subset in hardcopy
+$218).
+
+I just downloaded the full language spec. - 421 pages, 25MB.
+
+
+Sent via Deja.com http://www.deja.com/
+Before you buy.
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,565eca426a39f407
+X-Google-Attributes: gid101deb,public
+From: "Donald L. Dobbs" <donaldldobbs@home.com>
+Subject: Re: PL/I Standards available for download
+Date: 2000/10/18
+Message-ID: <39EDE2B5.E8721E21@home.com>#1/1
+X-Deja-AN: 682979222
+Content-Transfer-Encoding: 7bit
+References: <8skf0e$u6e$1@nnrp1.deja.com>
+X-Accept-Language: en
+Content-Type: text/plain; charset=us-ascii
+X-Complaints-To: abuse@home.net
+X-Trace: news1.alsv1.occa.home.com 971891421 24.21.61.2 (Wed, 18 Oct 2000 10:50:21 PDT)
+Organization: @Home Network
+MIME-Version: 1.0
+NNTP-Posting-Date: Wed, 18 Oct 2000 10:50:21 PDT
+Newsgroups: comp.lang.pl1,dld
+
+
+
+peter_flass@yahoo.com wrote:
+> 
+> ANSI now has PDF versions of standards available for download at
+> reasonable cost.
+>    PL/I General-Purpose Subset ANSI X3.74-1987 (R1998) $18(US)
+>    Programming Language PL/I   ANSI X3.53-1976 (R1998) $18(US)
+> 
+> Go to http://webstore.ansi.org/ansidocstore/find.asp? and key in the
+> document number above (ANSI X3...).  This is a big improvement from the
+> $100's for printed documentation (General-purpose Subset in hardcopy
+> $218).
+> 
+> I just downloaded the full language spec. - 421 pages, 25MB.
+> 
+> Sent via Deja.com http://www.deja.com/
+> Before you buy.
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 1067ce,b7852558a5db97b3
+X-Google-Attributes: gid1067ce,public
+X-Google-Thread: 101deb,5d860c10957602b1
+X-Google-Attributes: gid101deb,public
+From: "Vincent F. Scarafino" <vscarafi@mich.com>
+Subject: Re: PL/I vs. PL/1
+Date: 1999/12/30
+Message-ID: <386BF400.9D0DDECE@mich.com>#1/1
+X-Deja-AN: 566691129
+Content-Transfer-Encoding: 7bit
+References: <ljJ84.2019$oJ5.4397@newsfeeds.bigpond.com>
+X-Accept-Language: en
+Content-Type: text/plain; charset=us-ascii
+X-Complaints-To: newsabuse@supernews.com
+Organization: Posted via Supernews, http://www.supernews.com
+MIME-Version: 1.0
+Newsgroups: alt.os.multics,comp.lang.pl1
+
+The "New River" in West Virginia is the second oldest river in the
+world.
+
+robin wrote:
+> 
+> "Paul Green" <Paul_Green@stratus.com> writes:
+> > The name of the language is PL/I (Programming Language I -- Roman I) in all
+> > cases, no matter whether you are talking about IBM, Honeywell, ANSI, or
+> > whatever. Perhaps IBM thought that there might someday be a PL/II; perhaps
+> > they just liked the official-sounding name. It's first name was "NPL", for
+> > New Programming Language. I kind of like that one; too bad it didn't stick.
+> 
+> The abbreviation was already in use for the National Physical Laboratory
+> (or was it Physics?).
+> 
+> > The UK is full of towns whose second-oldest street is named "New Street", so
+> > if they can have streets that are hundreds of years old named "new",
+> 
+> Not to mention "New York".
+> 
+> > we
+> > certainly could have had a programming language with that name.
+> >
+> > I suppose the official reference for the name of the language these days
+> > would be ANSI X3.53 or X3.74 (full PL/I and subset PL/I, respectively); q.v.
+> > at www.ansi.org.
+> >
+> > PG
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,5d860c10957602b1,start
+X-Google-Attributes: gid101deb,public
+X-Google-Thread: 1067ce,b7852558a5db97b3
+X-Google-Attributes: gid1067ce,public
+From: "Paul Green" <Paul_Green@stratus.com>
+Subject: Re: PL/I vs. PL/1
+Date: 1999/12/23
+Message-ID: <83u1cq$23o$1@transfer.stratus.com>#1/1
+X-Deja-AN: 564311310
+References: <3ln14.16725$BW6.372620@typhoon2.kc.rr.com> <82hhc4$64v$1@nnrp1.deja.com> <87puwixxua.fsf@bglbv.my-deja.com> <384e0137.339694214@news.newsguy.com> <944682825.621422@news.mediaWays.net> <87vh69ks46.fsf@bglbv.my-deja.com> <1e2js6y.x3yiqilx94wN@[192.168.1.4]> <B48665B89668CA7240@0.0.0.0> <1e37pbq.rsp3qs1641gvwN@[192.168.1.4]>
+Organization: Stratus Computer, Inc.
+X-MimeOLE: Produced By Microsoft MimeOLE V4.72.3612.1700
+Newsgroups: alt.os.multics,comp.lang.pl1
+
+The name of the language is PL/I (Programming Language I -- Roman I) in all
+cases, no matter whether you are talking about IBM, Honeywell, ANSI, or
+whatever. Perhaps IBM thought that there might someday be a PL/II; perhaps
+they just liked the official-sounding name. It's first name was "NPL", for
+New Programming Language. I kind of like that one; too bad it didn't stick.
+The UK is full of towns whose second-oldest street is named "New Street", so
+if they can have streets that are hundreds of years old named "new", we
+certainly could have had a programming language with that name.
+
+I suppose the official reference for the name of the language these days
+would be ANSI X3.53 or X3.74 (full PL/I and subset PL/I, respectively); q.v.
+at www.ansi.org.
+
+IBM abbreviated the name of their compiler "pli", as you say.  Multics
+abbreviated it "pl1". When the vote came up for the PL/I newsgroup, there
+was quite a debate as to whether it should be named "comp.sys.pli" or
+"comp.sys.pl1"....
+
+A lot of time has been wasted over the years debating this subject, and
+getting the manuals and whatnot consistent. I wish IBM had just named it
+"PL/1". It would have been so much easier.
+
+PG
+
+
+J. Spencer Love wrote in message <1e37pbq.rsp3qs1641gvwN@[192.168.1.4]>...
+>Edward Rice <ehrice@his.com> wrote [shortened by PG]:
+>
+>> The language was called PL/I (Roman), but the command to invoke it was
+>> "pl1" (arabic).  ALL of the Honeywell documentation, every bit of it,
+>> refers to the language as "PL/I", even the GCOS stuff.  (I just checked
+>> copies of the PL/I Language Spec, PL/I Reference Manual, and the GCOS
+PL/I
+>> manual, too.)
+>
+>But I stand by the rhetoric.  I recall some CISLian, perhaps Paul Green
+>or RBarnes, indulging in an impromptu diatribe on the subject, but since
+>this would be sometime between 1978 and 1986, it's pretty well shrouded
+>in the mists by now.  Anyone want to confess?  Or remember better?
+>
+>Although "pli" was "print_link_info" on Multics, I think I recall typing
+>"pli" at either TSO or CMS during the times I was forced to use the IBM
+>implementation
+
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,5d860c10957602b1
+X-Google-Attributes: gid101deb,public
+X-Google-Thread: 1067ce,b7852558a5db97b3
+X-Google-Attributes: gid1067ce,public
+From: robin <robin_v@nospam.bigpond.com>
+Subject: Re: PL/I vs. PL/1
+Date: 1999/12/24
+Message-ID: <ljJ84.2019$oJ5.4397@newsfeeds.bigpond.com>#1/1
+X-Deja-AN: 564515128
+X-Trace: newsfeeds.bigpond.com 946037073 139.134.210.225 (Fri, 24 Dec 1999 23:04:33 EST)
+Organization: Telstra BigPond Internet Services (http://www.bigpond.com)
+NNTP-Posting-Date: Fri, 24 Dec 1999 23:04:33 EST
+Newsgroups: alt.os.multics,comp.lang.pl1
+
+"Paul Green" <Paul_Green@stratus.com> writes: 
+> The name of the language is PL/I (Programming Language I -- Roman I) in all
+> cases, no matter whether you are talking about IBM, Honeywell, ANSI, or
+> whatever. Perhaps IBM thought that there might someday be a PL/II; perhaps
+> they just liked the official-sounding name. It's first name was "NPL", for
+> New Programming Language. I kind of like that one; too bad it didn't stick.
+
+The abbreviation was already in use for the National Physical Laboratory
+(or was it Physics?).
+
+> The UK is full of towns whose second-oldest street is named "New Street", so
+> if they can have streets that are hundreds of years old named "new",
+
+Not to mention "New York".
+
+> we
+> certainly could have had a programming language with that name.
+> 
+> I suppose the official reference for the name of the language these days
+> would be ANSI X3.53 or X3.74 (full PL/I and subset PL/I, respectively); q.v.
+> at www.ansi.org.
+> 
+> PG
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 1067ce,b7852558a5db97b3
+X-Google-Attributes: gid1067ce,public
+X-Google-Thread: 101deb,5d860c10957602b1
+X-Google-Attributes: gid101deb,public
+From: "Paul Green" <Paul_Green@stratus.com>
+Subject: Re: PL/I vs. PL/1
+Date: 1999/12/27
+Message-ID: <848o26$8bt$1@transfer.stratus.com>#1/1
+X-Deja-AN: 565447050
+References: <3ln14.16725$BW6.372620@typhoon2.kc.rr.com> <82hhc4$64v$1@nnrp1.deja.com> <87puwixxua.fsf@bglbv.my-deja.com> <384e0137.339694214@news.newsguy.com> <944682825.621422@news.mediaWays.net> <87vh69ks46.fsf@bglbv.my-deja.com> <1e2js6y.x3yiqilx94wN@[192.168.1.4]> <B48665B89668CA7240@0.0.0.0> <1e37pbq.rsp3qs1641gvwN@[192.168.1.4]> <83u1cq$23o$1@transfer.stratus.com>
+Organization: Stratus Computer, Inc.
+X-MimeOLE: Produced By Microsoft MimeOLE V4.72.3612.1700
+Newsgroups: alt.os.multics,comp.lang.pl1
+
+I am posting this on behalf of John C Klensin [klensin@mci.net.nospam] who
+mailed it to me but was unable to successfully post it to the newsgroups.
+John is the chairman of the X3 standards committee for PL/I, and a colleague
+of mine from when we both worked on Multics. In fact, John has the (dubious)
+distinction of being the first person to take me to task for installing
+untested (and hence buggy) code into a commercial product. I can still hear
+his voice at the other end of the phone carefully and distinctively
+explaining the impact of my carelessness on his product. At the time it
+didn't occur to me that he was teaching me a lifelong lesson. I eventually
+saw it as just that, the memory of it has motivated me to do better ever
+since.
+
+PG
+
+--On Thursday, 23 December, 1999 15:41 -0500 Paul Green
+<Paul_Green@stratus.com> wrote:
+
+> The name of the language is PL/I (Programming Language I --
+> Roman I) in all cases, no matter whether you are talking about
+> IBM, Honeywell, ANSI, or whatever. Perhaps IBM thought that
+> there might someday be a PL/II; perhaps they just liked the
+> official-sounding name.
+
+I was told about the time I got involved with the standards
+committee that IBM had, at one point. trademarked PL/I, PL/II,
+PL/III,.. PL/n for some fairly large (Roman) value of n and then
+released at least the first one to ANSI and ECMA.  Never checked
+on this, might be urban legend.
+
+> It's first name was "NPL", for New
+> Programming Language. I kind of like that one; too bad it
+> didn't stick.
+
+There was a cognitive conflict with the UK's National Physical
+Laboratory, who were, if I recall, expecting to be  major users
+(as well as major customers of IBM and others).
+
+> The UK is full of towns whose second-oldest
+> street is named "New Street", so if they can have streets that
+> are hundreds of years old named "new", we certainly could have
+> had a programming language with that name.
+
+> I suppose the official reference for the name of the language
+> these days would be ANSI X3.53 or X3.74 (full PL/I and subset
+> PL/I, respectively); q.v. at www.ansi.org.
+
+Technically X3.53-1976 (R[eaffirmed several times])  and
+X3.76-1987 (R}.   Most recent reaffirmation dates for both are
+within the last two years (I've lost track).   These are,
+respectively, ISO IS 6160 and 6522; the latter is known in
+ANSI-land as "PL/I General Purpose Subset" and in ISO as
+"General Purpose PL/I".
+
+> IBM abbreviated the name of their compiler "pli", as you say.
+> Multics abbreviated it "pl1". When the vote came up for the
+> PL/I newsgroup, there was quite a debate as to whether it
+> should be named "comp.sys.pli" or "comp.sys.pl1"....
+
+> A lot of time has been wasted over the years debating this
+> subject, and getting the manuals and whatnot consistent. I
+> wish IBM had just named it "PL/1". It would have been so much
+> easier.
+
+Might have been even easier had the design committee stuck with
+their original charge and called it "FORTRAN" :-)
+
+    john
+
+
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 10d15b,f0b52f2a7e68961c
+X-Google-Attributes: gid10d15b,public
+X-Google-Thread: 101deb,f0b52f2a7e68961c
+X-Google-Attributes: gid101deb,public
+From: robin <robin_v@bigpond.com>
+Subject: Re: In search of a PL/I - COBOL for OS/390 comparison
+Date: 1999/10/10
+Message-ID: <or9M3.2034$_4.3415@newsfeeds.bigpond.com>#1/1
+X-Deja-AN: 535177854
+X-Trace: newsfeeds.bigpond.com 939598676 139.134.210.127 (Mon, 11 Oct 1999 09:37:56 EST)
+Organization: Telstra BigPond Internet Services (http://www.bigpond.com)
+NNTP-Posting-Date: Mon, 11 Oct 1999 09:37:56 EST
+Newsgroups: comp.lang.pl1,comp.lang.cobol
+
+From: "William M. Klein" <wmklein@nospam.netcom.com>, 
+MindSpring EnterprisesDate: Sat, 9 Oct 1999 11:38:48 -0500
+robin <robin_v@bigpond.com> wrote in message
+news:CpIL3.1233$_4.2153@newsfeeds.bigpond.com...
+>> "William M. Klein" <wmklein@nospam.netcom.com> writes:
+>> > Also note that the copyright date on that book is 1977.  This is 8 years
+>> > before the '85 ANSI COBOL Standard and more than 10 years before the '89
+>> > Amendment.
+>
+>> And 21 years before the latest PL/I compiler incorporating the Y2K
+>> Millennium Language Extensions.
+>>
+>> And -- please note -- the PL/I compiler received the Millennium
+>> Language Extensions BEFRE the COBOL compiler did.
+>
+>> >  Also it was few years before the time that ANSI/ISO "gave up" on
+>> > PL/I
+
+"few" years?  Surely you're not referring to X3.74 of 1987,
+some ten years later?
+
+> - and said that it was "functionally" frozen as a programming
+>> >language
+>
+>> Well, if that is what they said,  they couldn't have been more wrong,
+>> because PL/I received a host of enhancements in
+>> the 1990s, including strong typing, etc,  new built-in functions.
+> I see (from the last two updates) that we aren't really talking about
+> "PL/I" - but IBM's PL/I compilers.  That is true - that IBM has kept on
+> updating their product.  I particularly like the announcement that they made
+> this past Sept - for a compiler that had all sorts of "goodies" in it - with
+> the minor <G> problem that it is "object code incompatible" with previous IBM
+> Mainframe PL/I compilers.
+
+There's nothing new in this.  IBM's OS PL/I Version 2 object code was
+incompatible with Version 1 object code, owing to changes with certain
+library functions.
+
+Also, different interfaces with various operating systems required
+different object code for each different version.
+
+>  Also, as far as I know, this NEW (incompatible)
+> version of IBM's mainframe PL/I compiler
+
+AFAIK, it's a new compiler, not a new version of the existing IBM Mainframe
+compiler.
+
+> finally has support for ANSI/ISO
+> conforming PL/I (conforming to the now functionally stabilized compiler) even
+> though most IBM PL/I programmers "hate" having PL/I behave (or limited) to
+> Standard syntax and functionality.
+
+That's their preference, of course.
+
+> Even so, I still would say that there have been MORE significant changes to
+> the IBM mainframe COBOLs than to the IBM mainframe PL/I compilers - since
+> 1977.
+
+What changes to IBM COBOL since 1977 do you think would affect Tucker's
+ratings of COBOL vs PL/I ?  Bearing in mind that PL/I was then streets
+ahead of COBOL in the areas cited.
+
+>  However, that is a matter of opinion - but whatever you think about
+> the amount or type of change, it is certainly true that any comparison made
+> in 1977 has little to do with the language advantages, structure, or uses
+>today.
+
+See above.
+
+---
+Bill Klein
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 10d15b,f0b52f2a7e68961c
+X-Google-Attributes: gid10d15b,public
+X-Google-Thread: 101deb,f0b52f2a7e68961c
+X-Google-Attributes: gid101deb,public
+From: robin <robin_v@bigpond.com>
+Subject: Re: In search of a PL/I - COBOL for OS/390 comparison
+Date: 1999/10/11
+Message-ID: <nGuM3.2730$_4.4950@newsfeeds.bigpond.com>#1/1
+X-Deja-AN: 535596590
+X-Trace: newsfeeds.bigpond.com 939685651 139.134.208.250 (Tue, 12 Oct 1999 09:47:31 EST)
+Organization: Telstra BigPond Internet Services (http://www.bigpond.com)
+NNTP-Posting-Date: Tue, 12 Oct 1999 09:47:31 EST
+Newsgroups: comp.lang.pl1,comp.lang.cobol
+
+From: "William M. Klein" <wmklein@nospam.netcom.com>, 
+MindSpring EnterprisesDate: Sat, 9 Oct 1999 11:38:48 -0500
+robin <robin_v@bigpond.com> wrote in message
+news:CpIL3.1233$_4.2153@newsfeeds.bigpond.com...
+>> "William M. Klein" <wmklein@nospam.netcom.com> writes:
+>> > Also note that the copyright date on that book is 1977.  This is 8 years
+>> > before the '85 ANSI COBOL Standard and more than 10 years before the '89
+>> > Amendment.
+>
+>> And 21 years before the latest PL/I compiler incorporating the Y2K
+>> Millennium Language Extensions.
+>>
+>> And -- please note -- the PL/I compiler received the Millennium
+>> Language Extensions BEFRE the COBOL compiler did.
+>
+>> >  Also it was few years before the time that ANSI/ISO "gave up" on
+>> > PL/I
+
+"few" years?  Surely you're not referring to X3.74 of 1987,
+some ten years later?
+
+> - and said that it was "functionally" frozen as a programming
+>> >language
+>
+>> Well, if that is what they said,  they couldn't have been more wrong,
+>> because PL/I received a host of enhancements in
+>> the 1990s, including strong typing, etc,  new built-in functions.
+> I see (from the last two updates) that we aren't really talking about
+> "PL/I" - but IBM's PL/I compilers.  That is true - that IBM has kept on
+> updating their product.  I particularly like the announcement that they made
+> this past Sept - for a compiler that had all sorts of "goodies" in it - with
+> the minor <G> problem that it is "object code incompatible" with previous IBM
+> Mainframe PL/I compilers.
+
+There's nothing new in this.  IBM's OS PL/I Version 2 object code was
+incompatible with Version 1 object code, owing to changes with certain
+library functions.
+
+Also, different interfaces with various operating systems required
+different object code for each different version.
+
+>  Also, as far as I know, this NEW (incompatible)
+> version of IBM's mainframe PL/I compiler
+
+AFAIK, it's a new compiler, not a new version of the existing IBM Mainframe
+compiler.
+
+> finally has support for ANSI/ISO
+> conforming PL/I (conforming to the now functionally stabilized compiler) even
+> though most IBM PL/I programmers "hate" having PL/I behave (or limited) to
+> Standard syntax and functionality.
+
+That's their preference, of course.
+
+> Even so, I still would say that there have been MORE significant changes to
+> the IBM mainframe COBOLs than to the IBM mainframe PL/I compilers - since
+> 1977.
+
+What changes to IBM COBOL since 1977 do you think would affect Tucker's
+ratings of COBOL vs PL/I ?  Bearing in mind that PL/I was then streets
+ahead of COBOL in the areas cited.
+
+>  However, that is a matter of opinion - but whatever you think about
+> the amount or type of change, it is certainly true that any comparison made
+> in 1977 has little to do with the language advantages, structure, or uses
+>today.
+
+See above.
+
+---
+Bill Klein 
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,b46b97b458f1018c
+X-Google-Attributes: gid101deb,public
+From: h@morantek.demon.co.uk
+Subject: Re: What is the definitive language reference for PL/I
+Date: 1999/09/29
+Message-ID: <37f260aa.10252993@news.demon.co.uk>#1/1
+X-Deja-AN: 530910285
+X-NNTP-Posting-Host: morantek.demon.co.uk:193.237.45.176
+References: <WLCz3.10404$ei1.20746@newsfeeds.bigpond.com> <37e3d712.16715725@news.demon.co.uk> <37E7EFFE.AAD2DF03@nsf.gov.invalid>
+X-Trace: news.demon.co.uk 938646794 nnrp-12:10563 NO-IDENT morantek.demon.co.uk:193.237.45.176
+Newsgroups: comp.lang.pl1
+X-Complaints-To: abuse@demon.net
+
+I agree.
+
+However the term 'Subset G' is usually taken to refer to the language
+specified by ANSI X3.74-1981 a very limited definition.
+
+To this day many assume that Subset G is this.
+
+Subset G 1981 is (rightly) seen as a rather limited and restrictive
+definition of a PL/I subset. The 1987 specification is however much
+more powerful.
+
+For example I beleive that Stratus's PL/I compiler for VOS is an
+implementation of the 1981 standard, and lacks many of the more
+powerful features defined in 1987 standard.
+
+Some of the fatures in the 1987 standard, that are not in the 1981
+are:
+
+REFER
+AREA and OFFSET types
+INITIAL for automatic variables
+DO LOOP for indefinite looping
+SELECT groups
+PACKAGE
+
+etc
+
+I was simply making it clear that ANSI X3.74-1987 is not to be seen as
+the same thing as 'Subset G' because this Subset is almost always
+taken to mean the 1981 standard, despite the fact that both standards
+are titled Subset G.
+
+I dont think that any implementation of X3.74-1987 actually exists,
+please let me know if this isnt the case.
+
+Hugh
+
+
+On Tue, 21 Sep 1999 16:52:15 -0400, "Shmuel (Seymour J.) Metz"
+<nospam@nsf.gov.invalid> wrote:
+
+>h@morantek.demon.co.uk wrote:
+>
+>> The definition that I used for PL/I is the ANSI X3.74-1987 document.
+>> This is a formal definition of the syntax, grammar and semantics of a
+>> large subset of the well known 'IBM PL/I' and should not be confused
+>> with the Subset-G version, this manual is abstruse and daunting in
+>> places.
+>
+>What do you mean "confused"? That document *is* the current definition
+>of Subset G. ANSI decided not to update the standard for the full
+>language. I'm sure that some of those who were involved on the SHARE
+>side can give a blow-by-blow description, but probably not in polite
+>language. The updated Subset G is still missing a lot of critical
+>functionality, so as far as I'm concerned the defining documents are the
+>old PL/I standard and the IBM compilers.
+>
+>-- 
+>
+>Shmuel (Seymour J.) Metz
+>Reply to host nsf (dot) gov, user smetz
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,b46b97b458f1018c
+X-Google-Attributes: gid101deb,public
+From: h@morantek.demon.co.uk
+Subject: Re: What is the definitive language reference for PL/I
+Date: 1999/09/18
+Message-ID: <37e3d712.16715725@news.demon.co.uk>#1/1
+X-Deja-AN: 526765768
+X-NNTP-Posting-Host: morantek.demon.co.uk:193.237.45.176
+References: <WLCz3.10404$ei1.20746@newsfeeds.bigpond.com>
+X-Trace: news.demon.co.uk 937679055 nnrp-13:22355 NO-IDENT morantek.demon.co.uk:193.237.45.176
+Newsgroups: comp.lang.pl1
+X-Complaints-To: abuse@demon.net
+
+Dont know if anyones interested, but I do have a 60%-70 complete PL/I
+compiler that I half ported to NT a few years ago. I never got much of
+a reaction to this work at the time, so I shelved the thing.
+
+A compiler is one thing, but in this day and age one is expected to
+have an editor, debugger etc, and although such things can readily be
+writteen for NT, its still a lot of additional work.
+
+The definition that I used for PL/I is the ANSI X3.74-1987 document.
+This is a formal definition of the syntax, grammar and semantics of a
+large subset of the well known 'IBM PL/I' and should not be confused
+with the Subset-G version, this manual is abstruse and daunting in
+places.
+
+The compiler is reasonably well written and has a hand coded recursive
+descent parser, since PL/I lack of reserved words meant that many
+parser generators were unable to handle it (well that was the case 8
+years ago).
+
+It generates  a DOS OBJ file, and this links and creates executable
+code. However it needs to have an NT COFF obj file, and this is not a
+quick fix !
+
+The NT COFF obj file format is well documented and somewhat easier to
+work with than the crude and awkward DOS version.
+
+Its not a complete compiler therefore but does represent some 60%-70%
+of such a project. The compiler is written (well) in 'C'.
+
+Hugh
+
+
+On Thu, 02 Sep 1999 22:21:42 GMT, robin <robin_v@bigpond.com> wrote:
+
+>Dan Cross <dan.nocross@sixspamdegrees.com> writes: > -----BEGIN PGP SIGNED MESSAGE-----
+>> 
+>> In article <37bd7584.0@news.wizvax.net>,
+>> Richard Shetron <multics@wizvax.wizvax.net> wrote:
+> 
+>> Also, what incentive is there for someone to program in
+>> PL/1 if they must pay for the compiler, and *good* compilers
+>> for other languages, such as C, C++, FORTRAN, Ada-95, Pascal,
+>> Objective C, Java, Perl*, SML, etc, are freely available?
+>> If PL/1 is to survive, there *must* be a free compiler
+>> available in order to spark interest.
+>
+>There is.  It's Digital research PL/I for DOS.
+>It's free for non-commercial use.
+>
+>Location is in the FAQ.
+>
+>>  Open source would
+>> be best, as well.
+>> 
+>> Someone had mentioned a possible front end to GCC.  Why don't
+>> some of the PL/1 experts here weigh in and lend a hand on that
+>> project?  I believe that it could certainly be worthwhile.
+>> 
+>> 	- Dan C.
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,b46b97b458f1018c
+X-Google-Attributes: gid101deb,public
+From: "Shmuel (Seymour J.) Metz" <nospam@nsf.gov.invalid>
+Subject: Re: What is the definitive language reference for PL/I
+Date: 1999/09/21
+Message-ID: <37E7EFFE.AAD2DF03@nsf.gov.invalid>#1/1
+X-Deja-AN: 527966641
+Content-Transfer-Encoding: 7bit
+References: <WLCz3.10404$ei1.20746@newsfeeds.bigpond.com> <37e3d712.16715725@news.demon.co.uk>
+X-Accept-Language: en
+Content-Type: text/plain; charset=us-ascii
+Organization: National Science Foundation
+Mime-Version: 1.0
+Newsgroups: comp.lang.pl1
+
+h@morantek.demon.co.uk wrote:
+
+> The definition that I used for PL/I is the ANSI X3.74-1987 document.
+> This is a formal definition of the syntax, grammar and semantics of a
+> large subset of the well known 'IBM PL/I' and should not be confused
+> with the Subset-G version, this manual is abstruse and daunting in
+> places.
+
+What do you mean "confused"? That document *is* the current definition
+of Subset G. ANSI decided not to update the standard for the full
+language. I'm sure that some of those who were involved on the SHARE
+side can give a blow-by-blow description, but probably not in polite
+language. The updated Subset G is still missing a lot of critical
+functionality, so as far as I'm concerned the defining documents are the
+old PL/I standard and the IBM compilers.
+
+-- 
+
+Shmuel (Seymour J.) Metz
+Reply to host nsf (dot) gov, user smetz
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII
+X-Google-Thread: 101deb,242d3511791735de,start
+X-Google-Attributes: gid101deb,public
+From: "Mark Yudkin" <myudkin@csi.com>
+Subject: ANSI PL/I Standards
+Date: 1999/09/05
+Message-ID: <7qu8kn$3su$1@ssauraab-i-1.production.compuserve.com>#1/1
+X-Deja-AN: 521367445
+X-Priority: 3
+X-MimeOLE: Produced By Microsoft MimeOLE V5.00.2314.1300
+X-Complaints-To: newsmaster@compuserve.com
+X-Trace: ssauraab-i-1.production.compuserve.com 936551895 3998 195.232.38.124 (5 Sep 1999 17:18:15 GMT)
+Organization: CompuServe Interactive Services
+X-MSMail-Priority: Normal
+NNTP-Posting-Date: 5 Sep 1999 17:18:15 GMT
+Newsgroups: comp.lang.pl1
+
+A while back, a question was posed about definitive PL/I standards.
+
+ANSI (www.ansi.org) will sell you their PL/I standards manuals:
+  X3.53-1976 (PL/I)
+  X3.74-1976 (PL/I G Subset)
+
+You can search on those terms at http://web.ansi.org/public/std_info.html
+
+---
+
+Going way back (1965), you can also look for the Vienna Lab's PL/I
+definition in VDM:
+
+Tentative Steps towards a Formal Definition of PL/1 (with K. Bandat. P.
+Lucas, K. Walk) IBM Lab., Vienna (1965). Report
+In collection Publications of 1965
+
+A Formal definition of the Macro Activity of PL/1 IBM Lab., Vienna (1965).
+Report
+In collection Publications of 1965
+
+Pl 1 (PL/1), Abk. f�r engl. Programming Language 1, problemorientierte
+Programmiersprache f�r die L�sung kommerzieller und techn.-wiss. Probleme.
+In collection Pirayas��Plafond
+
+
+--
+Regards, Mark Yudkin, Yudkin Consulting AG, Authors of Cogent/SQL for MVS,
+OS/2 and Windows NT.
+The simplest way to publish live data on the World Wide Web.
+
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,e6f0a4b5e1554d9b
+X-Google-Attributes: gid101deb,public
+X-Google-Thread: 1094ba,e6f0a4b5e1554d9b
+X-Google-Attributes: gid1094ba,public
+From: robin <robin_v@nospam.bigpond.com>
+Subject: Re: Fortran or Ada or PL/I?
+Date: 1998/09/25
+Message-ID: <360afe18.0@139.134.5.33>#1/1
+X-Deja-AN: 394591330
+X-Trace: nsw.nnrp.telstra.net 906690309 139.134.5.33 (Fri, 25 Sep 1998 12:25:09 EST)
+Organization: Telstra Big Pond Direct
+NNTP-Posting-Date: Fri, 25 Sep 1998 12:25:09 EST
+Newsgroups: comp.lang.fortran,comp.lang.pl1
+X-Complaints-To: abuse@telstra.net
+
+Jean Vezina <jvezina@ibm.net> writes: > robin wrote:
+> > 
+> > Jean Vezina <jvezina@ibm.net> writes: > robin wrote:
+> > > >
+> > > > >Siamak Kaveh <kaveh@meca.polymtl.ca> writes: > Dear Fortran experts:
+> > > >
+> > > > In that post, some remarks are made about Ada, Fortran, and C++.
+> > > >
+> > > > Some readers might like to know how PL/I stacks up against those three
+> > > > languages.
+> > > >
+> > >
+> > > But don't forget that the full PL/I language has no official standard.
+> > 
+> > The standard for the full language is:X3.53-1976.
+> > >
+> > > This is a clear disadvantage of PL/I vs Fortran and Ada.
+> > 
+> > What?
+> > >
+> > > There is a subset that was standardized in 1976 by ANSI but the PL/I
+> > > ANSI committee has now disappeared.
+
+Yes, the very latest is the inclusion of the Millennium Language Extensions.
+IBM's OS/2 PL/I compiler was the first compiler to use these --
+even before the COBOL compiler.
+
+Those extensions allow a program to use a 100-year date window,
+so that comparisons and arithmetic operations can be performed
+automatically on 2-digit year dates as if they were 4-digit years
+(and automatically on mixed operations using 2-digit years and 4-digit
+years.
+
+There are also several new built-in functions for processing 2-digit years,
+as well as altered functions to let them process 2-digit years (as well
+as the 4-digit years that they already handle).
+
+Declarations allow the "DATE" attribute, which is the means by which
+the compiler handles automatic date windowing.
+
+> > As well as the subset defined in 1977 x3.4-1977 there is also the
+> > 1987 standard General Purpose Subset X3.74-1987.
+> 
+> Thanks for the clarifications. But is there are new developments planned
+> for PL/I ?
+> 
+> Jean Vezina
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,e6f0a4b5e1554d9b
+X-Google-Attributes: gid101deb,public
+X-Google-Thread: 1094ba,e6f0a4b5e1554d9b
+X-Google-Attributes: gid1094ba,public
+From: Jean Vezina <jvezina@ibm.net>
+Subject: Re: Fortran or Ada or PL/I?
+Date: 1998/09/23
+Message-ID: <3609B28D.29E8@ibm.net>#1/1
+X-Deja-AN: 394228358
+Content-Transfer-Encoding: 7bit
+References: <360994a7.0@139.134.5.33>
+X-Notice: should be reported to postmaster@ibm.net
+Content-Type: text/plain; charset=us-ascii
+X-Complaints-To: postmaster@ibm.net
+X-Trace: 24 Sep 1998 02:47:09 GMT, 129.37.169.22
+Organization: IBM.NET
+MIME-Version: 1.0
+Reply-To: jvezina@ibm.net
+Newsgroups: comp.lang.fortran,comp.lang.pl1
+
+robin wrote:
+> 
+> Jean Vezina <jvezina@ibm.net> writes: > robin wrote:
+> > >
+> > > >Siamak Kaveh <kaveh@meca.polymtl.ca> writes: > Dear Fortran experts:
+> > >
+> > > In that post, some remarks are made about Ada, Fortran, and C++.
+> > >
+> > > Some readers might like to know how PL/I stacks up against those three
+> > > languages.
+> > >
+> >
+> > But don't forget that the full PL/I language has no official standard.
+> 
+> The standard for the full language is:X3.53-1976.
+> >
+> > This is a clear disadvantage of PL/I vs Fortran and Ada.
+> 
+> What?
+> >
+> > There is a subset that was standardized in 1976 by ANSI but the PL/I
+> > ANSI committee has now disappeared.
+> 
+> As well as the subset defined in 1977 x3.4-1977 there is also the
+> 1987 standard General Purpose Subset X3.74-1987.
+
+Thanks for the clarifications. But is there are new developments planned
+for PL/I ?
+
+Jean Vezina
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,e6f0a4b5e1554d9b
+X-Google-Attributes: gid101deb,public
+X-Google-Thread: 1094ba,e6f0a4b5e1554d9b
+X-Google-Attributes: gid1094ba,public
+From: robin <robin_v@nospam.bigpond.com>
+Subject: Re: Fortran or Ada or PL/I?
+Date: 1998/09/24
+Message-ID: <360994a7.0@139.134.5.33>#1/1
+X-Deja-AN: 394197353
+X-Trace: nsw.nnrp.telstra.net 906597762 139.134.5.33 (Thu, 24 Sep 1998 10:42:42 EST)
+Organization: Telstra Big Pond Direct
+NNTP-Posting-Date: Thu, 24 Sep 1998 10:42:42 EST
+Newsgroups: comp.lang.fortran,comp.lang.pl1
+X-Complaints-To: abuse@telstra.net
+
+Jean Vezina <jvezina@ibm.net> writes: > robin wrote:
+> > 
+> > >Siamak Kaveh <kaveh@meca.polymtl.ca> writes: > Dear Fortran experts:
+> > 
+> > In that post, some remarks are made about Ada, Fortran, and C++.
+> > 
+> > Some readers might like to know how PL/I stacks up against those three
+> > languages.
+> > 
+> 
+> But don't forget that the full PL/I language has no official standard.
+
+The standard for the full language is:X3.53-1976.
+> 
+> This is a clear disadvantage of PL/I vs Fortran and Ada.
+
+What?
+> 
+> There is a subset that was standardized in 1976 by ANSI but the PL/I
+> ANSI committee has now disappeared.
+
+As well as the subset defined in 1977 x3.4-1977 there is also the
+1987 standard General Purpose Subset X3.74-1987.
+
+> In 1984, I have done some tests on an IBM mainframe comparing the
+> execution speed between a Fortran 77 program compiled with VS Fortran
+> with full optimization enabled and an equivalent program in PL/I 
+> (strictly equivalent, no dynamic storage allocation) compiled
+> with IBM PL/I Optimizing (sic) Compiler (full optimization) and the PL/I
+> program was about 5 times slower. Thus, this compiler was far from
+> optimizing!
+
+I'd like to see that.  The code from the optimizing compiler
+was pretty good.
+
+Claims that the program was "equivalent"
+need to be viewed with suspicion.  Three published "comparisons"
+of PL/I with other languages were flawed, and when examined,
+showed that the authors had overlooked some important aspects
+that prevented full optimization!  In particular, they forgot to
+specify the option "REORDER".  In one of the comparisons, they made
+the error of suppressing a condition by using a null action instead
+of disabling the condition!
+
+> Regards,
+> 
+> Jean Vezina
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,50834889a79edaeb
+X-Google-Attributes: gid101deb,public
+From: "Shmuel (Seymour J.) Metz" <nospam@osg.eds.com>
+Subject: Re: pl1 syntax definition
+Date: 1998/04/09
+Message-ID: <352D23AE.2B40@osg.eds.com>#1/1
+X-Deja-AN: 342468101
+Content-Transfer-Encoding: 7bit
+References: <01bd526f$bf20fea0$890476c3@bebrlte> <35266D28.3EC33471@levtech.com> <35290182.3D40@osg.eds.com> <35293f0d.2861557@news.demon.co.uk>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Organization: EDS
+Newsgroups: comp.lang.pl1
+
+
+Hugh Gleaves wrote:
+> 
+> not true.
+> 
+> get ansi x3.74-1987 from them, ive got a copy.
+
+I've got a copy. Reread my article, then read the description at the
+front of X3.74-1987. You will see that it is a revison of the standard
+for the PL/I General Subset, not a revision of the standard for PL/I. As
+I stated, ANSI has *not* revised the PL/I standard since 1976.
+
+
+-- 
+
+
+	Shmuel (Seymour J.) Metz
+	Senior Software SE
+	EDS
+
+The values in From are for the benefit of spammers:
+reply to domain exse01.exch.eds.com, user seymour.metz. 
+Do not reply to spamtrap@library.lspace.org
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,23614d693e4c6cf4,start
+X-Google-Attributes: gid101deb,public
+From: hugo@morantek.demon.co.uk (Hugh Gleaves)
+Subject: PL/I versions
+Date: 1998/03/04
+Message-ID: <34fdc224.1809341@news.demon.co.uk>#1/1
+X-Deja-AN: 330867402
+X-NNTP-Posting-Host: morantek.demon.co.uk [193.237.45.176]
+Organization: Morantek
+Newsgroups: comp.lang.pl1
+
+
+I am considering working again on my PL/I compiler for NT.
+
+I would like some answers first however:
+
+Question 1 versions:
+
+There are three printed standards:
+
+ANSI X3.53-1976 (Large and similar to IBM/Full PL/I)
+
+ANSI X3.74-1981 (Small and quite restrictive)
+
+ANSI X3.74-1987 (Large and better than 1981, but not as large as 1976)
+
+So called 'IBM/Full PL/I' (Large and to my knowledge no language
+definition exists, so its 'closed' and only IBM know its formal
+definition)
+
+Which of these are people interested in ?
+
+Question 2 features
+
+Would you be happy with just a compiler, and use your own editor, and
+linker etc ?
+
+Or do you want a complete featured IDE (like microsofts devstudio) ?
+
+Question 3 Platform
+
+What platform is of most interest 
+
+DOS ?
+Win16 ?
+Win95 ?
+WinNT ?
+Linux ?
+Other ?
+
+Please email me with your views on these questions, I may restart the
+project if I get the right interest, and its price would be a lot less
+than any competing compiler.
+
+I would like to interface PL/I with the Win32 API to allows
+sophisticated products to be developed.
+
+Thanks
+
+Hugh
+
+
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,ff67ce9e3ac07a13
+X-Google-Attributes: gid101deb,public
+X-Google-Thread: 1077ec,ff67ce9e3ac07a13
+X-Google-Attributes: gid1077ec,public
+From: rav@goanna.cs.rmit.edu.au (robin)
+Subject: Re: PL/I for AS400
+Date: 1998/01/09
+Message-ID: <6944e3$lcb$1@goanna.cs.rmit.edu.au>#1/1
+X-Deja-AN: 314190265
+Expires: 9 March 1998 00:00:00 GMT
+References: <68kt64$er1$1@goanna.cs.rmit.edu.au> <19980103163500.LAA29943@ladder02.news.aol.com>
+Organization: Comp Sci, RMIT University, Melbourne, Australia.
+NNTP-Posting-User: rav
+Newsgroups: comp.sys.ibm.as400.misc,comp.lang.pl1
+
+
+ositim@aol.com (OSITim) writes:
+
+	>>	>PL/I is the forgotten AS/400 language though.
+	>>
+	>>You can view the on-line manual at: http://blah, blah, blah
+	>> or thereabouts. If you have trouble looking for it, do a search on
+	>>"PL/I User's Guide and Reference"
+
+	>Thank you for the road map to PL/I manuals but after eight years of using the
+	>language on the AS/400, the manulas are indelibly imprinted on my retinas.
+	>BECAUSE THEY HAVEN'T CHANGED.
+
+Well, then, you might like to look at the on-line
+copy, because that's the 1994 edition!
+
+	 Four years ago we got an errata sheet. That was
+	>the last modification. 
+
+	>>>It is a shame that  IBM created such a crippled subset of the languare
+
+They didn't "create" it.  It's an ANSI standard.
+
+ 	>then
+	>>>refused to enhance it, support it, or market it.
+
+The existence of an online manual constitutes marketing.
+and is evidence of support.
+
+The compiler cited in the on-ine manual is Version 3,
+Release 1, so there is ample evidence of on-going support.
+Your own note below indicates that, since that 1994 edition,
+there have been 5 more releases (up to release 6).
+
+Support, no?
+
+	>>What?  AS400 PL/I implements ANSI standard PL/I.  It's
+	>>scarcely "crippled".  It's a substantial subset of the
+	>>language, and implements most of the facilities.
+	>>
+	>>   All the data types are present, except fixed-point
+	>>binary fractions.  Full fixed-point DECIMAL arithmetic
+	>>is provided -- with fractions.  FIXED BINARY (integer)
+	>>is present.  And so are FLOAT, CHARACTER and BIT.
+	>>
+	>>And it has a number of built-in functions specific for the
+	>>AS400 environment.
+
+	>The PL/I inmplemented by the AS/400 is not an ANSI standard.
+
+Indeed it is.  If you read the online manual, you will see that
+it's ANSI standard X3.74-1981
+
+There are extensions, based on full PL/I,
+as described in ANSI standard X3.53-1976, and
+AS400 PL/I supports a number of additional extensions
+compatible with IBM's other PL/I compilers..
+
+	>It is Subset G of
+	>PL/I specifically designed by IBM to say it had a compiler on the System/38 so
+	>it could sell System/38's to GM.
+
+	>Of the many features that AS/400 PL/I lacks is: Controlled Storage, most of 
+	>the trappable conditions,
+
+Pretty well most -- if not all-- of the conditions are
+trappable.  Which ones do you think are not trappable?
+
+	 File Variables, Prefixes, Arrays with LBOUND other
+	>than 1. GENERIC parameters and the list goes on...
+                         ??????????
+
+I think you mean "generic procedures".
+
+Might be more constructive to list what's available . . . .
+
+	>Just go take a look at some of the code examples on IBM's own PL/I web page, I
+	>couldn't find a single one that could be compiled on an AS/400.
+
+There are many examples in the online AS400 PL/I manual,
+and they can be compiled on an AS400.
+
+	>>>And then, withdrew it with the
+	>>>statement that there is no market for it.
+	>>
+	>>It's still available.
+
+	>In V3R2 PL/I was sold as 5763-PLI liscensed program. In V3R6 forward it is sold
+	>only as a PRPQ strictly as is with no support. IBM's statement is "customers
+	>are encouraged to move to the ILE-languages" 
+
+	>Which brings up another sore subject... PL/I does not support the ILE
+	>environment on AS/400 eventhough it is the language that most clearly inspired
+	>it. With its concept of a Run Unit and Static, Automatic storage, and
+	>External/Internal scope.
+
+	>PL/I is not year 2000 compliant on AS/400 and there are no tools to examine
+	>PL/I source code available.
+
+Year 2000 date stuff for PL/I is available from
+the web page http://www.cs.rmit.edu.au/~rav....
+
+	>Finally, any reference to PL/I has been stricken from virtually all the AS/400
+	>reference manuals.
+
+Not the PL/I manual.
+
+	 All the code examples are in unreadable RPG or inscrutable
+	>C. 
+
+	>So I stand by my statement the PL/I on the AS/400 is doomed. And I am sure all
+	>six other AS/400 PL/I shops agree with me.
+
+Don't you think tha a more postitive attitude
+will go a long way to promoting the use of the
+language --
+particularly as most of your statements about
+PL/I on the AS400 are demonstrably wrong?
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 114eba,3507dbb53070c3c
+X-Google-Attributes: gid114eba,public
+X-Google-Thread: 101deb,a580a469c359edf8,start
+X-Google-Attributes: gid101deb,public
+From: Paul_Green@vos.stratus.com
+Subject: RE: Pictures in PL/1
+Date: 1997/08/02
+Message-ID: <5rvvtb$8ql@transfer.stratus.com>#1/1
+X-Deja-AN: 261764941
+References: <5rvn0f$2lq$1@hermes.is.co.za>
+Organization: Stratus Computer, Marlboro Ma.
+Newsgroups: comp.sys.stratus,comp.lang.pl1
+
+
+In article <5rvn0f$2lq$1@hermes.is.co.za> "Peter Hamilton-Scott" 
+<hamscott@icon.co.za> wrote: 
+>I want to use a value in a picture dcl. Trouble is I'm not sure how to 
+>define the picture such that it takes these rules into account: 
+> 
+>1) If the value is <0 display it like -100. 
+>2) If the value is =0 display nothing (spaces). 
+>3) If the value is >0 display it like 100. 
+> 
+>Ive tried pictures like '----9' (rule 1) and like 'zzzzz' (Rule 2) and like 
+>'zzzz9' (Rule 3). The closest I come to all three could be a compromise 
+>like '----z' but the compiler barks at me for being an idiot! 
+>True, I may be, but can someone give me some advice on how I'd do this. 
+> 
+>PS. Please reply to PeterH@nedcor.co.za  
+
+Here is the VOS PL/I program to accomplish this task, along with its output: 
+
+    1  t_pic: 
+    2       procedure; 
+    3   
+    4       call test (-100); 
+    5       call test (0); 
+    6       call test (+100); 
+    7       return; 
+    8   
+    9  test: 
+   10       procedure (v); 
+   11   
+   12  dcl  v bin (15); 
+   13  dcl  p picture '-----'; 
+   14   
+   15       /* assign the numeric value to a picture, then 
+   16          translate spaces to dots to prove that the 
+   17          picture is working as expected. */ 
+   18   
+   19       p = v; 
+   20       put list ('|' || translate (p, '.', ' ') || '|'); 
+   21       put skip; 
+   22   
+   23       end test; 
+   24   
+   25       end t_pic; 
+
+!t_pic 
+|.-100|  
+|.....|  
+|..100|  
+
+Pictures are documented on pages 4-16 thru 4-20 in R009-02, the 
+VOS PL/I Language Manual.  Pay close attention to the 
+documentation of "drifting fields" on page 4-19.  This trick of 
+a picture consisting entirely of a sign character will work with 
+"-", "+", "s", or "$".  And if the dollar-sign isn't the proper 
+currency symbol for your locale, the translate builtin can be 
+used to replace it with the appropriate Latin Alphabet #1 
+character. 
+
+The compiler barfed at "----z" because a picture with a drifting 
+field (the "----") is not allowed to contain or be preceded by 
+9, y, t, i, r, z, or *.  Got that?  (If you think the VOS PL/I 
+manual is complicated in this respect, check out the 
+create-numeric-picture operation in X3.74, which is where the 
+ANSI PL/I General Purpose Subset standard defines pictures; they 
+are quite complex). 
+
+PG 
+-- 
+Paul Green                  | Mail: Paul_Green@stratus.com 
+Senior Technical Consultant | Voice: +1 508-460-2557   FAX: +1 508-460-0397 
+Stratus Computer, Inc.      | Video: PictureTel/AT&T by request. 
+Marlboro, MA  01752         | Disclaimer: I speak for myself, not Stratus. 
+-- 
+Paul Green                  | Mail: Paul_Green@stratus.com 
+Senior Technical Consultant | Voice: +1 508-460-2557   FAX: +1 508-460-0397 
+Stratus Computer, Inc.      | Video: PictureTel/AT&T by request. 
+Marlboro, MA  01752         | Disclaimer: I speak for myself, not Stratus. 
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,f943a05307627900
+X-Google-Attributes: gid101deb,public
+X-Google-Thread: 1149ec,cbaecefca3a8b706
+X-Google-Attributes: gid1149ec,public
+From: gleeh@tulletts.sprint.com
+Subject: Re: comment nesting
+Date: 1996/12/01
+Message-ID: <57pujl$rfd@infoserv.netkonect.net>#1/1
+X-Deja-AN: 201590809
+references: <AE9F7D069668AED2E@dialup-206.minn.net> <327A904A.446B@wizard.net> <01bbc859$00051c00$6674adce@azguard> <AEA0B50A96683BFF@dialup-209.minn.net> <55fris$set@poblano.near.net> <55ksmf$nh2@lyra.csx.cam.ac.uk> <55n8rg$4fb@lyra.csx.cam.ac.uk> <560joi$akl$1@goanna.cs.rmit.edu.au> <56kv4r$871@infoserv.netkonect.net> <57bim2$bkc$1@goanna.cs.rmit.edu.au>
+organization: .netkonect (customer account)
+newsgroups: comp.std.c,comp.lang.pl1
+
+
+ok@goanna.cs.rmit.edu.au (Richard A. O'Keefe) wrote:
+
+>gleeh@tulletts.sprint.com writes:
+
+>>On comment nesting.
+
+>>The alpha version of my PL/I compiler for NT allows
+>>comments to be nested. This isnt in line with the ANSI
+>>standard however.
+
+>>Why do I allow nesting ?
+
+>>Well it allows you to comment out large chunks of code and
+>>comments in one hit:
+
+>But PL/I (IBM PL/I and Burroughs PL/I at least)
+>has an extremely powerful (and elaborate) preprocessor,
+>which renders an extra mechanism as useful as tits on a bull.
+
+>If you are going to add things to PL/I that are not in the
+>ANSI standard (is there one more recent than 1976?) then the
+>preprocessor is a _long_ way ahead of contra-standard comments.
+
+>-- 
+>Mixed Member Proportional---a *great* way to vote!
+>Richard A. O'Keefe; http://www.cs.rmit.edu.au/%7Eok; RMIT Comp.Sci.
+
+IBM's PL/I compilers dont implement an ANSI standard.
+
+Preprocessing isnt included in ANSI.
+
+The X3.74-1987 standard is the latest standard.
+
+Like I said nesting comments allows arbitrary blocks of commented code
+to be commented out. This is so useful (especially for testing the
+compiler) that I include it. Its an optional extension, such things
+are common in this business.
+
+
+
+
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,f943a05307627900
+X-Google-Attributes: gid101deb,public
+X-Google-Thread: 1149ec,cbaecefca3a8b706
+X-Google-Attributes: gid1149ec,public
+From: shmuel@os2bbs.com
+Subject: Re: comment nesting
+Date: 1996/12/04
+Message-ID: <584rrh$ok0@news1.mnsinc.com>#1/1
+X-Deja-AN: 202380414
+distribution: inet
+references: <AE9F7D069668AED2E@dialup-206.minn.net> <327A904A.446B@wizard.net> <01bbc859$00051c00$6674adce@azguard> <AEA0B50A96683BFF@dialup-209.minn.net> <55fris$set@poblano.near.net> <55ksmf$nh2@lyra.csx.cam.ac.uk> <55n8rg$4fb@lyra.csx.cam.ac.uk> <560joi$akl$1@goanna.cs.rmit.edu.au> <56kv4r$871@infoserv.netkonect.net> <57bim2$bkc$1@goanna.cs.rmit.edu.au> <57pujl$rfd@infoserv.netkonect.net>
+organization: Atid/2
+reply-to: shmuel@os2bbs.remove.to.reply.com
+newsgroups: comp.std.c,comp.lang.pl1
+
+
+In <57pujl$rfd@infoserv.netkonect.net>, gleeh@tulletts.sprint.com writes:
+>
+>The X3.74-1987 standard is the latest standard.
+
+Not quite; it's the latest standard for the General Purpose (G) subset; ANSI 
+reaffirmed the 1976 standard instead of updating it. At that point, I gave up on ANSI.
+
+
+
+
+     Shmuel (Seymour J.) Metz
+     Systems Programmer & JOAT
+     Atid/2
+
+Any unsolicited commercial junk E-mail will will be subject to
+legal action.
+
+I added an * to my E-mail address to foil automated spammers;
+remove it to contact me.
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,f943a05307627900
+X-Google-Attributes: gid101deb,public
+X-Google-Thread: 1149ec,cbaecefca3a8b706
+X-Google-Attributes: gid1149ec,public
+From: gleeh@tulletts.sprint.com
+Subject: Re: comment nesting
+Date: 1996/12/05
+Message-ID: <586pbp$1qe@infoserv.netkonect.net>#1/1
+X-Deja-AN: 202516228
+references: <AE9F7D069668AED2E@dialup-206.minn.net> <327A904A.446B@wizard.net> <01bbc859$00051c00$6674adce@azguard> <AEA0B50A96683BFF@dialup-209.minn.net> <55fris$set@poblano.near.net> <55ksmf$nh2@lyra.csx.cam.ac.uk> <55n8rg$4fb@lyra.csx.cam.ac.uk> <560joi$akl$1@goanna.cs.rmit.edu.au> <56kv4r$871@infoserv.netkonect.net> <57bim2$bkc$1@goanna.cs.rmit.edu.au> <57pujl$rfd@infoserv.netkonect.net> <584rrh$ok0@news1.mnsinc.com>
+organization: .netkonect (customer account)
+newsgroups: comp.std.c,comp.lang.pl1
+
+
+shmuel@os2bbs.com wrote:
+
+>In <57pujl$rfd@infoserv.netkonect.net>, gleeh@tulletts.sprint.com writes:
+>>
+>>The X3.74-1987 standard is the latest standard.
+
+>Not quite; it's the latest standard for the General Purpose (G) subset; ANSI 
+>reaffirmed the 1976 standard instead of updating it. At that point, I gave up on ANSI.
+
+True enough. But the 1987 standard is often confused with the 1982
+ANSI standard  called the General Purpose Subset.The 1987 standard is
+much closer to full PL/I. 
+
+Hugo.
+
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,8bb149e24d802573
+X-Google-Attributes: gid101deb,public
+From: gleeh@tulletts.sprint.com
+Subject: Re: Grammar for PL/I
+Date: 1996/10/13
+Message-ID: <53qf1m$9in@infoserv.netkonect.net>#1/1
+X-Deja-AN: 189108314
+references: <325901F1.2170@legasys.on.ca>
+organization: .netkonect (customer account)
+newsgroups: comp.lang.pl1
+
+
+"James R. Cordy" <cordy@legasys.on.ca> wrote:
+
+>I am interested in obtaining a public domain online grammar
+>for PL/I, or a large (say, PL/C-sized) subset of it.  
+>If anyone knows of the whereabouts of such a beast, please let me know.
+
+>Thanks
+>Jim Cordy
+
+>PS I am not interested in commercial products.
+
+Do you want the grammar in order to build a parser ?
+Do you want the grammar in some special format ?
+The grammar for PL/I is rather complex, the one I used
+is the ANSI X3.74-1987 document (450 pages).
+
+Be warned the document is abstruse.
+
+For example it describes PL/I in terms of TWO syntaxes
+a 'concrete' syntax and an 'abstract' syntax. 
+
+I used this document to help me write a recursive-descent
+parser in 'C' for my windows NT PL/I compiler, if you want to see the
+results check out
+
+ftp.winsite.com
+
+in
+
+ftp/pub/pc/winnt/miscutil
+
+called
+
+pli-32.zip
+
+Let me know if you track down a 'grammar', id be interested
+in what you dig up.
+
+Regards, Hugo.
+
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,8bb149e24d802573
+X-Google-Attributes: gid101deb,public
+From: gleeh@tulletts.sprint.com
+Subject: Re: Grammar for PL/I
+Date: 1996/10/13
+Message-ID: <53qfce$9qf@infoserv.netkonect.net>#1/1
+X-Deja-AN: 189109012
+references: <325901F1.2170@legasys.on.ca>
+organization: .netkonect (customer account)
+newsgroups: comp.lang.pl1
+
+
+"James R. Cordy" <cordy@legasys.on.ca> wrote:
+
+>I am interested in obtaining a public domain online grammar
+>for PL/I, or a large (say, PL/C-sized) subset of it.  
+>If anyone knows of the whereabouts of such a beast, please let me know.
+
+>Thanks
+>Jim Cordy
+
+>PS I am not interested in commercial products.
+
+Do you want the grammar in order to build a parser ?
+Do you want the grammar in some special format ?
+The grammar for PL/I is rather complex, the one I used
+is the ANSI X3.74-1987 document (450 pages).
+
+Be warned the document is abstruse.
+
+For example it describes PL/I in terms of TWO syntaxes
+a 'concrete' syntax and an 'abstract' syntax. 
+
+I used this document to help me write a recursive-descent
+parser in 'C' for my windows NT PL/I compiler, if you want to see the
+results check out
+
+ftp.winsite.com
+
+in
+
+ftp/pub/pc/winnt/miscutil
+
+called
+
+pli-32.zip
+
+Let me know if you track down a 'grammar', id be interested
+in what you dig up.
+
+Regards, Hugo.
+
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,8bb149e24d802573
+X-Google-Attributes: gid101deb,public
+From: gleeh@tulletts.sprint.com
+Subject: Re: Grammar for PL/I
+Date: 1996/10/13
+Message-ID: <53qfhn$9t6@infoserv.netkonect.net>#1/1
+X-Deja-AN: 189112172
+references: <325901F1.2170@legasys.on.ca>
+organization: .netkonect (customer account)
+newsgroups: comp.lang.pl1
+
+
+"James R. Cordy" <cordy@legasys.on.ca> wrote:
+
+>I am interested in obtaining a public domain online grammar
+>for PL/I, or a large (say, PL/C-sized) subset of it.  
+>If anyone knows of the whereabouts of such a beast, please let me know.
+
+>Thanks
+>Jim Cordy
+
+>PS I am not interested in commercial products.
+
+Do you want the grammar in order to build a parser ?
+Do you want the grammar in some special format ?
+The grammar for PL/I is rather complex, the one I used
+is the ANSI X3.74-1987 document (450 pages).
+
+Be warned the document is abstruse.
+
+For example it describes PL/I in terms of TWO syntaxes
+a 'concrete' syntax and an 'abstract' syntax. 
+
+I used this document to help me write a recursive-descent
+parser in 'C' for my windows NT PL/I compiler, if you want to see the
+results check out
+
+ftp.winsite.com
+
+in
+
+ftp/pub/pc/winnt/miscutil
+
+called
+
+pli-32.zip
+
+Let me know if you track down a 'grammar', id be interested
+in what you dig up.
+
+Regards, Hugo.
+
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,8bb149e24d802573
+X-Google-Attributes: gid101deb,public
+From: shmuel@os2bbs.com
+Subject: Re: Grammar for PL/I
+Date: 1996/10/15
+Message-ID: <53vqb7$mj5@news1.mnsinc.com>#1/1
+X-Deja-AN: 189533475
+distribution: inet
+references: <325901F1.2170@legasys.on.ca> <53qf1m$9in@infoserv.netkonect.net>
+organization: Atid/2
+reply-to: shmuel.metz@os2bbs.com
+newsgroups: comp.lang.pl1
+
+
+In <53qf1m$9in@infoserv.netkonect.net>, gleeh@tulletts.sprint.com writes:
+>"James R. Cordy" <cordy@legasys.on.ca> wrote:
+>
+>Do you want the grammar in order to build a parser ?
+>Do you want the grammar in some special format ?
+>The grammar for PL/I is rather complex, the one I used
+>is the ANSI X3.74-1987 document (450 pages).
+
+Also, the 1987 document is an update of the G subset, not of the full language.
+Unfortunately, ANSI decided to reaffirm the 1976 standard rather than upgrading
+it, an action that, IMHO, rendered ANSI irrelevant to the PL/I world.
+
+	Shmuel (Seymour J.) Metz
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,6bf2a6141e2595d5,start
+X-Google-Attributes: gid101deb,public
+From: gleeh@tulletts.sprint.com
+Subject: Request for source code.
+Date: 1996/08/17
+Message-ID: <4v4b08$se2@serv1.vossnet.co.uk>#1/1
+X-Deja-AN: 174845926
+organization: Voss Net Online (info@vossnet.co.uk)
+newsgroups: comp.lang.pl1
+
+
+I have almost fully implemented the parser for my port of my old DOS
+PL/I compiler to NT.
+
+I now have a full Win32 PL/I executable. It doesnt yet produce code,
+but It wont be too hard to modify the 16 80286 codegen to 32 bit 486,
+586 etc.
+
+In the meantime, I would like to get hold of 'real' PL/I source code
+that I can use to stress the parser to its limits.
+
+The parser in the latest version supports (in addition to the DOS
+version):
+
+All stream and record IO statements and options.
+All looping constructs
+All forms of the INITIAL option on declares.
+
+The parser implements ANSI X3.74-1987 this does NOT refer in any way
+to preprocessing (as used by IBM M/F) except %include.
+
+So if anybody has any source code that I can have, please Email it to
+me so that I can stress the parser.
+
+There is a ZIP file that contains a full test version including sample
+source and detailed complete documentation, this file is about 300K
+I can upload this seperately to Usenet. If there is a better way to
+make this available let me know. (Im newish to internet).
+
+Regards, Hugo.
+
+
+
+
+
+From nobody@example.com Wed Jun 30 21:49:08 1993
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: 101deb,b5b61603dacbbda7
+X-Google-Attributes: gid101deb,public
+From: Paul_Green@stratus.com (Paul Green)
+Subject: Re: Need PL/I's BNF Discription
+Date: 1996/05/06
+Message-ID: <Paul_Green.216.3DE798D7@stratus.com>#1/1
+X-Deja-AN: 153324932
+references: <4mh5k7$9cv@info.bta.net.cn>
+organization: Stratus Computer, Inc.
+newsgroups: comp.lang.pl1
+
+
+In article <4mh5k7$9cv@info.bta.net.cn> wangj@public2.bta.net.cn () writes:
+>From: wangj@public2.bta.net.cn ()
+>Subject: Need PL/I's BNF Discription
+>Date: 5 May 1996 03:00:23 GMT
+
+>Hello!
+>  I am developing a PL/1 to COBOL convertor. I need BNF description of PL/1.
+>Thanks for help.
+>Wang Jun
+
+Get a copy of ANSI X3.53-1976 (ANSI Standard PL/I), or X3.74-1987 (General 
+Purpose Subset PL/I). They have enough BNF for PL/I to make your head swim. Of 
+course, it is ANSI PL/I, not IBM PL/I, but you should be able to understand it 
+well enough to improve it.  See http://www.ansi.org/.
+
+PG
+--
+Paul Green               | Mail: Paul_Green@stratus.com
+Director, VOS Planning   | Voice: +1 508-460-2557  FAX: +1 508-460-0397
+Stratus Computer, Inc.   | Video: PictureTel/AT&T by request.
+Marlboro, MA 01752       | Disclaimer: I speak for myself, not Stratus.
+
+
+

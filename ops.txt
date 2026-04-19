@@ -35,3 +35,5 @@ Unary operators:
 ¬	logical not
 
 Other characters: blank . ' ( ) , _ $ ; : %
+Unused ASCII: ! @ # ^ [ ] { } \ ` ~ " ?
+Total: 96 characters: blank + 94 printing + not
